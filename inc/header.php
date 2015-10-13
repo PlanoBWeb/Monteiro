@@ -119,13 +119,15 @@
                <li class="dropdown linha-topo">
                   <a href="#" class="dropdown-toggle link-linha-topo font-normal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Publicações<span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                     <li><a class="link-linha-topo font-normal" href="#">Action</a></li>
-                     <li><a class="link-linha-topo font-normal" href="#">Another action</a></li>
+                     <li><a class="link-linha-topo font-normal" href="informativos.php">INFORMATIVOS</a></li>
+                     <li><a class="link-linha-topo font-normal" href="artigos.php">ARTIGOS</a></li>
+                     <li><a class="link-linha-topo font-normal" href="instrucoes.php">INSTRUÇÕES</a></li>
+                     <li><a class="link-linha-topo font-normal" href="palestras.php">PALESTRAS</a></li>
                   </ul>
                </li>
-               <li class="linha-topo"><a class="link-linha-topo font-normal" href="#">Mídia</a></li>
-               <li class="linha-topo"><a class="link-linha-topo font-normal" href="#">Fale Conosco</a></li>
-               <li class="linha-topo"><a class="link-linha-topo font-normal" href="#">Localização</a></li>
+               <li class="linha-topo"><a class="link-linha-topo font-normal" href="midias.php">Mídia</a></li>
+               <li class="linha-topo"><a class="link-linha-topo font-normal" href="fale-conosco.php">Fale Conosco</a></li>
+               <li class="linha-topo"><a class="link-linha-topo font-normal" href="localizacao.php">Localização</a></li>
                <li class="linha-topo"><a class="link-linha-topo font-normal pd-right-none icon-redes" href="https://www.facebook.com/Marcos-Monteiro-Sociedade-de-Advogados-798300076864104/timeline/" target="_blank"><img src="img/icon-face.png" alt="Facebook" title="Facebook"></a></li>
                <li class="linha-topo"><a class="link-linha-topo font-normal pd-left-none icon-redes" href="#"><img src="img/icon-in.png" alt="Likedin" title="Likedin" target="_blank"></a></li>
             </ul>

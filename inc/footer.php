@@ -14,7 +14,7 @@
 			<form class="form-search" method="post" name="indique">
 	            <input class="font-normal form-compartilhe" type="text" name="indique" placeholder="e-mail">
 	            <input class="btn-ok cinza font-normal" type="submit" value="ok">
-	         </form>
+	        </form>
 		</div>
 		<div class="col-xs-12 col-sm-1 col-md-1">&nbsp;</div>
 		<div class="col-xs-12 col-sm-4 col-md-4 pd-right-5 center-bloco-compartilhe">
@@ -89,6 +89,7 @@
 <script src="js/vitrine/owl.carousel.js"></script>
 <!-- vitrine -->
 <script src="js/geral.js" type="text/javascript"></script>
+<script src="js/lightbox.js"></script>
 <script>
 $(document).ready(function() {
  $("#owl-demo").owlCarousel({

@@ -68,7 +68,7 @@
          <?php include 'inc/header.php'; ?>
          <!-- Banner -->
          <article class="banner">
-            <img class="banner-interna" src="img/banner-escritorio.jpg" alt="escritório" title="escritório">
+            <img class="banner-interna" src="img/banner-contato.jpg" alt="contato" title="contato">
          </article>
          <div class="row bloco-breadcrumb">
             <div class="tamanho-max pd-left-5">

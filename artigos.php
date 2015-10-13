@@ -25,7 +25,7 @@
             <div class="tamanho-max pd-left-5">
                <ol class="breadcrumb">
                   <li><a href="index.php">Home</a></li>
-                  <li>Notícias</li>
+                  <li>Artigos</li>
                </ol>
             </div>
          </div>
@@ -36,11 +36,10 @@
             <div class="row tamanho-max bloco-conteudo bloco-conteudo-noticias">
                <div class="col-xs-12 col-sm-8 col-md-8 pd-none encapsula-noticias">
                   <?php for ($i=0; $i < 6; $i++) { ?>
-                     <div class="col-xs-12 col-sm-12 col-md-12 pd-none conteudo-interna-not">
-                        <a href=""><img class="img-noticias" src="img/noticias/noticia1.jpg" title="Noticia" alt="Noticia"></a>
-                        <h2 class="titulo-noticias font-normal"><a href="noticia.php">Câmara aprova regras para convênios entre órgãos públicos e ONGs</a></h2>
+                     <div class="col-xs-12 col-sm-12 col-md-12 pd-none conteudo-interna-publicacao">
+                        <h2 class="titulo-publicacoes font-bold"><a href="informativa.php">Artigo nº<?php echo $i; ?></a></h2>
+                        <a class="txt-desc-publicacao font-normal" href="informativo.php">Tse reforma decisão do tribunal regional eleitoral paulista que tinha considerado irregular a “caravana horizonte paulista” do candidato Alexandre Padilha - PT.</a>
                         <p class="txt-noticias-info font-normal">Por:  Lorem Ipsum   •  em: Direito Público  •   26 Fev. 2015</p>
-                        <a class="txt-desc-noticias font-normal" href="">O Plenário da Câmara dos Deputados aprovou nesta terça-feira (24) o Projeto de Lei Complementar 177/12...</a>
                      </div>
                   <?php } ?>
                   

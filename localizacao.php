@@ -22,7 +22,7 @@
          <?php include 'inc/header.php'; ?>
          <!-- Banner -->
          <article class="banner">
-            <img class="banner-interna" src="img/banner-escritorio.jpg" alt="escritório" title="escritório">
+            <img class="banner-interna" src="img/banner-localizacao.jpg" alt="localização" title="localização">
          </article>
          <div class="row bloco-breadcrumb">
             <div class="tamanho-max pd-left-5">
