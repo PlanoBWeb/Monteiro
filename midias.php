@@ -34,8 +34,10 @@
          <!-- Conteudo -->
          <section class="conteudo-interna">
             <div class="row tamanho-max bloco-conteudo bloco-conteudo-noticias">
-               <div class="col-xs-12 col-sm-8 col-md-8 pd-none encapsula-noticias">
-                  <?php for ($i=0; $i < 3; $i++) { ?>
+               <br><br>
+               <p class="txt-desc-noticias font-normal">Em breve!</p>
+            <!--    <div class="col-xs-12 col-sm-8 col-md-8 pd-none encapsula-noticias">
+                  <?php //for ($i=0; $i < 3; $i++) { ?>
                      <div class="col-xs-12 col-sm-12 col-md-12 pd-none conteudo-interna-not">
                         <a href="midia.php"><img class="img-noticias" src="img/noticias/noticia1.jpg" title="Noticia" alt="Noticia"></a>
                         <h2 class="titulo-noticias font-normal"><a href="midia.php">Câmara aprova regras para convênios entre órgãos públicos e ONGs</a></h2>
@@ -43,9 +45,9 @@
                         <img class="pull-left" src="img/icon-foto.png" alt="icone foto" title="icone foto">
                         <p class="txt-icon-midia font-bold">Galeria de fotos</p>
                      </div>
-                  <?php } ?>
+                  <?php //} ?>
 
-                  <?php for ($i=0; $i < 3; $i++) { ?>
+                  <?php //for ($i=0; $i < 3; $i++) { ?>
                      <div class="col-xs-12 col-sm-12 col-md-12 pd-none conteudo-interna-not">
                         <a href="midia.php"><img class="img-noticias" src="img/noticias/noticia1.jpg" title="Noticia" alt="Noticia"></a>
                         <h2 class="titulo-noticias font-normal"><a href="midia.php">Câmara aprova regras para convênios entre órgãos públicos e ONGs</a></h2>
@@ -53,7 +55,7 @@
                         <img class="pull-left" src="img/icon-video.png" alt="icone video" title="icone video">
                         <p class="txt-icon-midia font-bold">Video</p>
                      </div>
-                  <?php } ?>
+                  <?php //} ?>
                   
                   <div class="bloco-paginacao">
                      <a href="?p=#" class="seta-esquerda fl-left seta-default">&lt;&lt;</a>
@@ -62,9 +64,9 @@
                      <a href="?p=#" class="seta-direita fl-left seta-default">&gt;</a>
                      <a href="?p=#" class="seta-direita fl-left seta-default">&gt;&gt;</a>
                   </div>
-               </div>
+               </div> -->
 
-               <?php include 'inc/menu-lateral-blog.php'; ?>
+               <?php //include 'inc/menu-lateral-blog.php'; ?>
             </div>
          </section>
          <!-- Conteudo -->
