@@ -21,14 +21,7 @@
       <div class="container-fluid no-padding">
          {include file="../inc/header.html"}
          <!-- BreadCrumb -->
-         <div class="row bloco-breadcrumb">
-            <div class="tamanho-max pd-left-5">
-               <ol class="breadcrumb">
-                  <li><a href="index.php">Home</a></li>
-                  <li>Informativos</li>
-               </ol>
-            </div>
-         </div>
+         {include file="../inc/breadcrumb.html"}
          <!-- BreadCrumb -->
 
          <!-- Conteudo -->
@@ -38,7 +31,7 @@
                   <div class="col-xs-12 col-sm-12 col-md-12 pd-none conteudo-interna-publicacao">
                      <h2 class="titulo-publicacoes font-bold"><a href="informativa.php">Informativo nº1 </a></h2>
                      <a class="txt-desc-publicacao font-normal" href="informativo.php">Tse reforma decisão do tribunal regional eleitoral paulista que tinha considerado irregular a “caravana horizonte paulista” do candidato Alexandre Padilha - PT.</a>
-                     <p class="txt-noticias-info font-normal">Por:  Lorem Ipsum   •  em: Direito Público  •   26 Fev. 2015</p>
+                     <p class="txt-noticias-info font-normal">{ $arrayIdioma.MN_NOT_POR }:  Lorem Ipsum   •  { $arrayIdioma.MN_NOT_EM }: Direito Público  •   26 Fev. 2015</p>
                   </div>
 
                   

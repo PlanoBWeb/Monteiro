@@ -1,6 +1,6 @@
 <?php 
 
-	$pastaProjeto	= "clientes/MonteiroNovo/Web/";
+	$pastaProjeto	= "clientes/MonteiroEMassarana/Web/";
 	$urlCompleta 	= $_SERVER['REQUEST_URI'];
 	$posInicio		= strpos($urlCompleta, $pastaProjeto);
 	$priimeiraEtapa	= substr($urlCompleta, ($posInicio+strlen($pastaProjeto)));
@@ -67,7 +67,8 @@
 		$pagina == "representacao-em-licitacoes.php" ||
 		$pagina == "impugnacoes-em-editais.php" ||
 		$pagina == "mandado-de-seguranca.php" ||
-		$pagina == "advocacia-consultiva.php" 
+		$pagina == "advocacia-consultiva.php" ||
+		$pagina == "diligencias-negociais.php"
 	){
 		$PgAtiva = "direito empresarial"; 
 	}
@@ -83,7 +84,7 @@
 		$pagina == "Autorizacao-Alvara-Judicial-para-Venda-de-Imoveis.php" ||
 		$pagina == "Acoes-possessorias-e-Imissao-na-posse.php" 
 	){
-		$PgAtiva = "direito imobiliario "; 
+		$PgAtiva = "direito imobiliario"; 
 	}
 
 

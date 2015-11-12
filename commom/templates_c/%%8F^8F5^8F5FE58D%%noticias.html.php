@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-10-28 15:58:46
+<?php /* Smarty version 2.6.12, created on 2015-11-12 17:46:27
          compiled from noticias.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -27,14 +27,11 @@ $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
          <!-- BreadCrumb -->
-         <div class="row bloco-breadcrumb">
-            <div class="tamanho-max pd-left-5">
-               <ol class="breadcrumb">
-                  <li><a href="index.php">Home</a></li>
-                  <li>Notícias</li>
-               </ol>
-            </div>
-         </div>
+         <?php $_smarty_tpl_vars = $this->_tpl_vars;
+$this->_smarty_include(array('smarty_include_tpl_file' => "../inc/breadcrumb.html", 'smarty_include_vars' => array()));
+$this->_tpl_vars = $_smarty_tpl_vars;
+unset($_smarty_tpl_vars);
+ ?>
          <!-- BreadCrumb -->
 
          <!-- Conteudo -->
@@ -45,7 +42,9 @@ unset($_smarty_tpl_vars);
                   <div class="col-xs-12 col-sm-12 col-md-12 pd-none conteudo-interna-not">
                      <a href=""><img class="img-noticias" src="commom/img/noticias/noticia1.jpg" title="Noticia" alt="Noticia"></a>
                      <h2 class="titulo-noticias font-normal"><a href="noticia.php">Câmara aprova regras para convênios entre órgãos públicos e ONGs</a></h2>
-                     <p class="txt-noticias-info font-normal">Por:  Lorem Ipsum   •  em: Direito Público  •   26 Fev. 2015</p>
+                     <p class="txt-noticias-info font-normal"><?php echo $this->_tpl_vars['arrayIdioma']['MN_NOT_POR']; ?>
+:  Lorem Ipsum   •  <?php echo $this->_tpl_vars['arrayIdioma']['MN_NOT_EM']; ?>
+: Direito Público  •   26 Fev. 2015</p>
                      <a class="txt-desc-noticias font-normal" href="">O Plenário da Câmara dos Deputados aprovou nesta terça-feira (24) o Projeto de Lei Complementar 177/12...</a>
                   </div>
 

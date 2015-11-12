@@ -1342,3 +1342,13 @@ iframe{
         display: none;
     }
 }
+
+@media all and (max-width: 360px) {
+
+    .center-bloco-compartilhe{
+        width: 320px;
+        margin: auto;
+        display: table;
+        float: none;
+    }
+}

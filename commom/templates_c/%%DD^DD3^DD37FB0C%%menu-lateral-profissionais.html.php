@@ -1,7 +1,8 @@
-<?php /* Smarty version 2.6.12, created on 2015-10-28 18:00:02
+<?php /* Smarty version 2.6.12, created on 2015-11-12 18:04:33
          compiled from ../inc/menu-lateral-profissionais.html */ ?>
 <div class="col-xs-12 col-sm-3 col-md-3 pd-none bloco-menu-lateral">
-   <h2 class="titulo-menu-lateral font-normal">PROFISSIONAIS</h2>
+   <h2 class="titulo-menu-lateral font-normal"><?php echo $this->_tpl_vars['arrayIdioma']['MN_PROFISSIONAIS']; ?>
+</h2>
    <nav class="menu-lateral">
       <ul>
          <li class="linha-menu-lateral <?php if ($this->_tpl_vars['pagina'] == "marcos-antonio-gaban-monteiro.php"): ?> link-lateral-ativo <?php endif; ?>"><a class="link-menu-lateral font-normal" href="marcos-antonio-gaban-monteiro.php">Marcos Antonio Gaban Monteiro</a></li>

@@ -21,23 +21,16 @@
       <div class="container-fluid no-padding">
          {include file="../inc/header.html"}
          <!-- BreadCrumb -->
-         <div class="row bloco-breadcrumb">
-            <div class="tamanho-max pd-left-5">
-               <ol class="breadcrumb">
-                  <li><a href="index.php">Home</a></li>
-                  <li>Mídia</li>
-               </ol>
-            </div>
-         </div>
+         {include file="../inc/breadcrumb.html"}
          <!-- BreadCrumb -->
 
          <!-- Conteudo -->
          <section class="conteudo-interna">
             <div class="row tamanho-max bloco-conteudo bloco-conteudo-noticias">
                <br><br>
-               <p class="txt-desc-noticias font-normal">Em breve!</p>
+               <p class="txt-desc-noticias font-normal">{ $arrayIdioma.MN_TXT_EMBREVE }</p>
             <!--    <div class="col-xs-12 col-sm-8 col-md-8 pd-none encapsula-noticias">
-                  <?php //for ($i=0; $i < 3; $i++) { ?>
+                  
                      <div class="col-xs-12 col-sm-12 col-md-12 pd-none conteudo-interna-not">
                         <a href="midia.php"><img class="img-noticias" src="img/noticias/noticia1.jpg" title="Noticia" alt="Noticia"></a>
                         <h2 class="titulo-noticias font-normal"><a href="midia.php">Câmara aprova regras para convênios entre órgãos públicos e ONGs</a></h2>
@@ -45,9 +38,7 @@
                         <img class="pull-left" src="img/icon-foto.png" alt="icone foto" title="icone foto">
                         <p class="txt-icon-midia font-bold">Galeria de fotos</p>
                      </div>
-                  <?php //} ?>
-
-                  <?php //for ($i=0; $i < 3; $i++) { ?>
+             
                      <div class="col-xs-12 col-sm-12 col-md-12 pd-none conteudo-interna-not">
                         <a href="midia.php"><img class="img-noticias" src="img/noticias/noticia1.jpg" title="Noticia" alt="Noticia"></a>
                         <h2 class="titulo-noticias font-normal"><a href="midia.php">Câmara aprova regras para convênios entre órgãos públicos e ONGs</a></h2>
@@ -55,7 +46,7 @@
                         <img class="pull-left" src="img/icon-video.png" alt="icone video" title="icone video">
                         <p class="txt-icon-midia font-bold">Video</p>
                      </div>
-                  <?php //} ?>
+      
                   
                   <div class="bloco-paginacao">
                      <a href="?p=#" class="seta-esquerda fl-left seta-default">&lt;&lt;</a>
