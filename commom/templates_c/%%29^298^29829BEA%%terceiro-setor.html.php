@@ -1,5 +1,5 @@
-<?php /* Smarty version 2.6.12, created on 2015-10-29 10:22:55
-         compiled from alvaro-merlos-akinaga-cordeiro.html */ ?>
+<?php /* Smarty version 2.6.12, created on 2015-10-29 12:02:49
+         compiled from terceiro-setor.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
    <head>
@@ -28,7 +28,7 @@ unset($_smarty_tpl_vars);
  ?>
          <!-- Banner -->
          <article class="banner">
-            <img class="banner-interna" src="commom/img/banner-profissionais.jpg" alt="profissionais" title="profissionais">
+            <img class="banner-interna" src="commom/img/banner-atuacao.jpg" alt="Atuação" title="Atuação">
          </article>
          <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "../inc/breadcrumb.html", 'smarty_include_vars' => array()));
@@ -41,24 +41,17 @@ unset($_smarty_tpl_vars);
          <section class="conteudo-interna">
             <div class="row tamanho-max bloco-conteudo">
                <?php $_smarty_tpl_vars = $this->_tpl_vars;
-$this->_smarty_include(array('smarty_include_tpl_file' => "../inc/menu-lateral-profissionais.html", 'smarty_include_vars' => array()));
+$this->_smarty_include(array('smarty_include_tpl_file' => "../inc/menu-lateral-atuacao.html", 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
                <div class="col-xs-12 col-sm-9 col-md-9 pd-none bloco-conteudo-interna">
-                  <!-- <div class="col-xs-12 col-sm-3 col-md-3 pd-none">
-                     <img class="img-profissional" src="img/marcos-gaban.jpg" alt="Marcos Antonio Gaban Monteiro" title="Marcos Antonio Gaban Monteiro">
-                  </div> -->
                   <div class="col-xs-12 col-sm-12 col-md-12 pd-none bloco-profissional">
-                     <h1 class="titulo-pag font-normal"><?php echo $this->_tpl_vars['arrayIdioma']['MN_ALVARO']; ?>
+                     <h1 class="titulo-pag font-normal"><?php echo $this->_tpl_vars['arrayIdioma']['MN_TITULO_TS']; ?>
 </h1>
                      <br><br>                  
-                     <p class="txt-interna font-normal"><?php echo $this->_tpl_vars['arrayIdioma']['MN_TXT_ALVARO']; ?>
+                     <p class="txt-interna font-normal"><?php echo $this->_tpl_vars['arrayIdioma']['MN_TXT_TS']; ?>
 </p>
-                     <div class="col-xs-12 col-sm-12 col-md-12 pd-none email-profissional">
-                        <img src="commom/img/icon-msg-v.png" alt="icone mensagem" title="icone mensagem">
-                        <a href="mailto:alvaro@mmonteiroadv.com.br">alvaro@mmonteiroadv.com.br</a>
-                     </div>
                   </div>
                </div>
             </div>

@@ -1,5 +1,3 @@
-<?php /* Smarty version 2.6.12, created on 2015-10-29 11:44:03
-         compiled from direito-publico.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
    <head>
@@ -21,47 +19,28 @@
    </head>
    <body>
       <div class="container-fluid no-padding">
-         <?php $_smarty_tpl_vars = $this->_tpl_vars;
-$this->_smarty_include(array('smarty_include_tpl_file' => "../inc/header.html", 'smarty_include_vars' => array()));
-$this->_tpl_vars = $_smarty_tpl_vars;
-unset($_smarty_tpl_vars);
- ?>
+         {include file="../inc/header.html"}
          <!-- Banner -->
          <article class="banner">
             <img class="banner-interna" src="commom/img/banner-atuacao.jpg" alt="Atuação" title="Atuação">
          </article>
-         <?php $_smarty_tpl_vars = $this->_tpl_vars;
-$this->_smarty_include(array('smarty_include_tpl_file' => "../inc/breadcrumb.html", 'smarty_include_vars' => array()));
-$this->_tpl_vars = $_smarty_tpl_vars;
-unset($_smarty_tpl_vars);
- ?>
+         {include file="../inc/breadcrumb.html"}
          <!-- Banner -->
-
          <!-- Conteudo -->
          <section class="conteudo-interna">
             <div class="row tamanho-max bloco-conteudo">
-               <?php $_smarty_tpl_vars = $this->_tpl_vars;
-$this->_smarty_include(array('smarty_include_tpl_file' => "../inc/menu-lateral-atuacao.html", 'smarty_include_vars' => array()));
-$this->_tpl_vars = $_smarty_tpl_vars;
-unset($_smarty_tpl_vars);
- ?>
+               {include file="../inc/menu-lateral-atuacao.html"}
                <div class="col-xs-12 col-sm-9 col-md-9 pd-none bloco-conteudo-interna">
                   <div class="col-xs-12 col-sm-12 col-md-12 pd-none bloco-profissional">
-                     <h1 class="titulo-pag font-normal"><?php echo $this->_tpl_vars['arrayIdioma']['MN_TITULO_DP']; ?>
-</h1>
+                     <h1 class="titulo-pag font-normal">{ $arrayIdioma.MN_TITULO_APC }</h1>
                      <br><br>                  
-                     <p class="txt-interna font-normal"><?php echo $this->_tpl_vars['arrayIdioma']['MN_TXT_DP']; ?>
-</p>
+                     <p class="txt-interna font-normal">{ $arrayIdioma.MN_TXT_APC }</p>
                   </div>
                </div>
             </div>
          </section>
          <!-- Conteudo -->
-         <?php $_smarty_tpl_vars = $this->_tpl_vars;
-$this->_smarty_include(array('smarty_include_tpl_file' => "../inc/footer.html", 'smarty_include_vars' => array()));
-$this->_tpl_vars = $_smarty_tpl_vars;
-unset($_smarty_tpl_vars);
- ?>
+         {include file="../inc/footer.html"}
       </div>
   </body>
 </html>

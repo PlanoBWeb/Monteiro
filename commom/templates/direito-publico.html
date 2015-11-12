@@ -24,15 +24,7 @@
          <article class="banner">
             <img class="banner-interna" src="commom/img/banner-atuacao.jpg" alt="Atuação" title="Atuação">
          </article>
-         <div class="row bloco-breadcrumb">
-            <div class="tamanho-max pd-left-5">
-               <ol class="breadcrumb">
-                  <li><a href="index.php">Home</a></li>
-                  <li><a href="direito-publico.php">Atuação</a></li>
-                  <li>Tribunal de Contas</li>
-               </ol>
-            </div>
-         </div>
+         {include file="../inc/breadcrumb.html"}
          <!-- Banner -->
 
          <!-- Conteudo -->
@@ -41,19 +33,9 @@
                {include file="../inc/menu-lateral-atuacao.html"}
                <div class="col-xs-12 col-sm-9 col-md-9 pd-none bloco-conteudo-interna">
                   <div class="col-xs-12 col-sm-12 col-md-12 pd-none bloco-profissional">
-                     <h1 class="titulo-pag font-normal">TRIBUNAL DE CONTAS</h1>
+                     <h1 class="titulo-pag font-normal">{ $arrayIdioma.MN_TITULO_DP }</h1>
                      <br><br>                  
-                     <p class="txt-interna font-normal">
-                        Atua na fiscalização contábil, financeira, orçamentária, operacional e patrimonial de estados, municípios e da União, além das respectivas entidades de administração direta ou indireta e fundações, quanto à legalidade, legitimidade, economicidade, aplicação de subvenções e renúncia de receitas.<br><br>
-
-                        A jurisdição do Tribunal alcança administradores e demais responsáveis por dinheiro, bens e valores públicos, além das pessoas físicas ou jurídicas, que, mediante convênios, acordos, ajustes ou outros instrumentos congêneres, apliquem auxílios, subvenções ou recursos repassados pelo Poder Público.<br><br>
-
-                        Todo cuidado é pouco quando se trata do dinheiro público e os clientes da Marcos Monteiro Sociedade de Advogados são assessorados em todas as particularidades que envolvem os detalhados processos de prestação de contas dos órgãos públicos, incluindo:<br><br>
-
-                        - Patrocínio de defesas especializadas por área, tanto no setor público como privado (prefeituras, câmaras municipais, empresas).<br>
-                        - Acompanhamento simultâneo do andamento processual realizado por sistema próprio.<br>
-                        - Manifestações complementares contínuas ao longo da instrução processual, com elaboração de memoriais, diligências e sustentações orais, permitindo maiores chances de êxito na causa.<br><br>
-                     </p>
+                     <p class="txt-interna font-normal">{ $arrayIdioma.MN_TXT_DP }</p>
                   </div>
                </div>
             </div>

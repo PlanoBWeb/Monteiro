@@ -40,7 +40,50 @@
 		$pagina == "consultoria.php" || 
 		$pagina == "consorcios-municipais.php"
 		){
-		$PgAtiva = "atuacao"; 
+		$PgAtiva = "direito publico"; 
+	}
+
+	if(
+		$pagina == "direito-eleitoral.php" || 
+		$pagina == "assessoria-para-pre-candidatos.php" || 
+		$pagina == "fidelidade-partidaria.php" || 
+		$pagina == "raio-x-candidato.php" || 
+		$pagina == "registro-candidatura.php" || 
+		$pagina == "prestacao-de-contas.php" ||
+		$pagina == "propaganda-eleitoral.php" || 
+		$pagina == "assessoria-em-campanhas.php" || 
+		$pagina == "impugnacao-de-mandato-eletivo.php" ||
+		$pagina == "crimes-infracoes-eleitorais.php" ||
+		$pagina == "cpi.php" 
+		){
+		$PgAtiva = "direito eleitoral"; 
+	}
+
+	if(
+		$pagina == "direito-empresarial.php" ||
+		$pagina == "planejamento-tributario.php" ||
+		$pagina == "recuperacao-de-creditos.php" ||
+		$pagina == "debitos-federais-estaduais.php" ||
+		$pagina == "representacao-em-licitacoes.php" ||
+		$pagina == "impugnacoes-em-editais.php" ||
+		$pagina == "mandado-de-seguranca.php" ||
+		$pagina == "advocacia-consultiva.php" 
+	){
+		$PgAtiva = "direito empresarial"; 
+	}
+
+	if(
+		$pagina == "direito-imobiliario.php" ||
+		$pagina == "consultoria-e-assessoria-Juridicas.php" ||
+		$pagina == "registro-e-legalizacao-de-imoveis.php" ||
+		$pagina == "renegociacao-de-contratos-imobiliarios.php" ||
+		$pagina == "Contencioso-Judicial-e-extrajudicial.php" ||
+		$pagina == "Acoes-de-Usucapiao.php" ||
+		$pagina == "Inventarios-Judicial-e-Extrajudicial-com-partilha.php" ||
+		$pagina == "Autorizacao-Alvara-Judicial-para-Venda-de-Imoveis.php" ||
+		$pagina == "Acoes-possessorias-e-Imissao-na-posse.php" 
+	){
+		$PgAtiva = "direito imobiliario "; 
 	}
 
 
