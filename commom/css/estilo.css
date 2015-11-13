@@ -748,6 +748,14 @@ iframe{
     padding: 5px 0px; 
 }
 
+.submenu-ano{
+    display: none;
+}
+
+.submenu-ano li{
+    padding-left: 20px;
+}
+
 .linha-menu-lateral{
     padding: 13px 10px;
 }
@@ -914,6 +922,7 @@ iframe{
 .bloco-noticia-destaque img{
     float: left;
     margin-right: 10px;
+    max-width: 100px;
 }
 
 .bloco-links-blog{

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-10-28 17:11:46
+<?php /* Smarty version 2.6.12, created on 2015-11-13 15:48:28
          compiled from index.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -73,46 +73,56 @@ unset($_smarty_tpl_vars);
                      <div class="col-xs-12 col-sm-12 col-md-12 pd-left-none">
                         <h2 class="titulo-default font-normal pd-left-none fl-left"><?php echo $this->_tpl_vars['arrayIdioma']['MN_ULTIMAS_NOT']; ?>
 </h2>
-                        <div class="bloco-setas fl-right hidden-xs">
-                           <div class="seta-esquerda fl-left seta-default">&lt;</div>
-                           <div class="seta-direita fl-right seta-default">&gt;</div>
-                        </div>
+                        <?php if ($this->_tpl_vars['totalNotDestaque'] > 6): ?>
+                           <div class="bloco-setas fl-right hidden-xs">
+                              <div class="seta-esquerda fl-left seta-default">&lt;</div>
+                              <div class="seta-direita fl-right seta-default">&gt;</div>
+                           </div>
+                        <?php endif; ?>
                      </div>
                   </div>
                   <div class="borda-titulo"></div>
                   <!-- Noticias -->
-                  <div class="row bloco-ultimas-noticias">
+                  <div class="row bloco-ultimas-noticias" <?php if ($this->_tpl_vars['totalNotDestaque'] < 6): ?> style="min-height: 350px;" <?php endif; ?>>
                      <!-- Noticia Individual -->
-                     <div class="col-xs-12 col-sm-5 col-md-4 pd-none ultimas-noticias-ind">
-                        <img src="commom/img/noticias/noticia.jpg" alt="noticia" title="noticia">
-                        <a href="" class="txt-noticia-destaque font-normal"><p>Câmara aprova regras para convênios entre órgãos públicos e ONGs</p></a>
-                        <p class="data-noticia font-normal">26 Fev. 2015</p>
-                     </div>
-                     <div class="col-xs-12 col-sm-5 col-md-4 pd-none ultimas-noticias-ind">
-                        <img src="commom/img/noticias/noticia.jpg" alt="noticia" title="noticia">
-                        <a href="" class="txt-noticia-destaque font-normal"><p>Câmara aprova regras para convênios entre órgãos públicos e ONGs</p></a>
-                        <p class="data-noticia font-normal">26 Fev. 2015</p>
-                     </div>
-                     <div class="col-xs-12 col-sm-5 col-md-4 pd-none ultimas-noticias-ind">
-                        <img src="commom/img/noticias/noticia.jpg" alt="noticia" title="noticia">
-                        <a href="" class="txt-noticia-destaque font-normal"><p>Câmara aprova regras para convênios entre órgãos públicos e ONGs</p></a>
-                        <p class="data-noticia font-normal">26 Fev. 2015</p>
-                     </div>
-                     <div class="col-xs-12 col-sm-5 col-md-4 pd-none ultimas-noticias-ind">
-                        <img src="commom/img/noticias/noticia.jpg" alt="noticia" title="noticia">
-                        <a href="" class="txt-noticia-destaque font-normal"><p>Câmara aprova regras para convênios entre órgãos públicos e ONGs</p></a>
-                        <p class="data-noticia font-normal">26 Fev. 2015</p>
-                     </div>
-                     <div class="col-xs-12 col-sm-5 col-md-4 pd-none ultimas-noticias-ind">
-                        <img src="commom/img/noticias/noticia.jpg" alt="noticia" title="noticia">
-                        <a href="" class="txt-noticia-destaque font-normal"><p>Câmara aprova regras para convênios entre órgãos públicos e ONGs</p></a>
-                        <p class="data-noticia font-normal">26 Fev. 2015</p>
-                     </div>
-                     <div class="col-xs-12 col-sm-5 col-md-4 pd-none ultimas-noticias-ind">
-                        <img src="commom/img/noticias/noticia.jpg" alt="noticia" title="noticia">
-                        <a href="" class="txt-noticia-destaque font-normal"><p>Câmara aprova regras para convênios entre órgãos públicos e ONGs</p></a>
-                        <p class="data-noticia font-normal">26 Fev. 2015</p>
-                     </div>
+                     <?php unset($this->_sections['i']);
+$this->_sections['i']['name'] = 'i';
+$this->_sections['i']['loop'] = is_array($_loop=$this->_tpl_vars['dados']) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
+$this->_sections['i']['show'] = true;
+$this->_sections['i']['max'] = $this->_sections['i']['loop'];
+$this->_sections['i']['step'] = 1;
+$this->_sections['i']['start'] = $this->_sections['i']['step'] > 0 ? 0 : $this->_sections['i']['loop']-1;
+if ($this->_sections['i']['show']) {
+    $this->_sections['i']['total'] = $this->_sections['i']['loop'];
+    if ($this->_sections['i']['total'] == 0)
+        $this->_sections['i']['show'] = false;
+} else
+    $this->_sections['i']['total'] = 0;
+if ($this->_sections['i']['show']):
+
+            for ($this->_sections['i']['index'] = $this->_sections['i']['start'], $this->_sections['i']['iteration'] = 1;
+                 $this->_sections['i']['iteration'] <= $this->_sections['i']['total'];
+                 $this->_sections['i']['index'] += $this->_sections['i']['step'], $this->_sections['i']['iteration']++):
+$this->_sections['i']['rownum'] = $this->_sections['i']['iteration'];
+$this->_sections['i']['index_prev'] = $this->_sections['i']['index'] - $this->_sections['i']['step'];
+$this->_sections['i']['index_next'] = $this->_sections['i']['index'] + $this->_sections['i']['step'];
+$this->_sections['i']['first']      = ($this->_sections['i']['iteration'] == 1);
+$this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $this->_sections['i']['total']);
+?>
+                        <div class="col-xs-12 col-sm-5 col-md-4 pd-none ultimas-noticias-ind">
+                           <img src="<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['caminhoImagemThumb']; ?>
+" alt="<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['titulo']; ?>
+" title="<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['titulo']; ?>
+">
+                           <a href="noticia.php?id=<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['id']; ?>
+" class="txt-noticia-destaque font-normal"><p><?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['titulo']; ?>
+</p></a>
+                           <p class="data-noticia font-normal"><?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['dataMes'][2]; ?>
+ <?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['Mes']; ?>
+ <?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['dataMes'][0]; ?>
+</p>
+                        </div>
+                     <?php endfor; endif; ?>
                      <!-- Noticia Individual -->
                   </div>
                   <!-- Noticias -->
@@ -128,24 +138,44 @@ unset($_smarty_tpl_vars);
                   </div>
                   <div class="borda-titulo"></div>
                   <!-- Publicações Individual -->
-                  <div class="row">
-                     <div class="col-xs-12 col-sm-12 col-md-12 pd-none bloco-ultimas-pub">
-                        <a href="">
-                           <p class="titulo-ultima-pub font-normal">Informativo nº 34</p>
-                           <p class="txt-ultima-pub font-normal">TSE reforma decisão do tribunal regional eleitoral paulista que tinha considerado irregular a “caravana horizonte paulista” do candidato Alexandre Padilha - PT</p>
-                        </a>
-                     </div>      
-                  </div>
-                  <div class="row">
-                     <div class="col-xs-12 col-sm-12 col-md-12 pd-none bloco-ultimas-pub">
-                        <a href="">
-                           <p class="titulo-ultima-pub font-normal">Informativo nº 33</p>
-                           <p class="txt-ultima-pub font-normal">TSE reforma decisão do tribunal regional eleitoral paulista que tinha considerado irregular a “caravana horizonte paulista” do candidato Alexandre Padilha - PT</p>
-                        </a>
-                     </div>      
-                  </div>
+                  <?php unset($this->_sections['i']);
+$this->_sections['i']['name'] = 'i';
+$this->_sections['i']['loop'] = is_array($_loop=$this->_tpl_vars['dadosPub']) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
+$this->_sections['i']['show'] = true;
+$this->_sections['i']['max'] = $this->_sections['i']['loop'];
+$this->_sections['i']['step'] = 1;
+$this->_sections['i']['start'] = $this->_sections['i']['step'] > 0 ? 0 : $this->_sections['i']['loop']-1;
+if ($this->_sections['i']['show']) {
+    $this->_sections['i']['total'] = $this->_sections['i']['loop'];
+    if ($this->_sections['i']['total'] == 0)
+        $this->_sections['i']['show'] = false;
+} else
+    $this->_sections['i']['total'] = 0;
+if ($this->_sections['i']['show']):
+
+            for ($this->_sections['i']['index'] = $this->_sections['i']['start'], $this->_sections['i']['iteration'] = 1;
+                 $this->_sections['i']['iteration'] <= $this->_sections['i']['total'];
+                 $this->_sections['i']['index'] += $this->_sections['i']['step'], $this->_sections['i']['iteration']++):
+$this->_sections['i']['rownum'] = $this->_sections['i']['iteration'];
+$this->_sections['i']['index_prev'] = $this->_sections['i']['index'] - $this->_sections['i']['step'];
+$this->_sections['i']['index_next'] = $this->_sections['i']['index'] + $this->_sections['i']['step'];
+$this->_sections['i']['first']      = ($this->_sections['i']['iteration'] == 1);
+$this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $this->_sections['i']['total']);
+?>
+                     <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 pd-none bloco-ultimas-pub">
+                           <a href="informativo.php?id=<?php echo $this->_tpl_vars['dadosPub'][$this->_sections['i']['index']]['id']; ?>
+">
+                              <p class="titulo-ultima-pub font-normal"><?php echo $this->_tpl_vars['dadosPub'][$this->_sections['i']['index']]['titulo']; ?>
+</p>
+                              <p class="txt-ultima-pub font-normal"><?php echo $this->_tpl_vars['dadosPub'][$this->_sections['i']['index']]['textoAbrev']; ?>
+</p>
+                           </a>
+                        </div>      
+                     </div>
+                  <?php endfor; endif; ?>
                   <!-- Publicações Individual -->
-                  <a href="" class="mais-default">+</a>
+                  <a href="informativos.php" class="mais-default">+</a>
                </div>
                <!-- Publicações -->
 
@@ -165,7 +195,7 @@ unset($_smarty_tpl_vars);
                      </div>      
                   </div>
                   <!-- Videos Individual -->
-                  <a href="" class="mais-default">+</a>
+                  <!-- <a href="" class="mais-default">+</a> -->
                </div>
                <!-- Publicações -->
             </div>

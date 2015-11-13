@@ -85,21 +85,6 @@
 		$pagina == "Acoes-possessorias-e-Imissao-na-posse.php" 
 	){
 		$PgAtiva = "direito imobiliario"; 
-	}
-
-
-
-	// if(
-	// 	$pagina == "marcos-antonio-gaban-monteiro.php" || 
-	// 	$pagina == "" || 
-	// 	$pagina == "" || 
-	// 	$pagina == "" || 
-	// 	$pagina == "" || 
-	// 	$pagina == "" ||
-	// 	){
-	// 	$PgAtiva = "profissionais"; 
-	// }
-		
-	
+	}	
 
 ?>

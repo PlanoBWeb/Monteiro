@@ -63,46 +63,25 @@
                   <div class="row">
                      <div class="col-xs-12 col-sm-12 col-md-12 pd-left-none">
                         <h2 class="titulo-default font-normal pd-left-none fl-left">{ $arrayIdioma.MN_ULTIMAS_NOT }</h2>
-                        <div class="bloco-setas fl-right hidden-xs">
-                           <div class="seta-esquerda fl-left seta-default">&lt;</div>
-                           <div class="seta-direita fl-right seta-default">&gt;</div>
-                        </div>
+                        {if $totalNotDestaque > 6}
+                           <div class="bloco-setas fl-right hidden-xs">
+                              <div class="seta-esquerda fl-left seta-default">&lt;</div>
+                              <div class="seta-direita fl-right seta-default">&gt;</div>
+                           </div>
+                        {/if}
                      </div>
                   </div>
                   <div class="borda-titulo"></div>
                   <!-- Noticias -->
-                  <div class="row bloco-ultimas-noticias">
+                  <div class="row bloco-ultimas-noticias" {if $totalNotDestaque < 6} style="min-height: 350px;" {/if}>
                      <!-- Noticia Individual -->
-                     <div class="col-xs-12 col-sm-5 col-md-4 pd-none ultimas-noticias-ind">
-                        <img src="commom/img/noticias/noticia.jpg" alt="noticia" title="noticia">
-                        <a href="" class="txt-noticia-destaque font-normal"><p>Câmara aprova regras para convênios entre órgãos públicos e ONGs</p></a>
-                        <p class="data-noticia font-normal">26 Fev. 2015</p>
-                     </div>
-                     <div class="col-xs-12 col-sm-5 col-md-4 pd-none ultimas-noticias-ind">
-                        <img src="commom/img/noticias/noticia.jpg" alt="noticia" title="noticia">
-                        <a href="" class="txt-noticia-destaque font-normal"><p>Câmara aprova regras para convênios entre órgãos públicos e ONGs</p></a>
-                        <p class="data-noticia font-normal">26 Fev. 2015</p>
-                     </div>
-                     <div class="col-xs-12 col-sm-5 col-md-4 pd-none ultimas-noticias-ind">
-                        <img src="commom/img/noticias/noticia.jpg" alt="noticia" title="noticia">
-                        <a href="" class="txt-noticia-destaque font-normal"><p>Câmara aprova regras para convênios entre órgãos públicos e ONGs</p></a>
-                        <p class="data-noticia font-normal">26 Fev. 2015</p>
-                     </div>
-                     <div class="col-xs-12 col-sm-5 col-md-4 pd-none ultimas-noticias-ind">
-                        <img src="commom/img/noticias/noticia.jpg" alt="noticia" title="noticia">
-                        <a href="" class="txt-noticia-destaque font-normal"><p>Câmara aprova regras para convênios entre órgãos públicos e ONGs</p></a>
-                        <p class="data-noticia font-normal">26 Fev. 2015</p>
-                     </div>
-                     <div class="col-xs-12 col-sm-5 col-md-4 pd-none ultimas-noticias-ind">
-                        <img src="commom/img/noticias/noticia.jpg" alt="noticia" title="noticia">
-                        <a href="" class="txt-noticia-destaque font-normal"><p>Câmara aprova regras para convênios entre órgãos públicos e ONGs</p></a>
-                        <p class="data-noticia font-normal">26 Fev. 2015</p>
-                     </div>
-                     <div class="col-xs-12 col-sm-5 col-md-4 pd-none ultimas-noticias-ind">
-                        <img src="commom/img/noticias/noticia.jpg" alt="noticia" title="noticia">
-                        <a href="" class="txt-noticia-destaque font-normal"><p>Câmara aprova regras para convênios entre órgãos públicos e ONGs</p></a>
-                        <p class="data-noticia font-normal">26 Fev. 2015</p>
-                     </div>
+                     {section name=i loop=$dados}
+                        <div class="col-xs-12 col-sm-5 col-md-4 pd-none ultimas-noticias-ind">
+                           <img src="{$dados[i].caminhoImagemThumb}" alt="{$dados[i].titulo}" title="{$dados[i].titulo}">
+                           <a href="noticia.php?id={$dados[i].id}" class="txt-noticia-destaque font-normal"><p>{$dados[i].titulo}</p></a>
+                           <p class="data-noticia font-normal">{$dados[i].dataMes[2]} {$dados[i].Mes} {$dados[i].dataMes[0]}</p>
+                        </div>
+                     {/section}
                      <!-- Noticia Individual -->
                   </div>
                   <!-- Noticias -->
@@ -117,24 +96,18 @@
                   </div>
                   <div class="borda-titulo"></div>
                   <!-- Publicações Individual -->
-                  <div class="row">
-                     <div class="col-xs-12 col-sm-12 col-md-12 pd-none bloco-ultimas-pub">
-                        <a href="">
-                           <p class="titulo-ultima-pub font-normal">Informativo nº 34</p>
-                           <p class="txt-ultima-pub font-normal">TSE reforma decisão do tribunal regional eleitoral paulista que tinha considerado irregular a “caravana horizonte paulista” do candidato Alexandre Padilha - PT</p>
-                        </a>
-                     </div>      
-                  </div>
-                  <div class="row">
-                     <div class="col-xs-12 col-sm-12 col-md-12 pd-none bloco-ultimas-pub">
-                        <a href="">
-                           <p class="titulo-ultima-pub font-normal">Informativo nº 33</p>
-                           <p class="txt-ultima-pub font-normal">TSE reforma decisão do tribunal regional eleitoral paulista que tinha considerado irregular a “caravana horizonte paulista” do candidato Alexandre Padilha - PT</p>
-                        </a>
-                     </div>      
-                  </div>
+                  {section name=i loop=$dadosPub}
+                     <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 pd-none bloco-ultimas-pub">
+                           <a href="informativo.php?id={$dadosPub[i].id}">
+                              <p class="titulo-ultima-pub font-normal">{$dadosPub[i].titulo}</p>
+                              <p class="txt-ultima-pub font-normal">{$dadosPub[i].textoAbrev}</p>
+                           </a>
+                        </div>      
+                     </div>
+                  {/section}
                   <!-- Publicações Individual -->
-                  <a href="" class="mais-default">+</a>
+                  <a href="informativos.php" class="mais-default">+</a>
                </div>
                <!-- Publicações -->
 
@@ -153,7 +126,7 @@
                      </div>      
                   </div>
                   <!-- Videos Individual -->
-                  <a href="" class="mais-default">+</a>
+                  <!-- <a href="" class="mais-default">+</a> -->
                </div>
                <!-- Publicações -->
             </div>

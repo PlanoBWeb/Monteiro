@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-12 17:58:29
+<?php /* Smarty version 2.6.12, created on 2015-11-13 10:56:23
          compiled from informativo.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -29,14 +29,11 @@ $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
          <!-- BreadCrumb -->
-         <div class="row bloco-breadcrumb">
-            <div class="tamanho-max pd-left-5">
-               <ol class="breadcrumb">
-                  <li><a href="index.php">Home</a></li>
-                  <li>Informativo</li>
-               </ol>
-            </div>
-         </div>
+         <?php $_smarty_tpl_vars = $this->_tpl_vars;
+$this->_smarty_include(array('smarty_include_tpl_file' => "../inc/breadcrumb.html", 'smarty_include_vars' => array()));
+$this->_tpl_vars = $_smarty_tpl_vars;
+unset($_smarty_tpl_vars);
+ ?>
          <!-- BreadCrumb -->
 
          <!-- Conteudo -->
@@ -103,7 +100,8 @@ unset($_smarty_tpl_vars);
                            <div class="col-xs-12 col-sm-3 col-md-3 pd-none"><p class="share-noticia font-normal"><img src="commom/img/mais-share.jpg" title="share" alt="share"> Share</p></div>
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-6 pd-none">
-                           <h2 class="titulo-menu-lateral font-normal">Indicar esta notícia</h2>
+                           <h2 class="titulo-menu-lateral font-normal"><?php echo $this->_tpl_vars['arrayIdioma']['MN_NOT_IND_NOT']; ?>
+</h2>
                            <form method="post" name="indique">
                               <input class="font-normal form-compartilhe" type="text" name="indique" placeholder="e-mail...">
                               <input class="btn-ok cinza font-normal" type="submit" value="ok">
@@ -113,7 +111,8 @@ unset($_smarty_tpl_vars);
 
                      <div class="row bloco-leia-tambem">
                         <br><br>
-                        <h2 class="titulo-compartilhe font-normal">Leia também:</h2>
+                        <h2 class="titulo-compartilhe font-normal"><?php echo $this->_tpl_vars['arrayIdioma']['MN_NOT_LEIA_TBM']; ?>
+:</h2>
                         <div class="col-xs-12 col-sm-6 col-md-6 pd-none">
                            <div class="bloco-noticia-destaque">
                               <a href=""><img src="commom/img/noticias/noticiadestaque.jpg" alt="Noticia destaque" title="Noticia destaque"></a>

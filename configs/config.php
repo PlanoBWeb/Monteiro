@@ -30,8 +30,8 @@ if( $_SERVER['SERVER_NAME'] == 'planobweb' || $_SERVER['SERVER_NAME'] == '192.16
 	define("db_host", 'localhost');
 	define("db_user", 'root');
 	define("db_pass", '');
-	define("db_base", 'planobweb_extranet');
-	define("PATH_SERVIDOR","C:/wamp/www/Clientes/MonteiroNovo/Web/");
+	define("db_base", 'monteiro');
+	define("PATH_SERVIDOR","C:/wamp/www/Clientes/\MonteiroEMassarana/Web/");
 
 }
 else
@@ -56,7 +56,23 @@ if (!($resultado)) {
 	echo "Erro ao conectar-se ao Banco de Dados";
 }
 
-define("TITULO","PBW EXTRANET");
-define("URL","http://www.papelchamex.com/");
+define("TITULO","Monteiro");
+
+//Define idioma padrão
+if(!$_SESSION['idioma'] || $_GET["l"])
+{
+    if($_GET["l"])
+        $_idioma = $_GET["l"];
+    else
+        $_idioma = "P";
+
+    session_start();
+    $_SESSION['idioma'] = $_idioma;
+}
+// FIM - Define idioma padrão
+
+session_start();
+$_idioma = $_SESSION['idioma'];
+include_once "idiomas.php";
 
 ?>

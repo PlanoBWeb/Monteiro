@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-12 18:04:33
+<?php /* Smarty version 2.6.12, created on 2015-11-13 14:37:34
          compiled from ../inc/menu-lateral-profissionais.html */ ?>
 <div class="col-xs-12 col-sm-3 col-md-3 pd-none bloco-menu-lateral">
-   <h2 class="titulo-menu-lateral font-normal"><?php echo $this->_tpl_vars['arrayIdioma']['MN_PROFISSIONAIS']; ?>
+   <h2 class="titulo-menu-lateral font-normal"><?php echo $this->_tpl_vars['arrayIdioma']['MN_PROF']; ?>
 </h2>
    <nav class="menu-lateral">
       <ul>

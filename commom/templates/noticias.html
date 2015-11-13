@@ -28,24 +28,24 @@
          <section class="conteudo-interna">
             <div class="row tamanho-max bloco-conteudo bloco-conteudo-noticias">
                <div class="col-xs-12 col-sm-8 col-md-8 pd-none encapsula-noticias">
-
-                  <div class="col-xs-12 col-sm-12 col-md-12 pd-none conteudo-interna-not">
-                     <a href=""><img class="img-noticias" src="commom/img/noticias/noticia1.jpg" title="Noticia" alt="Noticia"></a>
-                     <h2 class="titulo-noticias font-normal"><a href="noticia.php">Câmara aprova regras para convênios entre órgãos públicos e ONGs</a></h2>
-                     <p class="txt-noticias-info font-normal">{ $arrayIdioma.MN_NOT_POR }:  Lorem Ipsum   •  { $arrayIdioma.MN_NOT_EM }: Direito Público  •   26 Fev. 2015</p>
-                     <a class="txt-desc-noticias font-normal" href="">O Plenário da Câmara dos Deputados aprovou nesta terça-feira (24) o Projeto de Lei Complementar 177/12...</a>
-                  </div>
-
-                  
-                  <div class="bloco-paginacao">
-                     <a href="?p=#" class="seta-esquerda fl-left seta-default">&lt;&lt;</a>
-                     <a href="?p=#" class="seta-esquerda fl-left seta-default">&lt;</a>
-                     <p class="link-paginacao">1 de 3</p>
-                     <a href="?p=#" class="seta-direita fl-left seta-default">&gt;</a>
-                     <a href="?p=#" class="seta-direita fl-left seta-default">&gt;&gt;</a>
-                  </div>
+                  {section name=i loop=$dados}
+                     <div class="col-xs-12 col-sm-12 col-md-12 pd-none conteudo-interna-not">
+                        <a href="noticia.php?id={$dados[i].id}"><img class="img-noticias" src="commom/img/noticias/noticia1.jpg" title="Noticia" alt="Noticia"></a>
+                        <h2 class="titulo-noticias font-normal"><a href="noticia.php?id={$dados[i].id}">{$dados[i].titulo}</a></h2>
+                        <p class="txt-noticias-info font-normal">{ $arrayIdioma.MN_NOT_POR }:  {$dados[i].por}  •  { $arrayIdioma.MN_NOT_EM }: {$dados[i].nomeCategoria}  •   {$dados[i].dataMes[2]} {$dados[i].Mes} {$dados[i].dataMes[0]}</p>
+                        <a class="txt-desc-noticias font-normal" href="noticia.php?id={$dados[i].id}">{$dados[i].textoAbrev}</a>
+                     </div>
+                  {/section}
+                  {if $totalNot > 10}
+                     <div class="bloco-paginacao">
+                        <a href="?p=#" class="seta-esquerda fl-left seta-default">&lt;&lt;</a>
+                        <a href="?p=#" class="seta-esquerda fl-left seta-default">&lt;</a>
+                        <p class="link-paginacao">1 de 3</p>
+                        <a href="?p=#" class="seta-direita fl-left seta-default">&gt;</a>
+                        <a href="?p=#" class="seta-direita fl-left seta-default">&gt;&gt;</a>
+                     </div>
+                  {/if}
                </div>
-
                {include file="../inc/menu-lateral-blog.html"}
             </div>
          </section>

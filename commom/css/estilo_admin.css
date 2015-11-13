@@ -118,7 +118,7 @@ body{
 	}
 
 	.btn-form{
-		background: #df9300;
+		background: #8b0304;
 		color: #fff;
 		font-size: 14px;
 		border: none;
@@ -148,7 +148,7 @@ body{
 	}
 
 	.hello-user{
-		color: #df9300;
+		color: #282828;
 		font-size: 14px;
 		float: right;
 		font-weight: bold;
@@ -168,7 +168,7 @@ body{
 
 	.dropdown-menu{
 		border: transparent !important;
-		background-color: #df9300;
+		background-color: #282828;
 	}
 
 	.starter-template{
@@ -179,8 +179,13 @@ body{
 		color: #fff !important;
 	}
 
+	.nav-link:hover{
+		color: #b4002c !important;
+	}
+
 	.dropdown-item:hover{
 		background: transparent !important;
+		color: #b4002c !important;
 	}
 
 	.dropdown-item{
@@ -194,7 +199,11 @@ body{
 	}
 
 	.hover-tr:hover{
-		background-color: #df9300 !important;
+		background-color: #660000 !important;
+	}
+
+	.hover-tr:hover td{
+		color: #fff;
 	}
 	
 	tr:nth-child(even) {
@@ -202,7 +211,7 @@ body{
 	}
 
 	tr:nth-child(odd) {
-		background: #ffe6b6;
+		background: #b15656;
 	}
 	
 	.cor-tr-btn{
@@ -313,7 +322,7 @@ body{
 	}
 
 	.link-pag-ativo{
-		color: #df9300;
+		color: #b4002c;
 	}
 
 	.sem-resultado{
@@ -425,7 +434,7 @@ body{
 	}
 
 	.select-acoes a:hover{
-		color: #df9300 !important;		
+		color: #b4002c !important;		
 	}
 
 	
@@ -563,7 +572,7 @@ body{
 
 @media all and  (min-width:544px){
 	.bg-faded {
-	    background-color: #df9300;
+	    background-color: #282828;
 	}
 }
 

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-10-28 11:20:57
+<?php /* Smarty version 2.6.12, created on 2015-11-13 10:27:51
          compiled from admin/login.html */ ?>
 <html>
 <head>	
@@ -10,7 +10,7 @@
 	<script src="commom/js/bootstrap.min.js"></script>
 	<link href="commom/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="commom/css/template.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="commom/css/estilo.css">
+	<link rel="stylesheet" type="text/css" href="commom/css/estilo_admin.css">
 	<title><?php echo $this->_tpl_vars['titulo']; ?>
  - ADMINISTRAÇÃO</title>
 	<?php echo '

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-10-29 11:32:53
+<?php /* Smarty version 2.6.12, created on 2015-11-13 10:28:47
          compiled from ../inc/header.html */ ?>
 <div id="fb-root"></div>
 <?php echo '
@@ -39,10 +39,10 @@
 
          <div class="col-xs-12 col-sm-4 col-md-4 hidden-xs">
             <div class="bloco-linguas">
-               <a href="?l=i">
+               <a href="?l=I">
                   <img src="commom/img/icon-en.png" alt="icone inglês" title="icone inglês">
                </a>
-               <a href="?l=p">
+               <a href="?l=P">
                   <img src="commom/img/icon-pt.png" alt="icone português" title="icone português">
                </a>
             </div>
@@ -66,10 +66,10 @@
                <a class="navbar-brand img-logo" href="index.php"><img src="commom/img/logo.png" alt="Logo Monteiro" title="Logo Monteiro"></a>   
                <div class="bloco-linguas-mobile visible-xs-block">
                   <a class="open-search-mobile" href="#"><img src="commom/img/lupa.png" alt="icone lupa" title="icone lupa"></a>
-                  <a href="?l=i">
+                  <a href="?l=I">
                      <img src="commom/img/icon-en.png" alt="icone inglês" title="icone inglês">
                   </a>
-                  <a href="?l=p">
+                  <a href="?l=P">
                      <img src="commom/img/icon-pt.png" alt="icone português" title="icone português"> 
                   </a>
                </div>

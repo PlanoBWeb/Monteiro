@@ -1,7 +1,6 @@
 <?php
 
 include_once "configs/config.php";
-include_once "adm_permissao.php";
 include_once "classes/Usuario.class.php";
 $smarty->assign("pagina", $pagina);
 
@@ -10,7 +9,6 @@ $smarty->assign("titulo", utf8_encode(TITULO));
 if ($_POST["acao"] == "logar")
 {
 	$classUsuario = new Usuario();
-	
 	$arCheca = $classUsuario->checa($_POST['login'], md5($_POST['senha']));
 	if( $arCheca[0] )
 	{
@@ -25,16 +23,14 @@ if ($_POST["acao"] == "logar")
 	$_SESSION['login'] 	= $arCheca[1]['email'];
 	$_SESSION['senha'] 	= $arCheca[1]['senha'];
 	$_SESSION['nome'] 	= utf8_encode($arCheca[1]['nome']);
-	$_SESSION['perfil'] = $arCheca[1]['perfil'];
 	
-	echo "<script>location.href='index.php';</script>";
+	echo "<script>location.href='adm_index.php';</script>";
 }
 
 session_start();
 if($_SESSION['login'] == "" OR $_SESSION['senha'] == "" OR $_SESSION['id'] == "")
 {
-	// $smarty->display('admin/login.html');
-	$smarty->display('index.html');
+	$smarty->display('admin/login.html');
 	die();
 }
 

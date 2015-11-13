@@ -6,14 +6,6 @@
 
 	    <h1 class="titulo-pag">Usuarios</h1>
 
-	    <label>*Pefil:</label>
-        <select name="perfil">
-            <option value="A" {if $dados[0].perfil == "A"}selected="selected"{/if}>Administrador</option>
-            <option value="M" {if $dados[0].perfil == "M"}selected="selected"{/if}>Marketing</option>
-            <option value="F" {if $dados[0].perfil == "F"}selected="selected"{/if}>Financeiro</option>
-            <option value="D" {if $dados[0].perfil == "D"}selected="selected"{/if}>Desenvolvedor</option>
-        </select>
-
 	    <label>*Nome do usuário:</label>
 	    <input type="text" name="nome" size="50" value="{$dados[0].nome}" />
 	    

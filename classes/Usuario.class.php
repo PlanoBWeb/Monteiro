@@ -255,7 +255,6 @@ class Usuario
 		$dadosUsuario['email']	= $rows['email'];
 		$dadosUsuario['senha']	= $rows['senha'];
 		$dadosUsuario['nome']	= $rows['nome'];
-		$dadosUsuario['perfil']	= $rows['perfil'];
 		
 		$retorno[0] = 0;
 		$retorno[1] = $dadosUsuario;

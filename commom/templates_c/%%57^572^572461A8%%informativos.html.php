@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-12 17:54:55
+<?php /* Smarty version 2.6.12, created on 2015-11-13 10:56:04
          compiled from informativos.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -27,14 +27,11 @@ $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
          <!-- BreadCrumb -->
-         <div class="row bloco-breadcrumb">
-            <div class="tamanho-max pd-left-5">
-               <ol class="breadcrumb">
-                  <li><a href="index.php">Home</a></li>
-                  <li>Informativos</li>
-               </ol>
-            </div>
-         </div>
+         <?php $_smarty_tpl_vars = $this->_tpl_vars;
+$this->_smarty_include(array('smarty_include_tpl_file' => "../inc/breadcrumb.html", 'smarty_include_vars' => array()));
+$this->_tpl_vars = $_smarty_tpl_vars;
+unset($_smarty_tpl_vars);
+ ?>
          <!-- BreadCrumb -->
 
          <!-- Conteudo -->
@@ -44,7 +41,9 @@ unset($_smarty_tpl_vars);
                   <div class="col-xs-12 col-sm-12 col-md-12 pd-none conteudo-interna-publicacao">
                      <h2 class="titulo-publicacoes font-bold"><a href="informativa.php">Informativo nº1 </a></h2>
                      <a class="txt-desc-publicacao font-normal" href="informativo.php">Tse reforma decisão do tribunal regional eleitoral paulista que tinha considerado irregular a “caravana horizonte paulista” do candidato Alexandre Padilha - PT.</a>
-                     <p class="txt-noticias-info font-normal">Por:  Lorem Ipsum   •  em: Direito Público  •   26 Fev. 2015</p>
+                     <p class="txt-noticias-info font-normal"><?php echo $this->_tpl_vars['arrayIdioma']['MN_NOT_POR']; ?>
+:  Lorem Ipsum   •  <?php echo $this->_tpl_vars['arrayIdioma']['MN_NOT_EM']; ?>
+: Direito Público  •   26 Fev. 2015</p>
                   </div>
 
                   

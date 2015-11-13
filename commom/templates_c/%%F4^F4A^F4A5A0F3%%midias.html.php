@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-12 18:01:13
+<?php /* Smarty version 2.6.12, created on 2015-11-13 11:05:25
          compiled from midias.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -38,7 +38,8 @@ unset($_smarty_tpl_vars);
          <section class="conteudo-interna">
             <div class="row tamanho-max bloco-conteudo bloco-conteudo-noticias">
                <br><br>
-               <p class="txt-desc-noticias font-normal">Em breve!</p>
+               <p class="txt-desc-noticias font-normal"><?php echo $this->_tpl_vars['arrayIdioma']['MN_TXT_EMBREVE']; ?>
+</p>
             <!--    <div class="col-xs-12 col-sm-8 col-md-8 pd-none encapsula-noticias">
                   
                      <div class="col-xs-12 col-sm-12 col-md-12 pd-none conteudo-interna-not">

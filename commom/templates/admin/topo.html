@@ -8,7 +8,7 @@
     <meta name="robots" content="noindex, nofollow">
     <link href="commom/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="commom/css/template.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="commom/css/estilo.css">
+    <link rel="stylesheet" type="text/css" href="commom/css/estilo_admin.css">
     <script src="commom/assets/js/ie10-viewport-bug-workaround.js"></script>
     <script src="commom/js/funcoes.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -21,9 +21,6 @@
                 <div class="topo-logo col-sm-12 col-md-4 col-lg-4">
                     <a class="navbar-brand" href="index.php"><img src="commom/img/logo.png" alt="logo PlanoBWeb" title="logo PlanoBWeb"></a>
                 </div>
-                <div class="starter-template col-sm-12 col-md-4 col-lg-4 top-espaco">
-                    <h1 class="hidden-sm-down">Extranet PlanoBWeb</h1>
-                </div>
                 <div class="col-sm-12 col-md-4 col-lg-4">
                     <p class="hello-user">Olá {$nome}</p>
                 </div>
@@ -34,52 +31,21 @@
                     <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
                         <ul class="nav navbar-nav">
                         
-                            {if $menuPesUsuario}
-                                <li class="nav-item active dropdown">
-                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Usuários</a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="adm_usuario.php?acao=pesquisar">Consultar</a>
-                                        {if $menuAddUsuario}
-                                            <a class="dropdown-item" href="adm_usuario.php">Cadastrar</a>
-                                        {/if}
-                                    </div>
-                                </li>
-                            {/if}
+                            <li class="nav-item active dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Usuários</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="adm_usuario.php?acao=pesquisar">Consultar</a>
+                                    <a class="dropdown-item" href="adm_usuario.php">Cadastrar</a>
+                                </div>
+                            </li>
 
-                            {if $menuPesUsuario}
-                                <li class="nav-item active dropdown">
-                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Clientes</a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="adm_cliente.php?acao=pesquisar">Consultar</a>
-                                        <a class="dropdown-item" href="adm_cliente.php">Cadastrar</a>
-                                        <a class="dropdown-item" href="adm_contato.php">Cadastrar Contato</a>
-                                        <a class="dropdown-item" href="adm_anotacao.php">Cadastrar Anotação</a>
-                                        <a class="dropdown-item" href="adm_historico.php">Cadastrar Histórico</a>
-                                    </div>
-                                </li>
-                            {/if}
-
-                            {if $menuPesUsuario}
-                                <li class="nav-item active dropdown">
-                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Fornecedores</a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="adm_fornecedor.php?acao=pesquisar">Consultar</a>
-                                        <a class="dropdown-item" href="adm_fornecedor.php">Cadastrar</a>
-                                        <a class="dropdown-item" href="adm_contato_fornecedor.php">Cadastrar Contato</a>
-                                    </div>
-                                </li>
-                            {/if}
-
-                            {if $menuPesUsuario}
-                                <li class="nav-item active dropdown">
-                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Tarefas</a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="adm_tarefa.php?acao=pesquisar">Consultar</a>
-                                        <a class="dropdown-item" href="adm_tarefa.php">Cadastrar</a>
-                                        <a class="dropdown-item" href="adm_tarefa.php?acao=painel">Painel</a>
-                                    </div>
-                                </li>
-                            {/if}
+                            <li class="nav-item active dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Notícias</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="adm_noticias.php?acao=pesquisar">Consultar</a>
+                                    <a class="dropdown-item" href="adm_noticias.php">Cadastrar</a>
+                                </div>
+                            </li>
 
                             <!-- <li class="nav-item active dropdown">
                                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Destaques</a>
