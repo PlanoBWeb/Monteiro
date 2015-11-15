@@ -31,7 +31,22 @@
 	}else{
 		$parametro['id'] 		= $_GET['id'];
 	}
-	$retorno = $class->Pesquisar($parametro, null, null);
+
+	//  Paginação
+	$parametroTipo['tipo'] = $tipoPub;
+	$retornoPag = $class->Pesquisar($parametroTipo, null, null);
+	if( $retornoPag[0] )
+		die("<script>alert('".$retornoPag[1]."');location.href='index.php';</script>");
+
+	$totalPorPagina = 2;
+	$totalDeProdutos = count($retornoPag[1]);
+	$conta = $totalDeProdutos / $totalPorPagina;
+	$totalPaginas = ceil($conta);
+
+	$_GET['p'] = (!$_GET['p'] ? 1 : $_GET['p']);
+	//  Fim Paginação
+
+	$retorno = $class->Pesquisar($parametro, $totalPorPagina, $_GET['p']);
 	if( $retorno[0] )
 	{
 		$smarty->assign("mensagem", $retorno[1]);
@@ -64,10 +79,19 @@
 		exit();
 	}	
 
-	// echo "<pre>";
-	// print_r($retornoCatego[1]);
-	// die();
+	$Numpaginas = array();
+	for($j=0; $j <= $totalPaginas; $j++) { 
+		$Numpaginas[$j] = $j;
+	}
+	$ultimaPaginacao = end($Numpaginas);
+	$totalNot = count($retorno[1]);
 
+	$smarty->assign("totalPaginas", $totalPaginas);
+	$smarty->assign("ultimaPaginacao", $ultimaPaginacao);
+	$smarty->assign("Numpaginas", $Numpaginas);
+	$smarty->assign("idCatPaginacao", $_GET['idCat']);
+	$smarty->assign("anoPaginacao", $_GET['ano']);
+	$smarty->assign("mesPaginacao", $_GET['mes']);
 	$smarty->assign("paginaMenuBlogInver", $paginaMenuBlogInver);
 	$smarty->assign("paginaMenuBlog", $paginaMenuBlog);
 	$smarty->assign("totalPub", $totalPub);

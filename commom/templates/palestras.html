@@ -36,13 +36,32 @@
                      </div>
                   {/section}
 
-                  {if $totalPub > 10}
+                  {if $totalPaginas > 1}
                      <div class="bloco-paginacao">
-                        <a href="?p=#" class="seta-esquerda fl-left seta-default">&lt;&lt;</a>
-                        <a href="?p=#" class="seta-esquerda fl-left seta-default">&lt;</a>
-                        <p class="link-paginacao">1 de 3</p>
-                        <a href="?p=#" class="seta-direita fl-left seta-default">&gt;</a>
-                        <a href="?p=#" class="seta-direita fl-left seta-default">&gt;&gt;</a>
+                        {if $anoPaginacao}
+                           <a href="palestras.php?ano={$anoPaginacao}&mes={$mesPaginacao}&p={$Numpaginas[1]}" class="seta-esquerda fl-left seta-default">&lt;&lt;</a>
+                        {elseif $idCatPaginacao}
+                           <a href="palestras.php?idCat={$idCatPaginacao}&p={$Numpaginas[1]}" class="seta-esquerda fl-left seta-default">&lt;&lt;</a>
+                        {else}
+                           <a href="palestras.php?p={$Numpaginas[1]}" class="seta-esquerda fl-left seta-default">&lt;&lt;</a>
+                        {/if}
+                        {section start=1 name=i loop=$Numpaginas}
+                           {if $anoPaginacao}
+                              <a href="palestras.php?ano={$anoPaginacao}&mes={$mesPaginacao}&p={$Numpaginas[i]}" class="link-paginacao {if $Numpaginas[i] == $smarty.get.p} link-paginacao-ativo {/if}">{$Numpaginas[i]}</a>
+                           {elseif $idCatPaginacao}
+                              <a href="palestras.php?idCat={$idCatPaginacao}&p={$Numpaginas[i]}" class="link-paginacao {if $Numpaginas[i] == $smarty.get.p} link-paginacao-ativo {/if}">{$Numpaginas[i]}</a>
+                           {else}
+                              <a href="palestras.php?p={$Numpaginas[i]}" class="link-paginacao {if $Numpaginas[i] == $smarty.get.p} link-paginacao-ativo {/if}">{$Numpaginas[i]}</a>
+                           {/if}
+                        {/section}
+                        
+                        {if $anoPaginacao}
+                           <a href="palestras.php?ano={$anoPaginacao}&mes={$mesPaginacao}&p={$ultimaPaginacao}" class="seta-direita fl-left seta-default">&gt;&gt;</a>
+                        {elseif $idCatPaginacao}
+                           <a href="palestras.php?idCat={$idCatPaginacao}&p={$ultimaPaginacao}" class="seta-direita fl-left seta-default">&gt;&gt;</a>
+                        {else}
+                           <a href="palestras.php?p={$ultimaPaginacao}" class="seta-direita fl-left seta-default">&gt;&gt;</a>
+                        {/if}
                      </div>
                   {/if}
                </div>

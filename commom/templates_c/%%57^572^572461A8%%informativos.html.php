@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-14 20:16:20
+<?php /* Smarty version 2.6.12, created on 2015-11-15 22:51:06
          compiled from informativos.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -80,15 +80,82 @@ $this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $th
                      </div>
                   <?php endfor; endif; ?>
 
-                  <?php if ($this->_tpl_vars['totalPub'] > 10): ?>
-                     <div class="bloco-paginacao">
-                        <a href="?p=#" class="seta-esquerda fl-left seta-default">&lt;&lt;</a>
-                        <a href="?p=#" class="seta-esquerda fl-left seta-default">&lt;</a>
-                        <p class="link-paginacao">1 de 3</p>
-                        <a href="?p=#" class="seta-direita fl-left seta-default">&gt;</a>
-                        <a href="?p=#" class="seta-direita fl-left seta-default">&gt;&gt;</a>
-                     </div>
-                  <?php endif; ?>
+                  <?php if ($this->_tpl_vars['totalPaginas'] > 1): ?>
+                        <div class="bloco-paginacao">
+                           <?php if ($this->_tpl_vars['anoPaginacao']): ?>
+                              <a href="informativos.php?ano=<?php echo $this->_tpl_vars['anoPaginacao']; ?>
+&mes=<?php echo $this->_tpl_vars['mesPaginacao']; ?>
+&p=<?php echo $this->_tpl_vars['Numpaginas'][1]; ?>
+" class="seta-esquerda fl-left seta-default">&lt;&lt;</a>
+                           <?php elseif ($this->_tpl_vars['idCatPaginacao']): ?>
+                              <a href="informativos.php?idCat=<?php echo $this->_tpl_vars['idCatPaginacao']; ?>
+&p=<?php echo $this->_tpl_vars['Numpaginas'][1]; ?>
+" class="seta-esquerda fl-left seta-default">&lt;&lt;</a>
+                           <?php else: ?>
+                              <a href="informativos.php?p=<?php echo $this->_tpl_vars['Numpaginas'][1]; ?>
+" class="seta-esquerda fl-left seta-default">&lt;&lt;</a>
+                           <?php endif; ?>
+                           <?php unset($this->_sections['i']);
+$this->_sections['i']['start'] = (int)1;
+$this->_sections['i']['name'] = 'i';
+$this->_sections['i']['loop'] = is_array($_loop=$this->_tpl_vars['Numpaginas']) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
+$this->_sections['i']['show'] = true;
+$this->_sections['i']['max'] = $this->_sections['i']['loop'];
+$this->_sections['i']['step'] = 1;
+if ($this->_sections['i']['start'] < 0)
+    $this->_sections['i']['start'] = max($this->_sections['i']['step'] > 0 ? 0 : -1, $this->_sections['i']['loop'] + $this->_sections['i']['start']);
+else
+    $this->_sections['i']['start'] = min($this->_sections['i']['start'], $this->_sections['i']['step'] > 0 ? $this->_sections['i']['loop'] : $this->_sections['i']['loop']-1);
+if ($this->_sections['i']['show']) {
+    $this->_sections['i']['total'] = min(ceil(($this->_sections['i']['step'] > 0 ? $this->_sections['i']['loop'] - $this->_sections['i']['start'] : $this->_sections['i']['start']+1)/abs($this->_sections['i']['step'])), $this->_sections['i']['max']);
+    if ($this->_sections['i']['total'] == 0)
+        $this->_sections['i']['show'] = false;
+} else
+    $this->_sections['i']['total'] = 0;
+if ($this->_sections['i']['show']):
+
+            for ($this->_sections['i']['index'] = $this->_sections['i']['start'], $this->_sections['i']['iteration'] = 1;
+                 $this->_sections['i']['iteration'] <= $this->_sections['i']['total'];
+                 $this->_sections['i']['index'] += $this->_sections['i']['step'], $this->_sections['i']['iteration']++):
+$this->_sections['i']['rownum'] = $this->_sections['i']['iteration'];
+$this->_sections['i']['index_prev'] = $this->_sections['i']['index'] - $this->_sections['i']['step'];
+$this->_sections['i']['index_next'] = $this->_sections['i']['index'] + $this->_sections['i']['step'];
+$this->_sections['i']['first']      = ($this->_sections['i']['iteration'] == 1);
+$this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $this->_sections['i']['total']);
+?>
+                              <?php if ($this->_tpl_vars['anoPaginacao']): ?>
+                                 <a href="informativos.php?ano=<?php echo $this->_tpl_vars['anoPaginacao']; ?>
+&mes=<?php echo $this->_tpl_vars['mesPaginacao']; ?>
+&p=<?php echo $this->_tpl_vars['Numpaginas'][$this->_sections['i']['index']]; ?>
+" class="link-paginacao <?php if ($this->_tpl_vars['Numpaginas'][$this->_sections['i']['index']] == $_GET['p']): ?> link-paginacao-ativo <?php endif; ?>"><?php echo $this->_tpl_vars['Numpaginas'][$this->_sections['i']['index']]; ?>
+</a>
+                              <?php elseif ($this->_tpl_vars['idCatPaginacao']): ?>
+                                 <a href="informativos.php?idCat=<?php echo $this->_tpl_vars['idCatPaginacao']; ?>
+&p=<?php echo $this->_tpl_vars['Numpaginas'][$this->_sections['i']['index']]; ?>
+" class="link-paginacao <?php if ($this->_tpl_vars['Numpaginas'][$this->_sections['i']['index']] == $_GET['p']): ?> link-paginacao-ativo <?php endif; ?>"><?php echo $this->_tpl_vars['Numpaginas'][$this->_sections['i']['index']]; ?>
+</a>
+                              <?php else: ?>
+                                 <a href="informativos.php?p=<?php echo $this->_tpl_vars['Numpaginas'][$this->_sections['i']['index']]; ?>
+" class="link-paginacao <?php if ($this->_tpl_vars['Numpaginas'][$this->_sections['i']['index']] == $_GET['p']): ?> link-paginacao-ativo <?php endif; ?>"><?php echo $this->_tpl_vars['Numpaginas'][$this->_sections['i']['index']]; ?>
+</a>
+                              <?php endif; ?>
+                           <?php endfor; endif; ?>
+                           
+                           <?php if ($this->_tpl_vars['anoPaginacao']): ?>
+                              <a href="informativos.php?ano=<?php echo $this->_tpl_vars['anoPaginacao']; ?>
+&mes=<?php echo $this->_tpl_vars['mesPaginacao']; ?>
+&p=<?php echo $this->_tpl_vars['ultimaPaginacao']; ?>
+" class="seta-direita fl-left seta-default">&gt;&gt;</a>
+                           <?php elseif ($this->_tpl_vars['idCatPaginacao']): ?>
+                              <a href="informativos.php?idCat=<?php echo $this->_tpl_vars['idCatPaginacao']; ?>
+&p=<?php echo $this->_tpl_vars['ultimaPaginacao']; ?>
+" class="seta-direita fl-left seta-default">&gt;&gt;</a>
+                           <?php else: ?>
+                              <a href="informativos.php?p=<?php echo $this->_tpl_vars['ultimaPaginacao']; ?>
+" class="seta-direita fl-left seta-default">&gt;&gt;</a>
+                           <?php endif; ?>
+                        </div>
+                     <?php endif; ?>
                </div>
 
                <?php $_smarty_tpl_vars = $this->_tpl_vars;

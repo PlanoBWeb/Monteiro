@@ -37,19 +37,38 @@
                            <a class="txt-desc-noticias font-normal" href="noticia.php?id={$dados[i].id}">{$dados[i].textoAbrev}</a>
                         </div>
                      {/section}
-                     {if $totalNot > 1}
+
+                     {if $totalPaginas > 1}
                         <div class="bloco-paginacao">
-                           <a href="noticias?p=#" class="seta-esquerda fl-left seta-default">&lt;&lt;</a>
-                           <!-- <a href="noticias?p=#" class="seta-esquerda fl-left seta-default">&lt;</a> -->
-                           <a href="noticias?p=#" class="link-paginacao">1</a>
-                           <a href="noticias?p=#" class="link-paginacao">2</a>
-                           <!-- <a href="noticias?p=#" class="seta-direita fl-left seta-default">&gt;</a> -->
-                           <a href="noticias?p=#" class="seta-direita fl-left seta-default">&gt;&gt;</a>
+                           {if $anoPaginacao}
+                              <a href="noticias.php?ano={$anoPaginacao}&mes={$mesPaginacao}&p={$Numpaginas[1]}" class="seta-esquerda fl-left seta-default">&lt;&lt;</a>
+                           {elseif $idCatPaginacao}
+                              <a href="noticias.php?idCat={$idCatPaginacao}&p={$Numpaginas[1]}" class="seta-esquerda fl-left seta-default">&lt;&lt;</a>
+                           {else}
+                              <a href="noticias.php?p={$Numpaginas[1]}" class="seta-esquerda fl-left seta-default">&lt;&lt;</a>
+                           {/if}
+                           {section start=1 name=i loop=$Numpaginas}
+                              {if $anoPaginacao}
+                                 <a href="noticias.php?ano={$anoPaginacao}&mes={$mesPaginacao}&p={$Numpaginas[i]}" class="link-paginacao {if $Numpaginas[i] == $smarty.get.p} link-paginacao-ativo {/if}">{$Numpaginas[i]}</a>
+                              {elseif $idCatPaginacao}
+                                 <a href="noticias.php?idCat={$idCatPaginacao}&p={$Numpaginas[i]}" class="link-paginacao {if $Numpaginas[i] == $smarty.get.p} link-paginacao-ativo {/if}">{$Numpaginas[i]}</a>
+                              {else}
+                                 <a href="noticias.php?p={$Numpaginas[i]}" class="link-paginacao {if $Numpaginas[i] == $smarty.get.p} link-paginacao-ativo {/if}">{$Numpaginas[i]}</a>
+                              {/if}
+                           {/section}
+                           
+                           {if $anoPaginacao}
+                              <a href="noticias.php?ano={$anoPaginacao}&mes={$mesPaginacao}&p={$ultimaPaginacao}" class="seta-direita fl-left seta-default">&gt;&gt;</a>
+                           {elseif $idCatPaginacao}
+                              <a href="noticias.php?idCat={$idCatPaginacao}&p={$ultimaPaginacao}" class="seta-direita fl-left seta-default">&gt;&gt;</a>
+                           {else}
+                              <a href="noticias.php?p={$ultimaPaginacao}" class="seta-direita fl-left seta-default">&gt;&gt;</a>
+                           {/if}
                         </div>
                      {/if}
                   {else}
                      <br><br>
-                     <p class="sem-resultado font-bold">{ $arrayIdioma.MN_RESULT_BUSCA } "{$postBusca}"</p>
+                     <p class="sem-resultado font-bold">{ $arrayIdioma.MN_RESULT_BUSCA }</p>
                   {/if}
                </div>
                {include file="../inc/menu-lateral-blog.html"}

@@ -421,7 +421,7 @@ if( $_SESSION['idioma'] == "I")
 		'MN_LAT_RS'  		=> 'Responsabilidade Social',
 		'MN_NOT_IND_PUB'  	=> 'Indicar esta publicação',
 		'MN_TESTE'  		=> '',
-		'MN_RESULT_BUSCA'	=> 'Não existe resultado para',
+		'MN_RESULT_BUSCA'	=> 'Não existe resultado',
 	);	
 	
 }
@@ -845,7 +845,7 @@ else
 		'MN_LAT_APRESENTA' 	=> 'Apresentação',
 		'MN_LAT_MVO'  		=> 'Missão, Valores e Objetivo',
 		'MN_LAT_RS'  		=> 'Responsabilidade Social',
-		'MN_RESULT_BUSCA'	=> 'Não existe resultado para',
+		'MN_RESULT_BUSCA'	=> 'Não existe resultado',
 	);
 }
 

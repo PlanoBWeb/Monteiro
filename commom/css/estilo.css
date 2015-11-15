@@ -899,6 +899,10 @@ iframe{
     padding: 10px 5px;
 }
 
+.link-paginacao-ativo{
+    font-weight: bold;
+}
+
 .bloco-paginacao{
     display: table;
     position: relative;
