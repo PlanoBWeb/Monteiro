@@ -24,11 +24,8 @@
 
 	$parametro['id'] 		= $_GET['id'];
 	$parametro['idioma']	= $_idioma;
-<<<<<<< HEAD
 	$parametro['tipo'] 		= "1";
 	$parametro['limitVeja'] = "2";
-=======
->>>>>>> ca5fe7d1914a4a718aea68ce0386b27d039dbf80
 	$retornoPub = $classPub->Pesquisar($parametro, null, null);
 	if( $retornoPub[0] )
 	{

@@ -419,10 +419,7 @@ if( $_SESSION['idioma'] == "I")
 		'MN_LAT_APRESENTA' 	=> 'Apresentação',
 		'MN_LAT_MVO'  		=> 'Missão, Valores e Objetivo',
 		'MN_LAT_RS'  		=> 'Responsabilidade Social',
-<<<<<<< HEAD
 		'MN_NOT_IND_PUB'  	=> 'Indicar esta publicação',
-=======
->>>>>>> ca5fe7d1914a4a718aea68ce0386b27d039dbf80
 		'MN_TESTE'  		=> ''
 	);	
 	
@@ -839,10 +836,7 @@ else
 		'MN_NOT_IMPRIMI'  	=> 'Imprimir',
 		'MN_NOT_COMP'  		=> 'Compartilhe!',
 		'MN_NOT_IND_NOT'  	=> 'Indicar esta notícia',
-<<<<<<< HEAD
 		'MN_NOT_IND_PUB'  	=> 'Indicar esta publicação',
-=======
->>>>>>> ca5fe7d1914a4a718aea68ce0386b27d039dbf80
 		'MN_NOT_LEIA_TBM'  	=> 'Leia também',
 		'MN_TXT_EMBREVE'  	=> 'Em breve!',
 		'MN_PROF' 			=> 'PROFSSIONAIS',

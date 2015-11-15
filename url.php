@@ -1,11 +1,7 @@
 <?php 
 
-<<<<<<< HEAD
 	// $pastaProjeto	= "clientes/MonteiroEMassarana/Web/";
 	$pastaProjeto	= "/Monteiro/";
-=======
-	$pastaProjeto	= "clientes/MonteiroEMassarana/Web/";
->>>>>>> ca5fe7d1914a4a718aea68ce0386b27d039dbf80
 	$urlCompleta 	= $_SERVER['REQUEST_URI'];
 	$posInicio		= strpos($urlCompleta, $pastaProjeto);
 	$priimeiraEtapa	= substr($urlCompleta, ($posInicio+strlen($pastaProjeto)));
@@ -92,7 +88,6 @@
 		$PgAtiva = "direito imobiliario"; 
 	}	
 
-<<<<<<< HEAD
 	if ($pagina == "informativos.php") {
 		$paginaMenuBlog = "informativo.php";
 	}elseif ($pagina == "artigos.php") {
@@ -127,6 +122,4 @@
 		$tipoPub = "4";
 	}
 
-=======
->>>>>>> ca5fe7d1914a4a718aea68ce0386b27d039dbf80
 ?>

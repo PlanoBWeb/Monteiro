@@ -65,7 +65,6 @@
 
 			echo utf8_decode("<script>alert('Enviado com sucesso.');location.href ='index.php'</script>");
 		}
-<<<<<<< HEAD
 	}
 
 	if ($_POST['acao'] == 'indiqueNot') {
@@ -92,6 +91,3 @@
 		}
 	}
 	
-=======
-	}
->>>>>>> ca5fe7d1914a4a718aea68ce0386b27d039dbf80

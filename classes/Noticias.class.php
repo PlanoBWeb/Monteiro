@@ -2,10 +2,6 @@
 
 include_once "configs/funcoes.php";
 include_once "Imagem.class.php";
-<<<<<<< HEAD
-=======
-
->>>>>>> ca5fe7d1914a4a718aea68ce0386b27d039dbf80
 class Noticias
 {
 	function Noticias()
@@ -197,7 +193,6 @@ class Noticias
 			$sqlLimit = "LIMIT ".$_limit.",".$totalPorPagina."";
 		}
 
-<<<<<<< HEAD
 		if($post['id'])
 		{
 			$query .= " AND noticias.id = '".$post['id']."' ";
@@ -216,21 +211,6 @@ class Noticias
 		if($post['mesAtual'])
 		{
 			$query .= " AND MONTH(data) = '".$post['mesAtual']."' ";
-=======
-		if($post['noticia'])
-		{
-			$query .= " AND noticias.pagina = '".$post['noticia']."' ";
-		}
-
-		if($post['id'])
-		{
-			$query .= " AND noticias.id = '".$post['id']."' ";
-		}
-
-		if($post['ano'])
-		{
-			$query .= " AND YEAR(data) = '".$post['ano']."' ";
->>>>>>> ca5fe7d1914a4a718aea68ce0386b27d039dbf80
 		}
 
 		if($post['destaque'])
@@ -251,12 +231,8 @@ class Noticias
 		$retorno = array();
 		$sql = "SELECT 
 					*, 
-<<<<<<< HEAD
 					C.id as idCategoria,
 					noticias.id as id
-=======
-					C.id as idCategoria
->>>>>>> ca5fe7d1914a4a718aea68ce0386b27d039dbf80
 				FROM
 					" . $this->entidade . " 
 				INNER JOIN
@@ -283,19 +259,12 @@ class Noticias
 			$dados[$i] 					= $rows;
 			if ($post['idioma'] == "I") {
 				$dados[$i]['titulo'] 		= utf8_encode($rows['titulo_I']);
-<<<<<<< HEAD
 				$dados[$i]['tituloAbrev'] 	= utf8_encode(limita_caracteres($rows['titulo_I'], 45, false));	
 				$dados[$i]['texto'] 		= utf8_encode($rows['texto_I']);
 				$dados[$i]['textoAbrev']	= utf8_encode(limita_caracteres($rows['texto_I'], 150, false));
 			}else{
 				$dados[$i]['titulo'] 		= utf8_encode($rows['titulo']);	
 				$dados[$i]['tituloAbrev'] 	= utf8_encode(limita_caracteres($rows['titulo'], 45, false));	
-=======
-				$dados[$i]['texto'] 		= utf8_encode($rows['texto_I']);
-				$dados[$i]['textoAbrev']	= utf8_encode(limita_caracteres($rows['texto_I'], 150, false));
-			}else{
-				$dados[$i]['titulo_P'] 		= utf8_encode($rows['titulo_P']);	
->>>>>>> ca5fe7d1914a4a718aea68ce0386b27d039dbf80
 				$dados[$i]['texto'] 		= utf8_encode($rows['texto']);
 				$dados[$i]['textoAbrev']	= utf8_encode(limita_caracteres($rows['texto'], 150, false));
 			}

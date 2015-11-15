@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php /* Smarty version 2.6.12, created on 2015-11-14 20:16:20
-=======
-<?php /* Smarty version 2.6.12, created on 2015-11-13 10:56:04
->>>>>>> ca5fe7d1914a4a718aea68ce0386b27d039dbf80
          compiled from informativos.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -42,7 +38,6 @@ unset($_smarty_tpl_vars);
          <section class="conteudo-interna">
             <div class="row tamanho-max bloco-conteudo bloco-conteudo-noticias">
                <div class="col-xs-12 col-sm-8 col-md-8 pd-none encapsula-noticias">
-<<<<<<< HEAD
                   <?php unset($this->_sections['i']);
 $this->_sections['i']['name'] = 'i';
 $this->_sections['i']['loop'] = is_array($_loop=$this->_tpl_vars['dados']) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
@@ -94,24 +89,6 @@ $this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $th
                         <a href="?p=#" class="seta-direita fl-left seta-default">&gt;&gt;</a>
                      </div>
                   <?php endif; ?>
-=======
-                  <div class="col-xs-12 col-sm-12 col-md-12 pd-none conteudo-interna-publicacao">
-                     <h2 class="titulo-publicacoes font-bold"><a href="informativa.php">Informativo nº1 </a></h2>
-                     <a class="txt-desc-publicacao font-normal" href="informativo.php">Tse reforma decisão do tribunal regional eleitoral paulista que tinha considerado irregular a “caravana horizonte paulista” do candidato Alexandre Padilha - PT.</a>
-                     <p class="txt-noticias-info font-normal"><?php echo $this->_tpl_vars['arrayIdioma']['MN_NOT_POR']; ?>
-:  Lorem Ipsum   •  <?php echo $this->_tpl_vars['arrayIdioma']['MN_NOT_EM']; ?>
-: Direito Público  •   26 Fev. 2015</p>
-                  </div>
-
-                  
-                  <div class="bloco-paginacao">
-                     <a href="?p=#" class="seta-esquerda fl-left seta-default">&lt;&lt;</a>
-                     <a href="?p=#" class="seta-esquerda fl-left seta-default">&lt;</a>
-                     <p class="link-paginacao">1 de 3</p>
-                     <a href="?p=#" class="seta-direita fl-left seta-default">&gt;</a>
-                     <a href="?p=#" class="seta-direita fl-left seta-default">&gt;&gt;</a>
-                  </div>
->>>>>>> ca5fe7d1914a4a718aea68ce0386b27d039dbf80
                </div>
 
                <?php $_smarty_tpl_vars = $this->_tpl_vars;
