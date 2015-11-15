@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php /* Smarty version 2.6.12, created on 2015-11-14 20:08:35
+=======
+<?php /* Smarty version 2.6.12, created on 2015-11-13 17:30:55
+>>>>>>> ca5fe7d1914a4a718aea68ce0386b27d039dbf80
          compiled from ../inc/footer.html */ ?>
 <article class="compartilhe-monteiro">
 	<div class="tamanho-max">
@@ -102,7 +106,10 @@
 <script src="commom/js/geral.js" type="text/javascript"></script>
 <script src="commom/js/lightbox.js"></script>
 <script src="commom/js/funcoes.js"></script>
+<<<<<<< HEAD
 <script type="text/javascript" src="http://platform.twitter.com/widgets.js"> </script>
+=======
+>>>>>>> ca5fe7d1914a4a718aea68ce0386b27d039dbf80
 <?php echo '
  <script type="text/javascript">
     function enviarnewsletter()
@@ -129,6 +136,7 @@
        d.submit();
     }
 
+<<<<<<< HEAD
     function enviarindiqueNot()
     {
        d = document.formIndiqueNot;
@@ -141,6 +149,8 @@
        d.submit();
     }
 
+=======
+>>>>>>> ca5fe7d1914a4a718aea68ce0386b27d039dbf80
     $(\'.ano-menu-lateral\').click(function(event){
     	event.preventDefault();
         menu = $(this).next(\'.submenu-ano\');
@@ -151,6 +161,7 @@
         }
     });
 
+<<<<<<< HEAD
     function print(){
        w=window.open();
        w.document.write($(\'.bloco-imprimi\').html());
@@ -169,4 +180,18 @@
 
 
  </script>
+=======
+ </script>
+
+	<script>
+	$(document).ready(function() {
+	 $("#owl-demo").owlCarousel({
+	    navigation : true,
+	    slideSpeed : 300,
+	    paginationSpeed : 400,
+	    singleItem : true
+	 });
+	});
+	</script>
+>>>>>>> ca5fe7d1914a4a718aea68ce0386b27d039dbf80
 '; ?>

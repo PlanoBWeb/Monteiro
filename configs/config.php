@@ -25,7 +25,11 @@ $smarty->debugging = false;
 */
 
 /* MyADMIN - http://phpmyadmin.locaweb.com.br/ */
+<<<<<<< HEAD
 if( $_SERVER['SERVER_NAME'] == 'planobweb' || $_SERVER['SERVER_NAME'] == '192.168.0.105' || $_SERVER['SERVER_NAME'] == 'dev')
+=======
+if( $_SERVER['SERVER_NAME'] == 'planobweb' || $_SERVER['SERVER_NAME'] == '192.168.0.105')
+>>>>>>> ca5fe7d1914a4a718aea68ce0386b27d039dbf80
 {
 	define("db_host", 'localhost');
 	define("db_user", 'root');
@@ -40,7 +44,11 @@ else
 	define("db_host", '179.188.16.43');
 	define("db_user", 'planobweb212');
 	define("db_pass", 'teste123');
+<<<<<<< HEAD
 	define("db_base", 'planobweb212');http://dev:82/Monteiro/index.php
+=======
+	define("db_base", 'planobweb212');
+>>>>>>> ca5fe7d1914a4a718aea68ce0386b27d039dbf80
 	//define("PATH_SERVIDOR","E:/Home/planobweb2/Web/extranet/");
 }
 

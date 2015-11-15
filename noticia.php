@@ -3,6 +3,7 @@
 	include_once "configs/config.php";
 	include_once "url.php";
 	include_once "configs/idiomas.php";
+<<<<<<< HEAD
 	include_once "news_indique.php";
 	include_once "classes/Noticias.class.php";
 	include_once "classes/Categoria.class.php";
@@ -69,6 +70,9 @@
 	$smarty->assign("dadosVejaTambem", $randVejaTambem);
 	$smarty->assign("dadosCategoria", $retornoCatego[1]);
 	$smarty->assign("dadosMenuBlog", $retornoMenuBlog[1]);
+=======
+
+>>>>>>> ca5fe7d1914a4a718aea68ce0386b27d039dbf80
 	$smarty->assign("arrayIdioma", $arrayIdioma);
 	$smarty->assign("pagina", $pagina);
 	$smarty->assign("titulo", utf8_encode(TITULO));

@@ -5,6 +5,7 @@
 	include_once "configs/idiomas.php";
 	include_once "news_indique.php";
 	include_once "classes/Noticias.class.php";
+<<<<<<< HEAD
 	include_once "classes/Categoria.class.php";
 	$class 		= new Noticias();
 	$classCatego= new Categoria();
@@ -30,16 +31,27 @@
 		$parametro['id'] 		= $_GET['id'];
 	}
 	
+=======
+	$class = new Noticias();
+
+	$parametro['id'] 		= $_GET['id'];
+	$parametro['idioma']	= $_idioma;
+>>>>>>> ca5fe7d1914a4a718aea68ce0386b27d039dbf80
 	$retorno = $class->Pesquisar($parametro, null, null);
 	if( $retorno[0] )
 	{
 		$smarty->assign("mensagem", $retorno[1]);
+<<<<<<< HEAD
 		$smarty->assign("redir", "noticias.php");
+=======
+		$smarty->assign("redir", "adm_" . $pagina . ".php");
+>>>>>>> ca5fe7d1914a4a718aea68ce0386b27d039dbf80
 		$smarty->display("mensagem.html");
 		exit();
 	}
 	$totalNot = count($retorno[1]);
 
+<<<<<<< HEAD
 	// Dados do blog menu lateral
 	$parametroBlog['destaque']	= "1";
 	$retornoMenuBlog = $class->Pesquisar($parametroBlog, null, null);
@@ -47,10 +59,20 @@
 	{
 		$smarty->assign("mensagem", $retornoMenuBlog[1]);
 		$smarty->assign("redir", "noticias.php");
+=======
+
+	$parametro['destaque']	= "1";
+	$retornoMenuBlog = $class->Pesquisar($parametro, null, null);
+	if( $retornoMenuBlog[0] )
+	{
+		$smarty->assign("mensagem", $retornoMenuBlog[1]);
+		$smarty->assign("redir", "adm_" . $pagina . ".php");
+>>>>>>> ca5fe7d1914a4a718aea68ce0386b27d039dbf80
 		$smarty->display("mensagem.html");
 		exit();
 	}
 
+<<<<<<< HEAD
 	// Dados do blog menu lateral categoria
 	$parametroDestaque['id']		= $_GET['id'];
 	$parametroDestaque['limitVeja']	= "4";
@@ -66,6 +88,12 @@
 	$smarty->assign("paginaMenuBlogInver", $paginaMenuBlogInver);
 	$smarty->assign("paginaMenuBlog", $paginaMenuBlog);
 	$smarty->assign("dadosCategoria", $retornoCatego[1]);
+=======
+	// echo "<pre>";
+	// print_r($retornoMenuBlog);
+	// die();
+
+>>>>>>> ca5fe7d1914a4a718aea68ce0386b27d039dbf80
 	$smarty->assign("dadosMenuBlog", $retornoMenuBlog[1]);
 	$smarty->assign("totalNot", $totalNot);
 	$smarty->assign("dados", $retorno[1]);

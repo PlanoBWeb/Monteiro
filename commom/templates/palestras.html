@@ -21,13 +21,25 @@
       <div class="container-fluid no-padding">
          {include file="../inc/header.html"}
          <!-- BreadCrumb -->
+<<<<<<< HEAD
          {include file="../inc/breadcrumb.html"}
+=======
+         <div class="row bloco-breadcrumb">
+            <div class="tamanho-max pd-left-5">
+               <ol class="breadcrumb">
+                  <li><a href="index.php">Home</a></li>
+                  <li>Palestras</li>
+               </ol>
+            </div>
+         </div>
+>>>>>>> ca5fe7d1914a4a718aea68ce0386b27d039dbf80
          <!-- BreadCrumb -->
 
          <!-- Conteudo -->
          <section class="conteudo-interna">
             <div class="row tamanho-max bloco-conteudo bloco-conteudo-noticias">
                <div class="col-xs-12 col-sm-8 col-md-8 pd-none encapsula-noticias">
+<<<<<<< HEAD
                   {section name=i loop=$dados}
                      <div class="col-xs-12 col-sm-12 col-md-12 pd-none conteudo-interna-publicacao">
                         <h2 class="titulo-publicacoes font-bold"><a href="palestra.php?id={$dados[i].id}">{$dados[i].numPubclicacao}</a></h2>
@@ -45,6 +57,22 @@
                         <a href="?p=#" class="seta-direita fl-left seta-default">&gt;&gt;</a>
                      </div>
                   {/if}
+=======
+
+                  <div class="col-xs-12 col-sm-12 col-md-12 pd-none conteudo-interna-publicacao">
+                     <h2 class="titulo-publicacoes font-bold"><a href="informativa.php">Palestra nº 1</a></h2>
+                     <a class="txt-desc-publicacao font-normal" href="informativo.php">Tse reforma decisão do tribunal regional eleitoral paulista que tinha considerado irregular a “caravana horizonte paulista” do candidato Alexandre Padilha - PT.</a>
+                     <p class="txt-noticias-info font-normal">Por:  Lorem Ipsum   •  em: Direito Público  •   26 Fev. 2015</p>
+                  </div>
+                  
+                  <div class="bloco-paginacao">
+                     <a href="?p=#" class="seta-esquerda fl-left seta-default">&lt;&lt;</a>
+                     <a href="?p=#" class="seta-esquerda fl-left seta-default">&lt;</a>
+                     <p class="link-paginacao">1 de 3</p>
+                     <a href="?p=#" class="seta-direita fl-left seta-default">&gt;</a>
+                     <a href="?p=#" class="seta-direita fl-left seta-default">&gt;&gt;</a>
+                  </div>
+>>>>>>> ca5fe7d1914a4a718aea68ce0386b27d039dbf80
                </div>
 
                {include file="../inc/menu-lateral-blog.html"}

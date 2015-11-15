@@ -34,6 +34,7 @@ class Publicacoes
 			$query .= " AND publicacoes.id = '".$post['id']."' ";
 		}
 
+<<<<<<< HEAD
 		if($post['id'])
 		{
 			$query .= " AND publicacoes.id = '".$post['id']."' ";
@@ -62,10 +63,26 @@ class Publicacoes
 		if($post['idCat'])
 		{
 			$query .= " AND publicacoes.idCategoria = '".$post['idCat']."' ";
+=======
+		if($post['ano'])
+		{
+			$query .= " AND YEAR(data) = '".$post['ano']."' ";
+		}
+
+		if($post['mes'])
+		{
+			if (intval($post['mes'])) {
+				$query .= " AND MONTH(data) = '".$post['mes']."' ";
+			}else{
+				$retorno = MesInverte($post['mes']);
+				$query .= " AND MONTH(data) = '".$retorno."' ";
+			}			
+>>>>>>> ca5fe7d1914a4a718aea68ce0386b27d039dbf80
 		}
 
 		$retorno = array();
 		$sql = "SELECT 
+<<<<<<< HEAD
 					*,
 					C.id as idCategoria,
 					publicacoes.id as id
@@ -77,14 +94,24 @@ class Publicacoes
 					C.id = " . $this->entidade . ".Idcategoria
 				WHERE
 					1 = 1 ".$query . "
+=======
+					*
+				FROM
+					" . $this->entidade . " 
+				WHERE
+					1 = 1 ".$query."
+>>>>>>> ca5fe7d1914a4a718aea68ce0386b27d039dbf80
 				ORDER BY
 					data DESC
 			".$sqlLimit." ";
 
+<<<<<<< HEAD
 			// echo "<pre>";
 			// print_r($sql);
 			// die();
 
+=======
+>>>>>>> ca5fe7d1914a4a718aea68ce0386b27d039dbf80
 		$result = mysql_query($sql);
 		if (!($result))
 		{
@@ -99,6 +126,7 @@ class Publicacoes
 			$dados[$i] 					= $rows;
 			if ($post['idioma'] == "I") {
 				$dados[$i]['titulo'] 		= utf8_encode($rows['titulo_I']);
+<<<<<<< HEAD
 				$dados[$i]['tituloAbrev'] 	= utf8_encode(limita_caracteres($rows['titulo_I'], 45, false));	
 				$dados[$i]['texto'] 		= utf8_encode($rows['texto_I']);
 				$dados[$i]['textoAbrev']	= utf8_encode(limita_caracteres($rows['texto_I'], 150, false));
@@ -109,12 +137,23 @@ class Publicacoes
 				$dados[$i]['texto'] 		= utf8_encode($rows['texto']);
 				$dados[$i]['textoAbrev']	= utf8_encode(limita_caracteres($rows['texto'], 150, false));
 				$dados[$i]['numPubclicacao'] 		= utf8_encode($rows['numPubclicacao']);
+=======
+				$dados[$i]['texto'] 		= utf8_encode($rows['texto_I']);
+				$dados[$i]['textoAbrev']	= utf8_encode(limita_caracteres($rows['texto_I'], 150, false));
+			}else{
+				$dados[$i]['titulo'] 		= utf8_encode($rows['titulo']);	
+				$dados[$i]['texto'] 		= utf8_encode($rows['texto']);
+				$dados[$i]['textoAbrev']	= utf8_encode(limita_caracteres($rows['texto'], 150, false));
+>>>>>>> ca5fe7d1914a4a718aea68ce0386b27d039dbf80
 			}
 			$dados[$i]['data'] 			= date("d/m/Y", strtotime($rows['data']));
 			$dados[$i]['Mes']			= Mes(explode("-", ($rows['data'])));
 			//$dados[$i]['MesAbreviado']	= limita_caracteres($dados[$i]['Mes'], 9, false);
 			$dados[$i]['dataMes'] 		= explode("-", ($rows['data']));
+<<<<<<< HEAD
 			$dados[$i]['nomeCategoria'] 	= utf8_encode($rows['nomeCategoria']);
+=======
+>>>>>>> ca5fe7d1914a4a718aea68ce0386b27d039dbf80
 			$i++;
 		}
 

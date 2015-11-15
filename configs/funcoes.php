@@ -90,10 +90,13 @@
 		return $novo_texto;
 	}
 
+<<<<<<< HEAD
 	function UrlAtual(){
 		$dominio= $_SERVER['HTTP_HOST'];
 		$urlCompleta = "http://" . $dominio. $_SERVER['REQUEST_URI'];
 		return $urlCompleta;
 	}
 
+=======
+>>>>>>> ca5fe7d1914a4a718aea68ce0386b27d039dbf80
 ?>

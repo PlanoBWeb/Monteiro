@@ -2,6 +2,7 @@
    <h2 class="titulo-menu-destaques font-normal">{ $arrayIdioma.MN_NOT_DESTA }</h2><br>
    {section name=i loop=$dadosMenuBlog}   
       <div class="bloco-noticia-destaque">
+<<<<<<< HEAD
          {if $dadosMenuBlog[i].idTipo != ""}
             <a class="txt-desc-noticias font-normal" href="{$paginaMenuBlog}?id={$dadosMenuBlog[i].id}"><strong>{$dadosMenuBlog[i].numPubclicacao}</strong></a><br>
             <a class="txt-desc-noticias font-normal" href="{$paginaMenuBlog}?id={$dadosMenuBlog[i].id}">{$dadosMenuBlog[i].tituloAbrev}</a>
@@ -11,6 +12,10 @@
             </a>
             <a class="txt-desc-noticias font-normal" href="{$paginaMenuBlog}?id={$dadosMenuBlog[i].id}">{$dadosMenuBlog[i].tituloAbrev}</a>
          {/if}
+=======
+         <a href="noticia.php?id={$dadosMenuBlog[i].id}"><img src="{$dadosMenuBlog[i].caminhoImagemThumb}" alt="{$dadosMenuBlog[i].titulo}" title="{$dadosMenuBlog[i].titulo}"></a>
+         <a class="txt-desc-noticias font-normal" href="noticia.php?id={$dadosMenuBlog[i].id}">{$dadosMenuBlog[i].titulo}</a>
+>>>>>>> ca5fe7d1914a4a718aea68ce0386b27d039dbf80
          <p class="txt-noticias-info font-normal pd-none">{$dadosMenuBlog[i].dataMes[2]} {$dadosMenuBlog[i].Mes} {$dadosMenuBlog[i].dataMes[0]}</p>
       </div>
    {/section}
@@ -26,8 +31,13 @@
          <ul>
             {assign var="nmTipo" value=$nmTipo|default:""}
             {section name=i loop=$dadosMenuBlog}   
+<<<<<<< HEAD
                 <!--   <ul> -->
                   <!-- <li> -->
+=======
+                  <ul>
+                  <li>
+>>>>>>> ca5fe7d1914a4a718aea68ce0386b27d039dbf80
                   {if $nmTipo <> $dadosMenuBlog[i].dataMes[0]}
                         </ul>
                      </li>
@@ -39,7 +49,11 @@
                   {assign var="nmTipoMes" value=$nmTipoMes|default:""}
                      {if $nmTipoMes <> $dadosMenuBlog[i].Mes}
                         <li class="linha-menu-lateral">
+<<<<<<< HEAD
                            <a class="link-menu-lateral font-normal" href="{$paginaMenuBlogInver}?ano={$dadosMenuBlog[i].dataMes[0]}&mes={$dadosMenuBlog[i].dataMes[1]}">{$dadosMenuBlog[i].Mes}</a>
+=======
+                           <a class="ano-menu-lateral link-menu-lateral font-normal" href="noticias.php?ano={$dadosMenuBlog[i].dataMes[0]}&mes={$dadosMenuBlog[i].dataMes[1]}">{$dadosMenuBlog[i].Mes}</a>
+>>>>>>> ca5fe7d1914a4a718aea68ce0386b27d039dbf80
                         </li>
                      {/if}
                   {assign var="nmTipoMes" value=$dadosMenuBlog[i].Mes}
@@ -51,17 +65,27 @@
       <h2 class="titulo-menu-lateral font-normal">{ $arrayIdioma.MN_NOT_CAT }</h2>
       <nav class="menu-lateral">
          <ul>
+<<<<<<< HEAD
             {section name=i loop=$dadosCategoria}   
                <li class="linha-menu-lateral"><a class="link-menu-lateral font-normal" href="{$paginaMenuBlogInver}?idCat={$dadosCategoria[i].Idcategoria}">{$dadosCategoria[i].nomeCategoria}</a></li>
             {/section}  
             <!-- <li class="linha-menu-lateral"><a class="link-menu-lateral font-normal" href=".php">Direito Tributário</a></li>
             <li class="linha-menu-lateral"><a class="link-menu-lateral font-normal" href=".php">Direito Público</a></li>
             <li class="linha-menu-lateral"><a class="link-menu-lateral font-normal" href=".php">Direito Empresairial</a></li> -->
+=======
+            <li class="linha-menu-lateral"><a class="link-menu-lateral font-normal" href=".php">Direito Tributário</a></li>
+            <li class="linha-menu-lateral"><a class="link-menu-lateral font-normal" href=".php">Direito Público</a></li>
+            <li class="linha-menu-lateral"><a class="link-menu-lateral font-normal" href=".php">Direito Empresairial</a></li>
+>>>>>>> ca5fe7d1914a4a718aea68ce0386b27d039dbf80
          </ul>
       </nav>
    </div>
    <div class="bloco-links-blog">
       <h2 class="titulo-menu-lateral font-normal">{ $arrayIdioma.MN_NOT_TAG }</h2>
+<<<<<<< HEAD
       <a class="tags-lateral font-normal" href="">Teste</a><a class="tags-lateral font-normal" href="{$paginaMenuBlogInver}">Teste</a><a class="tags-lateral font-normal" href="">Teste</a>
+=======
+      <a class="tags-lateral font-normal" href="">Teste</a><a class="tags-lateral font-normal" href="">Teste</a><a class="tags-lateral font-normal" href="">Teste</a>
+>>>>>>> ca5fe7d1914a4a718aea68ce0386b27d039dbf80
    </div> 
 </div>
