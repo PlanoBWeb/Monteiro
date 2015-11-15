@@ -13,32 +13,6 @@
 	// $parametro['id'] 		= $_GET['id'];
 	// $parametro['idCat'] 	= $_GET['idCat'];
 	$parametro['idioma']	= $_idioma;
-	if (!$_GET['id']) {
-		if ($_GET['idCat']) {
-			$parametro['idCat'] 	= $_GET['idCat'];
-		}elseif ($_GET['ano'] || $_GET['mes']) {
-			$parametro['anoAtual'] 	= $_GET['ano'];
-			$parametro['mesAtual'] 	= $_GET['mes'];
-		}
-		else{
-			$dataAtual = explode("/",date("d/m/Y"));
-			$parametro['diaAtual'] = $dataAtual['0'];
-			$parametro['mesAtual'] = $dataAtual['1'];
-			$parametro['anoAtual'] = $dataAtual['2'];
-		}
-	}else{
-		$parametro['id'] 		= $_GET['id'];
-	}
-	
-	$retorno = $class->Pesquisar($parametro, null, null);
-	if( $retorno[0] )
-	{
-		$smarty->assign("mensagem", $retorno[1]);
-		$smarty->assign("redir", "noticias.php");
-		$smarty->display("mensagem.html");
-		exit();
-	}
-	$totalNot = count($retorno[1]);
 
 	// Dados do blog menu lateral
 	$parametroBlog['destaque']	= "1";
@@ -63,6 +37,46 @@
 		exit();
 	}
 
+
+	if ($_POST['acao'] == "busca") {
+		$parametro['busca'] = $_POST['search'];
+		$retorno = $class->Pesquisar($parametro, null, null);
+		if( $retorno[0] )
+		{
+			$smarty->assign("mensagem", $retorno[1]);
+			$smarty->assign("redir", "index.php");
+			$smarty->display("mensagem.html");
+			exit();
+		}
+	}else{
+		if (!$_GET['id']) {
+			if ($_GET['idCat']) {
+				$parametro['idCat'] 	= $_GET['idCat'];
+			}elseif ($_GET['ano'] || $_GET['mes']) {
+				$parametro['anoAtual'] 	= $_GET['ano'];
+				$parametro['mesAtual'] 	= $_GET['mes'];
+			}
+			else{
+				$dataAtual = explode("/",date("d/m/Y"));
+				$parametro['diaAtual'] = $dataAtual['0'];
+				$parametro['mesAtual'] = $dataAtual['1'];
+				$parametro['anoAtual'] = $dataAtual['2'];
+			}
+		}else{
+			$parametro['id'] 		= $_GET['id'];
+		}
+		$retorno = $class->Pesquisar($parametro, null, null);
+		if( $retorno[0] )
+		{
+			$smarty->assign("mensagem", $retorno[1]);
+			$smarty->assign("redir", "noticias.php");
+			$smarty->display("mensagem.html");
+			exit();
+		}
+	}
+	$totalNot = count($retorno[1]);
+
+	$smarty->assign("postBusca", $_POST['search']);
 	$smarty->assign("paginaMenuBlogInver", $paginaMenuBlogInver);
 	$smarty->assign("paginaMenuBlog", $paginaMenuBlog);
 	$smarty->assign("dadosCategoria", $retornoCatego[1]);

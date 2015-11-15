@@ -183,7 +183,6 @@ class Noticias
 	function Pesquisar($post, $totalPorPagina, $pagina)
 	{
 		$query = "";
-
 		$sqlLimit = "";
 		if ($totalPorPagina) {
 
@@ -191,6 +190,16 @@ class Noticias
 			$_limit = $numero*$totalPorPagina;
 
 			$sqlLimit = "LIMIT ".$_limit.",".$totalPorPagina."";
+		}
+
+		if($post['busca'])
+		{
+			if ($_SESSION['idioma'] == "P") {
+			 	$query .= " AND noticias.titulo LIKE '%".$post['busca']."%' ";
+			 }else{
+			 	$query .= " AND noticias.titulo_I LIKE '".$post['busca']."' ";
+			 }
+			
 		}
 
 		if($post['id'])

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-13 16:57:02
+<?php /* Smarty version 2.6.12, created on 2015-11-15 21:26:33
          compiled from noticias.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -38,7 +38,8 @@ unset($_smarty_tpl_vars);
          <section class="conteudo-interna">
             <div class="row tamanho-max bloco-conteudo bloco-conteudo-noticias">
                <div class="col-xs-12 col-sm-8 col-md-8 pd-none encapsula-noticias">
-                  <?php unset($this->_sections['i']);
+                  <?php if ($this->_tpl_vars['dados']): ?>
+                     <?php unset($this->_sections['i']);
 $this->_sections['i']['name'] = 'i';
 $this->_sections['i']['loop'] = is_array($_loop=$this->_tpl_vars['dados']) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
 $this->_sections['i']['show'] = true;
@@ -62,13 +63,13 @@ $this->_sections['i']['index_next'] = $this->_sections['i']['index'] + $this->_s
 $this->_sections['i']['first']      = ($this->_sections['i']['iteration'] == 1);
 $this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $this->_sections['i']['total']);
 ?>
-                     <div class="col-xs-12 col-sm-12 col-md-12 pd-none conteudo-interna-not">
-                        <a href="noticia.php?id=<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['id']; ?>
+                        <div class="col-xs-12 col-sm-12 col-md-12 pd-none conteudo-interna-not">
+                           <a href="noticia.php?id=<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['id']; ?>
 "><img class="img-noticias" src="commom/img/noticias/noticia1.jpg" title="Noticia" alt="Noticia"></a>
-                        <h2 class="titulo-noticias font-normal"><a href="noticia.php?id=<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['id']; ?>
+                           <h2 class="titulo-noticias font-normal"><a href="noticia.php?id=<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['id']; ?>
 "><?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['titulo']; ?>
 </a></h2>
-                        <p class="txt-noticias-info font-normal"><?php echo $this->_tpl_vars['arrayIdioma']['MN_NOT_POR']; ?>
+                           <p class="txt-noticias-info font-normal"><?php echo $this->_tpl_vars['arrayIdioma']['MN_NOT_POR']; ?>
 :  <?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['por']; ?>
   •  <?php echo $this->_tpl_vars['arrayIdioma']['MN_NOT_EM']; ?>
 : <?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['nomeCategoria']; ?>
@@ -76,19 +77,26 @@ $this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $th
  <?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['Mes']; ?>
  <?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['dataMes'][0]; ?>
 </p>
-                        <a class="txt-desc-noticias font-normal" href="noticia.php?id=<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['id']; ?>
+                           <a class="txt-desc-noticias font-normal" href="noticia.php?id=<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['id']; ?>
 "><?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['textoAbrev']; ?>
 </a>
-                     </div>
-                  <?php endfor; endif; ?>
-                  <?php if ($this->_tpl_vars['totalNot'] > 10): ?>
-                     <div class="bloco-paginacao">
-                        <a href="?p=#" class="seta-esquerda fl-left seta-default">&lt;&lt;</a>
-                        <a href="?p=#" class="seta-esquerda fl-left seta-default">&lt;</a>
-                        <p class="link-paginacao">1 de 3</p>
-                        <a href="?p=#" class="seta-direita fl-left seta-default">&gt;</a>
-                        <a href="?p=#" class="seta-direita fl-left seta-default">&gt;&gt;</a>
-                     </div>
+                        </div>
+                     <?php endfor; endif; ?>
+                     <?php if ($this->_tpl_vars['totalNot'] > 1): ?>
+                        <div class="bloco-paginacao">
+                           <a href="noticias?p=#" class="seta-esquerda fl-left seta-default">&lt;&lt;</a>
+                           <!-- <a href="noticias?p=#" class="seta-esquerda fl-left seta-default">&lt;</a> -->
+                           <a href="noticias?p=#" class="link-paginacao">1</a>
+                           <a href="noticias?p=#" class="link-paginacao">2</a>
+                           <!-- <a href="noticias?p=#" class="seta-direita fl-left seta-default">&gt;</a> -->
+                           <a href="noticias?p=#" class="seta-direita fl-left seta-default">&gt;&gt;</a>
+                        </div>
+                     <?php endif; ?>
+                  <?php else: ?>
+                     <br><br>
+                     <p class="sem-resultado font-bold"><?php echo $this->_tpl_vars['arrayIdioma']['MN_RESULT_BUSCA']; ?>
+ "<?php echo $this->_tpl_vars['postBusca']; ?>
+"</p>
                   <?php endif; ?>
                </div>
                <?php $_smarty_tpl_vars = $this->_tpl_vars;

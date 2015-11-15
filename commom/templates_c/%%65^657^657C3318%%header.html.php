@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-13 10:28:47
+<?php /* Smarty version 2.6.12, created on 2015-11-15 20:26:23
          compiled from ../inc/header.html */ ?>
 <div id="fb-root"></div>
 <?php echo '
@@ -46,7 +46,8 @@
                   <img src="commom/img/icon-pt.png" alt="icone português" title="icone português">
                </a>
             </div>
-            <form class="form-search" method="post" name="form_search">
+            <form action="noticias.php" class="form-search" method="post" name="form_search">
+               <input type="hidden" name="acao" value="busca">
                <input class="btn-ok cinza font-normal fl-right" type="submit" value="ok">
                <input class="font-normal fl-right" type="search" name="search" placeholder="<?php echo $this->_tpl_vars['arrayIdioma']['MN_BUSCA']; ?>
 ">
@@ -74,7 +75,8 @@
                   </a>
                </div>
             </div>
-            <form class="form-search search-mobile" method="post" name="form_search">
+            <form action="noticias.php" class="form-search search-mobile" method="post" name="form_search">
+               <input type="hidden" name="acao" value="busca">
                <a class="close-search-mobile" href="#"><img src="commom/img/lupa.png" alt="icone lupa" title="icone lupa"></a>
                <input class="font-normal input-search-mobile" type="search" name="search" placeholder="busca...">
                <input class="btn-ok cinza font-normal" type="submit" value="ok">

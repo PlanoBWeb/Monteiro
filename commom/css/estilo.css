@@ -768,6 +768,14 @@ iframe{
     padding-bottom: 20px;
 }
 
+.sem-resultado{
+    font-size: 1.2em;
+    color: #8b0303;
+    text-align: center;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+}
+
 .link-lateral-ativo{
     border-top: solid 1px #bfc1c2;
     border-bottom: solid 1px #bfc1c2;
@@ -888,7 +896,7 @@ iframe{
     font-size: 0.8em;
     text-decoration: none;
     float: left;
-    padding: 10px;
+    padding: 10px 5px;
 }
 
 .bloco-paginacao{
