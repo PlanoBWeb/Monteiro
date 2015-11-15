@@ -1,0 +1,62 @@
+<div class="col-xs-12 col-sm-3 col-md-3 pd-none bloco-menu-lateral">
+   {if $PgAtiva == "direito publico"}
+   <h2 class="titulo-menu-lateral font-normal">DIREITO PÚBLICO</h2>
+   <nav class="menu-lateral">
+      <ul>         
+         <li class="linha-menu-lateral {if $pagina == "tribunal-de-contas.php"}  link-lateral-ativo {/if}"><a class="link-menu-lateral font-normal" href="tribunal-de-contas.php">{ $arrayIdioma.MN_TITULO_TC }</a></li>
+         <li class="linha-menu-lateral {if $pagina == "licitacoes-e-contratos.php"} link-lateral-ativo {/if}"><a class="link-menu-lateral font-normal" href="licitacoes-e-contratos.php">{ $arrayIdioma.MN_TITULO_LC }</a></li>
+         <li class="linha-menu-lateral {if $pagina == "improbidade-administrativa.php"} link-lateral-ativo {/if}"><a class="link-menu-lateral font-normal" href="improbidade-administrativa.php">{ $arrayIdioma.MN_TITULO_IA }</a></li>
+         <li class="linha-menu-lateral {if $pagina == "crimes-de-responsabilidade.php"} link-lateral-ativo {/if}"><a class="link-menu-lateral font-normal" href="crimes-de-responsabilidade.php">{ $arrayIdioma.MN_TITULO_CR }</a></li>
+         <li class="linha-menu-lateral {if $pagina == "terceiro-setor.php"} link-lateral-ativo {/if}"><a class="link-menu-lateral font-normal" href="terceiro-setor.php">{ $arrayIdioma.MN_TITULO_TS }</a></li>
+         <li class="linha-menu-lateral {if $pagina == "processo-legislativo.php"} link-lateral-ativo {/if}"><a class="link-menu-lateral font-normal" href="processo-legislativo.php">{ $arrayIdioma.MN_TITULO_PL }</a></li>
+         <li class="linha-menu-lateral {if $pagina == "consultoria.php"} link-lateral-ativo {/if}"><a class="link-menu-lateral font-normal" href="consultoria.php">{ $arrayIdioma.MN_TITULO_C }</a></li>
+         <li class="linha-menu-lateral {if $pagina == "consorcios-municipais.php"} link-lateral-ativo {/if}"><a class="link-menu-lateral font-normal" href="consorcios-municipais.php">{ $arrayIdioma.MN_TITULO_CM }</a></li>
+      </ul>
+   </nav>
+{elseif $PgAtiva == "direito eleitoral"}
+      <h2 class="titulo-menu-lateral font-normal">DIREITO ELEITORAL</h2>
+      <nav class="menu-lateral">
+         <ul>         
+            <li class="linha-menu-lateral {if $pagina == "assessoria-para-pre-candidatos.php"} link-lateral-ativo {/if}"><a class="link-menu-lateral font-normal" href="assessoria-para-pre-candidatos.php">{ $arrayIdioma.MN_TITULO_APC }</a></li>
+            <li class="linha-menu-lateral {if $pagina == "fidelidade-partidaria.php"} link-lateral-ativo {/if}"><a class="link-menu-lateral font-normal" href="fidelidade-partidaria.php">{ $arrayIdioma.MN_TITULO_FP }</a></li>
+            <li class="linha-menu-lateral {if $pagina == "raio-x-candidato.php"} link-lateral-ativo {/if}"><a class="link-menu-lateral font-normal" href="raio-x-candidato.php">{ $arrayIdioma.MN_TITULO_RX }</a></li>
+            <li class="linha-menu-lateral {if $pagina == "registro-candidatura.php"} link-lateral-ativo {/if}"><a class="link-menu-lateral font-normal" href="registro-candidatura.php">{ $arrayIdioma.MN_TITULO_RC }</a></li>
+            <li class="linha-menu-lateral {if $pagina == "prestacao-de-contas.php"} link-lateral-ativo {/if}"><a class="link-menu-lateral font-normal" href="prestacao-de-contas.php">{ $arrayIdioma.MN_TITULO_PC }</a></li>
+            <li class="linha-menu-lateral {if $pagina == "propaganda-eleitoral.php"} link-lateral-ativo {/if}"><a class="link-menu-lateral font-normal" href="propaganda-eleitoral.php">{ $arrayIdioma.MN_TITULO_PE }</a></li>
+            <li class="linha-menu-lateral {if $pagina == "assessoria-em-campanhas.php"} link-lateral-ativo {/if}"><a class="link-menu-lateral font-normal" href="assessoria-em-campanhas.php">{ $arrayIdioma.MN_TITULO_AC }</a></li>
+            <li class="linha-menu-lateral {if $pagina == "impugnacao-de-mandato-eletivo.php"} link-lateral-ativo {/if}"><a class="link-menu-lateral font-normal" href="impugnacao-de-mandato-eletivo.php">{ $arrayIdioma.MN_TITULO_IME }</a></li>
+            <li class="linha-menu-lateral {if $pagina == "crimes-infracoes-eleitorais.php"} link-lateral-ativo {/if}"><a class="link-menu-lateral font-normal" href="crimes-infracoes-eleitorais.php">{ $arrayIdioma.MN_TITULO_CIE }</a></li>
+            <li class="linha-menu-lateral {if $pagina == "cpi.php"} link-lateral-ativo {/if}"><a class="link-menu-lateral font-normal" href="cpi.php">{ $arrayIdioma.MN_TITULO_RC }</a></li>
+         </ul>
+      </nav>
+   {elseif $PgAtiva == "direito empresarial"}
+      <h2 class="titulo-menu-lateral font-normal">DIREITO EMPRESARIAL</h2>
+      <nav class="menu-lateral">
+         <ul>         
+            <li class="linha-menu-lateral {if $pagina == "planejamento-tributario.php"} link-lateral-ativo {/if}"><a class="link-menu-lateral font-normal" href="planejamento-tributario.php">{ $arrayIdioma.MN_TITULO_PT }</a></li>
+            <li class="linha-menu-lateral {if $pagina == "recuperacao-de-creditos.php"} link-lateral-ativo {/if}"><a class="link-menu-lateral font-normal" href="recuperacao-de-creditos.php">{ $arrayIdioma.MN_TITULO_RC }</a></li>
+            <li class="linha-menu-lateral {if $pagina == "debitos-federais-estaduais.php"} link-lateral-ativo {/if}"><a class="link-menu-lateral font-normal" href="debitos-federais-estaduais.php">{ $arrayIdioma.MN_TITULO_DFE }</a></li>
+            <li class="linha-menu-lateral {if $pagina == "representacao-em-licitacoes.php"} link-lateral-ativo {/if}"><a class="link-menu-lateral font-normal" href="representacao-em-licitacoes.php">{ $arrayIdioma.MN_TITULO_RL }</a></li>
+            <li class="linha-menu-lateral {if $pagina == "impugnacoes-em-editais.php"} link-lateral-ativo {/if}"><a class="link-menu-lateral font-normal" href="impugnacoes-em-editais.php">{ $arrayIdioma.MN_TITULO_IMPE }</a></li>
+            <li class="linha-menu-lateral {if $pagina == "mandado-de-seguranca.php"} link-lateral-ativo {/if}"><a class="link-menu-lateral font-normal" href="mandado-de-seguranca.php">{ $arrayIdioma.MN_TITULO_MS }</a></li>
+            <li class="linha-menu-lateral {if $pagina == "diligencias-negociais.php"} link-lateral-ativo {/if}"><a class="link-menu-lateral font-normal" href="diligencias-negociais.php">{ $arrayIdioma.MN_TITULO_DN }</a></li>
+            <li class="linha-menu-lateral {if $pagina == "advocacia-consultiva.php"} link-lateral-ativo {/if}"><a class="link-menu-lateral font-normal" href="advocacia-consultiva.php">{ $arrayIdioma.MN_TITULO_DAC }</a></li>
+         </ul>
+      </nav>
+   {elseif $PgAtiva == "direito imobiliario"}
+      <h2 class="titulo-menu-lateral font-normal">DIREITO IMOBILIÁRIO</h2>
+      <nav class="menu-lateral">
+         <ul>         
+            <li class="linha-menu-lateral {if $pagina == "direito-imobiliario.php"} link-lateral-ativo {/if}"><a class="link-menu-lateral font-normal" href="direito-imobiliario.php">{ $arrayIdioma.MN_TITULO_ADI }</a></li>
+            <li class="linha-menu-lateral {if $pagina == "consultoria-e-assessoria-Juridicas.php"} link-lateral-ativo {/if}"><a class="link-menu-lateral font-normal" href="consultoria-e-assessoria-Juridicas.php">{ $arrayIdioma.MN_TITULO_CAJ }</a></li>
+            <li class="linha-menu-lateral {if $pagina == "registro-e-legalizacao-de-imoveis.php"} link-lateral-ativo {/if}"><a class="link-menu-lateral font-normal" href="registro-e-legalizacao-de-imoveis.php">{ $arrayIdioma.MN_TITULO_RLI }</a></li>
+            <li class="linha-menu-lateral {if $pagina == "renegociacao-de-contratos-imobiliarios.php"} link-lateral-ativo {/if}"><a class="link-menu-lateral font-normal" href="renegociacao-de-contratos-imobiliarios.php">{ $arrayIdioma.MN_TITULO_RCI }</a></li>
+            <li class="linha-menu-lateral {if $pagina == "Contencioso-Judicial-e-extrajudicial.php"} link-lateral-ativo {/if}"><a class="link-menu-lateral font-normal" href="Contencioso-Judicial-e-extrajudicial.php">{ $arrayIdioma.MN_TITULO_CJE }</a></li>
+            <li class="linha-menu-lateral {if $pagina == "Acoes-de-Usucapiao.php"} link-lateral-ativo {/if}"><a class="link-menu-lateral font-normal" href="Acoes-de-Usucapiao.php">{ $arrayIdioma.MN_TITULO_AU }</a></li>
+            <li class="linha-menu-lateral {if $pagina == "Inventarios-Judicial-e-Extrajudicial-com-partilha.php"} link-lateral-ativo {/if}"><a class="link-menu-lateral font-normal" href="Inventarios-Judicial-e-Extrajudicial-com-partilha.php">{ $arrayIdioma.MN_TITULO_IJEP }</a></li>
+            <li class="linha-menu-lateral {if $pagina == "Autorizacao-Alvara-Judicial-para-Venda-de-Imoveis.php"} link-lateral-ativo {/if}"><a class="link-menu-lateral font-normal" href="Autorizacao-Alvara-Judicial-para-Venda-de-Imoveis.php">{ $arrayIdioma.MN_TITULO_AAJVI }</a></li>
+            <li class="linha-menu-lateral {if $pagina == "Acoes-possessorias-e-Imissao-na-posse.php"} link-lateral-ativo {/if}"><a class="link-menu-lateral font-normal" href="Acoes-possessorias-e-Imissao-na-posse.php">{ $arrayIdioma.MN_TITULO_APIP }</a></li>
+         </ul>
+      </nav>
+   {/if}
+</div>

@@ -1,0 +1,166 @@
+-- phpMyAdmin SQL Dump
+-- version 2.11.6
+-- http://www.phpmyadmin.net
+--
+-- Servidor: localhost
+-- Tempo de Geração: Nov 13, 2015 as 06:02 PM
+-- Versão do Servidor: 5.0.51
+-- Versão do PHP: 5.2.6
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Banco de Dados: `monteiro`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `categoria`
+--
+
+CREATE TABLE `categoria` (
+  `id` int(11) NOT NULL auto_increment,
+  `nomeCategoria` varchar(50) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Extraindo dados da tabela `categoria`
+--
+
+INSERT INTO `categoria` (`id`, `nomeCategoria`) VALUES
+(1, 'Direito Público'),
+(2, 'Direito Privado');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `newsletter`
+--
+
+CREATE TABLE `newsletter` (
+  `id` int(11) NOT NULL auto_increment,
+  `email` varchar(60) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Extraindo dados da tabela `newsletter`
+--
+
+INSERT INTO `newsletter` (`id`, `email`) VALUES
+(1, 'joseygor@planobweb.com');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `noticias`
+--
+
+CREATE TABLE `noticias` (
+  `id` int(11) NOT NULL auto_increment,
+  `caminhoImagem` varchar(100) NOT NULL,
+  `caminhoImagemThumb` varchar(100) NOT NULL,
+  `titulo` varchar(60) NOT NULL,
+  `titulo_I` varchar(60) NOT NULL,
+  `por` varchar(30) NOT NULL,
+  `data` date NOT NULL,
+  `texto` text NOT NULL,
+  `texto_I` text NOT NULL,
+  `tag` varchar(250) NOT NULL,
+  `tag_I` varchar(250) NOT NULL,
+  `destaque` int(1) NOT NULL,
+  `Idcategoria` tinyint(4) NOT NULL,
+  PRIMARY KEY  (`id`),
+  KEY `categoria` (`Idcategoria`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Extraindo dados da tabela `noticias`
+--
+
+INSERT INTO `noticias` (`id`, `caminhoImagem`, `caminhoImagemThumb`, `titulo`, `titulo_I`, `por`, `data`, `texto`, `texto_I`, `tag`, `tag_I`, `destaque`, `Idcategoria`) VALUES
+(1, 'upload/noticias/img-noticia.jpg', 'upload/noticias/noticia.jpg', 'Titulo', 'Titulo Ingles', 'Ygor', '2015-10-14', 'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker. ', 'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker. Ingles', 'tag1, tag2, tag3, tag4', 'tag1_I, tag2_I, tag3_I, tag4_I', 1, 2),
+(2, 'upload/noticias/img-noticia.jpg', 'upload/noticias/noticia.jpg', 'Titulo 2', 'Titulo Ingles 2 ', 'Ygor 2', '2015-11-16', 'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker. ', 'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker. Ingles', 'tag1, tag2, tag3, tag42', 'tag1_I, tag2_I, tag3_I, tag4_I2', 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `publicacoes`
+--
+
+CREATE TABLE `publicacoes` (
+  `id` int(11) NOT NULL auto_increment,
+  `titulo` varchar(60) NOT NULL,
+  `titulo_I` varchar(60) NOT NULL,
+  `por` varchar(30) NOT NULL,
+  `data` date NOT NULL,
+  `texto` text NOT NULL,
+  `texto_I` text NOT NULL,
+  `tag` varchar(250) NOT NULL,
+  `tag_I` varchar(250) NOT NULL,
+  `Idcategoria` tinyint(4) NOT NULL,
+  `idTipo` tinyint(4) NOT NULL,
+  PRIMARY KEY  (`id`),
+  KEY `categoria` (`Idcategoria`),
+  KEY `idTipo` (`idTipo`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Extraindo dados da tabela `publicacoes`
+--
+
+INSERT INTO `publicacoes` (`id`, `titulo`, `titulo_I`, `por`, `data`, `texto`, `texto_I`, `tag`, `tag_I`, `Idcategoria`, `idTipo`) VALUES
+(1, 'Informativo nº 1', 'Informativo nº 1 Ingles', '', '2015-11-20', 'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.', 'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker. Ingles', 'tagInf1, tagInf2, tagInf3 ', 'tagInf1ING, tagInf2ING, tagInf3ING', 0, 1),
+(2, 'Informativo nº 2', 'Informativo nº 2 Ingles', '', '2015-11-12', 'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.', 'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker. Ingles', 'tagInf1, tagInf2, tagInf3 ', 'tagInf1ING, tagInf2ING, tagInf3ING', 0, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tipopublicacao`
+--
+
+CREATE TABLE `tipopublicacao` (
+  `id` int(11) NOT NULL auto_increment,
+  `tipo` varchar(50) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+--
+-- Extraindo dados da tabela `tipopublicacao`
+--
+
+INSERT INTO `tipopublicacao` (`id`, `tipo`) VALUES
+(1, 'informativos'),
+(2, 'artigos'),
+(3, 'instruções'),
+(4, 'palestras');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuario`
+--
+
+CREATE TABLE `usuario` (
+  `id` int(11) NOT NULL auto_increment,
+  `nome` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `senha` varchar(100) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+
+--
+-- Extraindo dados da tabela `usuario`
+--
+
+INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`) VALUES
+(5, 'Jose ygor', 'joseygor@planobweb.com.br', '698dc19d489c4e4db73e28a713eab07b'),
+(10, 'Teste', 'joseygor@planobweb2.com.br', '81dc9bdb52d04dc20036dbd8313ed055');
