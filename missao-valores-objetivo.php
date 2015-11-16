@@ -4,6 +4,7 @@
 	include_once "url.php";
 	include_once "configs/idiomas.php";
 
+	$smarty->assign("breadcrumb", "Missão, Valores e Objetivo");
 	$smarty->assign("arrayIdioma", $arrayIdioma);
 	$smarty->assign("pagina", $pagina);
 	$smarty->assign("titulo", utf8_encode(TITULO));

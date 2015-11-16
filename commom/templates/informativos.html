@@ -42,6 +42,8 @@
                            <a href="informativos.php?ano={$anoPaginacao}&mes={$mesPaginacao}&p={$Numpaginas[1]}" class="seta-esquerda fl-left seta-default">&lt;&lt;</a>
                         {elseif $idCatPaginacao}
                            <a href="informativos.php?idCat={$idCatPaginacao}&p={$Numpaginas[1]}" class="seta-esquerda fl-left seta-default">&lt;&lt;</a>
+                        {elseif $tagPaginacao}
+                           <a href="informativos.php?tag={$tagPaginacao}&p={$Numpaginas[1]}" class="seta-esquerda fl-left seta-default">&lt;&lt;</a>
                         {else}
                            <a href="informativos.php?p={$Numpaginas[1]}" class="seta-esquerda fl-left seta-default">&lt;&lt;</a>
                         {/if}
@@ -50,6 +52,8 @@
                               <a href="informativos.php?ano={$anoPaginacao}&mes={$mesPaginacao}&p={$Numpaginas[i]}" class="link-paginacao {if $Numpaginas[i] == $smarty.get.p} link-paginacao-ativo {/if}">{$Numpaginas[i]}</a>
                            {elseif $idCatPaginacao}
                               <a href="informativos.php?idCat={$idCatPaginacao}&p={$Numpaginas[i]}" class="link-paginacao {if $Numpaginas[i] == $smarty.get.p} link-paginacao-ativo {/if}">{$Numpaginas[i]}</a>
+                           {elseif $tagPaginacao}
+                              <a href="informativos.php?tag={$tagPaginacao}&p={$Numpaginas[i]}" class="link-paginacao {if $Numpaginas[i] == $smarty.get.p} link-paginacao-ativo {/if}">{$Numpaginas[i]}</a>
                            {else}
                               <a href="informativos.php?p={$Numpaginas[i]}" class="link-paginacao {if $Numpaginas[i] == $smarty.get.p} link-paginacao-ativo {/if}">{$Numpaginas[i]}</a>
                            {/if}
@@ -59,6 +63,8 @@
                            <a href="informativos.php?ano={$anoPaginacao}&mes={$mesPaginacao}&p={$ultimaPaginacao}" class="seta-direita fl-left seta-default">&gt;&gt;</a>
                         {elseif $idCatPaginacao}
                            <a href="informativos.php?idCat={$idCatPaginacao}&p={$ultimaPaginacao}" class="seta-direita fl-left seta-default">&gt;&gt;</a>
+                        {elseif $tagPaginacao}
+                           <a href="informativos.php?tag={$tagPaginacao}&p={$ultimaPaginacao}" class="seta-direita fl-left seta-default">&gt;&gt;</a>
                         {else}
                            <a href="informativos.php?p={$ultimaPaginacao}" class="seta-direita fl-left seta-default">&gt;&gt;</a>
                         {/if}

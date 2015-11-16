@@ -4,6 +4,7 @@
 	include_once "url.php";
 	include_once "configs/idiomas.php";
 
+	$smarty->assign("breadcrumb", "Impugnação de Mandato Eletivo");
 	$smarty->assign("arrayIdioma", $arrayIdioma);
 	$smarty->assign("PgAtiva", $PgAtiva);
 	$smarty->assign("pagina", $pagina);

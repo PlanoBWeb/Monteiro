@@ -25,15 +25,25 @@ class Categoria
 			$query .= " AND publicacoes.idTipo = '".$post['tipo']."' ";
 		}
 
+		if($post['tipoNoticia'] == "1")
+		{
+			$inner = "INNER JOIN
+						noticias
+					ON	
+						noticias.idCategoria = categoria.id";
+		}else{
+			$inner = "INNER JOIN
+						publicacoes
+					ON	
+						publicacoes.idCategoria = categoria.id";
+		}
+
 		$retorno = array();
 		$sql = "SELECT 
 					*
 				FROM
 					" . $this->entidade . " 
-				INNER JOIN
-					publicacoes
-				ON	
-					publicacoes.idCategoria = categoria.id
+				" . $inner . " 
 				WHERE
 					1 = 1 ".$query."
 				GROUP BY	

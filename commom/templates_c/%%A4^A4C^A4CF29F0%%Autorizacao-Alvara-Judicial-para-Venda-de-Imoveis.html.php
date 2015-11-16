@@ -1,3 +1,5 @@
+<?php /* Smarty version 2.6.12, created on 2015-11-16 16:59:23
+         compiled from Autorizacao-Alvara-Judicial-para-Venda-de-Imoveis.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
    <head>
@@ -19,28 +21,46 @@
    </head>
    <body>
       <div class="container-fluid no-padding">
-         {include file="../inc/header.html"}
+         <?php $_smarty_tpl_vars = $this->_tpl_vars;
+$this->_smarty_include(array('smarty_include_tpl_file' => "../inc/header.html", 'smarty_include_vars' => array()));
+$this->_tpl_vars = $_smarty_tpl_vars;
+unset($_smarty_tpl_vars);
+ ?>
          <!-- Banner -->
          <article class="banner">
             <img class="banner-interna" src="commom/img/banner-atuacao.jpg" alt="Atuação" title="Atuação">
          </article>
-         {include file="../inc/breadcrumb.html"}
+         <?php $_smarty_tpl_vars = $this->_tpl_vars;
+$this->_smarty_include(array('smarty_include_tpl_file' => "../inc/breadcrumb.html", 'smarty_include_vars' => array()));
+$this->_tpl_vars = $_smarty_tpl_vars;
+unset($_smarty_tpl_vars);
+ ?>
          <!-- Banner -->
          <!-- Conteudo -->
          <section class="conteudo-interna">
             <div class="row tamanho-max bloco-conteudo">
-               {include file="../inc/menu-lateral-atuacao.html"}
+               <?php $_smarty_tpl_vars = $this->_tpl_vars;
+$this->_smarty_include(array('smarty_include_tpl_file' => "../inc/menu-lateral-atuacao.html", 'smarty_include_vars' => array()));
+$this->_tpl_vars = $_smarty_tpl_vars;
+unset($_smarty_tpl_vars);
+ ?>
                <div class="col-xs-12 col-sm-9 col-md-9 pd-none bloco-conteudo-interna">
                   <div class="col-xs-12 col-sm-12 col-md-12 pd-none bloco-profissional">
-                     <h1 class="titulo-pag font-normal">{ $arrayIdioma.MN_TITULO_AAJVI }</h1>
+                     <h1 class="titulo-pag font-normal"><?php echo $this->_tpl_vars['arrayIdioma']['MN_TITULO_AAJVI']; ?>
+</h1>
                      <br><br>                  
-                     <p class="txt-interna font-normal">{ $arrayIdioma.MN_TXT_AAJVI }</p>
+                     <p class="txt-interna font-normal"><?php echo $this->_tpl_vars['arrayIdioma']['MN_TXT_AAJVI']; ?>
+</p>
                   </div>
                </div>
             </div>
          </section>
          <!-- Conteudo -->
-         {include file="../inc/footer.html"}
+         <?php $_smarty_tpl_vars = $this->_tpl_vars;
+$this->_smarty_include(array('smarty_include_tpl_file' => "../inc/footer.html", 'smarty_include_vars' => array()));
+$this->_tpl_vars = $_smarty_tpl_vars;
+unset($_smarty_tpl_vars);
+ ?>
       </div>
   </body>
 </html>

@@ -67,6 +67,7 @@
                         <div class="col-xs-12 col-sm-6 col-md-6 pd-none">
                            <h2 class="titulo-menu-lateral font-normal">{ $arrayIdioma.MN_NOT_IND_PUB }</h2>
                            <form method="post" name="formIndiqueNot">
+                              <input type="hidden" name="acao" value="indiqueNot">
                               <input class="font-normal form-compartilhe" type="text" name="indiqueNot" placeholder="{ $arrayIdioma.MN_FORM_EMAIL }...">
                               <input class="btn-ok cinza font-normal" type="submit" value="ok" onclick="return enviarindiqueNot();">
                            </form>

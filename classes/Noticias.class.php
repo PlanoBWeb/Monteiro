@@ -194,10 +194,15 @@ class Noticias
 		{
 			if ($_SESSION['idioma'] == "P") {
 			 	$query .= " AND noticias.titulo LIKE '%".$post['busca']."%' ";
-			 }else{
+			}else{
 			 	$query .= " AND noticias.titulo_I LIKE '".$post['busca']."' ";
-			 }
+			}
 			
+		}
+
+		if($post['tag'])
+		{
+			$query .= " AND noticias.tag like '%".utf8_decode($post['tag'])."%' ";
 		}
 
 		if($post['id'])
@@ -269,11 +274,13 @@ class Noticias
 				$dados[$i]['tituloAbrev'] 	= utf8_encode(limita_caracteres($rows['titulo_I'], 45, false));	
 				$dados[$i]['texto'] 		= utf8_encode($rows['texto_I']);
 				$dados[$i]['textoAbrev']	= utf8_encode(limita_caracteres($rows['texto_I'], 150, false));
+				$dados[$i]['tag']			= utf8_encode($rows['tag_I']);
 			}else{
 				$dados[$i]['titulo'] 		= utf8_encode($rows['titulo']);	
 				$dados[$i]['tituloAbrev'] 	= utf8_encode(limita_caracteres($rows['titulo'], 45, false));	
 				$dados[$i]['texto'] 		= utf8_encode($rows['texto']);
 				$dados[$i]['textoAbrev']	= utf8_encode(limita_caracteres($rows['texto'], 150, false));
+				$dados[$i]['tag']			= utf8_encode($rows['tag']);
 			}
 			$dados[$i]['data'] 				= date("d/m/Y", strtotime($rows['data']));
 			$dados[$i]['titulo_I'] 		= utf8_encode($rows['titulo_I']);
@@ -290,6 +297,66 @@ class Noticias
 		$retorno[1] = $dados;
 		return $retorno;
 	}
+
+	function PesquisarTags($post)
+	{
+		$query = "";
+
+		if ($_SESSION['idioma'] == "I") {
+			$query = "N.tag_I IS NOT NULL AND N.tag_I <> ''";
+		}else{
+			$query = "N.tag IS NOT NULL AND N.tag <> ''";
+		}
+
+		$retorno = array();
+		$sql = "SELECT
+					N.tag,
+					N.tag_I
+				FROM  
+					" . $this->entidade . " N
+				WHERE
+					".$query."
+				ORDER BY
+					N.tag,N.tag_I ASC
+		";
+
+		$result = mysql_query($sql);
+		if (!($result))
+		{
+			$retorno[0] = "1";
+			$retorno[1] = "Erro ao executar a query. Classe = " . $this->entidade . " - Metodo = PesquisarTags";
+			return $retorno;
+		}
+
+		$tags = array();
+		$i = 0;
+		while( $rows = mysql_fetch_array($result) )
+		{
+			//$dados[$i] 					= $rows;
+			if ($_SESSION['idioma'] == "I") {
+				$dados[$i]['tag'] 		= utf8_encode(nl2br(trim($rows['tag_I'])));
+			}else{
+				$dados[$i]['tag'] 		= utf8_encode(nl2br(trim($rows['tag'])));
+			}
+			
+
+			$arTags = explode(",",$dados[$i]['tag']);
+
+			//Varre todas as Tags da respectiva dica
+			for ($j=0; $j < count($arTags) ; $j++) { 
+				
+				if(!in_array(trim($arTags[$j]), $tags))
+					$tags[] = trim($arTags[$j]);
+			}			
+
+			$i++;
+		}
+
+		$retorno[0] = 0;
+		$retorno[1] = $tags;
+		return $retorno;
+	}
+
 
 	function PesquisarMenuLateral($post)
 	{

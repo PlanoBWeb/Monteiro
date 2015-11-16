@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-15 22:50:30
+<?php /* Smarty version 2.6.12, created on 2015-11-16 16:10:40
          compiled from noticias.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -94,6 +94,10 @@ $this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $th
                               <a href="noticias.php?idCat=<?php echo $this->_tpl_vars['idCatPaginacao']; ?>
 &p=<?php echo $this->_tpl_vars['Numpaginas'][1]; ?>
 " class="seta-esquerda fl-left seta-default">&lt;&lt;</a>
+                           <?php elseif ($this->_tpl_vars['tagPaginacao']): ?>
+                              <a href="noticias.php?tag=<?php echo $this->_tpl_vars['tagPaginacao']; ?>
+&p=<?php echo $this->_tpl_vars['Numpaginas'][1]; ?>
+" class="seta-esquerda fl-left seta-default">&lt;&lt;</a>
                            <?php else: ?>
                               <a href="noticias.php?p=<?php echo $this->_tpl_vars['Numpaginas'][1]; ?>
 " class="seta-esquerda fl-left seta-default">&lt;&lt;</a>
@@ -137,6 +141,11 @@ $this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $th
 &p=<?php echo $this->_tpl_vars['Numpaginas'][$this->_sections['i']['index']]; ?>
 " class="link-paginacao <?php if ($this->_tpl_vars['Numpaginas'][$this->_sections['i']['index']] == $_GET['p']): ?> link-paginacao-ativo <?php endif; ?>"><?php echo $this->_tpl_vars['Numpaginas'][$this->_sections['i']['index']]; ?>
 </a>
+                              <?php elseif ($this->_tpl_vars['tagPaginacao']): ?>
+                                 <a href="noticias.php?tag=<?php echo $this->_tpl_vars['tagPaginacao']; ?>
+&p=<?php echo $this->_tpl_vars['Numpaginas'][$this->_sections['i']['index']]; ?>
+" class="link-paginacao <?php if ($this->_tpl_vars['Numpaginas'][$this->_sections['i']['index']] == $_GET['p']): ?> link-paginacao-ativo <?php endif; ?>"><?php echo $this->_tpl_vars['Numpaginas'][$this->_sections['i']['index']]; ?>
+</a>
                               <?php else: ?>
                                  <a href="noticias.php?p=<?php echo $this->_tpl_vars['Numpaginas'][$this->_sections['i']['index']]; ?>
 " class="link-paginacao <?php if ($this->_tpl_vars['Numpaginas'][$this->_sections['i']['index']] == $_GET['p']): ?> link-paginacao-ativo <?php endif; ?>"><?php echo $this->_tpl_vars['Numpaginas'][$this->_sections['i']['index']]; ?>
@@ -153,6 +162,10 @@ $this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $th
                               <a href="noticias.php?idCat=<?php echo $this->_tpl_vars['idCatPaginacao']; ?>
 &p=<?php echo $this->_tpl_vars['ultimaPaginacao']; ?>
 " class="seta-direita fl-left seta-default">&gt;&gt;</a>
+                           <?php elseif ($this->_tpl_vars['tagPaginacao']): ?>
+                              <a href="noticias.php?tag=<?php echo $this->_tpl_vars['tagPaginacao']; ?>
+&p=<?php echo $this->_tpl_vars['ultimaPaginacao']; ?>
+" class="seta-direita fl-left seta-default">&gt;&gt;</a>
                            <?php else: ?>
                               <a href="noticias.php?p=<?php echo $this->_tpl_vars['ultimaPaginacao']; ?>
 " class="seta-direita fl-left seta-default">&gt;&gt;</a>
@@ -162,7 +175,7 @@ $this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $th
                   <?php else: ?>
                      <br><br>
                      <p class="sem-resultado font-bold"><?php echo $this->_tpl_vars['arrayIdioma']['MN_RESULT_BUSCA']; ?>
-"</p>
+</p>
                   <?php endif; ?>
                </div>
                <?php $_smarty_tpl_vars = $this->_tpl_vars;

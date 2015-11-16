@@ -38,7 +38,7 @@
 	if( $retornoPag[0] )
 		die("<script>alert('".$retornoPag[1]."');location.href='index.php';</script>");
 
-	$totalPorPagina = 2;
+	$totalPorPagina = 10;
 	$totalDeProdutos = count($retornoPag[1]);
 	$conta = $totalDeProdutos / $totalPorPagina;
 	$totalPaginas = ceil($conta);
@@ -46,6 +46,7 @@
 	$_GET['p'] = (!$_GET['p'] ? 1 : $_GET['p']);
 	//  Fim Paginação
 
+	$parametro['tag'] = $_GET['tag'];
 	$retorno = $class->Pesquisar($parametro, $totalPorPagina, $_GET['p']);
 	if( $retorno[0] )
 	{
@@ -87,6 +88,18 @@
 	$ultimaPaginacao = end($Numpaginas);
 	$totalNot = count($retorno[1]);
 
+	// Tags
+	$retornoTags = $class->PesquisarTags(null, null, null);
+	if( $retornoTags[0] )
+	{
+		$smarty->assign("mensagem", $retornoTags[1]);
+		$smarty->assign("redir", "noticias.php");
+		$smarty->display("mensagem.html");
+	exit();
+	}
+
+	$smarty->assign("breadcrumb", "Palestras");
+	$smarty->assign("dadosTags", $retornoTags[1]);
 	$smarty->assign("totalPaginas", $totalPaginas);
 	$smarty->assign("ultimaPaginacao", $ultimaPaginacao);
 	$smarty->assign("Numpaginas", $Numpaginas);

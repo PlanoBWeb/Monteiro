@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-15 23:01:34
+<?php /* Smarty version 2.6.12, created on 2015-11-16 17:28:43
          compiled from instrucoes.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -91,6 +91,10 @@ $this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $th
                            <a href="instrucoes.php?idCat=<?php echo $this->_tpl_vars['idCatPaginacao']; ?>
 &p=<?php echo $this->_tpl_vars['Numpaginas'][1]; ?>
 " class="seta-esquerda fl-left seta-default">&lt;&lt;</a>
+                        <?php elseif ($this->_tpl_vars['tagPaginacao']): ?>
+                           <a href="instrucoes.php?tag=<?php echo $this->_tpl_vars['tagPaginacao']; ?>
+&p=<?php echo $this->_tpl_vars['Numpaginas'][1]; ?>
+" class="seta-esquerda fl-left seta-default">&lt;&lt;</a>
                         <?php else: ?>
                            <a href="instrucoes.php?p=<?php echo $this->_tpl_vars['Numpaginas'][1]; ?>
 " class="seta-esquerda fl-left seta-default">&lt;&lt;</a>
@@ -134,6 +138,11 @@ $this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $th
 &p=<?php echo $this->_tpl_vars['Numpaginas'][$this->_sections['i']['index']]; ?>
 " class="link-paginacao <?php if ($this->_tpl_vars['Numpaginas'][$this->_sections['i']['index']] == $_GET['p']): ?> link-paginacao-ativo <?php endif; ?>"><?php echo $this->_tpl_vars['Numpaginas'][$this->_sections['i']['index']]; ?>
 </a>
+                           <?php elseif ($this->_tpl_vars['tagPaginacao']): ?>
+                              <a href="instrucoes.php?tag=<?php echo $this->_tpl_vars['tagPaginacao']; ?>
+&p=<?php echo $this->_tpl_vars['Numpaginas'][$this->_sections['i']['index']]; ?>
+" class="link-paginacao <?php if ($this->_tpl_vars['Numpaginas'][$this->_sections['i']['index']] == $_GET['p']): ?> link-paginacao-ativo <?php endif; ?>"><?php echo $this->_tpl_vars['Numpaginas'][$this->_sections['i']['index']]; ?>
+</a>
                            <?php else: ?>
                               <a href="instrucoes.php?p=<?php echo $this->_tpl_vars['Numpaginas'][$this->_sections['i']['index']]; ?>
 " class="link-paginacao <?php if ($this->_tpl_vars['Numpaginas'][$this->_sections['i']['index']] == $_GET['p']): ?> link-paginacao-ativo <?php endif; ?>"><?php echo $this->_tpl_vars['Numpaginas'][$this->_sections['i']['index']]; ?>
@@ -150,6 +159,10 @@ $this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $th
                            <a href="instrucoes.php?idCat=<?php echo $this->_tpl_vars['idCatPaginacao']; ?>
 &p=<?php echo $this->_tpl_vars['ultimaPaginacao']; ?>
 " class="seta-direita fl-left seta-default">&gt;&gt;</a>
+                        <?php elseif ($this->_tpl_vars['tagPaginacao']): ?>
+                           <a href="instrucoes.php?tag=<?php echo $this->_tpl_vars['tagPaginacao']; ?>
+&p=<?php echo $this->_tpl_vars['ultimaPaginacao']; ?>
+" class="seta-direita fl-left seta-default">&gt;&gt;</a>                        
                         <?php else: ?>
                            <a href="instrucoes.php?p=<?php echo $this->_tpl_vars['ultimaPaginacao']; ?>
 " class="seta-direita fl-left seta-default">&gt;&gt;</a>

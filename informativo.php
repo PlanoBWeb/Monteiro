@@ -63,6 +63,17 @@
 		$randVejaTambem[$i] = $retornoVejaTambem[1][$randVejaTambem[$i]];
 	}
 
+	// Tags
+	$retornoTags = $class->PesquisarTags(null, null, null);
+	if( $retornoTags[0] )
+	{
+		$smarty->assign("mensagem", $retornoTags[1]);
+		$smarty->assign("redir", "noticias.php");
+		$smarty->display("mensagem.html");
+	exit();
+	}
+
+	$smarty->assign("dadosTags", $retornoTags[1]);
 	$smarty->assign("paginaMenuBlogInver", $paginaMenuBlogInver);
 	$smarty->assign("paginaMenuBlog", $paginaMenuBlog);
 	$smarty->assign("dadosVejaTambem", $randVejaTambem);

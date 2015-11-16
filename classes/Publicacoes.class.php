@@ -39,6 +39,11 @@ class Publicacoes
 			$query .= " AND publicacoes.id = '".$post['id']."' ";
 		}
 
+		if($post['tag'])
+		{
+			$query .= " AND publicacoes.tag like '%".utf8_decode($post['tag'])."%' ";
+		}
+
 		if($post['limitVeja'])
 		{
 			$sqlLimit = "LIMIT " . $post['limitVeja'];
@@ -122,6 +127,60 @@ class Publicacoes
 
 		$retorno[0] = 0;
 		$retorno[1] = $dados;
+		return $retorno;
+	}
+
+	function PesquisarTags($post)
+	{
+		$query = "";
+
+		$retorno = array();
+	
+		$sql = "SELECT
+					P.tag,
+					P.tag_I
+				FROM  
+					" . $this->entidade . " P
+				WHERE
+					P.tag IS NOT NULL AND P.tag <> '' ".$query."
+				ORDER BY
+					P.tag,P.tag_I ASC
+		";
+
+		$result = mysql_query($sql);
+		if (!($result))
+		{
+			$retorno[0] = "1";
+			$retorno[1] = "Erro ao executar a query. Classe = " . $this->entidade . " - Metodo = PesquisarTags";
+			return $retorno;
+		}
+
+		$tags = array();
+		$i = 0;
+		while( $rows = mysql_fetch_array($result) )
+		{
+			//$dados[$i] 					= $rows;
+			if ($_SESSION['idioma'] == "I") {
+				$dados[$i]['tag'] 		= utf8_encode(nl2br(trim($rows['tag_I'])));
+			}else{
+				$dados[$i]['tag'] 		= utf8_encode(nl2br(trim($rows['tag'])));
+			}
+			
+
+			$arTags = explode(",",$dados[$i]['tag']);
+
+			//Varre todas as Tags da respectiva dica
+			for ($j=0; $j < count($arTags) ; $j++) { 
+				
+				if(!in_array(trim($arTags[$j]), $tags))
+					$tags[] = trim($arTags[$j]);
+			}			
+
+			$i++;
+		}
+
+		$retorno[0] = 0;
+		$retorno[1] = $tags;
 		return $retorno;
 	}
 

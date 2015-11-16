@@ -48,7 +48,8 @@
 	}
 
 	// Dados do blog menu lateral categoria
-	$parametro['id']	= $_GET['id'];
+	$parametro['id']					= $_GET['id'];
+	$parametroDestaque['tipoNoticia']	= "1";
 	$retornoCatego = $classCatego->Pesquisar($parametro, null, null);
 	if( $retornoCatego[0] )
 	{
@@ -58,6 +59,17 @@
 		exit();
 	}
 
+	// Tags
+	$retornoTags = $class->PesquisarTags(null, null, null);
+	if( $retornoTags[0] )
+	{
+		$smarty->assign("mensagem", $retornoTags[1]);
+		$smarty->assign("redir", "noticias.php");
+		$smarty->display("mensagem.html");
+	exit();
+	}
+
+	$smarty->assign("dadosTags", $retornoTags[1]);
 	$smarty->assign("paginaMenuBlogInver", $paginaMenuBlogInver);
 	$smarty->assign("paginaMenuBlog", $paginaMenuBlog);
 	$smarty->assign("urlCompleta", $urlCompleta);

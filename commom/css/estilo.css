@@ -973,11 +973,16 @@ iframe{
     display: table;
 }
 
+.bloco-tags{
+    display: block;
+}
+
 .tags-lateral{
     color: #464646;
     font-size: 1em;
     text-decoration: none;
-    padding: 5px 7px;     
+    padding: 5px 7px;    
+    line-height: 1.4; 
 }
 
 .img-not-ind{
@@ -1210,7 +1215,8 @@ iframe{
     }
 
     .navbar-default{
-        position: absolute;
+        /*position: absolute;*/
+        position: fixed;
         width: 100%;
         top: 0px;
         margin-top: 0px;

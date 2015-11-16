@@ -26,8 +26,9 @@
 	}
 
 	// Dados do blog menu lateral categoria
-	$parametroDestaque['id']		= $_GET['id'];
-	$parametroDestaque['limitVeja']	= "4";
+	$parametroDestaque['id']			= $_GET['id'];
+	$parametroDestaque['limitVeja']		= "4";
+	$parametroDestaque['tipoNoticia']	= "1";
 	$retornoCatego 		= $classCatego->Pesquisar($parametroDestaque, null, null);
 	if( $retornoCatego[0] )
 	{
@@ -38,7 +39,7 @@
 	}
 
 	//  Paginação
-	$retornoPag = $class->Pesquisar(null, null, null);
+	$retornoPag = $class->Pesquisar($parametro, null, null);
 	if( $retornoPag[0] )
 		die("<script>alert('".$retornoPag[1]."');location.href='index.php';</script>");
 
@@ -49,7 +50,7 @@
 
 	$_GET['p'] = (!$_GET['p'] ? 1 : $_GET['p']);
 	//  Fim Paginação
-
+	$parametro['tag'] = $_GET['tag'];
 	if ($_POST['acao'] == "busca") {
 		$parametro['busca'] = $_POST['search'];
 		$retorno = $class->Pesquisar($parametro, $totalPorPagina, $_GET['p']);
@@ -94,12 +95,25 @@
 	$ultimaPaginacao = end($Numpaginas);
 	$totalNot = count($retorno[1]);
 
+	// Tags
+	$retornoTags = $class->PesquisarTags(null, null, null);
+	if( $retornoTags[0] )
+	{
+		$smarty->assign("mensagem", $retornoTags[1]);
+		$smarty->assign("redir", "noticias.php");
+		$smarty->display("mensagem.html");
+	exit();
+	}
+
+	$smarty->assign("breadcrumb", "Notícias");
+	$smarty->assign("dadosTags", $retornoTags[1]);
 	$smarty->assign("totalPaginas", $totalPaginas);
 	$smarty->assign("ultimaPaginacao", $ultimaPaginacao);
 	$smarty->assign("Numpaginas", $Numpaginas);
 	$smarty->assign("idCatPaginacao", $_GET['idCat']);
 	$smarty->assign("anoPaginacao", $_GET['ano']);
 	$smarty->assign("mesPaginacao", $_GET['mes']);
+	$smarty->assign("tagPaginacao", $_GET['tag']);
 	$smarty->assign("postBusca", $_POST['search']);
 	$smarty->assign("paginaMenuBlogInver", $paginaMenuBlogInver);
 	$smarty->assign("paginaMenuBlog", $paginaMenuBlog);

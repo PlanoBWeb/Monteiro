@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-12 17:39:57
+<?php /* Smarty version 2.6.12, created on 2015-11-16 16:51:51
          compiled from ../inc/menu-lateral-atuacao.html */ ?>
 <div class="col-xs-12 col-sm-3 col-md-3 pd-none bloco-menu-lateral">
    <?php if ($this->_tpl_vars['PgAtiva'] == 'direito publico'): ?>
@@ -45,7 +45,7 @@
 </a></li>
             <li class="linha-menu-lateral <?php if ($this->_tpl_vars['pagina'] == "crimes-infracoes-eleitorais.php"): ?> link-lateral-ativo <?php endif; ?>"><a class="link-menu-lateral font-normal" href="crimes-infracoes-eleitorais.php"><?php echo $this->_tpl_vars['arrayIdioma']['MN_TITULO_CIE']; ?>
 </a></li>
-            <li class="linha-menu-lateral <?php if ($this->_tpl_vars['pagina'] == "cpi.php"): ?> link-lateral-ativo <?php endif; ?>"><a class="link-menu-lateral font-normal" href="cpi.php"><?php echo $this->_tpl_vars['arrayIdioma']['MN_TITULO_RC']; ?>
+            <li class="linha-menu-lateral <?php if ($this->_tpl_vars['pagina'] == "cpi.php"): ?> link-lateral-ativo <?php endif; ?>"><a class="link-menu-lateral font-normal" href="cpi.php"><?php echo $this->_tpl_vars['arrayIdioma']['MN_TITULO_CPI']; ?>
 </a></li>
          </ul>
       </nav>

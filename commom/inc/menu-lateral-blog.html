@@ -26,8 +26,6 @@
          <ul>
             {assign var="nmTipo" value=$nmTipo|default:""}
             {section name=i loop=$dadosMenuBlog}   
-                <!--   <ul> -->
-                  <!-- <li> -->
                   {if $nmTipo <> $dadosMenuBlog[i].dataMes[0]}
                         </ul>
                      </li>
@@ -54,14 +52,15 @@
             {section name=i loop=$dadosCategoria}   
                <li class="linha-menu-lateral"><a class="link-menu-lateral font-normal" href="{$paginaMenuBlogInver}?idCat={$dadosCategoria[i].Idcategoria}">{$dadosCategoria[i].nomeCategoria}</a></li>
             {/section}  
-            <!-- <li class="linha-menu-lateral"><a class="link-menu-lateral font-normal" href=".php">Direito Tributário</a></li>
-            <li class="linha-menu-lateral"><a class="link-menu-lateral font-normal" href=".php">Direito Público</a></li>
-            <li class="linha-menu-lateral"><a class="link-menu-lateral font-normal" href=".php">Direito Empresairial</a></li> -->
          </ul>
       </nav>
    </div>
-   <div class="bloco-links-blog">
+   <div class="bloco-links-blog bloco-tags">
       <h2 class="titulo-menu-lateral font-normal">{ $arrayIdioma.MN_NOT_TAG }</h2>
-      <a class="tags-lateral font-normal" href="">Teste</a><a class="tags-lateral font-normal" href="{$paginaMenuBlogInver}">Teste</a><a class="tags-lateral font-normal" href="">Teste</a>
+      <!-- <a class="tags-lateral font-normal" href="">Teste</a> -->
+      {section name=i loop=$dadosTags}  
+         <a class="tags-lateral font-normal" href="{$paginaMenuBlogInver}?tag={$dadosTags[i]}">{$dadosTags[i]}</a>
+      {/section} 
+      <!-- <a class="tags-lateral font-normal" href="">Teste</a> -->
    </div> 
 </div>

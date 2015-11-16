@@ -1,9 +1,125 @@
 <div class="row bloco-breadcrumb">
     <div class="tamanho-max pd-left-5">
-       <ol class="breadcrumb">
-          <li><a href="index.php">Home</a></li>
-          <li><a href="escritorio.php">Escritório</a></li>
-          <li>Apresentação</li>
-       </ol>
+       	<ol class="breadcrumb">
+       		<!-- Noticia -->
+			{if $pagina == "noticia.php"}
+				<li><a href="index.php">Home</a></li>
+				<li><a href="noticias.php">Notícias</a></li>
+         		<li>{$dados[0].tituloAbrev}</li>
+         	<!-- Noticias -->
+			{elseif $pagina == "noticias.php"}
+				{if $smarty.get.ano}
+					<li><a href="index.php">Home</a></li>
+					<li><a href="noticias.php">Notícias</a></li>
+         			<li>{$dados[0].Mes} - {$dados[0].dataMes[0]}</li>
+         		{elseif $smarty.get.idCat}
+         			<li><a href="index.php">Home</a></li>
+					<li><a href="noticias.php">Notícias</a></li>
+         			<li>{$dados[0].nomeCategoria}</li>
+         		{elseif $smarty.get.tag}
+         			<li><a href="index.php">Home</a></li>
+					<li><a href="noticias.php">Notícias</a></li>
+         			<li>{$smarty.get.tag}</li>
+				{else}
+					<li><a href="index.php">Home</a></li>
+	         		<li>{$breadcrumb}</li>
+				{/if}
+			<!-- Informativo -->
+			{elseif $pagina == "informativo.php"}
+				<li><a href="index.php">Home</a></li>
+				<li><a href="informativos.php">Informativos</a></li>
+         		<li>{$dados[0].tituloAbrev}</li>
+         	<!-- Informativos -->
+         	{elseif $pagina == "informativos.php"}
+				{if $smarty.get.ano}
+					<li><a href="index.php">Home</a></li>
+					<li><a href="informativos.php">Informativos</a></li>
+         			<li>{$dados[0].Mes} - {$dados[0].dataMes[0]}</li>
+         		{elseif $smarty.get.idCat}
+         			<li><a href="index.php">Home</a></li>
+					<li><a href="informativos.php">Informativos</a></li>
+         			<li>{$dados[0].nomeCategoria}</li>
+         		{elseif $smarty.get.tag}
+         			<li><a href="index.php">Home</a></li>
+					<li><a href="informativos.php">Informativos</a></li>
+         			<li>{$smarty.get.tag}</li>
+				{else}
+					<li><a href="index.php">Home</a></li>
+	         		<li>{$breadcrumb}</li>
+				{/if}
+			<!-- Artigo -->
+			{elseif $pagina == "artigo.php"}
+				<li><a href="index.php">Home</a></li>
+				<li><a href="artigos.php">Artigos</a></li>
+         		<li>{$dados[0].tituloAbrev}</li>
+         	<!-- Artigos -->
+         	{elseif $pagina == "artigos.php"}
+				{if $smarty.get.ano}
+					<li><a href="index.php">Home</a></li>
+					<li><a href="artigos.php">Artigos</a></li>
+         			<li>{$dados[0].Mes} - {$dados[0].dataMes[0]}</li>
+         		{elseif $smarty.get.idCat}
+         			<li><a href="index.php">Home</a></li>
+					<li><a href="artigos.php">Artigos</a></li>
+         			<li>{$dados[0].nomeCategoria}</li>
+         		{elseif $smarty.get.tag}
+         			<li><a href="index.php">Home</a></li>
+					<li><a href="artigos.php">Artigos</a></li>
+         			<li>{$smarty.get.tag}</li>
+				{else}
+					<li><a href="index.php">Home</a></li>
+	         		<li>{$breadcrumb}</li>
+				{/if}
+			<!-- Instrução -->
+			{elseif $pagina == "instrucao.php"}
+				<li><a href="index.php">Home</a></li>
+				<li><a href="instrucoes.php">Instruções</a></li>
+         		<li>{$dados[0].tituloAbrev}</li>
+         	<!-- Instruções -->
+         	{elseif $pagina == "instrucoes.php"}
+				{if $smarty.get.ano}
+					<li><a href="index.php">Home</a></li>
+					<li><a href="instrucoes.php">Instruções</a></li>
+         			<li>{$dados[0].Mes} - {$dados[0].dataMes[0]}</li>
+         		{elseif $smarty.get.idCat}
+         			<li><a href="index.php">Home</a></li>
+					<li><a href="instrucoes.php">Instruções</a></li>
+         			<li>{$dados[0].nomeCategoria}</li>
+         		{elseif $smarty.get.tag}
+         			<li><a href="index.php">Home</a></li>
+					<li><a href="instrucoes.php">Instruções</a></li>
+         			<li>{$smarty.get.tag}</li>
+         		{else}
+					<li><a href="index.php">Home</a></li>
+	         		<li>{$breadcrumb}</li>
+         		{/if}
+         	<!-- Palestra -->
+     		{elseif $pagina == "palestra.php"}
+				<li><a href="index.php">Home</a></li>
+				<li><a href="palestras.php">Palestras</a></li>
+         		<li>{$dados[0].tituloAbrev}</li>
+         	<!-- Palestras -->
+         	{elseif $pagina == "palestras.php"}
+				{if $smarty.get.ano}
+					<li><a href="index.php">Home</a></li>
+					<li><a href="palestras.php">Palestras</a></li>
+         			<li>{$dados[0].Mes} - {$dados[0].dataMes[0]}</li>
+         		{elseif $smarty.get.idCat}
+         			<li><a href="index.php">Home</a></li>
+					<li><a href="palestras.php">Palestras</a></li>
+         			<li>{$dados[0].nomeCategoria}</li>
+         		{elseif $smarty.get.tag}
+         			<li><a href="index.php">Home</a></li>
+					<li><a href="palestras.php">Palestras</a></li>
+         			<li>{$smarty.get.tag}</li>
+				{else}
+					<li><a href="index.php">Home</a></li>
+	         		<li>{$breadcrumb}</li>
+				{/if}
+			{else}
+				<li><a href="index.php">Home</a></li>
+         		<li>{$breadcrumb}</li>
+			{/if}
+       	</ol>
     </div>
  </div>

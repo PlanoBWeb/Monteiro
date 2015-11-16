@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-14 20:08:35
+<?php /* Smarty version 2.6.12, created on 2015-11-16 16:16:24
          compiled from ../inc/footer.html */ ?>
 <article class="compartilhe-monteiro">
 	<div class="tamanho-max">
@@ -29,10 +29,10 @@
 				<a href="https://www.facebook.com/Marcos-Monteiro-Sociedade-de-Advogados-798300076864104/" target="_blank">
 					<img src="commom/img/face.png" alt"Facebook" title="Facebook">		
 				</a>
-				<a href="" target="_blank">
+				<a href="https://www.linkedin.com/company/10305250?trk=tyah&trkInfo=clickedVertical%3Acompany%2CclickedEntityId%3A10305250%2Cidx%3A2-1-7%2CtarId%3A1447688521985%2Ctas%3Amarcos%20monteiro%20soc" target="_blank">
 					<img src="commom/img/likedin.png" alt"Likedin" title="Likedin">		
 				</a>
-				<a href="" target="_blank">
+				<a href="https://www.youtube.com/channel/UCsSSUlcc-jSWzuXz8HakFJw" target="_blank">
 					<img src="commom/img/youtube.png" alt"Youtube" title="Youtube">		
 				</a>
 			</div>

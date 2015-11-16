@@ -1,18 +1,14 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-15 20:26:23
+<?php /* Smarty version 2.6.12, created on 2015-11-16 18:06:58
          compiled from ../inc/header.html */ ?>
 <div id="fb-root"></div>
 <?php echo '
-   <script>
-      (function(d, s, id) {
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) return;
-         js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.4&appId=1455524614773861";
-         fjs.parentNode.insertBefore(js, fjs);
-      }(document, 
-         \'script\', \'facebook-jssdk\')
-      );
-   </script>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.5&appId=1455524614773861";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, \'script\', \'facebook-jssdk\'));</script>
 '; ?>
 
 <header class="header">
@@ -154,7 +150,7 @@
                <li class="linha-topo"><a class="link-linha-topo font-normal" href="localizacao.php"><?php echo $this->_tpl_vars['arrayIdioma']['MN_LOCALIZACAO']; ?>
 </a></li>
                <li class="linha-topo"><a class="link-linha-topo font-normal pd-right-none icon-redes" href="https://www.facebook.com/Marcos-Monteiro-Sociedade-de-Advogados-798300076864104/timeline/" target="_blank"><img src="commom/img/icon-face.png" alt="Facebook" title="Facebook"></a></li>
-               <li class="linha-topo"><a class="link-linha-topo font-normal pd-left-none icon-redes" href="#"><img src="commom/img/icon-in.png" alt="Likedin" title="Likedin" target="_blank"></a></li>
+               <li class="linha-topo"><a class="link-linha-topo font-normal pd-left-none icon-redes" href="https://www.linkedin.com/company/10305250?trk=tyah&trkInfo=clickedVertical%3Acompany%2CclickedEntityId%3A10305250%2Cidx%3A2-1-7%2CtarId%3A1447688521985%2Ctas%3Amarcos%20monteiro%20soc" target="_blank"><img src="commom/img/icon-in.png" alt="Likedin" title="Likedin" target="_blank"></a></li>
             </ul>
          </div>
       </div>

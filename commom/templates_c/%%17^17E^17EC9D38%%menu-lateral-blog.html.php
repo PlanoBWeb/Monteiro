@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-15 19:52:10
+<?php /* Smarty version 2.6.12, created on 2015-11-16 17:51:42
          compiled from ../inc/menu-lateral-blog.html */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'default', '../inc/menu-lateral-blog.html', 27, false),)), $this); ?>
@@ -95,8 +95,6 @@ $this->_sections['i']['index_next'] = $this->_sections['i']['index'] + $this->_s
 $this->_sections['i']['first']      = ($this->_sections['i']['iteration'] == 1);
 $this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $this->_sections['i']['total']);
 ?>   
-                <!--   <ul> -->
-                  <!-- <li> -->
                   <?php if ($this->_tpl_vars['nmTipo'] <> $this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['dataMes'][0]): ?>
                         </ul>
                      </li>
@@ -155,16 +153,42 @@ $this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $th
 "><?php echo $this->_tpl_vars['dadosCategoria'][$this->_sections['i']['index']]['nomeCategoria']; ?>
 </a></li>
             <?php endfor; endif; ?>  
-            <!-- <li class="linha-menu-lateral"><a class="link-menu-lateral font-normal" href=".php">Direito Tributário</a></li>
-            <li class="linha-menu-lateral"><a class="link-menu-lateral font-normal" href=".php">Direito Público</a></li>
-            <li class="linha-menu-lateral"><a class="link-menu-lateral font-normal" href=".php">Direito Empresairial</a></li> -->
          </ul>
       </nav>
    </div>
-   <div class="bloco-links-blog">
+   <div class="bloco-links-blog bloco-tags">
       <h2 class="titulo-menu-lateral font-normal"><?php echo $this->_tpl_vars['arrayIdioma']['MN_NOT_TAG']; ?>
 </h2>
-      <a class="tags-lateral font-normal" href="">Teste</a><a class="tags-lateral font-normal" href="<?php echo $this->_tpl_vars['paginaMenuBlogInver']; ?>
-">Teste</a><a class="tags-lateral font-normal" href="">Teste</a>
+      <!-- <a class="tags-lateral font-normal" href="">Teste</a> -->
+      <?php unset($this->_sections['i']);
+$this->_sections['i']['name'] = 'i';
+$this->_sections['i']['loop'] = is_array($_loop=$this->_tpl_vars['dadosTags']) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
+$this->_sections['i']['show'] = true;
+$this->_sections['i']['max'] = $this->_sections['i']['loop'];
+$this->_sections['i']['step'] = 1;
+$this->_sections['i']['start'] = $this->_sections['i']['step'] > 0 ? 0 : $this->_sections['i']['loop']-1;
+if ($this->_sections['i']['show']) {
+    $this->_sections['i']['total'] = $this->_sections['i']['loop'];
+    if ($this->_sections['i']['total'] == 0)
+        $this->_sections['i']['show'] = false;
+} else
+    $this->_sections['i']['total'] = 0;
+if ($this->_sections['i']['show']):
+
+            for ($this->_sections['i']['index'] = $this->_sections['i']['start'], $this->_sections['i']['iteration'] = 1;
+                 $this->_sections['i']['iteration'] <= $this->_sections['i']['total'];
+                 $this->_sections['i']['index'] += $this->_sections['i']['step'], $this->_sections['i']['iteration']++):
+$this->_sections['i']['rownum'] = $this->_sections['i']['iteration'];
+$this->_sections['i']['index_prev'] = $this->_sections['i']['index'] - $this->_sections['i']['step'];
+$this->_sections['i']['index_next'] = $this->_sections['i']['index'] + $this->_sections['i']['step'];
+$this->_sections['i']['first']      = ($this->_sections['i']['iteration'] == 1);
+$this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $this->_sections['i']['total']);
+?>  
+         <a class="tags-lateral font-normal" href="<?php echo $this->_tpl_vars['paginaMenuBlogInver']; ?>
+?tag=<?php echo $this->_tpl_vars['dadosTags'][$this->_sections['i']['index']]; ?>
+"><?php echo $this->_tpl_vars['dadosTags'][$this->_sections['i']['index']]; ?>
+</a>
+      <?php endfor; endif; ?> 
+      <!-- <a class="tags-lateral font-normal" href="">Teste</a> -->
    </div> 
 </div>

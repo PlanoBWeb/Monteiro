@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-14 20:02:10
+<?php /* Smarty version 2.6.12, created on 2015-11-16 18:03:28
          compiled from noticia.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -79,7 +79,7 @@ unset($_smarty_tpl_vars);
                            <h2 class="titulo-menu-lateral font-normal"><?php echo $this->_tpl_vars['arrayIdioma']['MN_NOT_COMP']; ?>
 </h2>
                            <div class="col-xs-12 col-sm-3 col-md-3">
-                              Facebook 
+                              <div class="fb-like"></div> 
                            </div>
                            <div class="col-xs-12 col-sm-3 col-md-3 pd-none">
                               <a href="http://twitter.com/share" class="twitter-share-button" data-url="<?php echo $this->_tpl_vars['urlCompleta']; ?>

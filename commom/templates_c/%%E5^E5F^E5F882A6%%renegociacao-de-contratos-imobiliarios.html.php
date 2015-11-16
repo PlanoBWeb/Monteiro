@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-12 17:29:15
+<?php /* Smarty version 2.6.12, created on 2015-11-16 16:57:10
          compiled from renegociacao-de-contratos-imobiliarios.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -46,10 +46,10 @@ unset($_smarty_tpl_vars);
  ?>
                <div class="col-xs-12 col-sm-9 col-md-9 pd-none bloco-conteudo-interna">
                   <div class="col-xs-12 col-sm-12 col-md-12 pd-none bloco-profissional">
-                     <h1 class="titulo-pag font-normal"><?php echo $this->_tpl_vars['arrayIdioma']['MN_TITULO_CJE']; ?>
+                     <h1 class="titulo-pag font-normal"><?php echo $this->_tpl_vars['arrayIdioma']['MN_TITULO_RCI']; ?>
 </h1>
                      <br><br>                  
-                     <p class="txt-interna font-normal"><?php echo $this->_tpl_vars['arrayIdioma']['MN_TXT_CJE']; ?>
+                     <p class="txt-interna font-normal"><?php echo $this->_tpl_vars['arrayIdioma']['MN_TXT_RCI']; ?>
 </p>
                   </div>
                </div>

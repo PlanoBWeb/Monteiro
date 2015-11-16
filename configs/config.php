@@ -37,11 +37,11 @@ if( $_SERVER['SERVER_NAME'] == 'planobweb' || $_SERVER['SERVER_NAME'] == '192.16
 else
 {
 	/* DADOS Online  */
-	define("db_host", '179.188.16.43');
-	define("db_user", 'planobweb212');
-	define("db_pass", 'teste123');
-	define("db_base", 'planobweb212');
-	//define("PATH_SERVIDOR","E:/Home/planobweb2/Web/extranet/");
+	define("db_host", '179.188.16.95');
+	define("db_user", 'monteiroemassa');
+	define("db_pass", 'mo9428ro');
+	define("db_base", 'monteiroemassa');
+	define("PATH_SERVIDOR","E:/Home/monteiroemassarana/Web/Homologacao/");
 }
 
 //Acesso ao MyAdmin
