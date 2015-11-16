@@ -40,7 +40,7 @@ else
 	define("db_host", '179.188.16.43');
 	define("db_user", 'planobweb212');
 	define("db_pass", 'teste123');
-	define("db_base", 'planobweb212');http://dev:82/Monteiro/index.php
+	define("db_base", 'planobweb212');
 	//define("PATH_SERVIDOR","E:/Home/planobweb2/Web/extranet/");
 }
 

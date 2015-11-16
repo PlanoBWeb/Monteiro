@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-13 12:30:34
+<?php /* Smarty version 2.6.12, created on 2015-11-16 13:05:47
          compiled from admin/topo.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -22,7 +22,7 @@
         <div class="container-fluid">
             <div class="encapsula-topo-logo">
                 <div class="topo-logo col-sm-12 col-md-4 col-lg-4">
-                    <a class="navbar-brand" href="index.php"><img src="commom/img/logo.png" alt="logo PlanoBWeb" title="logo PlanoBWeb"></a>
+                    <a class="navbar-brand" href="adm_index.php"><img src="commom/img/logo.png" alt="logo PlanoBWeb" title="logo PlanoBWeb"></a>
                 </div>
                 <div class="col-sm-12 col-md-4 col-lg-4">
                     <p class="hello-user">Olá <?php echo $this->_tpl_vars['nome']; ?>
@@ -51,6 +51,15 @@
                                 </div>
                             </li>
 
+                            <li class="nav-item active dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Publicações</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="adm_publicacoes.php?acao=pesquisar">Consultar</a>
+                                    <a class="dropdown-item" href="adm_publicacoes.php">Cadastrar</a>
+                                </div>
+                            </li>
+
+
                             <!-- <li class="nav-item active dropdown">
                                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Destaques</a>
                                 <div class="dropdown-menu">
@@ -76,4 +85,4 @@
                 </div>
             </nav>
         </div>
-    </header>
+    </header>

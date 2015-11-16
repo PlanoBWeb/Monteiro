@@ -58,6 +58,7 @@
 
 	// Dados do blog menu lateral	
 	$parametroBlog['destaque']	= "1";
+	$parametroBlog['limitVeja']	= "4";
 	$retornoMenuBlog = $class->Pesquisar($parametroBlog, null, null);
 	if( $retornoMenuBlog[0] )
 	{
@@ -69,7 +70,6 @@
 
 	// Dados do blog menu lateral categoria
 	$parametroDestaque['id']		= $_GET['id'];
-	$parametroDestaque['limitVeja']	= "4";
 	$retornoCatego 		= $classCatego->Pesquisar($parametroDestaque, null, null);
 	if( $retornoCatego[0] )
 	{

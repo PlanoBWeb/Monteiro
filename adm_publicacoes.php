@@ -1,12 +1,12 @@
 <?php
 
 include_once "adm_login.php";
-include_once "classes/Noticias.class.php";
-$class = new Noticias();
+include_once "classes/Publicacoes.class.php";
+$class = new Publicacoes();
 include_once "classes/Categoria.class.php";
 $classCategoria = new Categoria();
 
-$pagina = "noticias";
+$pagina = "publicacoes";
 
 $smarty->assign("titulo", utf8_encode(TITULO));
 $smarty->assign("nome", $_SESSION['nome']);
@@ -85,6 +85,7 @@ elseif( $_GET['acao'] == "editar" )
 	$parametro['id'] 		= $_GET['id'];
 	$parametro['categoria'] = "1";
 	$retorno = $class->Pesquisar($parametro, null, null);
+
 	
 	if( $retorno[0] )
 	{

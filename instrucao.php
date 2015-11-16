@@ -41,12 +41,9 @@
 	}
 	$totalPub = count($retorno[1]);
 
-	// echo "<pre>";
-	// print_r($retorno);
-	// die();
-
 	// Dados do blog menu lateral	
 	$parametroBlog['destaque']	= "1";
+	$parametroBlog['limitVeja']	= "4";
 	$retornoMenuBlog = $class->Pesquisar($parametroBlog, null, null);
 	if( $retornoMenuBlog[0] )
 	{
@@ -68,7 +65,7 @@
 	}	
 
 	$parametroVejaTambem['destaque']	= "1";
-	$parametroVejaTambem['limitVeja']	= "4";
+	$parametroVejaTambem['limitVeja']	= "2";
 	$retornoVejaTambem = $class->Pesquisar($parametroVejaTambem, null, null);
 	if( $retornoVejaTambem[0] )
 	{

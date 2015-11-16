@@ -47,10 +47,6 @@
 	exit();
 	}
 
-	// echo "<pre>";
-	// print_r($retornoMenuBlog);
-	// die();
-
 	// Dados do blog menu lateral categoria
 	$parametro['id']	= $_GET['id'];
 	$retornoCatego = $classCatego->Pesquisar($parametro, null, null);

@@ -67,4 +67,42 @@ class Categoria
 		return $retorno;
 	}
 
+	function PesquisarCategorias($post)
+	{
+		$query = "";
+
+		$retorno = array();
+		$sql = "SELECT 
+					*
+				FROM
+					" . $this->entidade . " 
+				WHERE
+					1 = 1 
+				ORDER BY
+					nomeCategoria DESC,
+					nomeCategoria_I DESC
+			";
+			
+		$result = mysql_query($sql);
+		if (!($result))
+		{
+			$retorno[0] = "1";
+			$retorno[1] = "Erro ao executar a query. Classe = " . $this->entidade . " - Metodo = Pesquisar";
+			return $retorno;
+		}
+		
+		$i = 0;
+		while( $rows = mysql_fetch_array($result) )
+		{
+			$dados[$i] 					= $rows;
+			$dados[$i]['nomeCategoria'] 		= utf8_encode($rows['nomeCategoria']);	
+		
+			$i++;
+		}
+
+		$retorno[0] = 0;
+		$retorno[1] = $dados;
+		return $retorno;
+	}
+
 }

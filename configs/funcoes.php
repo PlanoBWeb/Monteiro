@@ -96,4 +96,18 @@
 		return $urlCompleta;
 	}
 
+	function tipoPublicacao($idTipo){
+		if ($idTipo == "1") {
+			$retornoTipo = "Informativos";
+		}elseif ($idTipo == "2") {
+			$retornoTipo = "Artigos";
+		}elseif ($idTipo == "3") {
+			$retornoTipo = "Instruções";
+		}elseif ($idTipo == "4") {
+			$retornoTipo = "Palestras";
+		}
+
+		return $retornoTipo;
+	}
+
 ?>

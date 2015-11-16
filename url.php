@@ -1,7 +1,7 @@
 <?php 
 
-	// $pastaProjeto	= "clientes/MonteiroEMassarana/Web/";
-	$pastaProjeto	= "/Monteiro/";
+	$pastaProjeto	= "clientes/MonteiroEMassarana/Web/";
+	//$pastaProjeto	= "/Monteiro/";
 	$urlCompleta 	= $_SERVER['REQUEST_URI'];
 	$posInicio		= strpos($urlCompleta, $pastaProjeto);
 	$priimeiraEtapa	= substr($urlCompleta, ($posInicio+strlen($pastaProjeto)));

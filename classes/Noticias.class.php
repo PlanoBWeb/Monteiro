@@ -65,6 +65,7 @@ class Noticias
 		";
 
 		$result = mysql_query($sql);
+		$ultimoId = mysql_insert_id();
 		if (!($result))
 		{
 			$retorno[0] = "1";
@@ -74,6 +75,7 @@ class Noticias
 
 		$retorno[0] = 0;
 		$retorno[1] = "Registro inserido com sucesso.";
+		$retorno[2] = $ultimoId;
 		return $retorno;
 	}
 	
@@ -84,18 +86,16 @@ class Noticias
 		//Checa se será autializado a imagem
 		if ($file['name'] != "")
 		{
-			if( $file["name"] != "" )
+	
+			//Checa se existe a imagem
+			if( file_exists($file["name"]) )
 			{
-				//Checa se existe a imagem
-				if( file_exists($file["name"]) )
+				//Exclui a antiga
+				if(!unlink( $this->pathProjeto.$file["name"] ))
 				{
-					//Exclui a antiga
-					if(!unlink( $this->pathProjeto.$file["name"] ))
-					{
-						$retorno[0] = "1";
-						$retorno[1] = "Não foi possíel excluir a imagem antiga!";
-						return $retorno;
-					}
+					$retorno[0] = "1";
+					$retorno[1] = "Não foi possíel excluir a imagem antiga!";
+					return $retorno;
 				}
 			}
 			
@@ -118,34 +118,32 @@ class Noticias
 		//Checa se será autializado a imagem
 		if ($file2['name'] != "")
 		{
-			if( $file2['name'] != "" )
+			//Checa se existe a imagem
+			if( file_exists($file2['name']) )
 			{
-				//Checa se existe a imagem
-				if( file_exists($file2['name']) )
+				//Exclui a antiga
+				if(!unlink( $this->pathProjeto.$file2['name'] ))
 				{
-					//Exclui a antiga
-					if(!unlink( $this->pathProjeto.$file2['name'] ))
-					{
-						$retorno[0] = "1";
-						$retorno[1] = "Não foi possíel excluir a imagem antiga 2!";
-						return $retorno;
-					}
+					$retorno[0] = "1";
+					$retorno[1] = "Não foi possíel excluir a imagem antiga 2!";
+					return $retorno;
 				}
 			}
+	
 			
 			//Grava a Imagem
-			$retornoManual = $this->classImagem->gravaImagem($file2, $post['extencoeValidas'], "upload/noticias/", $copy);
-			if( $retornoManual[0] )
+			$retornoClassImagem2 = $this->classImagem->gravaImagem($file2, $post['extencoeValidas'], "upload/noticias/", $copy);
+			if( $retornoClassImagem2[0] )
 			{
 				$retorno[0] = "1";
-				$retorno[1] = $retornoManual[1];
+				$retorno[1] = $retornoClassImagem2[1];
 				return $retorno;
 			}
 		}
 		else
 		{
 			//Mantém a imagem antiga
-			$retornoManual[1] = $post['caminhoImagemThumb'];
+			$retornoClassImagem2[1] = $post['caminhoImagemThumb'];
 		}
 
 		$sql = "
@@ -278,10 +276,13 @@ class Noticias
 				$dados[$i]['textoAbrev']	= utf8_encode(limita_caracteres($rows['texto'], 150, false));
 			}
 			$dados[$i]['data'] 				= date("d/m/Y", strtotime($rows['data']));
+			$dados[$i]['titulo_I'] 		= utf8_encode($rows['titulo_I']);
+			$dados[$i]['texto_I'] 			= utf8_encode($rows['texto_I']);
 			$dados[$i]['Mes']				= Mes(explode("-", ($rows['data'])));
 			$dados[$i]['nomeCategoria'] 	= utf8_encode($rows['nomeCategoria']);
-			//$dados[$i]['MesAbreviado']	= limita_caracteres($dados[$i]['Mes'], 9, false);
+			$dados[$i]['por']			 	= utf8_encode($rows['por']);
 			$dados[$i]['dataMes'] 			= explode("-", ($rows['data']));
+			$dados[$i]['data_formatada']	= date('Y-m-d', strtotime($rows['data']));
 			$i++;
 		}
 
@@ -331,92 +332,6 @@ class Noticias
 		return $retorno;
 	}
 
-	// function PesquisarMenuLateral($post)
-	// {
-
-	// 	$query = "";
-
-	// 	$retorno = array();
-
-	// 	$sql = "SELECT 
-	// 				data
-	// 			FROM
-	// 				" . $this->entidade . " 
-	// 			WHERE
-	// 				1 = 1 ".$query."
-	// 			GROUP BY
-	// 				MONTH(data)
-	// 			ORDER BY
-	// 				id DESC
-	// 		";
-
-	// 	$result = mysql_query($sql);
-	// 	if (!($result))
-	// 	{
-	// 		$retorno[0] = "1";
-	// 		$retorno[1] = "Erro ao executar a query. Classe = " . $this->entidade . " - Metodo = Pesquisar";
-	// 		return $retorno;
-	// 	}
-		
-	// 	$i = 0;
-	// 	while( $rows = mysql_fetch_array($result) )
-	// 	{
-	// 		$dados[$i]['data'] 			= date("d/m/Y", strtotime($rows['data']));
-	// 		$dados[$i]['Mes']			= Mes(explode("-", ($rows['data'])));
-	// 		$dados[$i]['dataMes'] 		= explode("-", ($rows['data']));
-	// 		$i++;
-	// 	}
-		
-	// 	$retorno[0] = 0;
-	// 	$retorno[1] = $dados;
-	// 	return $retorno;
-	// }
-
-
-
-	function Pesquisar_Produto_Categoria($post)
-	{
-		$query = "";
-
-		if($post['idProduto'])
-		{
-			$query .= " AND PC.idProduto = '".$post['idProduto']."' ";
-		}
-		
-		$retorno = array();
-	
-		$sql = "SELECT
-					*
-				FROM  
-					produtocategoria PC
-				INNER JOIN categoria C
-					ON PC.idCategoria = C.id
-				WHERE
-					1 = 1 ".$query."
-				ORDER BY
-					C.id DESC
-		";
-		$result = mysql_query($sql);
-		if (!($result))
-		{
-			$retorno[0] = "1";
-			$retorno[1] = "Erro ao executar a query. Classe = " . $this->entidade . " - Metodo = Pesquisar";
-			return $retorno;
-		}
-		
-		$i = 0;
-		while( $rows = mysql_fetch_array($result) )
-		{
-			$dados[$i] 					= $rows;
-			$dados[$i]['titulo'] 		= utf8_encode($rows['titulo']);
-
-			$i++;
-		}
-		
-		$retorno[0] = 0;
-		$retorno[1] = $dados;
-		return $retorno;
-	}
 
 	function Exclui_Categoria_Noticia($id)
 	{
@@ -465,7 +380,7 @@ class Noticias
 			$retorno[1] = "Não foi possível localizar a imagem para excluir 2!";
 			return $retorno;
 		}
-		$imgExclusao2 = $dados[1][0]["manual"];
+		$imgExclusao2 = $dados[1][0]["caminhoImagemThumb"];
 		
 		$sql = "
 			DELETE FROM	
@@ -503,16 +418,6 @@ class Noticias
 			}
 		}
 
-		//Exclui o vínculo com o modelo
-		$retornoExclusao = $this->Exclui_categoria_produto($id);
-		if( $retornoExclusao[0] )
-		{
-			$retorno[0] = "1";
-			$retorno[1] = "Não foi possível excluir o vínculo com a categoria!";
-			return $retorno;
-		}
-
-		
 		$retorno[0] = 0;
 		$retorno[1] = "Exclusão feita com sucesso!";
 		return $retorno;

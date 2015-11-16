@@ -81,10 +81,6 @@ class Publicacoes
 					data DESC
 			".$sqlLimit." ";
 
-			// echo "<pre>";
-			// print_r($sql);
-			// die();
-
 		$result = mysql_query($sql);
 		if (!($result))
 		{
@@ -98,28 +94,134 @@ class Publicacoes
 		{
 			$dados[$i] 					= $rows;
 			if ($post['idioma'] == "I") {
-				$dados[$i]['titulo'] 		= utf8_encode($rows['titulo_I']);
-				$dados[$i]['tituloAbrev'] 	= utf8_encode(limita_caracteres($rows['titulo_I'], 45, false));	
-				$dados[$i]['texto'] 		= utf8_encode($rows['texto_I']);
-				$dados[$i]['textoAbrev']	= utf8_encode(limita_caracteres($rows['texto_I'], 150, false));
-				$dados[$i]['numPubclicacao'] 		= utf8_encode($rows['numPubclicacao_I']);
+				$dados[$i]['titulo'] 			= utf8_encode($rows['titulo_I']);
+				$dados[$i]['tituloAbrev'] 		= utf8_encode(limita_caracteres($rows['titulo_I'], 45, false));	
+				$dados[$i]['texto'] 			= utf8_encode($rows['texto_I']);
+				$dados[$i]['textoAbrev']		= utf8_encode(limita_caracteres($rows['texto_I'], 150, false));
+				$dados[$i]['numPubclicacao'] 	= utf8_encode($rows['numPubclicacao_I']);
 			}else{
-				$dados[$i]['titulo'] 		= utf8_encode($rows['titulo']);	
-				$dados[$i]['tituloAbrev'] 	= utf8_encode(limita_caracteres($rows['titulo'], 45, false));	
-				$dados[$i]['texto'] 		= utf8_encode($rows['texto']);
-				$dados[$i]['textoAbrev']	= utf8_encode(limita_caracteres($rows['texto'], 150, false));
-				$dados[$i]['numPubclicacao'] 		= utf8_encode($rows['numPubclicacao']);
+				$dados[$i]['titulo'] 			= utf8_encode($rows['titulo']);	
+				$dados[$i]['tituloAbrev'] 		= utf8_encode(limita_caracteres($rows['titulo'], 45, false));	
+				$dados[$i]['texto'] 			= utf8_encode($rows['texto']);
+				$dados[$i]['textoAbrev']		= utf8_encode(limita_caracteres($rows['texto'], 150, false));
+				$dados[$i]['numPubclicacao_I'] 	= utf8_encode($rows['numPubclicacao_I']);
+				$dados[$i]['numPubclicacao'] 	= utf8_encode($rows['numPubclicacao']);
 			}
-			$dados[$i]['data'] 			= date("d/m/Y", strtotime($rows['data']));
-			$dados[$i]['Mes']			= Mes(explode("-", ($rows['data'])));
-			//$dados[$i]['MesAbreviado']	= limita_caracteres($dados[$i]['Mes'], 9, false);
-			$dados[$i]['dataMes'] 		= explode("-", ($rows['data']));
+
+			$dados[$i]['data'] 				= date("d/m/Y", strtotime($rows['data']));
+			$dados[$i]['Mes']				= Mes(explode("-", ($rows['data'])));
+			$dados[$i]['dataMes'] 			= explode("-", ($rows['data']));
 			$dados[$i]['nomeCategoria'] 	= utf8_encode($rows['nomeCategoria']);
+			$dados[$i]['titulo_I'] 			= utf8_encode($rows['titulo_I']);
+			$dados[$i]['por']			 	= utf8_encode($rows['por']);
+			$dados[$i]['texto_I'] 			= utf8_encode($rows['texto_I']);
+			$dados[$i]['tipo'] 				= tipoPublicacao($rows['idTipo']);
+			$dados[$i]['data_formatada']	= date('Y-m-d', strtotime($rows['data']));
 			$i++;
 		}
 
 		$retorno[0] = 0;
 		$retorno[1] = $dados;
+		return $retorno;
+	}
+
+	function Grava($post, $file, $file2)
+	{
+
+		$retorno = array();
+	
+		$sql = "
+			INSERT INTO
+				".$this->entidade."
+			SET
+				titulo				= '". utf8_decode($post['titulo']) ."',
+				titulo_I			= '". utf8_decode($post['titulo_I']) ."',
+				numPubclicacao		= '". utf8_decode($post['numPub']) ."',
+				numPubclicacao_I	= '". utf8_decode($post['numPub_I']) ."',
+				por					= '". utf8_decode($post['por']) ."',
+				data				= '". $post['data'] ."',
+				texto				= '". addslashes(utf8_decode($post['texto'])) ."',
+				texto_I				= '". addslashes(utf8_decode($post['texto_I'])) ."',
+				tag					= '". utf8_decode(str_replace("'","''", $post['tag']))."',
+				tag_I				= '". utf8_decode(str_replace("'","''", $post['tag_I']))."',
+				Idcategoria			= '". $post['categoria'] ."',
+				idTipo				= '". $post['tipo'] ."'
+		";
+
+		$result = mysql_query($sql);
+		$ultimoId = mysql_insert_id();
+		if (!($result))
+		{
+			$retorno[0] = "1";
+			$retorno[1] = "Erro ao executar a query. Classe = ".$this->entidade." - Metodo = grava";
+			return $retorno;
+		}
+
+		$retorno[0] = 0;
+		$retorno[1] = "Registro inserido com sucesso.";
+		$retorno[2] = $ultimoId;
+		return $retorno;
+	}
+
+	function Altera($post, $file, $file2)
+	{
+
+		$retorno = array();
+	
+		$sql = "
+			UPDATE
+				".$this->entidade."
+			SET
+				titulo				= '". utf8_decode($post['titulo']) ."',
+				titulo_I			= '". utf8_decode($post['titulo_I']) ."',
+				numPubclicacao		= '". utf8_decode($post['numPub']) ."',
+				numPubclicacao_I	= '". utf8_decode($post['numPub_I']) ."',
+				por					= '". utf8_decode($post['por']) ."',
+				data				= '". $post['data'] ."',
+				texto				= '". addslashes(utf8_decode($post['texto'])) ."',
+				texto_I				= '". addslashes(utf8_decode($post['texto_I'])) ."',
+				tag					= '". utf8_decode(str_replace("'","''", $post['tag']))."',
+				tag_I				= '". utf8_decode(str_replace("'","''", $post['tag_I']))."',
+				Idcategoria			= '". $post['categoria'] ."',
+				idTipo				= '". $post['tipo'] ."'
+			WHERE
+				id 					= '".$post['id']."'
+		";
+
+		$result = mysql_query($sql);
+		if (!($result))
+		{
+			$retorno[0] = "1";
+			$retorno[1] = "Erro ao executar a query. Classe = ".$this->entidade." - Metodo = grava";
+			return $retorno;
+		}
+
+		$retorno[0] = 0;
+		$retorno[1] = "Registro inserido com sucesso.";
+		$retorno[2] = $post['id'];
+		return $retorno;
+	}
+
+	function Exclui($id)
+	{
+		$retorno = array();
+
+		$sql = "
+			DELETE FROM	
+				".$this->entidade." 
+			WHERE
+				id = '".$id."'
+		".$query;
+		$result = mysql_query($sql);
+		if (!($result))
+		{
+			$retorno[0] = "1";
+			$retorno[1] = "Erro ao executar a query. Classe = ".$this->entidade." - Metodo = Exclui";
+			return $retorno;
+		}
+
+		$retorno[0] = 0;
+		$retorno[1] = "Exclusão feita com sucesso!";
 		return $retorno;
 	}
 

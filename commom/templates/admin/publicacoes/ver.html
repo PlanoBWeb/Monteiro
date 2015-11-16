@@ -3,13 +3,19 @@
 	<div class="container">
 		<form class="form-ver">
 
-			<h1 class="titulo-pag">Noticia</h1>
+			<h1 class="titulo-pag">Publicação</h1>
 
 			<label><strong>*Titulo:</strong></label>
 			<input type="text" disabled value="{$dados[0].titulo}">	
 
 			<label><strong>*Titulo Inglês:</strong></label>
 			<input type="text" disabled value="{$dados[0].titulo_I}">	
+
+			<label><strong>*Numero Publicação:</strong></label>
+			<input type="text" disabled value="{$dados[0].numPubclicacao}">	
+
+			<label><strong>*Numero Publicação Inglês:</strong></label>
+			<input type="text" disabled value="{$dados[0].numPubclicacao_I}">	
 
 			<label><strong>*Por:</strong></label>
 			<input type="text" disabled value="{$dados[0].por}">	
@@ -32,26 +38,19 @@
 			<label>*Categoria:</label>
 			<input type="text" disabled value="{$dados[0].nomeCategoria}">
 
-			<label><strong>*Imagem:</strong></label>
 			{if $dados[0].caminhoImagem}
+				<label><strong>*Imagem:</strong></label>
 				<img src="{$dados[0].caminhoImagem}" width="250" border="0">
-			{else}
-				<label><strong>Não existe imagem cadastrada</strong></label>
 			{/if}
 			
-			<label><strong>*Imagem Thumb:</strong></label>
 			{if $dados[0].caminhoImagemThumb}
+				<label><strong>*Imagem Thumb:</strong></label>	
 				<img src="{$dados[0].caminhoImagemThumb}" style="max-width: 200px;" border="0">
-			{else}
-				<label><strong>Não existe imagem cadastrada</strong></label>
 			{/if}
 
-			<label><strong>*Noticia em destaque:</strong></label>
-			{if $dados[0].destaque} <label><strong>Sim</strong></label> {else} <label><strong>Não</strong></label> {/if}
-		
 			<br>
 			<br>
-			<a href="adm_noticias.php?acao=pesquisar" class="btn-form" ><< voltar</a>
+			<a href="adm_publicacoes.php?acao=pesquisar" class="btn-form" ><< voltar</a>
 		</form>
 	</div>
 	<!-- FIM Conteúdo -->
