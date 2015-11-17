@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-16 18:03:28
+<?php /* Smarty version 2.6.12, created on 2015-11-17 12:51:48
          compiled from noticia.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -78,8 +78,8 @@ unset($_smarty_tpl_vars);
                         <div class="col-xs-12 col-sm-6 col-md-6 pd-none">
                            <h2 class="titulo-menu-lateral font-normal"><?php echo $this->_tpl_vars['arrayIdioma']['MN_NOT_COMP']; ?>
 </h2>
-                           <div class="col-xs-12 col-sm-3 col-md-3">
-                              <div class="fb-like"></div> 
+                           <div class="col-xs-12 col-sm-3 col-md-3" style="max-width: 110px !important; overflow:hidden !important;">
+                              <div class="fb-like" style="width: 60px"></div> 
                            </div>
                            <div class="col-xs-12 col-sm-3 col-md-3 pd-none">
                               <a href="http://twitter.com/share" class="twitter-share-button" data-url="<?php echo $this->_tpl_vars['urlCompleta']; ?>
@@ -95,6 +95,7 @@ unset($_smarty_tpl_vars);
                            <h2 class="titulo-menu-lateral font-normal"><?php echo $this->_tpl_vars['arrayIdioma']['MN_NOT_IND_NOT']; ?>
 </h2>
                            <form method="post" name="formIndiqueNot">
+                              <input type="hidden" name="acao" value="indiqueNot">
                               <input class="font-normal form-compartilhe" type="text" name="indiqueNot" placeholder="<?php echo $this->_tpl_vars['arrayIdioma']['MN_FORM_EMAIL']; ?>
 ...">
                               <input class="btn-ok cinza font-normal" type="submit" value="ok" onclick="return enviarindiqueNot();">

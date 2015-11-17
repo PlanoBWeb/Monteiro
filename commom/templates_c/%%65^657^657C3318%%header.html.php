@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-16 18:06:58
+<?php /* Smarty version 2.6.12, created on 2015-11-17 10:55:42
          compiled from ../inc/header.html */ ?>
 <div id="fb-root"></div>
 <?php echo '
@@ -44,9 +44,10 @@
             </div>
             <form action="noticias.php" class="form-search" method="post" name="form_search">
                <input type="hidden" name="acao" value="busca">
-               <input class="btn-ok cinza font-normal fl-right" type="submit" value="ok">
-               <input class="font-normal fl-right" type="search" name="search" placeholder="<?php echo $this->_tpl_vars['arrayIdioma']['MN_BUSCA']; ?>
+               <input class="font-normal fl-left" id="buscaValor" autocomplete="off" type="search" name="search" placeholder="<?php echo $this->_tpl_vars['arrayIdioma']['MN_BUSCA']; ?>
 ">
+               <input class="btn-ok cinza font-normal fl-left" type="submit" value="ok">
+               <div  id="carrega-busca" class="carrega-busca"></div>
             </form>
          </div>
       </article>
@@ -74,8 +75,9 @@
             <form action="noticias.php" class="form-search search-mobile" method="post" name="form_search">
                <input type="hidden" name="acao" value="busca">
                <a class="close-search-mobile" href="#"><img src="commom/img/lupa.png" alt="icone lupa" title="icone lupa"></a>
-               <input class="font-normal input-search-mobile" type="search" name="search" placeholder="busca...">
+               <input class="font-normal input-search-mobile" id="buscaValorMobile" autocomplete="off" type="search" name="search" placeholder="busca...">
                <input class="btn-ok cinza font-normal" type="submit" value="ok">
+               <div  id="carrega-busca-mobile" class="carrega-busca"></div>
             </form>
          </div>
          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

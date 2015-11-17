@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-10-29 11:44:03
+<?php /* Smarty version 2.6.12, created on 2015-11-17 16:29:52
          compiled from direito-publico.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -7,8 +7,8 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="robots" content="index, follow">
-      <meta name="description" content="" />
-      <title>Monteiro</title>
+      <meta name="description" content="Advogados especialistas em Direito Público." />
+      <title>Marcos Monteiro Sociedade de Advogados – Direito Público</title>
       <link href="commom/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="commom/css/estilo.css">
       <link href="commom/img/icon-tab.png" rel="icon">

@@ -102,15 +102,19 @@ class Publicacoes
 				$dados[$i]['titulo'] 			= utf8_encode($rows['titulo_I']);
 				$dados[$i]['tituloAbrev'] 		= utf8_encode(limita_caracteres($rows['titulo_I'], 45, false));	
 				$dados[$i]['texto'] 			= utf8_encode($rows['texto_I']);
-				$dados[$i]['textoAbrev']		= utf8_encode(limita_caracteres($rows['texto_I'], 150, false));
+				$dados[$i]['textoSemTag']		= strip_tags(utf8_encode($rows['texto_I']));
+				$dados[$i]['textoAbrev']		= strip_tags(utf8_encode(limita_caracteres($rows['texto_I'], 150, false)));
+				$dados[$i]['tag'] 				= utf8_encode(nl2br(trim($rows['tag_I'])));
 				$dados[$i]['numPubclicacao'] 	= utf8_encode($rows['numPubclicacao_I']);
 			}else{
 				$dados[$i]['titulo'] 			= utf8_encode($rows['titulo']);	
 				$dados[$i]['tituloAbrev'] 		= utf8_encode(limita_caracteres($rows['titulo'], 45, false));	
 				$dados[$i]['texto'] 			= utf8_encode($rows['texto']);
-				$dados[$i]['textoAbrev']		= utf8_encode(limita_caracteres($rows['texto'], 150, false));
+				$dados[$i]['textoSemTag']		= strip_tags(utf8_encode($rows['texto']));
+				$dados[$i]['textoAbrev']		= strip_tags(utf8_encode(limita_caracteres($rows['texto'], 150, false)));
 				$dados[$i]['numPubclicacao_I'] 	= utf8_encode($rows['numPubclicacao_I']);
 				$dados[$i]['numPubclicacao'] 	= utf8_encode($rows['numPubclicacao']);
+				$dados[$i]['tag'] 				= utf8_encode(nl2br(trim($rows['tag'])));
 			}
 
 			$dados[$i]['data'] 				= date("d/m/Y", strtotime($rows['data']));
@@ -120,6 +124,7 @@ class Publicacoes
 			$dados[$i]['titulo_I'] 			= utf8_encode($rows['titulo_I']);
 			$dados[$i]['por']			 	= utf8_encode($rows['por']);
 			$dados[$i]['texto_I'] 			= utf8_encode($rows['texto_I']);
+			$dados[$i]['textoSemTag_I']		= strip_tags(utf8_encode($rows['texto_I']));
 			$dados[$i]['tipo'] 				= tipoPublicacao($rows['idTipo']);
 			$dados[$i]['data_formatada']	= date('Y-m-d', strtotime($rows['data']));
 			$i++;

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-16 13:12:31
+<?php /* Smarty version 2.6.12, created on 2015-11-17 13:11:59
          compiled from admin/rodape.html */ ?>
     <script>window.jQuery || document.write('<script src="commom/assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="commom/dist/js/bootstrap.min.js"></script>
@@ -41,12 +41,12 @@
                 return false;
             }
 
-            if(trim(frm.texto.value)=="")
-            {
-                alert(msg + "Texto!");
-                frm.texto.focus();
-                return false;
-            }
+            // if(trim(frm.texto.value)=="")
+            // {
+            //     alert(msg + "Texto!");
+            //     frm.texto.focus();
+            //     return false;
+            // }
 
             if(trim(frm.categoria.value)=="" || trim(frm.categoria.value)=="Seleciona uma categoria")
             {
@@ -54,21 +54,6 @@
                 frm.categoria.focus();
                 return false;
             }
-
-            if(trim(frm.arquivo.value)=="")
-            {
-                alert(msg + "Imagem!");
-                frm.arquivo.focus();
-                return false;
-            }
-
-            if(trim(frm.arquivo2.value)=="")
-            {
-                alert(msg + "Imagem Thumb!");
-                frm.arquivo2.focus();
-                return false;
-            }
-            
         
             frm.submit();
         }
@@ -108,12 +93,12 @@
                 return false;
             }
 
-            if(trim(frm.texto.value)=="")
-            {
-                alert(msg + "Texto!");
-                frm.texto.focus();
-                return false;
-            }
+            // if(trim(frm.texto.value)=="")
+            // {
+            //     alert(msg + "Texto!");
+            //     frm.texto.focus();
+            //     return false;
+            // }
 
             if(trim(frm.categoria.value)=="" || trim(frm.categoria.value)=="Seleciona uma categoria")
             {
@@ -126,6 +111,7 @@
             frm.submit();
         }
         //Valida Publicações
+
 
     </script>
 '; ?>

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-16 13:11:23
+<?php /* Smarty version 2.6.12, created on 2015-11-17 13:16:33
          compiled from admin/publicacoes/dados.html */ ?>
 ﻿<?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "admin/topo.html", 'smarty_include_vars' => array()));
@@ -100,6 +100,15 @@ $this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $th
 	    <label class="no-top">* Campos obrigatórios.</label>
     </form>
 <!-- FIM Conteúdo -->
+<?php echo '
+<script>
+	tinymce.init({
+	    selector: "textarea",
+	    plugins: \'link\'
+	 });
+</script>
+'; ?>
+
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "admin/rodape.html", 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;

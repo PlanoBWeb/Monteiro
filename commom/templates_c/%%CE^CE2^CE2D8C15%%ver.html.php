@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-16 12:54:54
+<?php /* Smarty version 2.6.12, created on 2015-11-17 13:19:30
          compiled from admin/publicacoes/ver.html */ ?>
 ﻿<?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "admin/topo.html", 'smarty_include_vars' => array()));
@@ -10,6 +10,10 @@ unset($_smarty_tpl_vars);
 		<form class="form-ver">
 
 			<h1 class="titulo-pag">Publicação</h1>
+
+			<label><strong>*Tipo:</strong></label>
+			<input type="text" disabled value="<?php echo $this->_tpl_vars['dados'][0]['tipo']; ?>
+">	
 
 			<label><strong>*Titulo:</strong></label>
 			<input type="text" disabled value="<?php echo $this->_tpl_vars['dados'][0]['titulo']; ?>
@@ -36,11 +40,11 @@ unset($_smarty_tpl_vars);
 ">	
 
 			<label><strong>*Texto:</strong></label>
-			<textarea disabled><?php echo $this->_tpl_vars['dados'][0]['texto']; ?>
+			<textarea disabled><?php echo $this->_tpl_vars['dados'][0]['textoSemTag']; ?>
 </textarea>
 
 			<label><strong>*Texto Inglês:</strong></label>
-			<textarea disabled><?php echo $this->_tpl_vars['dados'][0]['texto_I']; ?>
+			<textarea disabled><?php echo $this->_tpl_vars['dados'][0]['textoSemTag_I']; ?>
 </textarea>
 
 			<label><strong>*Tags:</strong></label>

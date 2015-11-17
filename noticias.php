@@ -88,6 +88,8 @@
 			exit();
 		}
 	}
+
+
 	$Numpaginas = array();
 	for($j=0; $j <= $totalPaginas; $j++) { 
 		$Numpaginas[$j] = $j;
@@ -104,6 +106,18 @@
 		$smarty->display("mensagem.html");
 	exit();
 	}
+
+	// Busca ajax
+	if ($retorno[1]) {
+		foreach ($retorno[1] as $key) {
+			echo '
+				<ul class="carrega-busca-ajax">					    		
+					<li class="selectProduto">'.$key["titulo"].'</li>
+				</ul>
+			';
+		}	
+	}
+	// Busca ajax
 
 	$smarty->assign("breadcrumb", "Notícias");
 	$smarty->assign("dadosTags", $retornoTags[1]);
@@ -125,6 +139,8 @@
 	$smarty->assign("pagina", $pagina);
 	$smarty->assign("titulo", utf8_encode(TITULO));
 	$smarty->assign("nome", $_SESSION['nome']);
-	$smarty->display("noticias.html");
-
+	if (!$_POST['buscaAjax']) {
+		$smarty->display('noticias.html');
+	}
+	exit;
 ?>

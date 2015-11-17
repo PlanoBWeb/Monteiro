@@ -5,8 +5,8 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="robots" content="index, follow">
-      <meta name="description" content="" />
-      <title>Monteiro</title>
+      <meta name="description" content="Escritório de Advocacia focado em direito Público, Eleitoral e Empresarial." />
+      <title>Marcos Monteiro – Sociedade de Advogados</title>
       <link href="commom/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="commom/css/estilo.css">
       <link href="commom/img/icon-tab.png" rel="icon">
@@ -63,10 +63,10 @@
                   <div class="row">
                      <div class="col-xs-12 col-sm-12 col-md-12 pd-left-none">
                         <h2 class="titulo-default font-normal pd-left-none fl-left">{ $arrayIdioma.MN_ULTIMAS_NOT }</h2>
-                        {if $totalNotDestaque > 6}
+                        {if $totalNotDestaque > 1}
                            <div class="bloco-setas fl-right hidden-xs">
-                              <div class="seta-esquerda fl-left seta-default">&lt;</div>
-                              <div class="seta-direita fl-right seta-default">&gt;</div>
+                              <div id="next" class="seta-esquerda fl-left seta-default">&lt;</div>
+                              <div id="prev" class="seta-direita fl-right seta-default">&gt;</div>
                            </div>
                         {/if}
                      </div>
@@ -74,15 +74,19 @@
                   <div class="borda-titulo"></div>
                   <!-- Noticias -->
                   <div class="row bloco-ultimas-noticias" {if $totalNotDestaque < 6} style="min-height: 350px;" {/if}>
-                     <!-- Noticia Individual -->
-                     {section name=i loop=$dados}
-                        <div class="col-xs-12 col-sm-5 col-md-4 pd-none ultimas-noticias-ind">
-                           <img src="{$dados[i].caminhoImagemThumb}" alt="{$dados[i].titulo}" title="{$dados[i].titulo}">
-                           <a href="noticia.php?id={$dados[i].id}" class="txt-noticia-destaque font-normal"><p>{$dados[i].titulo}</p></a>
-                           <p class="data-noticia font-normal">{$dados[i].dataMes[2]} {$dados[i].Mes} {$dados[i].dataMes[0]}</p>
+                     <div class="bloco-roda-vitrine">
+                        <div class="encapsula-produto-vitrine">
+                           <!-- Noticia Individual -->
+                           {section name=i loop=$dados}
+                              <div class="col-xs-12 col-sm-5 col-md-4 pd-none ultimas-noticias-ind">
+                                 <img src="{$dados[i].caminhoImagemThumb}" alt="{$dados[i].tituloAbrev}" title="{$dados[i].tituloAbrev}">
+                                 <a href="noticia.php?id={$dados[i].id}" class="txt-noticia-destaque font-normal"><p>{$dados[i].tituloAbrev}</p></a>
+                                 <p class="data-noticia font-normal">{$dados[i].dataMes[2]} {$dados[i].Mes} {$dados[i].dataMes[0]}</p>
+                              </div>
+                           {/section}
+                           <!-- Noticia Individual -->
                         </div>
-                     {/section}
-                     <!-- Noticia Individual -->
+                     </div>
                   </div>
                   <!-- Noticias -->
                </div>

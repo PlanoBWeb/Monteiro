@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-16 13:05:47
+<?php /* Smarty version 2.6.12, created on 2015-11-17 13:19:03
          compiled from admin/topo.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="commom/css/estilo_admin.css">
     <script src="commom/assets/js/ie10-viewport-bug-workaround.js"></script>
     <script src="commom/js/funcoes.js"></script>
+    <script type="text/javascript" src="commom/js/tinymce/tinymce.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <title><?php echo $this->_tpl_vars['titulo']; ?>
  - ADM</title>
@@ -43,6 +44,10 @@
                                 </div>
                             </li>
 
+                            <li class="nav-item">
+                                <a class="nav-link" href="adm_usuario.php?acao=senha">Alterar Senha</a>
+                            </li>
+
                             <li class="nav-item active dropdown">
                                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Notícias</a>
                                 <div class="dropdown-menu">
@@ -67,10 +72,6 @@
                                     <a class="dropdown-item" href="adm_destaque.php">Cadastrar</a>
                                 </div>
                             </li> -->
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="adm_usuario.php?acao=senha">Alterar Senha</a>
-                            </li>
 
                             <li class="nav-item">
                                 <a class="nav-link" href="adm_login.php?acao=logout">Sair</a>

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-16 12:47:16
+<?php /* Smarty version 2.6.12, created on 2015-11-17 13:14:56
          compiled from admin/noticias/ver.html */ ?>
 ﻿<?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "admin/topo.html", 'smarty_include_vars' => array()));
@@ -28,11 +28,11 @@ unset($_smarty_tpl_vars);
 ">	
 
 			<label><strong>*Texto:</strong></label>
-			<textarea disabled><?php echo $this->_tpl_vars['dados'][0]['texto']; ?>
+			<textarea disabled><?php echo $this->_tpl_vars['dados'][0]['textoSemTag']; ?>
 </textarea>
 
 			<label><strong>*Texto Inglês:</strong></label>
-			<textarea disabled><?php echo $this->_tpl_vars['dados'][0]['texto_I']; ?>
+			<textarea disabled><?php echo $this->_tpl_vars['dados'][0]['textoSemTag_I']; ?>
 </textarea>
 
 			<label><strong>*Tags:</strong></label>
