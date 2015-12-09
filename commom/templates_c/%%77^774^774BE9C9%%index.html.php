@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-17 13:30:17
+<?php /* Smarty version 2.6.12, created on 2015-11-23 13:16:12
          compiled from index.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -7,8 +7,8 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="robots" content="index, follow">
-      <meta name="description" content="" />
-      <title>Monteiro</title>
+      <meta name="description" content="Escritório de Advocacia focado em direito Público, Eleitoral e Empresarial." />
+      <title>Marcos Monteiro – Sociedade de Advogados</title>
       <link href="commom/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="commom/css/estilo.css">
       <link href="commom/img/icon-tab.png" rel="icon">
@@ -48,7 +48,7 @@ unset($_smarty_tpl_vars);
                               </div>
                               <img src="commom/img/banner.jpg" alt="banner" title="banner">
                            </div>
-                           <div class="item"><img src="commom/img/banner.jpg" alt="banner" title="banner"></div>
+                           <!-- <div class="item"><img src="commom/img/banner.jpg" alt="banner" title="banner"></div> -->
                         </div>
                      </div>
                   </div>
@@ -73,7 +73,7 @@ unset($_smarty_tpl_vars);
                      <div class="col-xs-12 col-sm-12 col-md-12 pd-left-none">
                         <h2 class="titulo-default font-normal pd-left-none fl-left"><?php echo $this->_tpl_vars['arrayIdioma']['MN_ULTIMAS_NOT']; ?>
 </h2>
-                        <?php if ($this->_tpl_vars['totalNotDestaque'] > 1): ?>
+                        <?php if ($this->_tpl_vars['totalNotDestaque'] > 6): ?>
                            <div class="bloco-setas fl-right hidden-xs">
                               <div id="next" class="seta-esquerda fl-left seta-default">&lt;</div>
                               <div id="prev" class="seta-direita fl-right seta-default">&gt;</div>
@@ -87,7 +87,7 @@ unset($_smarty_tpl_vars);
                      <div class="bloco-roda-vitrine">
                         <div class="encapsula-produto-vitrine">
                            <!-- Noticia Individual -->
-                           <!-- <?php unset($this->_sections['i']);
+                           <?php unset($this->_sections['i']);
 $this->_sections['i']['name'] = 'i';
 $this->_sections['i']['loop'] = is_array($_loop=$this->_tpl_vars['dados']) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
 $this->_sections['i']['show'] = true;
@@ -124,97 +124,7 @@ $this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $th
  <?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['dataMes'][0]; ?>
 </p>
                               </div>
-                           <?php endfor; endif; ?> -->
-
-                           <div class="col-xs-12 col-sm-5 col-md-4 pd-none ultimas-noticias-ind">
-                              <img src="upload/noticias/20151116_152142_13.jpg" alt="<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['tituloAbrev']; ?>
-" title="<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['tituloAbrev']; ?>
-">
-                              <a href="noticia.php?id=<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['id']; ?>
-" class="txt-noticia-destaque font-normal"><p>Titulo teste dessa noticia também que ...</p></a>
-                              <p class="data-noticia font-normal">12 novembro 2015</p>
-                           </div>
-
-                           <div class="col-xs-12 col-sm-5 col-md-4 pd-none ultimas-noticias-ind">
-                              <img src="upload/noticias/20151116_152142_13.jpg" alt="<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['tituloAbrev']; ?>
-" title="<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['tituloAbrev']; ?>
-">
-                              <a href="noticia.php?id=<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['id']; ?>
-" class="txt-noticia-destaque font-normal"><p>Titulo teste dessa noticia também que ...</p></a>
-                              <p class="data-noticia font-normal">13 novembro 2015</p>
-                           </div>
-
-                           <div class="col-xs-12 col-sm-5 col-md-4 pd-none ultimas-noticias-ind">
-                              <img src="upload/noticias/20151116_152142_13.jpg" alt="<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['tituloAbrev']; ?>
-" title="<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['tituloAbrev']; ?>
-">
-                              <a href="noticia.php?id=<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['id']; ?>
-" class="txt-noticia-destaque font-normal"><p>Titulo teste dessa noticia também que ...</p></a>
-                              <p class="data-noticia font-normal">14 novembro 2015</p>
-                           </div>
-
-                           <div class="col-xs-12 col-sm-5 col-md-4 pd-none ultimas-noticias-ind">
-                              <img src="upload/noticias/20151116_152142_13.jpg" alt="<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['tituloAbrev']; ?>
-" title="<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['tituloAbrev']; ?>
-">
-                              <a href="noticia.php?id=<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['id']; ?>
-" class="txt-noticia-destaque font-normal"><p>Titulo teste dessa noticia também que ...</p></a>
-                              <p class="data-noticia font-normal">15 novembro 2015</p>
-                           </div>
-
-                           <div class="col-xs-12 col-sm-5 col-md-4 pd-none ultimas-noticias-ind">
-                              <img src="upload/noticias/20151116_152142_13.jpg" alt="<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['tituloAbrev']; ?>
-" title="<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['tituloAbrev']; ?>
-">
-                              <a href="noticia.php?id=<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['id']; ?>
-" class="txt-noticia-destaque font-normal"><p>Titulo teste dessa noticia também que ...</p></a>
-                              <p class="data-noticia font-normal">16 novembro 2015</p>
-                           </div>
-
-                           <div class="col-xs-12 col-sm-5 col-md-4 pd-none ultimas-noticias-ind">
-                              <img src="upload/noticias/20151116_152142_13.jpg" alt="<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['tituloAbrev']; ?>
-" title="<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['tituloAbrev']; ?>
-">
-                              <a href="noticia.php?id=<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['id']; ?>
-" class="txt-noticia-destaque font-normal"><p>Titulo teste dessa noticia também que ...</p></a>
-                              <p class="data-noticia font-normal">12 novembro 2015</p>
-                           </div>
-
-                           <div class="col-xs-12 col-sm-5 col-md-4 pd-none ultimas-noticias-ind">
-                              <img src="upload/noticias/20151116_152142_13.jpg" alt="<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['tituloAbrev']; ?>
-" title="<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['tituloAbrev']; ?>
-">
-                              <a href="noticia.php?id=<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['id']; ?>
-" class="txt-noticia-destaque font-normal"><p>Titulo teste dessa noticia também que ...</p></a>
-                              <p class="data-noticia font-normal">12 novembro 2015</p>
-                           </div>
-
-                           <div class="col-xs-12 col-sm-5 col-md-4 pd-none ultimas-noticias-ind">
-                              <img src="upload/noticias/20151116_152142_13.jpg" alt="<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['tituloAbrev']; ?>
-" title="<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['tituloAbrev']; ?>
-">
-                              <a href="noticia.php?id=<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['id']; ?>
-" class="txt-noticia-destaque font-normal"><p>Titulo teste dessa noticia também que ...</p></a>
-                              <p class="data-noticia font-normal">12 novembro 2015</p>
-                           </div>
-
-                           <div class="col-xs-12 col-sm-5 col-md-4 pd-none ultimas-noticias-ind">
-                              <img src="upload/noticias/20151116_152142_13.jpg" alt="<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['tituloAbrev']; ?>
-" title="<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['tituloAbrev']; ?>
-">
-                              <a href="noticia.php?id=<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['id']; ?>
-" class="txt-noticia-destaque font-normal"><p>Titulo teste dessa noticia também que ...</p></a>
-                              <p class="data-noticia font-normal">12 novembro 2015</p>
-                           </div>
-
-                           <div class="col-xs-12 col-sm-5 col-md-4 pd-none ultimas-noticias-ind">
-                              <img src="upload/noticias/20151116_152142_13.jpg" alt="<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['tituloAbrev']; ?>
-" title="<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['tituloAbrev']; ?>
-">
-                              <a href="noticia.php?id=<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['id']; ?>
-" class="txt-noticia-destaque font-normal"><p>Titulo teste dessa noticia também que ...</p></a>
-                              <p class="data-noticia font-normal">12 novembro 2015</p>
-                           </div>
+                           <?php endfor; endif; ?>
                            <!-- Noticia Individual -->
                         </div>
                      </div>

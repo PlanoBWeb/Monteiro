@@ -73,6 +73,10 @@ a {
     background-color: #282828;    
 }
 
+.dropdown-menu a{
+    text-transform: uppercase;
+}
+
 .dropdown-menu a:hover{
     color: #b4002c !important;
 }
@@ -526,7 +530,7 @@ footer{
 
 .bloco-desc-banner{
     background-color: #282828;
-    opacity: 0.7;
+    opacity: 0.89;
     padding: 18px 18px;
     position: absolute;
     top: 36%;
@@ -671,8 +675,9 @@ footer{
 }
 
 .txt-noticia-destaque p{
-    text-align: justify;
-    direction: ltr;
+/*    text-align: justify;
+    direction: ltr;*/
+    text-align: left;
     padding-top: 10px;
     padding-bottom: 5px;
 }
@@ -685,6 +690,9 @@ footer{
 
 .ultimas-noticias-ind img{
     max-width: 100%; 
+    max-height: 120px;
+    overflow: hidden;
+    position: relative;
 }
 
 .data-noticia{
@@ -747,6 +755,7 @@ iframe{
     font-size: 1em;
     text-decoration: none;
     padding: 5px 0px; 
+    text-align: left !important;
 }
 
 .submenu-ano{
@@ -783,7 +792,7 @@ iframe{
     background: url('../img/seta-menu-lateral.png');
     background-repeat: no-repeat;
     background-position-x: 98%;
-    background-position-y: 13px;
+    background-position-y: 19px;
 }
 
 .link-lateral-ativo a{
@@ -851,6 +860,8 @@ iframe{
 
 .img-noticias{
     max-width: 100%;
+    max-height: 120px;
+    max-width: 204px;
     display: table;
     position: relative;
     float: left;
@@ -1489,10 +1500,24 @@ iframe{
     overflow: hidden !important;
 }
 
-.txt-desc-noticias p, a, span, div{
+.txt-desc-noticias p a span div{
     text-align: justify;
     direction: ltr;
     color: #464646;
     line-height: 1.4;
     font-family: 'modern 880 bt';
 }
+
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover{
+    border-color: #282828 !important;
+}
+
+.select-internas{
+    width: 100%;
+    padding: 10px 10px;
+    border: solid 1px #999;
+    color: #333;
+    display: block;
+    margin: 25px 0px 15px 0px;
+}
+    

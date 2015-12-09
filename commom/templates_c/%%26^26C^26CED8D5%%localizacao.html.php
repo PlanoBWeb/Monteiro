@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-10-28 17:34:30
+<?php /* Smarty version 2.6.12, created on 2015-11-23 13:34:39
          compiled from localizacao.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -7,8 +7,8 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="robots" content="index, follow">
-      <meta name="description" content="" />
-      <title>Monteiro</title>
+      <meta name="description" content="Estamos localizados na Rua Maria Paula, 36. Faça-nos uma visita" />
+      <title>Marcos Monteiro Sociedade de Advogados – Localização</title>
       <link href="commom/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="commom/css/estilo.css">
       <link href="commom/img/icon-tab.png" rel="icon">
@@ -55,7 +55,24 @@ unset($_smarty_tpl_vars);
                   </p>
                   <br>
                   <br>
-                  <img class="img-localizacao" src="commom/img/localizacao.jpg" alt="Localização" title="Localização">
+                  <div class="row">
+                     <div class="col-xs-12 col-sm-3 col-md-3">
+                        <div><img src="commom/img/icon-carro.jpg" alt="icone carro" title="icone carro"></div>
+                        <p class="txt-interna font-normal">Estacionamento Rua Asdrúbal do nascimento Número 298</p><br>
+
+                        <div><img src="commom/img/icon-local.jpg" alt="icone local" title="icone local"></div>
+                        <p class="txt-interna font-normal">Marcos Monteiro Sociedade de Advogados, n°36, 3° Andar cj. A</p><br>
+
+                        <div><img src="commom/img/icon-outros.jpg" alt="icone outros" title="icone outros"></div>
+                        <p class="txt-interna font-normal">Outros / Nenhum valor</p><br>
+                        
+                        
+                        
+                     </div>
+                     <div class="col-xs-12 col-sm-9 col-md-9 pd-none">
+                        <img class="img-localizacao" src="commom/img/localizacaoNovo.jpg" alt="Localização" title="Localização">
+                     </div>
+                  </div>
                </div>
             </div>
          </section>

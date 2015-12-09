@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-17 16:30:22
+<?php /* Smarty version 2.6.12, created on 2015-11-18 13:31:35
          compiled from direito-imobiliario.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -46,6 +46,11 @@ unset($_smarty_tpl_vars);
  ?>
                <div class="col-xs-12 col-sm-9 col-md-9 pd-none bloco-conteudo-interna">
                   <div class="col-xs-12 col-sm-12 col-md-12 pd-none bloco-profissional">
+                     <?php $_smarty_tpl_vars = $this->_tpl_vars;
+$this->_smarty_include(array('smarty_include_tpl_file' => "../inc/select-direito-imobiliario.html", 'smarty_include_vars' => array()));
+$this->_tpl_vars = $_smarty_tpl_vars;
+unset($_smarty_tpl_vars);
+ ?>
                      <h1 class="titulo-pag font-normal"><?php echo $this->_tpl_vars['arrayIdioma']['MN_TITULO_ADI']; ?>
 </h1>
                      <br><br>                  

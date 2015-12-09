@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-17 10:55:42
+<?php /* Smarty version 2.6.12, created on 2015-11-23 14:09:05
          compiled from ../inc/header.html */ ?>
 <div id="fb-root"></div>
 <?php echo '
@@ -34,14 +34,14 @@
          </div>
 
          <div class="col-xs-12 col-sm-4 col-md-4 hidden-xs">
-            <div class="bloco-linguas">
+        <!--     <div class="bloco-linguas">
                <a href="?l=I">
                   <img src="commom/img/icon-en.png" alt="icone inglês" title="icone inglês">
                </a>
                <a href="?l=P">
                   <img src="commom/img/icon-pt.png" alt="icone português" title="icone português">
                </a>
-            </div>
+            </div> -->
             <form action="noticias.php" class="form-search" method="post" name="form_search">
                <input type="hidden" name="acao" value="busca">
                <input class="font-normal fl-left" id="buscaValor" autocomplete="off" type="search" name="search" placeholder="<?php echo $this->_tpl_vars['arrayIdioma']['MN_BUSCA']; ?>
@@ -64,12 +64,12 @@
                <a class="navbar-brand img-logo" href="index.php"><img src="commom/img/logo.png" alt="Logo Monteiro" title="Logo Monteiro"></a>   
                <div class="bloco-linguas-mobile visible-xs-block">
                   <a class="open-search-mobile" href="#"><img src="commom/img/lupa.png" alt="icone lupa" title="icone lupa"></a>
-                  <a href="?l=I">
+               <!--    <a href="?l=I">
                      <img src="commom/img/icon-en.png" alt="icone inglês" title="icone inglês">
                   </a>
                   <a href="?l=P">
                      <img src="commom/img/icon-pt.png" alt="icone português" title="icone português"> 
-                  </a>
+                  </a> -->
                </div>
             </div>
             <form action="noticias.php" class="form-search search-mobile" method="post" name="form_search">

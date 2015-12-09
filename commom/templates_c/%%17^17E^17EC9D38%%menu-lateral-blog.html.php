@@ -1,11 +1,12 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-16 17:51:42
+<?php /* Smarty version 2.6.12, created on 2015-12-09 17:34:51
          compiled from ../inc/menu-lateral-blog.html */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('modifier', 'default', '../inc/menu-lateral-blog.html', 27, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('modifier', 'default', '../inc/menu-lateral-blog.html', 31, false),)), $this); ?>
 <div class="col-xs-12 col-sm-4 col-md-4 bloco-menu-lateral">
    <h2 class="titulo-menu-destaques font-normal"><?php echo $this->_tpl_vars['arrayIdioma']['MN_NOT_DESTA']; ?>
 </h2><br>
-   <?php unset($this->_sections['i']);
+   <?php if ($this->_tpl_vars['dadosMenuBlog']): ?>
+      <?php unset($this->_sections['i']);
 $this->_sections['i']['name'] = 'i';
 $this->_sections['i']['loop'] = is_array($_loop=$this->_tpl_vars['dadosMenuBlog']) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
 $this->_sections['i']['show'] = true;
@@ -29,36 +30,39 @@ $this->_sections['i']['index_next'] = $this->_sections['i']['index'] + $this->_s
 $this->_sections['i']['first']      = ($this->_sections['i']['iteration'] == 1);
 $this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $this->_sections['i']['total']);
 ?>   
-      <div class="bloco-noticia-destaque">
-         <?php if ($this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['idTipo'] != ""): ?>
-            <a class="txt-desc-noticias font-normal" href="<?php echo $this->_tpl_vars['paginaMenuBlog']; ?>
+            <div class="bloco-noticia-destaque">
+               <?php if ($this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['idTipo'] != ""): ?>
+                  <a class="txt-desc-noticias font-normal" href="<?php echo $this->_tpl_vars['paginaMenuBlog']; ?>
 ?id=<?php echo $this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['id']; ?>
 "><strong><?php echo $this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['numPubclicacao']; ?>
 </strong></a><br>
-            <a class="txt-desc-noticias font-normal" href="<?php echo $this->_tpl_vars['paginaMenuBlog']; ?>
+                  <a class="txt-desc-noticias font-normal" href="<?php echo $this->_tpl_vars['paginaMenuBlog']; ?>
 ?id=<?php echo $this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['id']; ?>
 "><?php echo $this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['tituloAbrev']; ?>
 </a>
-         <?php else: ?>
-            <a href="<?php echo $this->_tpl_vars['paginaMenuBlog']; ?>
+               <?php else: ?>
+                  <a href="<?php echo $this->_tpl_vars['paginaMenuBlog']; ?>
 ?id=<?php echo $this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['id']; ?>
 ">
-               <img src="<?php echo $this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['caminhoImagemThumb']; ?>
+                     <img src="<?php echo $this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['caminhoImagemThumb']; ?>
 " alt="<?php echo $this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['tituloAbrev']; ?>
 " title="<?php echo $this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['tituloAbrev']; ?>
 ">
-            </a>
-            <a class="txt-desc-noticias font-normal" href="<?php echo $this->_tpl_vars['paginaMenuBlog']; ?>
+                  </a>
+                  <a class="txt-desc-noticias font-normal" href="<?php echo $this->_tpl_vars['paginaMenuBlog']; ?>
 ?id=<?php echo $this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['id']; ?>
 "><?php echo $this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['tituloAbrev']; ?>
 </a>
-         <?php endif; ?>
-         <p class="txt-noticias-info font-normal pd-none"><?php echo $this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['dataMes'][2]; ?>
+               <?php endif; ?>
+               <p class="txt-noticias-info font-normal pd-none"><?php echo $this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['dataMes'][2]; ?>
  <?php echo $this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['Mes']; ?>
  <?php echo $this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['dataMes'][0]; ?>
 </p>
-      </div>
-   <?php endfor; endif; ?>
+            </div>
+      <?php endfor; endif; ?>
+   <?php else: ?>
+      <p class="txt-desc-noticias font-normal">Não existe destaques</p>
+   <?php endif; ?>
   <!--  <div class="bloco-busca-blog">
       <form class="form-search" method="post" name="indique">
          <input class="font-normal form-compartilhe" type="text" name="indique" placeholder="BUSCA...">
@@ -73,7 +77,7 @@ $this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $th
             <?php $this->assign('nmTipo', ((is_array($_tmp=@$this->_tpl_vars['nmTipo'])) ? $this->_run_mod_handler('default', true, $_tmp, "") : smarty_modifier_default($_tmp, ""))); ?>
             <?php unset($this->_sections['i']);
 $this->_sections['i']['name'] = 'i';
-$this->_sections['i']['loop'] = is_array($_loop=$this->_tpl_vars['dadosMenuBlog']) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
+$this->_sections['i']['loop'] = is_array($_loop=$this->_tpl_vars['dadosMenuBlogAnoMes']) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
 $this->_sections['i']['show'] = true;
 $this->_sections['i']['max'] = $this->_sections['i']['loop'];
 $this->_sections['i']['step'] = 1;
@@ -95,26 +99,26 @@ $this->_sections['i']['index_next'] = $this->_sections['i']['index'] + $this->_s
 $this->_sections['i']['first']      = ($this->_sections['i']['iteration'] == 1);
 $this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $this->_sections['i']['total']);
 ?>   
-                  <?php if ($this->_tpl_vars['nmTipo'] <> $this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['dataMes'][0]): ?>
+                  <?php if ($this->_tpl_vars['nmTipo'] <> $this->_tpl_vars['dadosMenuBlogAnoMes'][$this->_sections['i']['index']]['dataMes'][0]): ?>
                         </ul>
                      </li>
-                     <li class="linha-menu-lateral"><a class="ano-menu-lateral link-menu-lateral font-normal" href=""><?php echo $this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['dataMes'][0]; ?>
+                     <li class="linha-menu-lateral"><a class="ano-menu-lateral link-menu-lateral font-normal" href=""><?php echo $this->_tpl_vars['dadosMenuBlogAnoMes'][$this->_sections['i']['index']]['dataMes'][0]; ?>
 </a>
                      <ul class="submenu-ano">                     
                   <?php endif; ?>
-                  <?php $this->assign('nmTipo', $this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['dataMes'][0]); ?>
+                  <?php $this->assign('nmTipo', $this->_tpl_vars['dadosMenuBlogAnoMes'][$this->_sections['i']['index']]['dataMes'][0]); ?>
 
                   <?php $this->assign('nmTipoMes', ((is_array($_tmp=@$this->_tpl_vars['nmTipoMes'])) ? $this->_run_mod_handler('default', true, $_tmp, "") : smarty_modifier_default($_tmp, ""))); ?>
-                     <?php if ($this->_tpl_vars['nmTipoMes'] <> $this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['Mes']): ?>
+                     <?php if ($this->_tpl_vars['nmTipoMes'] <> $this->_tpl_vars['dadosMenuBlogAnoMes'][$this->_sections['i']['index']]['Mes']): ?>
                         <li class="linha-menu-lateral">
                            <a class="link-menu-lateral font-normal" href="<?php echo $this->_tpl_vars['paginaMenuBlogInver']; ?>
-?ano=<?php echo $this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['dataMes'][0]; ?>
-&mes=<?php echo $this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['dataMes'][1]; ?>
-"><?php echo $this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['Mes']; ?>
+?ano=<?php echo $this->_tpl_vars['dadosMenuBlogAnoMes'][$this->_sections['i']['index']]['dataMes'][0]; ?>
+&mes=<?php echo $this->_tpl_vars['dadosMenuBlogAnoMes'][$this->_sections['i']['index']]['dataMes'][1]; ?>
+"><?php echo $this->_tpl_vars['dadosMenuBlogAnoMes'][$this->_sections['i']['index']]['Mes']; ?>
 </a>
                         </li>
                      <?php endif; ?>
-                  <?php $this->assign('nmTipoMes', $this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['Mes']); ?>
+                  <?php $this->assign('nmTipoMes', $this->_tpl_vars['dadosMenuBlogAnoMes'][$this->_sections['i']['index']]['Mes']); ?>
             <?php endfor; endif; ?>  
          </ul>
       </nav>

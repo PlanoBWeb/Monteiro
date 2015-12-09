@@ -1,7 +1,7 @@
 <?php 
 
 	$pastaProjeto	= "clientes/MonteiroEMassarana/Web/";
-	// $pastaProjeto	= "/Homologacao";
+	// $pastaProjeto	= "/Homologacao/";
 	$urlCompleta 	= $_SERVER['REQUEST_URI'];
 	$posInicio		= strpos($urlCompleta, $pastaProjeto);
 	$priimeiraEtapa	= substr($urlCompleta, ($posInicio+strlen($pastaProjeto)));
@@ -24,7 +24,8 @@
 		$pagina == "krikor-palma-artissian.php" || 
 		$pagina == "roberta-moraes-dias-benatti.php" ||
 		$pagina == "gabriel-vieira-almeida-machado.php" || 
-		$pagina == "ernesto-ferreira-da-silva-neto.php"
+		$pagina == "ernesto-ferreira-da-silva-neto.php" ||
+		$pagina == "guillermo-santana-andrade-glassman.php" 
 		){
 		$PgAtiva = "profissionais"; 
 	}
@@ -120,6 +121,10 @@
 		$tipoPub = "3";
 	}elseif ($pagina == "palestras.php" || $pagina == "palestra.php") {
 		$tipoPub = "4";
+	}
+
+	if ($pagina == "escritorio.php" || $pagina == "missao-valores-objetivo.php" || $pagina == "responsabilidade-social.php" || $pagina == "localizacao.php" || $pagina == "fale-conosco.php") {
+		$PgAtiva = "escritorio"; 
 	}
 
 ?>

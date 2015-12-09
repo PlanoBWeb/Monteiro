@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-17 13:19:03
+<?php /* Smarty version 2.6.12, created on 2015-11-18 12:27:39
          compiled from admin/topo.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -20,7 +20,7 @@
 </head>
 <body>
     <header>
-        <div class="container-fluid">
+        <div class="container-fluid bloco-topo-fixo">
             <div class="encapsula-topo-logo">
                 <div class="topo-logo col-sm-12 col-md-4 col-lg-4">
                     <a class="navbar-brand" href="adm_index.php"><img src="commom/img/logo.png" alt="logo PlanoBWeb" title="logo PlanoBWeb"></a>

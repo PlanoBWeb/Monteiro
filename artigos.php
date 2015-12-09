@@ -38,7 +38,7 @@
 	if( $retornoPag[0] )
 		die("<script>alert('".$retornoPag[1]."');location.href='index.php';</script>");
 
-	$totalPorPagina = 10;
+	$totalPorPagina = 2;
 	$totalDeProdutos = count($retornoPag[1]);
 	$conta = $totalDeProdutos / $totalPorPagina;
 	$totalPaginas = ceil($conta);
@@ -54,6 +54,15 @@
 		$smarty->assign("redir", "index.php");
 		$smarty->display("mensagem.html");
 		exit();
+	}
+	if ($retorno[1] == "") {
+		$parametro['mesAtual'] = $dataAtual['1'] -1;
+		$retorno = $class->Pesquisar($parametro,  $totalPorPagina, $_GET['p']);
+		if ($retorno[1] == "") {
+			$parametro['mesAtual'] = $dataAtual['1'] -1;
+			$parametro['anoAtual'] = $dataAtual['2'] -1;
+			$retorno = $class->Pesquisar($parametro,  $totalPorPagina, $_GET['p']);
+		}
 	}
 	$totalPub = count($retorno[1]);
 

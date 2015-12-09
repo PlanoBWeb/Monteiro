@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-16 16:10:40
+<?php /* Smarty version 2.6.12, created on 2015-12-09 17:24:14
          compiled from noticias.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -7,8 +7,8 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="robots" content="index, follow">
-      <meta name="description" content="" />
-      <title>Monteiro</title>
+      <meta name="description" content="Fique por dentro das principais notícias da área de direto" />
+      <title>Marcos Monteiro Sociedade de Advogados – Notícias da área de Direito</title>
       <link href="commom/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="commom/css/estilo.css">
       <link href="commom/img/icon-tab.png" rel="icon">
@@ -39,6 +39,11 @@ unset($_smarty_tpl_vars);
             <div class="row tamanho-max bloco-conteudo bloco-conteudo-noticias">
                <div class="col-xs-12 col-sm-8 col-md-8 pd-none encapsula-noticias">
                   <?php if ($this->_tpl_vars['dados']): ?>
+                     <?php $_smarty_tpl_vars = $this->_tpl_vars;
+$this->_smarty_include(array('smarty_include_tpl_file' => "../inc/select-not-pub.html", 'smarty_include_vars' => array()));
+$this->_tpl_vars = $_smarty_tpl_vars;
+unset($_smarty_tpl_vars);
+ ?>
                      <?php unset($this->_sections['i']);
 $this->_sections['i']['name'] = 'i';
 $this->_sections['i']['loop'] = is_array($_loop=$this->_tpl_vars['dados']) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
@@ -65,7 +70,10 @@ $this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $th
 ?>
                         <div class="col-xs-12 col-sm-12 col-md-12 pd-none conteudo-interna-not">
                            <a href="noticia.php?id=<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['id']; ?>
-"><img class="img-noticias" src="commom/img/noticias/noticia1.jpg" title="Noticia" alt="Noticia"></a>
+"><img class="img-noticias" src="<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['caminhoImagemThumb']; ?>
+" title="<?php echo $this->_tpl_vars['dados'][0]['titulo']; ?>
+" alt="<?php echo $this->_tpl_vars['dados'][0]['titulo']; ?>
+"></a>
                            <h2 class="titulo-noticias font-normal"><a href="noticia.php?id=<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['id']; ?>
 "><?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['titulo']; ?>
 </a></h2>

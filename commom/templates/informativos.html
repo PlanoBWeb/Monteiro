@@ -28,6 +28,7 @@
          <section class="conteudo-interna">
             <div class="row tamanho-max bloco-conteudo bloco-conteudo-noticias">
                <div class="col-xs-12 col-sm-8 col-md-8 pd-none encapsula-noticias">
+                  {include file="../inc/select-not-pub.html"}
                   {section name=i loop=$dados}
                      <div class="col-xs-12 col-sm-12 col-md-12 pd-none conteudo-interna-publicacao">
                         <h2 class="titulo-publicacoes font-bold"><a href="informativo.php?id={$dados[i].id}">{$dados[i].numPubclicacao}</a></h2>

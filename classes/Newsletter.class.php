@@ -29,6 +29,7 @@
 				SET
 					email = '".utf8_decode($post['newsletter'])."'
 			";
+
 			$result = mysql_query($sql);
 			if (!($result))
 			{
@@ -48,10 +49,10 @@
 		{
 			$query = "";
 			
-			if($post['email'])
-			{
-				$query .= " AND email = '".$post['email']."' ";
-			}
+			// if($post['email'])
+			// {
+			// 	$query .= " AND email = '".$post['email']."' ";
+			// }
 			
 			$retorno = array();
 		
@@ -60,8 +61,9 @@
 					FROM  
 						".$this->entidade."
 					WHERE
-						1 = 1 ".$query."
+						1 = 1 AND email = '".$post['newsletter']."'
 			";
+
 			$result = mysql_query($sql);
 			if (!($result))
 			{

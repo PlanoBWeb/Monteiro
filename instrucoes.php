@@ -55,6 +55,15 @@
 		$smarty->display("mensagem.html");
 		exit();
 	}
+	if ($retorno[1] == "") {
+		$parametro['mesAtual'] = $dataAtual['1'] -1;
+		$retorno = $class->Pesquisar($parametro,  $totalPorPagina, $_GET['p']);
+		if ($retorno[1] == "") {
+			$parametro['mesAtual'] = $dataAtual['1'] -1;
+			$parametro['anoAtual'] = $dataAtual['2'] -1;
+			$retorno = $class->Pesquisar($parametro,  $totalPorPagina, $_GET['p']);
+		}
+	}
 	$totalPub = count($retorno[1]);
 
 	// Dados do blog menu lateral	
@@ -98,7 +107,7 @@
 	exit();
 	}
 
-	$smarty->assign("breadcrumb", "instruções");
+	$smarty->assign("breadcrumb", "Instruções");
 	$smarty->assign("dadosTags", $retornoTags[1]);
 	$smarty->assign("totalPaginas", $totalPaginas);
 	$smarty->assign("ultimaPaginacao", $ultimaPaginacao);

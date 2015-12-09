@@ -11,7 +11,7 @@ if( $_SESSION['idioma'] == "I")
 		'MN_ESCRITORIO'  	=> 'Escritório',
 		'MN_APRESENTACAO'  	=> 'APRESENTAÇÃO',
 		'MN_MISVALOBJ'  	=> 'MISSÃO, VALORES E OBJETIVO',
-		'MN_RESPSOCIAL'  	=> 'RESPONSAILIDADE SOCIAL',
+		'MN_RESPSOCIAL'  	=> 'RESPONSABILIDADE SOCIAL',
 		'MN_PROFISSIONAIS' 	=> 'Profissionais',
 		'MN_ATUACAO' 		=> 'Atuação',
 		'MN_DIRPUBLICO'  	=> 'DIREITO PÚBLICO',
@@ -35,7 +35,7 @@ if( $_SESSION['idioma'] == "I")
 		'MN_TXT_DES_HOME'	=> 'Defesas sólidas, criativas e atentas aos atuais entendimentos dos tribunais superiores do país.',
 		'MN_ULTIMAS_NOT'  	=> 'Últimas Notícias',
 		'MN_PUBLICACOES'  	=> 'Publicações',
-		'MN_VIDEOS'		  	=> 'Videos',
+		'MN_VIDEOS'		  	=> 'Vídeos',
 
 		// Footer
 		'MN_ASSINE_NEWS'  	=> 'Assine nossa Newsletter',
@@ -110,7 +110,7 @@ if( $_SESSION['idioma'] == "I")
 								Tem experiência na área de Direito Público, nos setores público e privado, com ênfase em Direito Administrativo - Contratos de Infraestrutura ',
 		
 		'MN_TXT_DP'  		=> 'Na área do Direito Público, a Marcos Monteiro Sociedade de Advogados, por meio de uma equipe altamente especializada, está apta a atender seus clientes de maneira rápida e eficiente em relação ao conjunto das normas jurídicas de natureza pública que regulam a relação entre o particular e o Estado e também às atividades, funções e organizações de poderes do Estado e dos seus servidores.',
-		'MN_TITULO_DP'  	=> 'TRIBUNAL DE CONTAS',
+		'MN_TITULO_DP'  	=> 'Direito Público',
 		'MN_TITULO_TC'  	=> 'Tribunal de Contas',
 		'MN_TXT_TC'  		=> 'Atua na fiscalização contábil, financeira, orçamentária, operacional e patrimonial de estados, municípios e da União, além das respectivas entidades de administração direta ou indireta e fundações, quanto à legalidade, legitimidade, economicidade, aplicação de subvenções e renúncia de receitas.<br><br>
 
@@ -436,7 +436,7 @@ else
 		'MN_ESCRITORIO'  	=> 'Escritório',
 		'MN_APRESENTACAO'  	=> 'APRESENTAÇÃO',
 		'MN_MISVALOBJ'  	=> 'MISSÃO, VALORES E OBJETIVO',
-		'MN_RESPSOCIAL'  	=> 'RESPONSAILIDADE SOCIAL',
+		'MN_RESPSOCIAL'  	=> 'RESPONSABILIDADE SOCIAL',
 		'MN_PROFISSIONAIS' 	=> 'Profissionais',
 		'MN_ATUACAO' 		=> 'Atuação',
 		'MN_DIRPUBLICO'  	=> 'DIREITO PÚBLICO',
@@ -460,7 +460,7 @@ else
 		'MN_TXT_DES_HOME'	=> 'Defesas sólidas, criativas e atentas aos atuais entendimentos dos tribunais superiores do país.',
 		'MN_ULTIMAS_NOT'  	=> 'Últimas Notícias',
 		'MN_PUBLICACOES'  	=> 'Publicações',
-		'MN_VIDEOS'		  	=> 'Videos',
+		'MN_VIDEOS'		  	=> 'Vídeos',
 
 		// Footer
 		'MN_ASSINE_NEWS'  	=> 'Assine nossa Newsletter',
@@ -535,7 +535,7 @@ else
 								Tem experiência na área de Direito Público, nos setores público e privado, com ênfase em Direito Administrativo - Contratos de Infraestrutura ',
 		
 		'MN_TXT_DP'  		=> 'Na área do Direito Público, a Marcos Monteiro Sociedade de Advogados, por meio de uma equipe altamente especializada, está apta a atender seus clientes de maneira rápida e eficiente em relação ao conjunto das normas jurídicas de natureza pública que regulam a relação entre o particular e o Estado e também às atividades, funções e organizações de poderes do Estado e dos seus servidores.',
-		'MN_TITULO_DP'  	=> 'TRIBUNAL DE CONTAS',
+		'MN_TITULO_DP'  	=> 'Direito Público',
 		'MN_TITULO_TC'  	=> 'Tribunal de Contas',
 		'MN_TXT_TC'  		=> 'Atua na fiscalização contábil, financeira, orçamentária, operacional e patrimonial de estados, municípios e da União, além das respectivas entidades de administração direta ou indireta e fundações, quanto à legalidade, legitimidade, economicidade, aplicação de subvenções e renúncia de receitas.<br><br>
 

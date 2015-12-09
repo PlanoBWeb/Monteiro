@@ -27,39 +27,47 @@
 			<!-- Informativo -->
 			{elseif $pagina == "informativo.php"}
 				<li><a href="index.php">Home</a></li>
+				<li>Publicações</li>
 				<li><a href="informativos.php">Informativos</a></li>
          		<li>{$dados[0].tituloAbrev}</li>
          	<!-- Informativos -->
          	{elseif $pagina == "informativos.php"}
 				{if $smarty.get.ano}
 					<li><a href="index.php">Home</a></li>
+					<li>Publicações</li>
 					<li><a href="informativos.php">Informativos</a></li>
          			<li>{$dados[0].Mes} - {$dados[0].dataMes[0]}</li>
          		{elseif $smarty.get.idCat}
          			<li><a href="index.php">Home</a></li>
+         			<li>Publicações</li>
 					<li><a href="informativos.php">Informativos</a></li>
          			<li>{$dados[0].nomeCategoria}</li>
          		{elseif $smarty.get.tag}
          			<li><a href="index.php">Home</a></li>
+         			<li>Publicações</li>
 					<li><a href="informativos.php">Informativos</a></li>
          			<li>{$smarty.get.tag}</li>
 				{else}
 					<li><a href="index.php">Home</a></li>
+					<li>Publicações</li>
 	         		<li>{$breadcrumb}</li>
 				{/if}
 			<!-- Artigo -->
 			{elseif $pagina == "artigo.php"}
 				<li><a href="index.php">Home</a></li>
+				<li>Publicações</li>
 				<li><a href="artigos.php">Artigos</a></li>
          		<li>{$dados[0].tituloAbrev}</li>
          	<!-- Artigos -->
          	{elseif $pagina == "artigos.php"}
 				{if $smarty.get.ano}
 					<li><a href="index.php">Home</a></li>
+					<li>Publicações</li>
 					<li><a href="artigos.php">Artigos</a></li>
          			<li>{$dados[0].Mes} - {$dados[0].dataMes[0]}</li>
          		{elseif $smarty.get.idCat}
          			<li><a href="index.php">Home</a></li>
+         			<li>Publicações</li>
 					<li><a href="artigos.php">Artigos</a></li>
          			<li>{$dados[0].nomeCategoria}</li>
          		{elseif $smarty.get.tag}
@@ -68,54 +76,94 @@
          			<li>{$smarty.get.tag}</li>
 				{else}
 					<li><a href="index.php">Home</a></li>
+					<li>Publicações</li>
 	         		<li>{$breadcrumb}</li>
 				{/if}
 			<!-- Instrução -->
 			{elseif $pagina == "instrucao.php"}
 				<li><a href="index.php">Home</a></li>
+				<li>Publicações</li>
 				<li><a href="instrucoes.php">Instruções</a></li>
          		<li>{$dados[0].tituloAbrev}</li>
          	<!-- Instruções -->
          	{elseif $pagina == "instrucoes.php"}
 				{if $smarty.get.ano}
 					<li><a href="index.php">Home</a></li>
+					<li>Publicações</li>
 					<li><a href="instrucoes.php">Instruções</a></li>
          			<li>{$dados[0].Mes} - {$dados[0].dataMes[0]}</li>
          		{elseif $smarty.get.idCat}
          			<li><a href="index.php">Home</a></li>
+         			<li>Publicações</li>
 					<li><a href="instrucoes.php">Instruções</a></li>
          			<li>{$dados[0].nomeCategoria}</li>
          		{elseif $smarty.get.tag}
          			<li><a href="index.php">Home</a></li>
+         			<li>Publicações</li>
 					<li><a href="instrucoes.php">Instruções</a></li>
          			<li>{$smarty.get.tag}</li>
          		{else}
 					<li><a href="index.php">Home</a></li>
+					<li>Publicações</li>
 	         		<li>{$breadcrumb}</li>
          		{/if}
          	<!-- Palestra -->
      		{elseif $pagina == "palestra.php"}
 				<li><a href="index.php">Home</a></li>
+				<li>Publicações</li>
 				<li><a href="palestras.php">Palestras</a></li>
          		<li>{$dados[0].tituloAbrev}</li>
          	<!-- Palestras -->
          	{elseif $pagina == "palestras.php"}
 				{if $smarty.get.ano}
 					<li><a href="index.php">Home</a></li>
+					<li>Publicações</li>
 					<li><a href="palestras.php">Palestras</a></li>
          			<li>{$dados[0].Mes} - {$dados[0].dataMes[0]}</li>
          		{elseif $smarty.get.idCat}
          			<li><a href="index.php">Home</a></li>
+         			<li>Publicações</li>
 					<li><a href="palestras.php">Palestras</a></li>
          			<li>{$dados[0].nomeCategoria}</li>
          		{elseif $smarty.get.tag}
          			<li><a href="index.php">Home</a></li>
+         			<li>Publicações</li>
 					<li><a href="palestras.php">Palestras</a></li>
          			<li>{$smarty.get.tag}</li>
 				{else}
 					<li><a href="index.php">Home</a></li>
+					<li>Publicações</li>
 	         		<li>{$breadcrumb}</li>
 				{/if}
+			<!-- Atuação {$PgAtiva}-->
+			{elseif $PgAtiva == "direito publico"}
+				<li><a href="index.php">Home</a></li>
+				<li>Atuação</li>
+				<li><a href="direito-publico.php">Direito Público</a></li>
+         		<li>{$breadcrumb}</li>
+         	{elseif $PgAtiva == "direito eleitoral"}
+				<li><a href="index.php">Home</a></li>
+				<li>Atuação</li>
+				<li><a href="direito-eleitoral.php">Direito Eleitoral</a></li>
+         		<li>{$breadcrumb}</li>
+         	{elseif $PgAtiva == "direito empresarial"}
+				<li><a href="index.php">Home</a></li>
+				<li>Atuação</li>
+				<li><a href="direito-empresarial.php">Direito Empresarial</a></li>
+         		<li>{$breadcrumb}</li>
+         	{elseif $PgAtiva == "direito imobiliario"}
+				<li><a href="index.php">Home</a></li>
+				<li>Atuação</li>
+				<li><a href="direito-imobiliario.php">Direito Imobiliario</a></li>
+         		<li>{$breadcrumb}</li>
+         	{elseif $PgAtiva == "profissionais"}
+         		<li><a href="index.php">Home</a></li>
+         		<li>Profissionais</li>
+         		<li>{$breadcrumb}</li>
+         	{elseif $PgAtiva == "escritorio"}
+         		<li><a href="index.php">Home</a></li>
+         		<li>Escritório</li>
+         		<li>{$breadcrumb}</li>
 			{else}
 				<li><a href="index.php">Home</a></li>
          		<li>{$breadcrumb}</li>

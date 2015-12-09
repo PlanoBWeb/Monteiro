@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-10-28 17:56:27
+<?php /* Smarty version 2.6.12, created on 2015-11-18 12:41:39
          compiled from gabriel-vieira-almeida-machado.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -7,8 +7,8 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="robots" content="index, follow">
-      <meta name="description" content="" />
-      <title>Monteiro</title>
+      <meta name="description" content="Advogados com experiência no mercado e especialista nos diversos ramos do Direito." />
+      <title>Marcos Monteiro – Advogado Gabriel Vieira Almeida Machado</title>
       <link href="commom/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="commom/css/estilo.css">
       <link href="commom/img/icon-tab.png" rel="icon">

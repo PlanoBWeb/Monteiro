@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-10-28 17:44:28
+<?php /* Smarty version 2.6.12, created on 2015-11-18 13:04:30
          compiled from marcos-antonio-gaban-monteiro.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -7,8 +7,8 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="robots" content="index, follow">
-      <meta name="description" content="" />
-      <title>Monteiro</title>
+      <meta name="description" content="Advogados com experiência no mercado e especialista nos diversos ramos do Direito." />
+      <title>Marcos Monteiro – Advogado Marcos Antonio Gaban Monteiro</title>
       <link href="commom/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="commom/css/estilo.css">
       <link href="commom/img/icon-tab.png" rel="icon">
@@ -46,10 +46,20 @@ $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
                <div class="col-xs-12 col-sm-9 col-md-9 pd-none bloco-conteudo-interna">
-                  <div class="col-xs-12 col-sm-3 col-md-3 pd-none">
-                     <img class="img-profissional" src="commom/img/marcos-gaban.jpg" alt="Marcos Antonio Gaban Monteiro" title="Marcos Antonio Gaban Monteiro">
-                  </div>
-                  <div class="col-xs-12 col-sm-9 col-md-9 pd-none bloco-profissional">
+                  <div class="col-xs-12 col-sm-12 col-md-12 pd-none bloco-profissional">
+                     <form>
+                        <select class="select-internas visible-xs-block" id="formRedirect">
+                           <option value="Selecione um profissional">Selecione um profissional</option>
+                           <option value="marcos-antonio-gaban-monteiro.php">Marcos Antonio Gaban Monteiro</option>
+                           <option value="alvaro-merlos-akinaga-cordeiro.php">Álvaro Merlos Akinaga Cordeiro</option>
+                           <option value="juliana-gaban-monteiro-multini.php">Juliana Gaban Monteiro Multini</option>
+                           <option value="angelica-rebequi-da-motta-santos.php">Angélica Rebequi da Motta Santos</option>
+                           <option value="krikor-palma-artissian.php">Krikor Palma Artissian</option>
+                           <option value="roberta-moraes-dias-benatti.php">Roberta Moraes Dias Benatti</option>
+                           <option value="gabriel-vieira-almeida-machado.php">Gabriel Vieira Almeida Machado</option>
+                           <option value="guillermo-santana-andrade-glassman.php">Guillermo Santana Andrade Glassman</option>
+                        </select>
+                     </form>
                      <h1 class="titulo-pag font-normal"><?php echo $this->_tpl_vars['arrayIdioma']['MN_PROF_MARCOS']; ?>
 </h1>
                      <br><br>                  

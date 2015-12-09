@@ -32,10 +32,20 @@
             <div class="row tamanho-max bloco-conteudo">
                {include file="../inc/menu-lateral-profissionais.html"}
                <div class="col-xs-12 col-sm-9 col-md-9 pd-none bloco-conteudo-interna">
-                  <div class="col-xs-12 col-sm-3 col-md-3 pd-none">
-                     <img class="img-profissional" src="commom/img/marcos-gaban.jpg" alt="Marcos Antonio Gaban Monteiro" title="Marcos Antonio Gaban Monteiro">
-                  </div>
-                  <div class="col-xs-12 col-sm-9 col-md-9 pd-none bloco-profissional">
+                  <div class="col-xs-12 col-sm-12 col-md-12 pd-none bloco-profissional">
+                     <form>
+                        <select class="select-internas visible-xs-block" id="formRedirect">
+                           <option value="Selecione um profissional">Selecione um profissional</option>
+                           <option value="marcos-antonio-gaban-monteiro.php">Marcos Antonio Gaban Monteiro</option>
+                           <option value="alvaro-merlos-akinaga-cordeiro.php">Álvaro Merlos Akinaga Cordeiro</option>
+                           <option value="juliana-gaban-monteiro-multini.php">Juliana Gaban Monteiro Multini</option>
+                           <option value="angelica-rebequi-da-motta-santos.php">Angélica Rebequi da Motta Santos</option>
+                           <option value="krikor-palma-artissian.php">Krikor Palma Artissian</option>
+                           <option value="roberta-moraes-dias-benatti.php">Roberta Moraes Dias Benatti</option>
+                           <option value="gabriel-vieira-almeida-machado.php">Gabriel Vieira Almeida Machado</option>
+                           <option value="guillermo-santana-andrade-glassman.php">Guillermo Santana Andrade Glassman</option>
+                        </select>
+                     </form>
                      <h1 class="titulo-pag font-normal">{ $arrayIdioma.MN_PROF_MARCOS }</h1>
                      <br><br>                  
                      <p class="txt-interna font-normal">{ $arrayIdioma.MN_TXT_MARCOS }</p>

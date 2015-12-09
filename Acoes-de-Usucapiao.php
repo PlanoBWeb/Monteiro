@@ -4,7 +4,7 @@
 	include_once "url.php";
 	include_once "configs/idiomas.php";
 
-	$smarty->assign("Acões de Usucapião", $breadcrumb);
+	$smarty->assign("breadcrumb", "Ações de Usucapião");
 	$smarty->assign("arrayIdioma", $arrayIdioma);
 	$smarty->assign("PgAtiva", $PgAtiva);
 	$smarty->assign("pagina", $pagina);

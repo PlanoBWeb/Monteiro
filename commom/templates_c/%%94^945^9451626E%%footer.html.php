@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-17 11:38:04
+<?php /* Smarty version 2.6.12, created on 2015-11-23 14:09:05
          compiled from ../inc/footer.html */ ?>
 <article class="compartilhe-monteiro">
 	<div class="tamanho-max">
@@ -159,13 +159,13 @@
     }
 
     $(document).ready(function() {
-		$("#owl-demo").owlCarousel({
-		    navigation : true,
-		    slideSpeed : 300,
-		    paginationSpeed : 400,
-		    singleItem : true
-		});
-	});
+  		$("#owl-demo").owlCarousel({
+  		    navigation : true,
+  		    slideSpeed : 300,
+  		    paginationSpeed : 400,
+  		    singleItem : true
+  		});
+	  });
 
 	// Ajax Busca Desktop
     $(document).ready(function(){
@@ -297,6 +297,12 @@
          
         });
  
+    });
+
+    $(\'#formRedirect\').change(function(){
+        var pagina = $(\'#formRedirect\').val();
+
+        window.location.href = pagina;
     });
 
 

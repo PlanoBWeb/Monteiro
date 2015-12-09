@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-12 17:04:12
+<?php /* Smarty version 2.6.12, created on 2015-11-18 12:48:31
          compiled from fale-conosco.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -7,8 +7,8 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="robots" content="index, follow">
-      <meta name="description" content="" />
-      <title>Monteiro</title>
+      <meta name="description" content="Preencha seus dados e a mensagem e retornaremos o mais breve possível." />
+      <title>Marcos Monteiro Sociedade de Advogados – Fale Conosco</title>
       <link href="commom/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="commom/css/estilo.css">
       <link href="commom/img/icon-tab.png" rel="icon">
@@ -18,7 +18,6 @@
          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
-      <script src="commom/js/funcoes.js"></script>
       <?php echo '
          <script type="text/javascript">
             function enviardados()

@@ -4,7 +4,7 @@
 	include_once "url.php";
 	include_once "configs/idiomas.php";
 
-	$smarty->assign("breadcrumb", "Consultoria & Assessoria Jurídicas");
+	$smarty->assign("breadcrumb", "Direito Imobiliário");
 	$smarty->assign("arrayIdioma", $arrayIdioma);
 	$smarty->assign("PgAtiva", $PgAtiva);
 	$smarty->assign("pagina", $pagina);

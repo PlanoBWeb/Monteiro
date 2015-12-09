@@ -1,7 +1,10 @@
 <?php 
 
 	include_once "classes/Newsletter.class.php";
+	include_once "configs/funcoes.php";
 	$classNewsletter = new Newsletter();
+
+	$urlCompleta = UrlAtual();
 
 	if ($_POST['acao'] == 'newsletter') {
 		$parametro['newsletter'] = $_POST['newsletter'];
@@ -13,33 +16,30 @@
 			$smarty->display("mensagem.html");
 			exit();
 		}else{
-			if (empty($_POST['newsletter'])) 
-			{
-			   	header("Location: index.php"); 
-			} else { 
-				$ip = $_SERVER['REMOTE_ADDR'];
-				$data = date("d/m/y");
-				$hora = date("H:i"); 
+			
+			$ip = $_SERVER['REMOTE_ADDR'];
+			$data = date("d/m/y");
+			$hora = date("H:i"); 
 
-				$newsletter = $_POST['newsletter'];
+			$newsletter = $_POST['newsletter'];
 
-				$cont = "$ip\r\n";
-				$cont .= "$data\r\n";
-				$cont .= "$hora\r\n\r\n";
-				$cont .= "E-mail: \t$newsletter\r\n";
+			$cont = "$ip\r\n";
+			$cont .= "$data\r\n";
+			$cont .= "$hora\r\n\r\n";
+			$cont .= "E-mail: \t$newsletter\r\n";
 
-				$headers 	= "MIME-Version: 1.1\r\n";
-				$headers 	.= "Content-type: text/plain; charset=UTF-8\n";
-				$assunto 	.= "Monteiro - Newsletter";
-				$conteudo 	.= "$cont\r\n";
-				$headers 	.= "From: joseygor@planobweb.com.br\n"; 
-				$headers 	.= "Return-Path: joseygor@planobweb.com.br\r\n"; 
-				//$headers 	.= "Bcc: contato@planobweb.com.br\r\n"; // cópia
-				$headers 	.= "Reply-To: $email\n";
-				$envio 		= mail("joseygor@planobweb.com.br", $assunto,$conteudo,$headers);
+			$headers 	= "MIME-Version: 1.1\r\n";
+			$headers 	.= "Content-type: text/plain; charset=UTF-8\n";
+			$assunto 	.= "Monteiro - Newsletter";
+			$conteudo 	.= "$cont\r\n";
+			$headers 	.= "From: contato@mmonteiroadv.com.br\n"; 
+			$headers 	.= "Return-Path: contato@mmonteiroadv.com.br\r\n"; 
+			$headers 	.= "Bcc: contato@planobweb.com.br\r\n"; // cópia
+			$headers 	.= "Reply-To: $email\n";
+			$envio 		= mail("contato@mmonteiroadv.com.br", $assunto,$conteudo,$headers);
 
-				echo utf8_decode("<script>alert('Cadastro enviado com sucesso.');location.href ='index.php'</script>");
-			}
+			echo utf8_decode("<script>alert('Cadastro enviado com sucesso.');</script>");
+			
 		}
 	}
 
@@ -51,19 +51,19 @@
 			
 			$indique = $_POST['indique'];
 
-			$cont .= 'Site: \t <a href="http://www.mmonteiroadv.com.br" target="_blank">www.mmonteiroadv.com.br</a> \r\n';
+			$cont .= 'Site: http://www.mmonteiroadv.com.br';
 
 			$headers 	= "MIME-Version: 1.1\r\n";
 			$headers 	.= "Content-type: text/plain; charset=UTF-8\n";
 			$assunto 	.= "Acesse a Monteiro";
 			$conteudo 	.= "$cont\r\n";
-			$headers 	.= "From: joseygor@planobweb.com.br\n"; 
-			$headers 	.= "Return-Path: joseygor@planobweb.com.br\r\n"; 
+			$headers 	.= "From: contato@mmonteiroadv.com.br\n"; 
+			$headers 	.= "Return-Path: contato@mmonteiroadv.com.br\r\n"; 
 			//$headers 	.= "Bcc: contato@planobweb.com.br\r\n"; // cópia
 			$headers 	.= "Reply-To: $email\n";
 			$envio 		= mail($indique, $assunto,$conteudo,$headers);
 
-			echo utf8_decode("<script>alert('Enviado com sucesso.');location.href ='index.php'</script>");
+			echo utf8_decode("<script>alert('Enviado com sucesso.');</script>");
 		}
 	}
 
@@ -75,19 +75,19 @@
 			
 			$indique = $_POST['indiqueNot'];
 
-			$cont .= 'Para ler acesse: \t <a href="'.$urlCompleta.'" target="_blank">'.$urlCompleta.'</a> \r\n';
+			$cont .= 'Para ler acesse: '. $urlCompleta;
 
 			$headers 	= "MIME-Version: 1.1\r\n";
 			$headers 	.= "Content-type: text/plain; charset=UTF-8\n";
 			$assunto 	.= "Leia essa pagina";
 			$conteudo 	.= "$cont\r\n";
-			$headers 	.= "From: joseygor@planobweb.com.br\n"; 
-			$headers 	.= "Return-Path: joseygor@planobweb.com.br\r\n"; 
+			$headers 	.= "From: contato@mmonteiroadv.com.br\n"; 
+			$headers 	.= "Return-Path: contato@mmonteiroadv.com.br\r\n"; 
 			//$headers 	.= "Bcc: contato@planobweb.com.br\r\n"; // cópia
 			$headers 	.= "Reply-To: $email\n";
 			$envio 		= mail($indique, $assunto,$conteudo,$headers);
 
-			echo utf8_decode("<script>alert('Enviado com sucesso.');location.href ='index.php'</script>");
+			echo utf8_decode("<script>alert('Enviado com sucesso.');</script>");
 		}
 	}
 	

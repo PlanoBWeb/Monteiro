@@ -6,6 +6,7 @@
 
 	$smarty->assign("breadcrumb", "Responsabilidade Social");
 	$smarty->assign("arrayIdioma", $arrayIdioma);
+	$smarty->assign("PgAtiva", $PgAtiva);
 	$smarty->assign("pagina", $pagina);
 	$smarty->assign("titulo", utf8_encode(TITULO));
 	$smarty->assign("nome", $_SESSION['nome']);

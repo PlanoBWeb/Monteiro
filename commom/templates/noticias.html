@@ -29,9 +29,10 @@
             <div class="row tamanho-max bloco-conteudo bloco-conteudo-noticias">
                <div class="col-xs-12 col-sm-8 col-md-8 pd-none encapsula-noticias">
                   {if $dados}
+                     {include file="../inc/select-not-pub.html"}
                      {section name=i loop=$dados}
                         <div class="col-xs-12 col-sm-12 col-md-12 pd-none conteudo-interna-not">
-                           <a href="noticia.php?id={$dados[i].id}"><img class="img-noticias" src="commom/img/noticias/noticia1.jpg" title="Noticia" alt="Noticia"></a>
+                           <a href="noticia.php?id={$dados[i].id}"><img class="img-noticias" src="{$dados[i].caminhoImagemThumb}" title="{$dados[0].titulo}" alt="{$dados[0].titulo}"></a>
                            <h2 class="titulo-noticias font-normal"><a href="noticia.php?id={$dados[i].id}">{$dados[i].titulo}</a></h2>
                            <p class="txt-noticias-info font-normal">{ $arrayIdioma.MN_NOT_POR }:  {$dados[i].por}  •  { $arrayIdioma.MN_NOT_EM }: {$dados[i].nomeCategoria}  •   {$dados[i].dataMes[2]} {$dados[i].Mes} {$dados[i].dataMes[0]}</p>
                            <a class="txt-desc-noticias font-normal" href="noticia.php?id={$dados[i].id}">{$dados[i].textoAbrev}</a>

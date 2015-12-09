@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-17 13:16:04
+<?php /* Smarty version 2.6.12, created on 2015-11-18 12:48:58
          compiled from admin/noticias/dados.html */ ?>
 ﻿<?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "admin/topo.html", 'smarty_include_vars' => array()));
@@ -92,7 +92,7 @@ $this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $th
 " width="100" border="0"/>
         <?php endif; ?>
 
-		<label>*Imagem Thumb:</label>
+		<label>*Imagem Thumb (tamanho recomendado 204px X 116px):</label>
         <input type="file" name="arquivo2" size="50"/>
         <?php if ($this->_tpl_vars['dados'][0]['caminhoImagemThumb']): ?>
             <img src="<?php echo $this->_tpl_vars['dados'][0]['caminhoImagemThumb']; ?>
@@ -107,54 +107,6 @@ $this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $th
 
 	<?php echo '	
 		<script>
-
-			function checa()
-			{
-				frm = document.frm_cadastro;
-				msg = "Preencha o campo ";
-				
-				if(trim(frm.nome.value)=="")
-				{
-					alert(msg + "Nome!");
-					frm.nome.focus();
-					return false;
-				}
-				
-				if(trim(frm.email.value) == "")
-				{
-					alert(msg + "E-mail!");
-					frm.email.focus();
-					return false;
-				}
-				
-				if(!email(frm.email, \'E-mail inválido!\'))
-					return false;
-
-				if(!frm.id.value){
-					if(trim(frm.senha.value) == "")
-					{
-						alert(msg + "Senha!");
-						frm.senha.focus();
-						return false;
-					}
-					
-					if(trim(frm.senha2.value) == "")
-					{
-						alert(msg + "Repetir Senha!");
-						frm.senha2.focus();
-						return false;
-					}
-					
-					if(trim(frm.senha.value) != trim(frm.senha2.value))
-					{
-						alert("As senhas estão diferentes!");
-						return false;
-					}
-				} 
-
-				frm.submit();
-			}
-
 			tinymce.init({
 			    selector: "textarea",
 			    plugins: \'link\'

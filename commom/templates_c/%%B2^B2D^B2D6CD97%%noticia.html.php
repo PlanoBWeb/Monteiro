@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-17 12:51:48
+<?php /* Smarty version 2.6.12, created on 2015-11-18 13:45:46
          compiled from noticia.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -7,8 +7,9 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="robots" content="index, follow">
-      <meta name="description" content="" />
-      <title>Monteiro</title>
+      <meta name="description" content="<?php echo $this->_tpl_vars['dados'][0]['titulo']; ?>
+" />
+      <title>Marcos Monteiro Sociedade de Advogados – Notícias da área de Direito</title>
       <link href="commom/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="commom/css/estilo.css">
       <link href="commom/img/icon-tab.png" rel="icon">
@@ -40,6 +41,11 @@ unset($_smarty_tpl_vars);
          <section class="conteudo-interna">
             <div class="row tamanho-max bloco-conteudo bloco-conteudo-noticias">
                <div class="col-xs-12 col-sm-8 col-md-8 pd-none encapsula-noticias">
+                  <?php $_smarty_tpl_vars = $this->_tpl_vars;
+$this->_smarty_include(array('smarty_include_tpl_file' => "../inc/select-not-pub.html", 'smarty_include_vars' => array()));
+$this->_tpl_vars = $_smarty_tpl_vars;
+unset($_smarty_tpl_vars);
+ ?>
                   <div class="col-xs-12 col-sm-12 col-md-12 pd-none conteudo-interna-not">
                      <div class="bloco-imprimi">
                         <img class="img-not-ind" src="<?php echo $this->_tpl_vars['dados'][0]['caminhoImagem']; ?>
@@ -81,11 +87,11 @@ unset($_smarty_tpl_vars);
                            <div class="col-xs-12 col-sm-3 col-md-3" style="max-width: 110px !important; overflow:hidden !important;">
                               <div class="fb-like" style="width: 60px"></div> 
                            </div>
-                           <div class="col-xs-12 col-sm-3 col-md-3 pd-none">
+                           <div class="col-xs-12 col-sm-4 col-md-4">
                               <a href="http://twitter.com/share" class="twitter-share-button" data-url="<?php echo $this->_tpl_vars['urlCompleta']; ?>
 "  data-count="horizontal" data-lang="pt">Tweetar</a> 
                            </div>
-                           <div class="col-xs-12 col-sm-3 col-md-3 pd-none">
+                           <div class="col-xs-12 col-sm-2 col-md-2">
                               <g:plusone href="<?php echo $this->_tpl_vars['urlCompleta']; ?>
 "></g:plusone>
                            </div>

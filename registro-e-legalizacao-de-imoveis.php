@@ -4,7 +4,7 @@
 	include_once "url.php";
 	include_once "configs/idiomas.php";
 
-	$smarty->assign("breadcrumb", "Renegociação de Contratos Imobiliários");
+	$smarty->assign("breadcrumb", "Registro e Legalização de Imóveis");
 	$smarty->assign("arrayIdioma", $arrayIdioma);
 	$smarty->assign("PgAtiva", $PgAtiva);
 	$smarty->assign("pagina", $pagina);
