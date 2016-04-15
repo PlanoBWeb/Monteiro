@@ -10,10 +10,21 @@
 	$classCatego= new Categoria();
 
 	if ($_GET['id']) {
+		$parametroBlogAnoMes['tipo']= $tipoPub;
+		$retornoMenuBlogAnoMes = $class->Pesquisar($parametroBlogAnoMes, null, null);
+		if( $retornoMenuBlogAnoMes[0] )
+		{
+			$smarty->assign("mensagem", $retornoMenuBlogAnoMes[1]);
+			$smarty->assign("redir", "noticias.php");
+			$smarty->display("mensagem.html");
+			exit();
+		}
+
 		// Passa o tipo da publicação que vai ser
 		$parametro['tipo'] 				= $tipoPub; 
 		$parametroBlog['tipo'] 			= $tipoPub; 
 		$parametroVejaTambem['tipo'] 	= $tipoPub; 
+		$parametroTipoTags['tipo']		= $tipoPub; 
 
 		$parametro['idioma']	= $_idioma;
 		if (!$_GET['id']) {
@@ -65,8 +76,8 @@
 			exit();
 		}	
 
-		$parametroVejaTambem['destaque']	= "1";
-		$parametroVejaTambem['limitVeja']	= "2";
+		// $parametroVejaTambem['destaque']	= "1";
+		// $parametroVejaTambem['limitVeja']	= "2";
 		$retornoVejaTambem = $class->Pesquisar($parametroVejaTambem, null, null);
 		if( $retornoVejaTambem[0] )
 		{
@@ -75,13 +86,18 @@
 			$smarty->display("mensagem.html");
 			exit();
 		}
-		$randVejaTambem = array_rand($retornoVejaTambem[1], 2);
-		for ($i=0; $i < 2; $i++) { 
-			$randVejaTambem[$i] = $retornoVejaTambem[1][$randVejaTambem[$i]];
+		$totalResultArray = count($retornoVejaTambem[1]);
+		if ($totalResultArray > 2) {
+			$randVejaTambem = array_rand($retornoVejaTambem[1], 2);
+			for ($i=0; $i < 2; $i++) { 
+				$randVejaTambem[$i] = $retornoVejaTambem[1][$randVejaTambem[$i]];
+			}
+		}else{
+			$randVejaTambem = "";
 		}
 
 		// Tags
-		$retornoTags = $class->PesquisarTags(null, null, null);
+		$retornoTags = $class->PesquisarTags($parametroTipoTags, null, null);
 		if( $retornoTags[0] )
 		{
 			$smarty->assign("mensagem", $retornoTags[1]);
@@ -90,6 +106,19 @@
 		exit();
 		}
 
+		$parametroTipoTagsPg['id'] = $_GET['id'];
+		// Tags Página
+		$retornoTagsPg = $class->PesquisarTags($parametroTipoTagsPg, null, null);
+		if( $retornoTagsPg[0] )
+		{
+			$smarty->assign("mensagem", $retornoTagsPg[1]);
+			$smarty->assign("redir", "noticias.php");
+			$smarty->display("mensagem.html");
+		exit();
+		}
+
+		$smarty->assign("menuAtivo", $menuAtivo);
+		$smarty->assign("dadosMenuBlogAnoMes", $retornoMenuBlogAnoMes[1]);
 		$smarty->assign("dadosTags", $retornoTags[1]);
 		$smarty->assign("dadosVejaTambem", $randVejaTambem);
 		$smarty->assign("paginaMenuBlogInver", $paginaMenuBlogInver);
@@ -102,10 +131,10 @@
 		$smarty->assign("pagina", $pagina);
 		$smarty->assign("titulo", utf8_encode(TITULO));
 		$smarty->assign("nome", $_SESSION['nome']);
+		$smarty->assign("dadosTagsPg", $retornoTagsPg[1]);
 		$smarty->display("palestra.html");
 	}else{
 		$smarty->assign("redir", "index.php");
 		$smarty->display("mensagem.html");
 		exit();
 	}
-?>

@@ -83,8 +83,11 @@ class Publicacoes
 				WHERE
 					1 = 1 ".$query . "
 				ORDER BY
-					data DESC
+					publicacoes.numPubclicacao DESC
 			".$sqlLimit." ";
+// echo "<pre>";
+// 			print_r($numPubclicacaoAbrev);
+// 			die();
 
 		$result = mysql_query($sql);
 		if (!($result))
@@ -105,6 +108,7 @@ class Publicacoes
 				$dados[$i]['textoSemTag']		= strip_tags(utf8_encode($rows['texto_I']));
 				$dados[$i]['textoAbrev']		= strip_tags(utf8_encode(limita_caracteres($rows['texto_I'], 150, false)));
 				$dados[$i]['tag'] 				= utf8_encode(nl2br(trim($rows['tag_I'])));
+				$dados[$i]['numPubclicacaoAbrev']=utf8_encode(limita_caracteres($rows['numPubclicacao_I'], 45, false));
 				$dados[$i]['numPubclicacao'] 	= utf8_encode($rows['numPubclicacao_I']);
 			}else{
 				$dados[$i]['titulo'] 			= utf8_encode($rows['titulo']);	
@@ -114,6 +118,7 @@ class Publicacoes
 				$dados[$i]['textoAbrev']		= strip_tags(utf8_encode(limita_caracteres($rows['texto'], 150, false)));
 				$dados[$i]['numPubclicacao_I'] 	= utf8_encode($rows['numPubclicacao_I']);
 				$dados[$i]['numPubclicacao'] 	= utf8_encode($rows['numPubclicacao']);
+				$dados[$i]['numPubclicacaoAbrev']= utf8_encode(limita_caracteres($rows['numPubclicacao'], 45, false));
 				$dados[$i]['tag'] 				= utf8_encode(nl2br(trim($rows['tag'])));
 			}
 
@@ -130,6 +135,9 @@ class Publicacoes
 			$i++;
 		}
 
+		// echo "<pre>";
+		// print_r($dados);
+		// die();
 		$retorno[0] = 0;
 		$retorno[1] = $dados;
 		return $retorno;
@@ -139,11 +147,22 @@ class Publicacoes
 	{
 		$query = "";
 
+		if($post['tipo'])
+		{
+			$query .= " AND P.idTipo = '".$post['tipo']."' ";
+		}
+
+		if($post['id'])
+		{
+			$query .= " AND P.id = '".$post['id']."' ";
+		}
+
 		$retorno = array();
 	
 		$sql = "SELECT
 					P.tag,
-					P.tag_I
+					P.tag_I,
+					P.idTipo
 				FROM  
 					" . $this->entidade . " P
 				WHERE

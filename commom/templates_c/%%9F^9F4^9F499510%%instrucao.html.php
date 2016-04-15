@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-17 13:17:58
+<?php /* Smarty version 2.6.12, created on 2016-04-08 10:34:35
          compiled from instrucao.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -7,8 +7,9 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="robots" content="index, follow">
-      <meta name="description" content="" />
-      <title>Monteiro</title>
+      <meta name="description" content="<?php echo $this->_tpl_vars['dados'][0]['titulo']; ?>
+" />
+      <title>Marcos Monteiro Sociedade de Advogados – Instruções do escritório</title>
       <link href="commom/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="commom/css/estilo.css">
       <link href="commom/img/icon-tab.png" rel="icon">
@@ -18,7 +19,7 @@
          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
-      <link rel="canonical" href="http://mmonteiroadv.com.br/" />
+      <link rel="canonical" href="http://gabanmonteiroadv.com.br/" />
     <script src="https://apis.google.com/js/platform.js" async defer></script>
    </head>
    <body>
@@ -40,15 +41,20 @@ unset($_smarty_tpl_vars);
          <section class="conteudo-interna">
             <div class="row tamanho-max bloco-conteudo bloco-conteudo-noticias">
                <div class="col-xs-12 col-sm-8 col-md-8 pd-none encapsula-noticias">
+                  <?php $_smarty_tpl_vars = $this->_tpl_vars;
+$this->_smarty_include(array('smarty_include_tpl_file' => "../inc/select-not-pub.html", 'smarty_include_vars' => array()));
+$this->_tpl_vars = $_smarty_tpl_vars;
+unset($_smarty_tpl_vars);
+ ?>
                   <div class="col-xs-12 col-sm-12 col-md-12 pd-none conteudo-interna-not">
                      <div class="bloco-imprimi">
                         <h2 class="num-informativo font-normal"><?php echo $this->_tpl_vars['dados'][0]['numPubclicacao']; ?>
 </h2>
                         <h1 class="titulo-noticias font-normal"><?php echo $this->_tpl_vars['dados'][0]['titulo']; ?>
 </h1>
-                        <p class="txt-noticias-info font-normal"><?php echo $this->_tpl_vars['arrayIdioma']['MN_NOT_POR']; ?>
+                        <p class="txt-noticias-info font-normal"><?php if ($this->_tpl_vars['dados'][0]['por']):  echo $this->_tpl_vars['arrayIdioma']['MN_NOT_POR']; ?>
 :  <?php echo $this->_tpl_vars['dados'][0]['por']; ?>
-   •  <?php echo $this->_tpl_vars['arrayIdioma']['MN_NOT_EM']; ?>
+   • <?php endif; ?> <?php echo $this->_tpl_vars['arrayIdioma']['MN_NOT_EM']; ?>
 : <?php echo $this->_tpl_vars['dados'][0]['nomeCategoria']; ?>
   •   <?php echo $this->_tpl_vars['dados'][0]['dataMes'][2]; ?>
  <?php echo $this->_tpl_vars['dados'][0]['Mes']; ?>
@@ -94,18 +100,20 @@ unset($_smarty_tpl_vars);
 </h2>
                            <form method="post" name="formIndiqueNot">
                               <input type="hidden" name="acao" value="indiqueNot">
-                              <input class="font-normal form-compartilhe" type="text" name="indiqueNot" placeholder="<?php echo $this->_tpl_vars['arrayIdioma']['MN_FORM_EMAIL']; ?>
+                              <input class="font-normal form-compartilhe form-compartilhe-nome" type="text" name="nome" placeholder="<?php echo $this->_tpl_vars['arrayIdioma']['MN_FORM_NOME']; ?>
+...">
+                              <input class="font-normal form-compartilhe" type="text" name="email" placeholder="<?php echo $this->_tpl_vars['arrayIdioma']['MN_FORM_EMAIL']; ?>
 ...">
                               <input class="btn-ok cinza font-normal" type="submit" value="ok" onclick="return enviarindiqueNot();">
                            </form>
                         </div>
                      </div>  
-
-                     <div class="row bloco-leia-tambem">
-                        <br><br>
-                        <h2 class="titulo-compartilhe font-normal"><?php echo $this->_tpl_vars['arrayIdioma']['MN_NOT_LEIA_TBM']; ?>
+                     <?php if ($this->_tpl_vars['dadosVejaTambem'] != ""): ?>
+                        <div class="row bloco-leia-tambem">
+                           <br><br>
+                           <h2 class="titulo-compartilhe font-normal"><?php echo $this->_tpl_vars['arrayIdioma']['MN_NOT_LEIA_TBM']; ?>
 :</h2>
-                        <?php unset($this->_sections['i']);
+                           <?php unset($this->_sections['i']);
 $this->_sections['i']['name'] = 'i';
 $this->_sections['i']['loop'] = is_array($_loop=$this->_tpl_vars['dadosVejaTambem']) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
 $this->_sections['i']['show'] = true;
@@ -129,20 +137,20 @@ $this->_sections['i']['index_next'] = $this->_sections['i']['index'] + $this->_s
 $this->_sections['i']['first']      = ($this->_sections['i']['iteration'] == 1);
 $this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $this->_sections['i']['total']);
 ?>
-                           <div class="col-xs-12 col-sm-6 col-md-6 pd-none">
-                              <div class="bloco-noticia-destaque">
-                                 <p class="link-desc-noticias font-normal"><a class="txt-desc-noticias font-normal" href="instrucao.php?id=<?php echo $this->_tpl_vars['dadosVejaTambem'][$this->_sections['i']['index']]['id']; ?>
+                              <div class="col-xs-12 col-sm-6 col-md-6 pd-none">
+                                 <div class="bloco-noticia-destaque">
+                                    <p class="link-desc-noticias font-normal"><a class="txt-desc-noticias font-normal" href="instrucao.php?id=<?php echo $this->_tpl_vars['dadosVejaTambem'][$this->_sections['i']['index']]['id']; ?>
 "><?php echo $this->_tpl_vars['dadosVejaTambem'][$this->_sections['i']['index']]['titulo']; ?>
 </a></p>
-                                 <p class="txt-noticias-info font-normal pd-none"><?php echo $this->_tpl_vars['dadosVejaTambem'][0]['dataMes'][2]; ?>
+                                    <p class="txt-noticias-info font-normal pd-none"><?php echo $this->_tpl_vars['dadosVejaTambem'][0]['dataMes'][2]; ?>
  <?php echo $this->_tpl_vars['dadosVejaTambem'][0]['Mes']; ?>
  <?php echo $this->_tpl_vars['dadosVejaTambem'][0]['dataMes'][0]; ?>
 </p>
+                                 </div>
                               </div>
-                           </div>
-                        <?php endfor; endif; ?>
-                     </div>
-                     
+                           <?php endfor; endif; ?>
+                        </div>
+                     <?php endif; ?>
                   </div>
                </div>
                <?php $_smarty_tpl_vars = $this->_tpl_vars;

@@ -153,6 +153,7 @@ elseif( $_GET['acao'] == "exclui" )
 	exit();
 }
 
+$smarty->assign("nome", $_SESSION['nome']);
 $smarty->assign("botao", "Gravar");
 $smarty->display('admin/'.$pagina.'/dados.html');
 

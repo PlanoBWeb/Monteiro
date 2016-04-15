@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-23 14:09:05
+<?php /* Smarty version 2.6.12, created on 2016-04-15 14:09:47
          compiled from ../inc/footer.html */ ?>
 <article class="compartilhe-monteiro">
 	<div class="tamanho-max">
@@ -7,7 +7,7 @@
 </h2>
 			<form class="form-search" method="post" name="formnewsletter">
 				<input type="hidden" name="acao" value="newsletter">
-	            <input class="font-normal form-compartilhe" type="text" name="newsletter" placeholder="e-mail">
+	            <input class="font-normal form-compartilhe" type="text" name="email" placeholder="e-mail">
 	            <input class="btn-ok cinza font-normal" type="submit" value="ok" onclick="return enviarnewsletter();">
 	         </form>
 		</div>
@@ -17,7 +17,7 @@
 </h2>
 			<form class="form-search" method="post" name="formindique">
 				<input type="hidden" name="acao" value="indique">
-	            <input class="font-normal form-compartilhe" type="text" name="indique" placeholder="e-mail">
+	            <input class="font-normal form-compartilhe" type="text" name="email" placeholder="e-mail">
 	            <input class="btn-ok cinza font-normal" type="submit" value="ok" onclick="return enviarindique();">
 	        </form>
 		</div>
@@ -42,7 +42,7 @@
 <section class="encapsula-rodape">
 	<footer>
 		<div class="row">
-			<div class="col-xs-12 col-sm-3 col-md-3 hidden-xs bloco-sobre-footer">
+			<div class=" col-sm-3 col-md-3 <?php if ($this->_tpl_vars['pagina'] == "" || $this->_tpl_vars['pagina'] == "index.php"): ?>col-xs-12<?php else: ?>hidden-xs<?php endif; ?> ">
 				<a href="index.php">
 					<img src="commom/img/logo-footer.png" alt="Marcos Monteiro Sociedade de Advogados" title="Marcos Monteiro Sociedade de Advogados">
 				</a>
@@ -57,18 +57,23 @@
 
 					<div class="linha-local-footer">
 						<img class="icon-local-footer" src="commom/img/icon-casa.png" alt="icone casa" title="icone casa">
-						<p class="txt-local-footer font-normal"><?php echo $this->_tpl_vars['arrayIdioma']['MN_END_FOOTER']; ?>
-</p>
+						<a class="txt-local-footer font-normal" target="_blank" href="https://goo.gl/maps/vgTTMDfLUMQ2"><?php echo $this->_tpl_vars['arrayIdioma']['MN_END_FOOTER']; ?>
+</a>
 					</div>
+          <div class="linha-local-footer">
+            <img class="icon-local-footer" src="commom/img/icon-carro.png" style="    margin-top: 0px;" alt="icone carro" title="icone carro">
+            <a class="txt-local-footer font-normal" target="_blank" href="https://goo.gl/maps/hvGagRfpDf92"><?php echo $this->_tpl_vars['arrayIdioma']['MN_END_FOOTER_ESTAC']; ?>
+</a>
+          </div>
 					<div class="linha-local-footer">
 						<img class="icon-local-footer" src="commom/img/icon-cel.png" alt="icone telefone" title="icone telefone">
 						<p><a class="txt-local-footer font-normal" href="tel:01139298934">55 11 3929-8934</a>  |  <a class="txt-local-footer font-normal" href="tel:01139298936">Fax: 55 11 3929-8936</a></p>
 						<img class="icon-local-footer top-linha-footer" src="commom/img/icon-waths.png" alt="icone wathsapp" title="icone wathsapp">
-						<p class="top-linha-footer"><a class="txt-local-footer font-normal" href="tel:011987492993">55 11 9 8749-2993</a></p>
+						<p class="top-linha-footer"><a class="txt-local-footer font-normal" href="tel:011987492993">55 11 97770-0032</a></p>
 					</div>
 					<div class="linha-local-footer">
 						<img class="icon-local-footer" src="commom/img/icon-msg.png" alt="icone mensagem" title="icone mensagem">
-						<a class="txt-local-footer font-normal" href="mailto:contato@mmonteiroadv.com.br">contato@mmonteiroadv.com.br</a>
+						<a class="txt-local-footer font-normal" href="mailto:contato@gabanmonteiroadv.com.br">contato@gabanmonteiroadv.com.br</a>
 					</div>
 				</div>
 			</div>
@@ -85,7 +90,7 @@
 			<div class="col-xs-12 col-sm-12 col-md-12 encapsula-direitos">
 				<p class="txt-direitos font-normal"><?php echo $this->_tpl_vars['arrayIdioma']['MN_DIREITOS']; ?>
 </p>
-				<a class="fl-right" href="http://www.planobweb.com.br/"><img src="commom/img/logo-planob.png" alt="PlanoBWeb" title="PlanoBWeb"></a>
+				<a class="fl-right" target="_blank" href="http://www.planobweb.com.br/"><img src="commom/img/logo-planob.png" alt="PlanoBWeb" title="PlanoBWeb"></a>
 				<p class="txt-dev font-normal"><?php echo $this->_tpl_vars['arrayIdioma']['MN_DEV']; ?>
 </p>
 			</div>
@@ -108,36 +113,48 @@
     function enviarnewsletter()
     {
        d = document.formnewsletter;
-       if(trim(d.newsletter.value)=="")
+       if(trim(d.email.value)=="")
        {
           alert("O campo newsletter deve ser preenchido!");
-          d.newsletter.focus();
+          d.email.focus();
           return false;
        }
+       if(!email(d.email,\'\')) return false;
        d.submit();
     }
 
     function enviarindique()
     {
        d = document.formindique;
-       if(trim(d.indique.value)=="")
+       if(trim(d.email.value)=="")
        {
           alert("O campo INDIQUE ESTE SITE deve ser preenchido!");
-          d.indique.focus();
+          d.email.focus();
           return false;
        }
+       if(!email(d.email,\'\')) return false;
        d.submit();
     }
 
     function enviarindiqueNot()
     {
        d = document.formIndiqueNot;
-       if(trim(d.indiqueNot.value)=="")
+       if(trim(d.nome.value)=="")
        {
-          alert("O campo INDIQUE ESTA PAGINA deve ser preenchido!");
-          d.indiqueNot.focus();
+          alert("O campo NOME deve ser preenchido!");
+          d.nome.focus();
           return false;
        }
+
+       if(trim(d.email.value)=="")
+       {
+          alert("O campo E-MAIL deve ser preenchido!");
+          d.email.focus();
+          return false;
+       }
+
+       if(!email(d.email,\'\')) return false;
+
        d.submit();
     }
 
@@ -198,6 +215,7 @@
         var valorTxtBusca = $(this).text();
 
         $("#buscaValor").val(valorTxtBusca);
+        $(\'.form-busca-desk\').submit();
         $("#carrega-busca").hide();
         
     });
@@ -233,6 +251,7 @@
         var valorTxtBusca = $(this).text();
 
         $("#buscaValorMobile").val(valorTxtBusca);
+        $(\'.search-mobile\').submit();
         $("#carrega-busca-mobile").hide();
         
     });
@@ -243,61 +262,61 @@
         $("#carrega-busca").hide();
     });
 
-    // Vitrine Slides
-    $(document).ready(function() {
+    // // Vitrine Slides
+    // $(document).ready(function() {
 
-        //Pega o valor da largura e calcular o valor da posição da esquerda
-        var item_width = $(\'.ultimas-noticias-ind\').outerWidth();
-        var left_value = item_width * (-1);
+    //     //Pega o valor da largura e calcular o valor da posição da esquerda
+    //     var item_width = $(\'.ultimas-noticias-ind\').outerWidth();
+    //     var left_value = item_width * (-1);
  
-        //Coloca o último item antes do primeiro item, caso o usuário clique no botão de ANTERIOR
-        $(\'.ultimas-noticias-ind:first\').before($(\'.ultimas-noticias-ind:last\'));
+    //     //Coloca o último item antes do primeiro item, caso o usuário clique no botão de ANTERIOR
+    //     $(\'.ultimas-noticias-ind:first\').before($(\'.ultimas-noticias-ind:last\'));
          
-        //Coloca o item atual na posição correta
-        $(\'.encapsula-produto-vitrine\').css({\'left\' : left_value});
+    //     //Coloca o item atual na posição correta
+    //     $(\'.encapsula-produto-vitrine\').css({\'left\' : left_value});
          
-        //Se o usuário clica no botão ANTERIOR
-        $(\'#prev\').click(function() {
-            //Pega a posição da direita
-            var left_indent = parseInt($(\'.encapsula-produto-vitrine\').css(\'left\')) + item_width;
+    //     //Se o usuário clica no botão ANTERIOR
+    //     $(\'#prev\').click(function() {
+    //         //Pega a posição da direita
+    //         var left_indent = parseInt($(\'.encapsula-produto-vitrine\').css(\'left\')) + item_width;
              
-            //Move o item
-            $(\'.encapsula-produto-vitrine\').animate({\'left\' : left_indent}, 200,function(){
+    //         //Move o item
+    //         $(\'.encapsula-produto-vitrine\').animate({\'left\' : left_indent}, 200,function(){
              
-                //Move o último item e o coloca como o primeiro
-                $(\'.ultimas-noticias-ind:first\').before($(\'.ultimas-noticias-ind:last\'));
+    //             //Move o último item e o coloca como o primeiro
+    //             $(\'.ultimas-noticias-ind:first\').before($(\'.ultimas-noticias-ind:last\'));
                  
-                //Coloca o item atual na posição correta
-                $(\'.encapsula-produto-vitrine\').css({\'left\' : left_value});
-            });
+    //             //Coloca o item atual na posição correta
+    //             $(\'.encapsula-produto-vitrine\').css({\'left\' : left_value});
+    //         });
          
-        //Cancela o comportamento do click
-        return false;
-        });
+    //     //Cancela o comportamento do click
+    //     return false;
+    //     });
 
-        //Se o usuário clica no botão PROXIMO
-        $(\'#next\').click(function() {
+    //     //Se o usuário clica no botão PROXIMO
+    //     $(\'#next\').click(function() {
                 
-            //Pega a posição da direita
-            var left_indent = parseInt($(\'.encapsula-produto-vitrine\').css(\'left\')) - item_width;
+    //         //Pega a posição da direita
+    //         var left_indent = parseInt($(\'.encapsula-produto-vitrine\').css(\'left\')) - item_width;
              
-            //Move o item
-            $(\'.encapsula-produto-vitrine\').animate({\'left\' : left_indent}, 200, function () {
+    //         //Move o item
+    //         $(\'.encapsula-produto-vitrine\').animate({\'left\' : left_indent}, 200, function () {
              
-                //Move o último item e o coloca como o primeiro
-                $(\'.ultimas-noticias-ind:last\').after($(\'.ultimas-noticias-ind:first\'));
+    //             //Move o último item e o coloca como o primeiro
+    //             $(\'.ultimas-noticias-ind:last\').after($(\'.ultimas-noticias-ind:first\'));
                  
-                //Coloca o item atual na posição correta
-                $(\'.encapsula-produto-vitrine\').css({\'left\' : left_value});
+    //             //Coloca o item atual na posição correta
+    //             $(\'.encapsula-produto-vitrine\').css({\'left\' : left_value});
                  
-            });
+    //         });
              
-            //Cancela o comportamento do click
-            return false;
+    //         //Cancela o comportamento do click
+    //         return false;
          
-        });
+    //     });
  
-    });
+    // });
 
     $(\'#formRedirect\').change(function(){
         var pagina = $(\'#formRedirect\').val();
@@ -306,6 +325,37 @@
     });
 
 
+   $(\'.link-linha-topo-esc, .dropdown-menu-esc\').mouseenter(function(){
+        $(\'.dropdown-menu-esc\').show();
+    });
+
+    $(\'.link-linha-topo-esc, .dropdown-menu-esc\').mouseleave(function(){
+        $(\'.dropdown-menu-esc\').hide();
+    });
+
+    $(\'.link-linha-topo-prof, .dropdown-menu-prof\').mouseenter(function(){
+        $(\'.dropdown-menu-prof\').show();
+    });
+
+    $(\'.link-linha-topo-prof, .dropdown-menu-prof\').mouseleave(function(){
+        $(\'.dropdown-menu-prof\').hide();
+    });
+
+    $(\'.link-linha-topo-atu, .dropdown-menu-atu\').mouseenter(function(){
+        $(\'.dropdown-menu-atu\').show();
+    });
+
+    $(\'.link-linha-topo-atu, .dropdown-menu-atu\').mouseleave(function(){
+        $(\'.dropdown-menu-atu\').hide();
+    });
+
+    $(\'.link-linha-topo-pub, .dropdown-menu-pub\').mouseenter(function(){
+        $(\'.dropdown-menu-pub\').show();
+    });
+
+    $(\'.link-linha-topo-pub, .dropdown-menu-pub\').mouseleave(function(){
+        $(\'.dropdown-menu-pub\').hide();
+    });
 
  </script>
 '; ?>

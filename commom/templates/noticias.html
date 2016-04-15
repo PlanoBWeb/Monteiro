@@ -17,7 +17,8 @@
          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
    </head>
-   <body>
+   <body itemscopeitemtype="http://schema.org/WebPage">
+      {include file="../inc/google-tag-manager.html"}
       <div class="container-fluid no-padding">
          {include file="../inc/header.html"}
          <!-- BreadCrumb -->
@@ -32,23 +33,26 @@
                      {include file="../inc/select-not-pub.html"}
                      {section name=i loop=$dados}
                         <div class="col-xs-12 col-sm-12 col-md-12 pd-none conteudo-interna-not">
-                           <a href="noticia.php?id={$dados[i].id}"><img class="img-noticias" src="{$dados[i].caminhoImagemThumb}" title="{$dados[0].titulo}" alt="{$dados[0].titulo}"></a>
-                           <h2 class="titulo-noticias font-normal"><a href="noticia.php?id={$dados[i].id}">{$dados[i].titulo}</a></h2>
-                           <p class="txt-noticias-info font-normal">{ $arrayIdioma.MN_NOT_POR }:  {$dados[i].por}  •  { $arrayIdioma.MN_NOT_EM }: {$dados[i].nomeCategoria}  •   {$dados[i].dataMes[2]} {$dados[i].Mes} {$dados[i].dataMes[0]}</p>
+                           {if $dados[i].caminhoImagemThumb}<a href="noticia.php?id={$dados[i].id}"><img class="img-noticias" src="{$dados[i].caminhoImagemThumb}" title="{$dados[0].titulo}" alt="{$dados[0].titulo}"></a>{/if}
+                           <h2 class="titulo-noticias font-normal"><a href="noticia.php?id={$dados[i].id}">{$dados[i].tituloAbrev}</a></h2>
+                           <p class="txt-noticias-info font-normal">{if $dados[i].por}{ $arrayIdioma.MN_NOT_POR }:  {$dados[i].por}  • {/if} { $arrayIdioma.MN_NOT_EM }: {$dados[i].nomeCategoria} </p>
+                            <!-- •   {$dados[i].dataMes[2]} {$dados[i].Mes} {$dados[i].dataMes[0]} -->
                            <a class="txt-desc-noticias font-normal" href="noticia.php?id={$dados[i].id}">{$dados[i].textoAbrev}</a>
                         </div>
                      {/section}
 
                      {if $totalPaginas > 1}
                         <div class="bloco-paginacao">
-                           {if $anoPaginacao}
-                              <a href="noticias.php?ano={$anoPaginacao}&mes={$mesPaginacao}&p={$Numpaginas[1]}" class="seta-esquerda fl-left seta-default">&lt;&lt;</a>
-                           {elseif $idCatPaginacao}
-                              <a href="noticias.php?idCat={$idCatPaginacao}&p={$Numpaginas[1]}" class="seta-esquerda fl-left seta-default">&lt;&lt;</a>
-                           {elseif $tagPaginacao}
-                              <a href="noticias.php?tag={$tagPaginacao}&p={$Numpaginas[1]}" class="seta-esquerda fl-left seta-default">&lt;&lt;</a>
-                           {else}
-                              <a href="noticias.php?p={$Numpaginas[1]}" class="seta-esquerda fl-left seta-default">&lt;&lt;</a>
+                           {if $postBusca == ""}
+                              {if $anoPaginacao}
+                                 <a href="noticias.php?ano={$anoPaginacao}&mes={$mesPaginacao}&p={$Numpaginas[1]}" class="seta-esquerda fl-left seta-default">&lt;&lt;</a>
+                              {elseif $idCatPaginacao}
+                                 <a href="noticias.php?idCat={$idCatPaginacao}&p={$Numpaginas[1]}" class="seta-esquerda fl-left seta-default">&lt;&lt;</a>
+                              {elseif $tagPaginacao}
+                                 <a href="noticias.php?tag={$tagPaginacao}&p={$Numpaginas[1]}" class="seta-esquerda fl-left seta-default">&lt;&lt;</a>
+                              {else}
+                                 <a href="noticias.php?p={$Numpaginas[1]}" class="seta-esquerda fl-left seta-default">&lt;&lt;</a>
+                              {/if}
                            {/if}
                            {section start=1 name=i loop=$Numpaginas}
                               {if $anoPaginacao}
@@ -57,20 +61,28 @@
                                  <a href="noticias.php?idCat={$idCatPaginacao}&p={$Numpaginas[i]}" class="link-paginacao {if $Numpaginas[i] == $smarty.get.p} link-paginacao-ativo {/if}">{$Numpaginas[i]}</a>
                               {elseif $tagPaginacao}
                                  <a href="noticias.php?tag={$tagPaginacao}&p={$Numpaginas[i]}" class="link-paginacao {if $Numpaginas[i] == $smarty.get.p} link-paginacao-ativo {/if}">{$Numpaginas[i]}</a>
+                              {elseif $postBusca}
+                                 <form method="post" action="" class="pull-left">
+                                    <input type="hidden" name="search" value="{$postBusca}">
+                                    <input type="hidden" name="acao" value="busca">
+                                    <input type="hidden" name="p" value="{$Numpaginas[i]}">
+                                    <input class="link-paginacao {if $Numpaginas[i] == $smarty.get.p} link-paginacao-ativo {/if}" type="submit" value="{$Numpaginas[i]}">
+                                 </form>
                               {else}
                                  <a href="noticias.php?p={$Numpaginas[i]}" class="link-paginacao {if $Numpaginas[i] == $smarty.get.p} link-paginacao-ativo {/if}">{$Numpaginas[i]}</a>
                               {/if}
                            {/section}
-                           
-                           {if $anoPaginacao}
-                              <a href="noticias.php?ano={$anoPaginacao}&mes={$mesPaginacao}&p={$ultimaPaginacao}" class="seta-direita fl-left seta-default">&gt;&gt;</a>
-                           {elseif $idCatPaginacao}
-                              <a href="noticias.php?idCat={$idCatPaginacao}&p={$ultimaPaginacao}" class="seta-direita fl-left seta-default">&gt;&gt;</a>
-                           {elseif $tagPaginacao}
-                              <a href="noticias.php?tag={$tagPaginacao}&p={$ultimaPaginacao}" class="seta-direita fl-left seta-default">&gt;&gt;</a>
-                           {else}
-                              <a href="noticias.php?p={$ultimaPaginacao}" class="seta-direita fl-left seta-default">&gt;&gt;</a>
-                           {/if}
+                           {if $postBusca == ""}
+                              {if $anoPaginacao}
+                                 <a href="noticias.php?ano={$anoPaginacao}&mes={$mesPaginacao}&p={$ultimaPaginacao}" class="seta-direita fl-left seta-default">&gt;&gt;</a>
+                              {elseif $idCatPaginacao}
+                                 <a href="noticias.php?idCat={$idCatPaginacao}&p={$ultimaPaginacao}" class="seta-direita fl-left seta-default">&gt;&gt;</a>
+                              {elseif $tagPaginacao}
+                                 <a href="noticias.php?tag={$tagPaginacao}&p={$ultimaPaginacao}" class="seta-direita fl-left seta-default">&gt;&gt;</a>
+                              {else}
+                                 <a href="noticias.php?p={$ultimaPaginacao}" class="seta-direita fl-left seta-default">&gt;&gt;</a>
+                              {/if}
+                           {/if}   
                         </div>
                      {/if}
                   {else}

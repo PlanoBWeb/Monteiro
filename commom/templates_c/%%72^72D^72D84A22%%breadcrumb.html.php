@@ -1,8 +1,8 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-23 14:40:10
+<?php /* Smarty version 2.6.12, created on 2016-04-12 16:39:29
          compiled from ../inc/breadcrumb.html */ ?>
 <div class="row bloco-breadcrumb">
     <div class="tamanho-max pd-left-5">
-       	<ol class="breadcrumb">
+       	<ol class="breadcrumb" itemprop="breadcrumb">
        		<!-- Noticia -->
 			<?php if ($this->_tpl_vars['pagina'] == "noticia.php"): ?>
 				<li><a href="index.php">Home</a></li>
@@ -172,27 +172,47 @@
 			<?php elseif ($this->_tpl_vars['PgAtiva'] == 'direito publico'): ?>
 				<li><a href="index.php">Home</a></li>
 				<li>Atuação</li>
-				<li><a href="direito-publico.php">Direito Público</a></li>
-         		<li><?php echo $this->_tpl_vars['breadcrumb']; ?>
+				<?php if ($this->_tpl_vars['breadcrumb'] == 'Direito Público'): ?>
+					<li><?php echo $this->_tpl_vars['breadcrumb']; ?>
 </li>
+				<?php else: ?>
+					<li><a href="direito-publico.php">Direito Público</a></li>
+         			<li><?php echo $this->_tpl_vars['breadcrumb']; ?>
+</li>
+				<?php endif; ?>
          	<?php elseif ($this->_tpl_vars['PgAtiva'] == 'direito eleitoral'): ?>
 				<li><a href="index.php">Home</a></li>
 				<li>Atuação</li>
-				<li><a href="direito-eleitoral.php">Direito Eleitoral</a></li>
-         		<li><?php echo $this->_tpl_vars['breadcrumb']; ?>
+				<?php if ($this->_tpl_vars['breadcrumb'] == 'Direito Eleitoral'): ?>
+					<li><?php echo $this->_tpl_vars['breadcrumb']; ?>
 </li>
+				<?php else: ?>
+					<li><a href="direito-eleitoral.php">Direito Eleitoral</a></li>
+         			<li><?php echo $this->_tpl_vars['breadcrumb']; ?>
+</li>
+				<?php endif; ?>
          	<?php elseif ($this->_tpl_vars['PgAtiva'] == 'direito empresarial'): ?>
 				<li><a href="index.php">Home</a></li>
 				<li>Atuação</li>
-				<li><a href="direito-empresarial.php">Direito Empresarial</a></li>
-         		<li><?php echo $this->_tpl_vars['breadcrumb']; ?>
+				<?php if ($this->_tpl_vars['breadcrumb'] == 'Direito Empresarial'): ?>
+					<li><?php echo $this->_tpl_vars['breadcrumb']; ?>
 </li>
+				<?php else: ?>
+					<li><a href="direito-empresarial.php">Direito Empresarial</a></li>
+         			<li><?php echo $this->_tpl_vars['breadcrumb']; ?>
+</li>
+				<?php endif; ?>
          	<?php elseif ($this->_tpl_vars['PgAtiva'] == 'direito imobiliario'): ?>
 				<li><a href="index.php">Home</a></li>
 				<li>Atuação</li>
-				<li><a href="direito-imobiliario.php">Direito Imobiliario</a></li>
-         		<li><?php echo $this->_tpl_vars['breadcrumb']; ?>
+				<?php if ($this->_tpl_vars['breadcrumb'] == "Direito Imobiliário"): ?>
+					<li><?php echo $this->_tpl_vars['breadcrumb']; ?>
 </li>
+				<?php else: ?>
+					<li><a href="direito-imobiliario.php">Direito Imobiliario</a></li>
+         			<li><?php echo $this->_tpl_vars['breadcrumb']; ?>
+</li>
+				<?php endif; ?>
          	<?php elseif ($this->_tpl_vars['PgAtiva'] == 'profissionais'): ?>
          		<li><a href="index.php">Home</a></li>
          		<li>Profissionais</li>

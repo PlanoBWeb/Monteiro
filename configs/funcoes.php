@@ -32,7 +32,7 @@
 		}elseif ($mes[1] == "11") {
 			$retorno = "Novembro";
 		}elseif ($mes[1] == "12") {
-			$retorno = "dezembro";
+			$retorno = "Dezembro";
 		}
 		return $retorno;
 	}
@@ -60,7 +60,7 @@
 			$retorno = "10";
 		}elseif ($mes == "Novembro") {
 			$retorno = "11";
-		}elseif ($mes == "dezembro") {
+		}elseif ($mes == "Dezembro") {
 			$retorno = "12";
 		}
 

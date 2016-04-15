@@ -12,37 +12,39 @@
 	/// Passa o tipo da publicação que vai ser
 	$parametro['tipo'] 			= $tipoPub; 
 	$parametroBlog['tipo'] 		= $tipoPub; 
+	$parametroBlogAnoMes['tipo']= $tipoPub; 
 	$parametroDestaque['tipo'] 	= $tipoPub; 
 	$parametro['idioma']		= $_idioma;
 
 	// Dados do blog menu lateral
-	$parametroBlog['destaque']	= "1";
+	$parametroBlog['destaque']		= "1";
+	$parametroBlog['limitVeja']		= "4";
 	$retornoMenuBlog = $class->Pesquisar($parametroBlog, null, null);
 	if( $retornoMenuBlog[0] )
 	{
 		$smarty->assign("mensagem", $retornoMenuBlog[1]);
-		$smarty->assign("redir", "noticias.php");
+		$smarty->assign("redir", "informativos.php");
 		$smarty->display("mensagem.html");
 		exit();
 	}
 
-	$retornoMenuBlogAnoMes = $class->Pesquisar(null, null, null);
+	$retornoMenuBlogAnoMes = $class->Pesquisar($parametroBlogAnoMes, null, null);
 	if( $retornoMenuBlogAnoMes[0] )
 	{
 		$smarty->assign("mensagem", $retornoMenuBlogAnoMes[1]);
-		$smarty->assign("redir", "noticias.php");
+		$smarty->assign("redir", "informativos.php");
 		$smarty->display("mensagem.html");
 		exit();
 	}
 
 	// Dados do blog menu lateral categoria
 	$parametroDestaque['id']			= $_GET['id'];
-	$parametroDestaque['limitVeja']		= "4";
+	// $parametroDestaque['limitVeja']		= "4";
 	$retornoCatego 		= $classCatego->Pesquisar($parametroDestaque, null, null);
 	if( $retornoCatego[0] )
 	{
 		$smarty->assign("mensagem", $retornoCatego[1]);
-		$smarty->assign("redir", "noticias.php");
+		$smarty->assign("redir", "informativos.php");
 		$smarty->display("mensagem.html");
 		exit();
 	}
@@ -52,50 +54,60 @@
 	
 	//  Fim Paginação
 	// $parametro['tag'] = $_GET['tag'];
-	
-
-		if (!$_GET['id']) {
-			if ($_GET['idCat']) {
-				$parametro['idCat'] 	= $_GET['idCat'];
-			}elseif ($_GET['ano'] || $_GET['mes']) {
-				$parametro['anoAtual'] 	= $_GET['ano'];
-				$parametro['mesAtual'] 	= $_GET['mes'];
-			}elseif ($_GET['tag']) {
-				$parametro['tag'] = $_GET['tag'];
-			}
-			else{
-				$dataAtual = explode("/",date("d/m/Y"));
-				$parametro['diaAtual'] = $dataAtual['0'];
-				$parametro['mesAtual'] = $dataAtual['1'];
-				$parametro['anoAtual'] = $dataAtual['2'];
-			}
-		}else{
-			$parametro['id'] 		= $_GET['id'];
+	if (!$_GET['id']) {
+		if ($_GET['idCat']) {
+			$parametro['idCat'] 	= $_GET['idCat'];
+		}elseif ($_GET['ano'] || $_GET['mes']) {
+			$parametro['anoAtual'] 	= $_GET['ano'];
+			$parametro['mesAtual'] 	= $_GET['mes'];
+		}elseif ($_GET['tag']) {
+			$parametro['tag'] = $_GET['tag'];
 		}
-		$retornoPag = $class->Pesquisar($parametro, null, null);
-		$retorno = $class->Pesquisar($parametro,  $totalPorPagina, $_GET['p']);
-		if( $retorno[0] )
-		{
-			$smarty->assign("mensagem", $retorno[1]);
-			$smarty->assign("redir", "noticias.php");
-			$smarty->display("mensagem.html");
-			exit();
-		}
+		// else{
+		// 	$dataAtual = explode("/",date("d/m/Y"));
+		// 	$parametro['diaAtual'] = $dataAtual['0'];
+		// 	$parametro['mesAtual'] = $dataAtual['1'];
+		// 	$parametro['anoAtual'] = $dataAtual['2'];
+		// }
+	}else{
+		$parametro['id'] 		= $_GET['id'];
+	}
+	$retornoPag = $class->Pesquisar($parametro, null, null);
+	$retorno = $class->Pesquisar($parametro,  $totalPorPagina, $_GET['p']);
+	if( $retorno[0] )
+	{
+		$smarty->assign("mensagem", $retorno[1]);
+		$smarty->assign("redir", "informativos.php");
+		$smarty->display("mensagem.html");
+		exit();
+	}
 
-		if ($retorno[1] == "") {
-			$parametro['mesAtual'] = $dataAtual['1'] -1;
-			$retorno = $class->Pesquisar($parametro,  $totalPorPagina, $_GET['p']);
-			if ($retorno[1] == "") {
-				$parametro['mesAtual'] = $dataAtual['1'] -1;
-				$parametro['anoAtual'] = $dataAtual['2'] -1;
-				$retorno = $class->Pesquisar($parametro,  $totalPorPagina, $_GET['p']);
-			}
-		}
+	// if ($retorno[1] == "") {
+	// 	$parametro['mesAtual'] = $dataAtual['1'] -1;
+	// 	$retornoPag = $class->Pesquisar($parametro, null, null);
+	// 	$retorno = $class->Pesquisar($parametro,  $totalPorPagina, $_GET['p']);
+	// 	if ($retorno[1] == "") {
+	// 		$parametro['mesAtual'] = $dataAtual['1'] -1;
+	// 		$parametro['anoAtual'] = $dataAtual['2'] -1;
+	// 		$retorno = $class->Pesquisar($parametro,  $totalPorPagina, $_GET['p']);
+	// 	}
+	// }
 
+	// $totalDeProdutos = count($retornoPag[1]);
+	// $conta = $totalDeProdutos / $totalPorPagina;
+	// $totalPaginas = ceil($conta);
 
 	$totalDeProdutos = count($retornoPag[1]);
 	$conta = $totalDeProdutos / $totalPorPagina;
-	$totalPaginas = ceil($conta);
+	if (!($_GET['idCat'] || $_GET['ano'] || $_GET['mes'] || $_GET['tag'] || $_POST['acao'])) {
+		if ($totalDeProdutos >= 30) {
+			$totalPaginas = 3;	
+		}else{
+			$totalPaginas = ceil($conta);	
+		}
+	}else{
+		$totalPaginas = ceil($conta);	
+	}
 
 	$Numpaginas 	= array();
 	for($j=0; $j <= $totalPaginas; $j++) { 
@@ -105,15 +117,16 @@
 	$totalNot = count($retorno[1]);
 
 	// Tags
-	$retornoTags = $class->PesquisarTags(null, null, null);
+	$retornoTags = $class->PesquisarTags($parametroBlogAnoMes, null, null);
 	if( $retornoTags[0] )
 	{
 		$smarty->assign("mensagem", $retornoTags[1]);
-		$smarty->assign("redir", "noticias.php");
+		$smarty->assign("redir", "informativos.php");
 		$smarty->display("mensagem.html");
 	exit();
 	}
 
+	$smarty->assign("menuAtivo", $menuAtivo);
 	$smarty->assign("breadcrumb", "Informativos");
 	$smarty->assign("dadosTags", $retornoTags[1]);
 	$smarty->assign("totalPaginas", $totalPaginas);

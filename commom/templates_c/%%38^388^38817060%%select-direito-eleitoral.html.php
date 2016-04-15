@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-18 13:23:23
+<?php /* Smarty version 2.6.12, created on 2016-04-14 12:11:01
          compiled from ../inc/select-direito-eleitoral.html */ ?>
  <form>
    <select class="select-internas visible-xs-block" id="formRedirect">
@@ -9,7 +9,7 @@
 </option>
       <option value="raio-x-candidato.php"><?php echo $this->_tpl_vars['arrayIdioma']['MN_TITULO_RX']; ?>
 </option>
-      <option value="registro-candidatura.php"><?php echo $this->_tpl_vars['arrayIdioma']['MN_TITULO_RC']; ?>
+      <option value="registro-candidatura.php"><?php echo $this->_tpl_vars['arrayIdioma']['MN_TITULO_RCRE']; ?>
 </option>
       <option value="prestacao-de-contas.php"><?php echo $this->_tpl_vars['arrayIdioma']['MN_TITULO_PC']; ?>
 </option>

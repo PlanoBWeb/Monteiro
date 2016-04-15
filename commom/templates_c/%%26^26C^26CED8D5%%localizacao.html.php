@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-23 13:34:39
+<?php /* Smarty version 2.6.12, created on 2016-04-15 14:28:36
          compiled from localizacao.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -19,7 +19,12 @@
          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
    </head>
-   <body>
+   <body itemscopeitemtype="http://schema.org/WebPage">
+      <?php $_smarty_tpl_vars = $this->_tpl_vars;
+$this->_smarty_include(array('smarty_include_tpl_file' => "../inc/google-tag-manager.html", 'smarty_include_vars' => array()));
+$this->_tpl_vars = $_smarty_tpl_vars;
+unset($_smarty_tpl_vars);
+ ?>
       <div class="container-fluid no-padding">
          <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "../inc/header.html", 'smarty_include_vars' => array()));
@@ -57,16 +62,18 @@ unset($_smarty_tpl_vars);
                   <br>
                   <div class="row">
                      <div class="col-xs-12 col-sm-3 col-md-3">
-                        <div><img src="commom/img/icon-carro.jpg" alt="icone carro" title="icone carro"></div>
-                        <p class="txt-interna font-normal">Estacionamento Rua Asdrúbal do nascimento Número 298</p><br>
-
                         <div><img src="commom/img/icon-local.jpg" alt="icone local" title="icone local"></div>
-                        <p class="txt-interna font-normal">Marcos Monteiro Sociedade de Advogados, n°36, 3° Andar cj. A</p><br>
+                        <a class="txt-interna font-normal" style="text-align: left" target="_blank" href="https://goo.gl/maps/vgTTMDfLUMQ2">Rua Dona Maria Paula, n° 36 <br>3° Andar – Bela Vista – São Paulo – SP</a><br><br>
+
+                        <div><img src="commom/img/icon-carro.jpg" alt="icone carro" title="icone carro"></div>
+                        <a class="txt-interna font-normal" style="text-align: left" target="_blank" href="https://goo.gl/maps/hvGagRfpDf92">
+                           <strong style="color: #8b0303;">Estacionamento</strong><br/>
+                           Mesmo prédio, porém a entrada na
+                           <strong>Rua Asdrúbal do Nascimento 298</strong>.
+                        </a><br><br>
 
                         <div><img src="commom/img/icon-outros.jpg" alt="icone outros" title="icone outros"></div>
-                        <p class="txt-interna font-normal">Outros / Nenhum valor</p><br>
-                        
-                        
+                        <p class="txt-interna font-normal" style="text-align: left">Outros / Nenhum valor</p><br>
                         
                      </div>
                      <div class="col-xs-12 col-sm-9 col-md-9 pd-none">

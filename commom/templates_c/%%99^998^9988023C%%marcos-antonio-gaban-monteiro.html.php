@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-18 13:04:30
+<?php /* Smarty version 2.6.12, created on 2016-04-15 14:27:15
          compiled from marcos-antonio-gaban-monteiro.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -19,7 +19,12 @@
          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
    </head>
-   <body>
+   <body itemscopeitemtype="http://schema.org/WebPage">
+      <?php $_smarty_tpl_vars = $this->_tpl_vars;
+$this->_smarty_include(array('smarty_include_tpl_file' => "../inc/google-tag-manager.html", 'smarty_include_vars' => array()));
+$this->_tpl_vars = $_smarty_tpl_vars;
+unset($_smarty_tpl_vars);
+ ?>
       <div class="container-fluid no-padding">
          <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "../inc/header.html", 'smarty_include_vars' => array()));
@@ -47,19 +52,11 @@ unset($_smarty_tpl_vars);
  ?>
                <div class="col-xs-12 col-sm-9 col-md-9 pd-none bloco-conteudo-interna">
                   <div class="col-xs-12 col-sm-12 col-md-12 pd-none bloco-profissional">
-                     <form>
-                        <select class="select-internas visible-xs-block" id="formRedirect">
-                           <option value="Selecione um profissional">Selecione um profissional</option>
-                           <option value="marcos-antonio-gaban-monteiro.php">Marcos Antonio Gaban Monteiro</option>
-                           <option value="alvaro-merlos-akinaga-cordeiro.php">Álvaro Merlos Akinaga Cordeiro</option>
-                           <option value="juliana-gaban-monteiro-multini.php">Juliana Gaban Monteiro Multini</option>
-                           <option value="angelica-rebequi-da-motta-santos.php">Angélica Rebequi da Motta Santos</option>
-                           <option value="krikor-palma-artissian.php">Krikor Palma Artissian</option>
-                           <option value="roberta-moraes-dias-benatti.php">Roberta Moraes Dias Benatti</option>
-                           <option value="gabriel-vieira-almeida-machado.php">Gabriel Vieira Almeida Machado</option>
-                           <option value="guillermo-santana-andrade-glassman.php">Guillermo Santana Andrade Glassman</option>
-                        </select>
-                     </form>
+                     <?php $_smarty_tpl_vars = $this->_tpl_vars;
+$this->_smarty_include(array('smarty_include_tpl_file' => "../inc/menu-profissionais-mobile.html", 'smarty_include_vars' => array()));
+$this->_tpl_vars = $_smarty_tpl_vars;
+unset($_smarty_tpl_vars);
+ ?>
                      <h1 class="titulo-pag font-normal"><?php echo $this->_tpl_vars['arrayIdioma']['MN_PROF_MARCOS']; ?>
 </h1>
                      <br><br>                  
@@ -67,7 +64,7 @@ unset($_smarty_tpl_vars);
 </p>
                      <div class="col-xs-12 col-sm-12 col-md-12 pd-none email-profissional">
                         <img src="commom/img/icon-msg-v.png" alt="icone mensagem" title="icone mensagem">
-                        <a href="mailto:marcos@mmonteiroadv.com.br">marcos@mmonteiroadv.com.br</a>
+                        <a href="mailto:marcos@gabanmonteiroadv.com.br">marcos@gabanmonteiroadv.com.br</a>
                      </div>
                   </div>
                </div>

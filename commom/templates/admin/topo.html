@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="favicon.ico">
-    <meta name="robots" content="noindex, nofollow">
+    <meta name="robots" content="noindex,follow"/>
     <link href="commom/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="commom/css/template.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="commom/css/estilo_admin.css">
@@ -19,10 +19,10 @@
     <header>
         <div class="container-fluid bloco-topo-fixo">
             <div class="encapsula-topo-logo">
-                <div class="topo-logo col-sm-12 col-md-4 col-lg-4">
+                <div class="topo-logo col-sm-12 col-md-6 col-lg-6">
                     <a class="navbar-brand" href="adm_index.php"><img src="commom/img/logo.png" alt="logo PlanoBWeb" title="logo PlanoBWeb"></a>
                 </div>
-                <div class="col-sm-12 col-md-4 col-lg-4">
+                <div class="col-sm-12 col-md-6 col-lg-6 hidden-xs">
                     <p class="hello-user">Olá {$nome}</p>
                 </div>
             </div>
@@ -40,8 +40,16 @@
                                 </div>
                             </li>
 
-                            <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <a class="nav-link" href="adm_usuario.php?acao=senha">Alterar Senha</a>
+                            </li> -->
+
+                            <li class="nav-item active dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Minha Conta</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="adm_usuario.php?acao=editar">Editar</a>    
+                                    <a class="dropdown-item" href="adm_usuario.php?acao=senha">Alterar Senha</a>
+                                </div>
                             </li>
 
                             <li class="nav-item active dropdown">

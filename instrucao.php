@@ -10,10 +10,20 @@
 	$classCatego= new Categoria();
 
 	if ($_GET['id']) {
+		$retornoMenuBlogAnoMes = $class->Pesquisar(null, null, null);
+		if( $retornoMenuBlogAnoMes[0] )
+		{
+			$smarty->assign("mensagem", $retornoMenuBlogAnoMes[1]);
+			$smarty->assign("redir", "noticias.php");
+			$smarty->display("mensagem.html");
+			exit();
+		}
+
 		// Passa o tipo da publicação que vai ser
 		$parametro['tipo'] 				= $tipoPub; 
 		$parametroBlog['tipo'] 			= $tipoPub; 
 		$parametroVejaTambem['tipo'] 	= $tipoPub; 
+		$parametroTipoTags['tipo']		= $tipoPub; 
 
 		$parametro['idioma']	= $_idioma;
 		if (!$_GET['id']) {
@@ -65,8 +75,8 @@
 			exit();
 		}	
 
-		$parametroVejaTambem['destaque']	= "1";
-		$parametroVejaTambem['limitVeja']	= "2";
+		// $parametroVejaTambem['destaque']	= "1";
+		// $parametroVejaTambem['limitVeja']	= "2";
 		$retornoVejaTambem = $class->Pesquisar($parametroVejaTambem, null, null);
 		if( $retornoVejaTambem[0] )
 		{
@@ -75,13 +85,18 @@
 			$smarty->display("mensagem.html");
 			exit();
 		}
-		$randVejaTambem = array_rand($retornoVejaTambem[1], 2);
-		for ($i=0; $i < 2; $i++) { 
-			$randVejaTambem[$i] = $retornoVejaTambem[1][$randVejaTambem[$i]];
+		$totalResultArray = count($retornoVejaTambem[1]);
+		if ($totalResultArray > 2) {
+			$randVejaTambem = array_rand($retornoVejaTambem[1], 2);
+			for ($i=0; $i < 2; $i++) { 
+				$randVejaTambem[$i] = $retornoVejaTambem[1][$randVejaTambem[$i]];
+			}
+		}else{
+			$randVejaTambem = "";
 		}
 
 		// Tags
-		$retornoTags = $class->PesquisarTags(null, null, null);
+		$retornoTags = $class->PesquisarTags($parametroTipoTags, null, null);
 		if( $retornoTags[0] )
 		{
 			$smarty->assign("mensagem", $retornoTags[1]);
@@ -90,6 +105,7 @@
 		exit();
 		}
 
+		$smarty->assign("dadosMenuBlogAnoMes", $retornoMenuBlogAnoMes[1]);
 		$smarty->assign("dadosTags", $retornoTags[1]);
 		$smarty->assign("dadosVejaTambem", $randVejaTambem);
 		$smarty->assign("paginaMenuBlogInver", $paginaMenuBlogInver);

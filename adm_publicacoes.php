@@ -34,17 +34,34 @@ if( $_POST['acao'] == "gravar" )
 elseif( $_GET['acao'] == "pesquisar" )
 {
 	//  Paginação
-	$retornoPag = $class->Pesquisar(null, null, null);
-	if( $retornoPag[0] )
-		die("<script>alert('".$retornoPag[1]."');location.href='adm_index.php';</script>");
+	// $retornoPag = $class->Pesquisar(null, null, null);
+	// if( $retornoPag[0] )
+	// 	die("<script>alert('".$retornoPag[1]."');location.href='adm_index.php';</script>");
 
+	// $totalPorPagina = 10;
+	// $totalDeProdutos = count($retornoPag[1]);
+	// $conta = $totalDeProdutos / $totalPorPagina;
+	// $totalPaginas = ceil($conta);
+	// $_GET['p'] = (!$_GET['p'] ? 1 : $_GET['p']);
+	// //  Fim Paginação
+
+	// $retorno = $class->Pesquisar($_POST, $totalPorPagina, $_GET['p']);
+	// if( $retorno[0] )
+	// {
+	// 	$smarty->assign("mensagem", $retorno[1]);
+	// 	$smarty->assign("redir", "adm_" . $pagina . ".php");
+	// 	$smarty->display("mensagem.html");
+	// 	exit();
+	// }
+	// $Numpaginas = array();
+	// for($j=0; $j <= $totalPaginas; $j++) { 
+	// 	$Numpaginas[$j] = $j;
+	// }
 	$totalPorPagina = 10;
-	$totalDeProdutos = count($retornoPag[1]);
-	$conta = $totalDeProdutos / $totalPorPagina;
-	$totalPaginas = ceil($conta);
 	$_GET['p'] = (!$_GET['p'] ? 1 : $_GET['p']);
 	//  Fim Paginação
 
+	$retornoPag = $class->Pesquisar(null, null, null);
 	$retorno = $class->Pesquisar($_POST, $totalPorPagina, $_GET['p']);
 	if( $retorno[0] )
 	{
@@ -53,10 +70,14 @@ elseif( $_GET['acao'] == "pesquisar" )
 		$smarty->display("mensagem.html");
 		exit();
 	}
+	$totalDeProdutos = count($retornoPag[1]);
+	$conta = $totalDeProdutos / $totalPorPagina;
+	$totalPaginas = ceil($conta);
 	$Numpaginas = array();
 	for($j=0; $j <= $totalPaginas; $j++) { 
 		$Numpaginas[$j] = $j;
 	}
+	$smarty->assign("totalPaginas", $totalPaginas);
 	$smarty->assign("Numpaginas", $Numpaginas);
 	$smarty->assign("dados", $retorno[1]);
 	$smarty->display('admin/' . $pagina . '/relacao.html');

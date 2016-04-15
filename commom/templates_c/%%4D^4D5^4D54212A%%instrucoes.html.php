@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-23 13:48:03
+<?php /* Smarty version 2.6.12, created on 2016-04-08 10:34:32
          compiled from instrucoes.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -69,14 +69,14 @@ $this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $th
 ?>
                      <div class="col-xs-12 col-sm-12 col-md-12 pd-none conteudo-interna-publicacao">
                         <h2 class="titulo-publicacoes font-bold"><a href="instrucao.php?id=<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['id']; ?>
-"><?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['numPubclicacao']; ?>
+"><?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['numPubclicacaoAbrev']; ?>
 </a></h2>
                         <a class="txt-desc-publicacao font-normal" href="instrucao.php?id=<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['id']; ?>
-"><?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['titulo']; ?>
+"><?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['tituloAbrev']; ?>
 </a>
-                        <p class="txt-noticias-info font-normal"><?php echo $this->_tpl_vars['arrayIdioma']['MN_NOT_POR']; ?>
+                        <p class="txt-noticias-info font-normal"><?php if ($this->_tpl_vars['dados'][$this->_sections['i']['index']]['por']): ?> <?php echo $this->_tpl_vars['arrayIdioma']['MN_NOT_POR']; ?>
 : <?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['por']; ?>
-  •  <?php echo $this->_tpl_vars['arrayIdioma']['MN_NOT_EM']; ?>
+  •  <?php endif; ?> <?php echo $this->_tpl_vars['arrayIdioma']['MN_NOT_EM']; ?>
 : <?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['nomeCategoria']; ?>
   •   <?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['dataMes'][2]; ?>
  <?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['Mes']; ?>

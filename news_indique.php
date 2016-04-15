@@ -6,8 +6,9 @@
 
 	$urlCompleta = UrlAtual();
 
+	// Assinar newsletter
 	if ($_POST['acao'] == 'newsletter') {
-		$parametro['newsletter'] = $_POST['newsletter'];
+		$parametro['newsletter'] = $_POST['email'];
 		$retorno	= $classNewsletter->Grava($parametro);
 		if( $retorno[0] )
 		{
@@ -21,7 +22,7 @@
 			$data = date("d/m/y");
 			$hora = date("H:i"); 
 
-			$newsletter = $_POST['newsletter'];
+			$newsletter = $_POST['email'];
 
 			$cont = "$ip\r\n";
 			$cont .= "$data\r\n";
@@ -30,64 +31,72 @@
 
 			$headers 	= "MIME-Version: 1.1\r\n";
 			$headers 	.= "Content-type: text/plain; charset=UTF-8\n";
-			$assunto 	.= "Monteiro - Newsletter";
+			$assunto 	.= "Gaban Monteiro - Newsletter";
 			$conteudo 	.= "$cont\r\n";
-			$headers 	.= "From: contato@mmonteiroadv.com.br\n"; 
-			$headers 	.= "Return-Path: contato@mmonteiroadv.com.br\r\n"; 
+			$headers 	.= "From: contato@gabanmonteiroadv.com.br\n"; 
+			$headers 	.= "Return-Path: contato@gabanmonteiroadv.com.br\r\n"; 
 			$headers 	.= "Bcc: contato@planobweb.com.br\r\n"; // cópia
 			$headers 	.= "Reply-To: $email\n";
-			$envio 		= mail("contato@mmonteiroadv.com.br", $assunto,$conteudo,$headers);
+			$envio 		= mail("contato@gabanmonteiroadv.com.br", $assunto,$conteudo,$headers);
 
-			echo utf8_decode("<script>alert('Cadastro enviado com sucesso.');</script>");
+			//echo utf8_decode("<script>alert('Cadastro enviado com sucesso.');</script>");
+			echo utf8_decode("<script>location.href ='obrigado-newsletter.php'</script>");
 			
 		}
 	}
 
+
+	// Indicação do site
 	if ($_POST['acao'] == 'indique') {
-		if (empty($_POST['indique'])) 
+		if (empty($_POST['email'])) 
 		{
 		   	header("Location: index.php"); 
 		} else { 
 			
-			$indique = $_POST['indique'];
+			$indique = $_POST['email'];
 
-			$cont .= 'Site: http://www.mmonteiroadv.com.br';
+			$cont .= 'Site: http://www.gabanmonteiroadv.com.br';
 
 			$headers 	= "MIME-Version: 1.1\r\n";
 			$headers 	.= "Content-type: text/plain; charset=UTF-8\n";
-			$assunto 	.= "Acesse a Monteiro";
+			$assunto 	.= "Acesse a Gaban Monteiro";
 			$conteudo 	.= "$cont\r\n";
-			$headers 	.= "From: contato@mmonteiroadv.com.br\n"; 
-			$headers 	.= "Return-Path: contato@mmonteiroadv.com.br\r\n"; 
+			$headers 	.= "From: contato@gabanmonteiroadv.com.br\n"; 
+			$headers 	.= "Return-Path: contato@gabanmonteiroadv.com.br\r\n"; 
 			//$headers 	.= "Bcc: contato@planobweb.com.br\r\n"; // cópia
 			$headers 	.= "Reply-To: $email\n";
 			$envio 		= mail($indique, $assunto,$conteudo,$headers);
 
-			echo utf8_decode("<script>alert('Enviado com sucesso.');</script>");
+			//echo utf8_decode("<script>alert('Enviado com sucesso.');</script>");
+			echo utf8_decode("<script>location.href ='obrigado-indicacao.php'</script>");
 		}
 	}
 
+
+	// Indicação da noticia
 	if ($_POST['acao'] == 'indiqueNot') {
-		if (empty($_POST['indiqueNot'])) 
+		if (empty($_POST['email'])) 
 		{
 		   	header("Location: index.php"); 
 		} else { 
 			
-			$indique = $_POST['indiqueNot'];
+			$indique = $_POST['email'];
+			$msg = " indicou essa página para você, para ler acesse: ";
 
-			$cont .= 'Para ler acesse: '. $urlCompleta;
+			$cont .= $_POST['nome'] . $msg . $urlCompleta;
 
 			$headers 	= "MIME-Version: 1.1\r\n";
 			$headers 	.= "Content-type: text/plain; charset=UTF-8\n";
-			$assunto 	.= "Leia essa pagina";
+			$assunto 	.= "Leia essa pagina da Gaban Monteiro";
 			$conteudo 	.= "$cont\r\n";
-			$headers 	.= "From: contato@mmonteiroadv.com.br\n"; 
-			$headers 	.= "Return-Path: contato@mmonteiroadv.com.br\r\n"; 
+			$headers 	.= "From: contato@gabanmonteiroadv.com.br\n"; 
+			$headers 	.= "Return-Path: contato@gabanmonteiroadv.com.br\r\n"; 
 			//$headers 	.= "Bcc: contato@planobweb.com.br\r\n"; // cópia
 			$headers 	.= "Reply-To: $email\n";
 			$envio 		= mail($indique, $assunto,$conteudo,$headers);
 
-			echo utf8_decode("<script>alert('Enviado com sucesso.');</script>");
+			//echo utf8_decode("<script>alert('Enviado com sucesso.');</script>");
+			echo utf8_decode("<script>location.href ='obrigado-indicacao.php'</script>");
 		}
 	}
 	

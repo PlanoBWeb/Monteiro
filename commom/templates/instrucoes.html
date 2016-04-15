@@ -17,7 +17,8 @@
          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
    </head>
-   <body>
+   <body itemscopeitemtype="http://schema.org/WebPage">
+      {include file="../inc/google-tag-manager.html"}
       <div class="container-fluid no-padding">
          {include file="../inc/header.html"}
          <!-- BreadCrumb -->
@@ -31,9 +32,9 @@
                   {include file="../inc/select-not-pub.html"}
                   {section name=i loop=$dados}
                      <div class="col-xs-12 col-sm-12 col-md-12 pd-none conteudo-interna-publicacao">
-                        <h2 class="titulo-publicacoes font-bold"><a href="instrucao.php?id={$dados[i].id}">{$dados[i].numPubclicacao}</a></h2>
-                        <a class="txt-desc-publicacao font-normal" href="instrucao.php?id={$dados[i].id}">{$dados[i].titulo}</a>
-                        <p class="txt-noticias-info font-normal">{ $arrayIdioma.MN_NOT_POR }: {$dados[i].por}  •  { $arrayIdioma.MN_NOT_EM }: {$dados[i].nomeCategoria}  •   {$dados[i].dataMes[2]} {$dados[i].Mes} {$dados[i].dataMes[0]}</p>
+                        <h2 class="titulo-publicacoes font-bold"><a href="instrucao.php?id={$dados[i].id}">{$dados[i].numPubclicacaoAbrev}</a></h2>
+                        <a class="txt-desc-publicacao font-normal" href="instrucao.php?id={$dados[i].id}">{$dados[i].tituloAbrev}</a>
+                        <p class="txt-noticias-info font-normal">{if $dados[i].por} { $arrayIdioma.MN_NOT_POR }: {$dados[i].por}  •  {/if} { $arrayIdioma.MN_NOT_EM }: {$dados[i].nomeCategoria}  •   {$dados[i].dataMes[2]} {$dados[i].Mes} {$dados[i].dataMes[0]}</p>
                      </div>
                   {/section}
 

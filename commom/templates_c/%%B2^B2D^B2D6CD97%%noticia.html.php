@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-18 13:45:46
+<?php /* Smarty version 2.6.12, created on 2016-04-15 14:28:22
          compiled from noticia.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -13,16 +13,30 @@
       <link href="commom/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="commom/css/estilo.css">
       <link href="commom/img/icon-tab.png" rel="icon">
+      <meta property="og:url"           content="<?php echo $this->_tpl_vars['urlCompleta']; ?>
+" />
+      <meta property="og:type"          content="website" />
+      <meta property="og:title"         content="<?php echo $this->_tpl_vars['dados'][0]['titulo']; ?>
+" />
+      <meta property="og:description"   content="<?php echo $this->_tpl_vars['dados'][0]['textoSemTag']; ?>
+" />
+      <meta property="og:image"         content="http://www.gabanmonteiroadv.com.br/<?php echo $this->_tpl_vars['dados'][0]['caminhoImagem']; ?>
+" />
       <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
       <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
       <!--[if lt IE 9]>
          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
-      <link rel="canonical" href="http://mmonteiroadv.com.br/" />
+      <link rel="canonical" href="http://gabanmonteiroadv.com.br/" />
     <script src="https://apis.google.com/js/platform.js" async defer></script>
    </head>
-   <body>
+   <body itemscopeitemtype="http://schema.org/WebPage">
+      <?php $_smarty_tpl_vars = $this->_tpl_vars;
+$this->_smarty_include(array('smarty_include_tpl_file' => "../inc/google-tag-manager.html", 'smarty_include_vars' => array()));
+$this->_tpl_vars = $_smarty_tpl_vars;
+unset($_smarty_tpl_vars);
+ ?>
       <div class="container-fluid no-padding">
          <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "../inc/header.html", 'smarty_include_vars' => array()));
@@ -48,31 +62,65 @@ unset($_smarty_tpl_vars);
  ?>
                   <div class="col-xs-12 col-sm-12 col-md-12 pd-none conteudo-interna-not">
                      <div class="bloco-imprimi">
-                        <img class="img-not-ind" src="<?php echo $this->_tpl_vars['dados'][0]['caminhoImagem']; ?>
+                        <?php if ($this->_tpl_vars['dados'][0]['caminhoImagem']): ?><img class="img-not-ind" src="<?php echo $this->_tpl_vars['dados'][0]['caminhoImagem']; ?>
 " title="<?php echo $this->_tpl_vars['dados'][0]['titulo']; ?>
 " alt="<?php echo $this->_tpl_vars['dados'][0]['titulo']; ?>
-">
+"><?php endif; ?>
                         <h1 class="titulo-noticias font-normal"><?php echo $this->_tpl_vars['dados'][0]['titulo']; ?>
 </h1>
-                        <p class="txt-noticias-info font-normal"><?php echo $this->_tpl_vars['arrayIdioma']['MN_NOT_POR']; ?>
+                        <p class="txt-noticias-info font-normal"><?php if ($this->_tpl_vars['dados'][0]['por']):  echo $this->_tpl_vars['arrayIdioma']['MN_NOT_POR']; ?>
 :  <?php echo $this->_tpl_vars['dados'][0]['por']; ?>
-   •  <?php echo $this->_tpl_vars['arrayIdioma']['MN_NOT_EM']; ?>
+   •  <?php endif; ?> <?php echo $this->_tpl_vars['arrayIdioma']['MN_NOT_EM']; ?>
 : <?php echo $this->_tpl_vars['dados'][0]['nomeCategoria']; ?>
-  •   <?php echo $this->_tpl_vars['dados'][0]['dataMes'][2]; ?>
+ </p>
+                         <!-- •   <?php echo $this->_tpl_vars['dados'][0]['dataMes'][2]; ?>
  <?php echo $this->_tpl_vars['dados'][0]['Mes']; ?>
  <?php echo $this->_tpl_vars['dados'][0]['dataMes'][0]; ?>
-</p>
-                        <p class="txt-desc-noticias font-normal">
+ -->
+                        <!-- <p class="txt-desc-noticias font-normal"> -->
+                           <div class="encapsula-txt-noticia">
                            <?php echo $this->_tpl_vars['dados'][0]['texto']; ?>
 
-                        </p>
+                           </div>
+                        <!-- </p> -->
                         <br>
+                        
+                        <?php if ($this->_tpl_vars['dadosTagsPg']): ?>
+                           <div class="row bloco-tags-post">
+                              <img class="icone-tag-not" src="commom/img/icon-tags.png" alt="icone tag" title="icone tag">
+                              <!-- <p class="txt-desc-noticias font-normal"><?php echo $this->_tpl_vars['dados'][0]['tag']; ?>
+</p>                            -->
+                              <?php unset($this->_sections['i']);
+$this->_sections['i']['name'] = 'i';
+$this->_sections['i']['loop'] = is_array($_loop=$this->_tpl_vars['dadosTagsPg']) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
+$this->_sections['i']['show'] = true;
+$this->_sections['i']['max'] = $this->_sections['i']['loop'];
+$this->_sections['i']['step'] = 1;
+$this->_sections['i']['start'] = $this->_sections['i']['step'] > 0 ? 0 : $this->_sections['i']['loop']-1;
+if ($this->_sections['i']['show']) {
+    $this->_sections['i']['total'] = $this->_sections['i']['loop'];
+    if ($this->_sections['i']['total'] == 0)
+        $this->_sections['i']['show'] = false;
+} else
+    $this->_sections['i']['total'] = 0;
+if ($this->_sections['i']['show']):
 
-                        <div class="row">
-                           <img class="icone-tag-not" src="commom/img/icon-tags.png" alt="icone tag" title="icone tag">
-                           <p class="txt-desc-noticias font-normal"><?php echo $this->_tpl_vars['dados'][0]['tag']; ?>
-</p>                           
-                        </div>
+            for ($this->_sections['i']['index'] = $this->_sections['i']['start'], $this->_sections['i']['iteration'] = 1;
+                 $this->_sections['i']['iteration'] <= $this->_sections['i']['total'];
+                 $this->_sections['i']['index'] += $this->_sections['i']['step'], $this->_sections['i']['iteration']++):
+$this->_sections['i']['rownum'] = $this->_sections['i']['iteration'];
+$this->_sections['i']['index_prev'] = $this->_sections['i']['index'] - $this->_sections['i']['step'];
+$this->_sections['i']['index_next'] = $this->_sections['i']['index'] + $this->_sections['i']['step'];
+$this->_sections['i']['first']      = ($this->_sections['i']['iteration'] == 1);
+$this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $this->_sections['i']['total']);
+?>  
+                                 <a class="txt-desc-noticias font-normal" href="<?php echo $this->_tpl_vars['paginaMenuBlogInver']; ?>
+?tag=<?php echo $this->_tpl_vars['dadosTagsPg'][$this->_sections['i']['index']]; ?>
+"><?php echo $this->_tpl_vars['dadosTagsPg'][$this->_sections['i']['index']]; ?>
+</a>
+                              <?php endfor; endif; ?> 
+                           </div>
+                        <?php endif; ?>
                         <div class="row">
                            <img class="icone-tag-not" src="commom/img/icon-imprimi.png" alt="icone tag" title="icone tag">
                            <a href="" class="txt-desc-noticias font-normal" onclick="print();"><?php echo $this->_tpl_vars['arrayIdioma']['MN_NOT_IMPRIMI']; ?>
@@ -84,14 +132,16 @@ unset($_smarty_tpl_vars);
                         <div class="col-xs-12 col-sm-6 col-md-6 pd-none">
                            <h2 class="titulo-menu-lateral font-normal"><?php echo $this->_tpl_vars['arrayIdioma']['MN_NOT_COMP']; ?>
 </h2>
-                           <div class="col-xs-12 col-sm-3 col-md-3" style="max-width: 110px !important; overflow:hidden !important;">
-                              <div class="fb-like" style="width: 60px"></div> 
+                           <div class="col-xs-12 col-sm-4 col-md-4" style="max-width: 120px !important; overflow:hidden !important; padding-left: 0px;">
+                              <!-- <div class="fb-like" style="width: 60px"></div>  -->
+                              <div class="fb-share-button" data-href="<?php echo $this->_tpl_vars['urlCompleta']; ?>
+" data-layout="button"></div>
                            </div>
-                           <div class="col-xs-12 col-sm-4 col-md-4">
+                           <div class="col-xs-12 col-sm-3 col-md-3 btn-twitter" style="padding-left: 0px; padding-right: 0px;">
                               <a href="http://twitter.com/share" class="twitter-share-button" data-url="<?php echo $this->_tpl_vars['urlCompleta']; ?>
 "  data-count="horizontal" data-lang="pt">Tweetar</a> 
                            </div>
-                           <div class="col-xs-12 col-sm-2 col-md-2">
+                           <div class="col-xs-12 col-sm-2 col-md-2" style="padding-left: 0px;">
                               <g:plusone href="<?php echo $this->_tpl_vars['urlCompleta']; ?>
 "></g:plusone>
                            </div>
@@ -102,19 +152,21 @@ unset($_smarty_tpl_vars);
 </h2>
                            <form method="post" name="formIndiqueNot">
                               <input type="hidden" name="acao" value="indiqueNot">
-                              <input class="font-normal form-compartilhe" type="text" name="indiqueNot" placeholder="<?php echo $this->_tpl_vars['arrayIdioma']['MN_FORM_EMAIL']; ?>
+                              <input class="font-normal form-compartilhe form-compartilhe-nome" type="text" name="nome" placeholder="<?php echo $this->_tpl_vars['arrayIdioma']['MN_FORM_NOME']; ?>
+...">
+                              <input class="font-normal form-compartilhe" type="text" name="email" placeholder="<?php echo $this->_tpl_vars['arrayIdioma']['MN_FORM_EMAIL']; ?>
 ...">
                               <input class="btn-ok cinza font-normal" type="submit" value="ok" onclick="return enviarindiqueNot();">
                            </form>
                         </div>
                      </div>  
-
-                     <div class="row bloco-leia-tambem">
-                        <br><br>
-                        <h2 class="titulo-compartilhe font-normal"><?php echo $this->_tpl_vars['arrayIdioma']['MN_NOT_LEIA_TBM']; ?>
+                     <?php if ($this->_tpl_vars['dadosVejaTambem'] != ""): ?>
+                        <div class="row bloco-leia-tambem">
+                           <br><br>
+                           <h2 class="titulo-compartilhe font-normal"><?php echo $this->_tpl_vars['arrayIdioma']['MN_NOT_LEIA_TBM']; ?>
 :</h2>
-                        
-                        <?php unset($this->_sections['i']);
+                           
+                           <?php unset($this->_sections['i']);
 $this->_sections['i']['name'] = 'i';
 $this->_sections['i']['loop'] = is_array($_loop=$this->_tpl_vars['dadosVejaTambem']) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
 $this->_sections['i']['show'] = true;
@@ -138,24 +190,27 @@ $this->_sections['i']['index_next'] = $this->_sections['i']['index'] + $this->_s
 $this->_sections['i']['first']      = ($this->_sections['i']['iteration'] == 1);
 $this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $this->_sections['i']['total']);
 ?>
-                           <div class="col-xs-12 col-sm-6 col-md-6 pd-none">
-                              <div class="bloco-noticia-destaque">
-                                 <a href=""><img src="<?php echo $this->_tpl_vars['dadosVejaTambem'][$this->_sections['i']['index']]['caminhoImagemThumb']; ?>
+                              <div class="col-xs-12 col-sm-6 col-md-6 pd-none">
+                                 <div class="bloco-noticia-destaque">
+                                    <?php if ($this->_tpl_vars['dadosVejaTambem'][$this->_sections['i']['index']]['caminhoImagemThumb']): ?>
+                                       <a href="noticia.php?id=<?php echo $this->_tpl_vars['dadosVejaTambem'][$this->_sections['i']['index']]['id']; ?>
+"><img src="<?php echo $this->_tpl_vars['dadosVejaTambem'][$this->_sections['i']['index']]['caminhoImagemThumb']; ?>
 " alt="<?php echo $this->_tpl_vars['dadosVejaTambem'][$this->_sections['i']['index']]['tituloAbrev']; ?>
 " title="<?php echo $this->_tpl_vars['dadosVejaTambem'][$this->_sections['i']['index']]['tituloAbrev']; ?>
 "></a>
-                                 <p class="link-desc-noticias font-normal"><a class="txt-desc-noticias font-normal" href="noticia.php?id=<?php echo $this->_tpl_vars['dadosVejaTambem'][$this->_sections['i']['index']]['id']; ?>
+                                    <?php endif; ?>
+                                    <p class="link-desc-noticias font-normal"><a class="txt-desc-noticias font-normal" href="noticia.php?id=<?php echo $this->_tpl_vars['dadosVejaTambem'][$this->_sections['i']['index']]['id']; ?>
 "><?php echo $this->_tpl_vars['dadosVejaTambem'][$this->_sections['i']['index']]['tituloAbrev']; ?>
 </a></p>
-                                 <p class="txt-noticias-info font-normal pd-none"><?php echo $this->_tpl_vars['dadosVejaTambem'][$this->_sections['i']['index']]['dataMes'][2]; ?>
+                                    <!-- <p class="txt-noticias-info font-normal pd-none"><?php echo $this->_tpl_vars['dadosVejaTambem'][$this->_sections['i']['index']]['dataMes'][2]; ?>
  <?php echo $this->_tpl_vars['dadosVejaTambem'][$this->_sections['i']['index']]['Mes']; ?>
  <?php echo $this->_tpl_vars['dadosVejaTambem'][$this->_sections['i']['index']]['dataMes'][0]; ?>
-</p>
+</p> -->
+                                 </div>
                               </div>
-                           </div>
-                        <?php endfor; endif; ?>
-                     </div>
-                     
+                           <?php endfor; endif; ?>
+                        </div>
+                     <?php endif; ?>
                   </div>
                </div>
                <?php $_smarty_tpl_vars = $this->_tpl_vars;

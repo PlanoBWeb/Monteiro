@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-18 12:04:28
+<?php /* Smarty version 2.6.12, created on 2016-04-15 14:27:31
          compiled from alvaro-merlos-akinaga-cordeiro.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -19,7 +19,12 @@
          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
    </head>
-   <body>
+   <body itemscopeitemtype="http://schema.org/WebPage">
+      <?php $_smarty_tpl_vars = $this->_tpl_vars;
+$this->_smarty_include(array('smarty_include_tpl_file' => "../inc/google-tag-manager.html", 'smarty_include_vars' => array()));
+$this->_tpl_vars = $_smarty_tpl_vars;
+unset($_smarty_tpl_vars);
+ ?>
       <div class="container-fluid no-padding">
          <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "../inc/header.html", 'smarty_include_vars' => array()));
@@ -50,6 +55,11 @@ unset($_smarty_tpl_vars);
                      <img class="img-profissional" src="img/marcos-gaban.jpg" alt="Marcos Antonio Gaban Monteiro" title="Marcos Antonio Gaban Monteiro">
                   </div> -->
                   <div class="col-xs-12 col-sm-12 col-md-12 pd-none bloco-profissional">
+                     <?php $_smarty_tpl_vars = $this->_tpl_vars;
+$this->_smarty_include(array('smarty_include_tpl_file' => "../inc/menu-profissionais-mobile.html", 'smarty_include_vars' => array()));
+$this->_tpl_vars = $_smarty_tpl_vars;
+unset($_smarty_tpl_vars);
+ ?>
                      <h1 class="titulo-pag font-normal"><?php echo $this->_tpl_vars['arrayIdioma']['MN_ALVARO']; ?>
 </h1>
                      <br><br>                  
@@ -57,7 +67,7 @@ unset($_smarty_tpl_vars);
 </p>
                      <div class="col-xs-12 col-sm-12 col-md-12 pd-none email-profissional">
                         <img src="commom/img/icon-msg-v.png" alt="icone mensagem" title="icone mensagem">
-                        <a href="mailto:alvaro@mmonteiroadv.com.br">alvaro@mmonteiroadv.com.br</a>
+                        <a href="mailto:alvaro@gabanmonteiroadv.com.br">alvaro@gabanmonteiroadv.com.br</a>
                      </div>
                   </div>
                </div>

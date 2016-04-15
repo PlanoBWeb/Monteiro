@@ -1,0 +1,19 @@
+<form>
+   <select class="select-internas visible-xs-block" id="formRedirect">
+      <option value="Selecione">Selecione</option>
+      {assign var="nmTipo" value=$nmTipo|default:""}
+      {section name=i loop=$dadosMenuBlog}   
+            {if $nmTipo <> $dadosMenuBlog[i].dataMes[0]}
+               <option disabled value="">{$dadosMenuBlog[i].dataMes[0]}</option>
+            {/if}
+            {assign var="nmTipo" value=$dadosMenuBlog[i].dataMes[0]}
+
+            {assign var="nmTipoMes" value=$nmTipoMes|default:""}
+               {if $nmTipoMes <> $dadosMenuBlog[i].Mes}
+                  <option value="{$paginaMenuBlogInver}?ano={$dadosMenuBlog[i].dataMes[0]}&mes={$dadosMenuBlog[i].dataMes[1]}">&nbsp;&nbsp;&nbsp;{$dadosMenuBlog[i].Mes}</option>
+                  
+               {/if}
+            {assign var="nmTipoMes" value=$dadosMenuBlog[i].Mes}
+      {/section}  
+   </select>
+</form>

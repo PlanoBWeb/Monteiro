@@ -61,7 +61,7 @@
 					FROM  
 						".$this->entidade."
 					WHERE
-						1 = 1 AND email = '".$post['newsletter']."'
+						1 = 1 AND email = '".$post['email']."'
 			";
 
 			$result = mysql_query($sql);

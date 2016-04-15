@@ -146,7 +146,10 @@ body{
 
 	.navbar-brand{
 		height: auto !important;
-		margin-top: 30px;
+		/*margin-top: 30px;
+		margin-bottom: 20px;*/
+		 /*   margin-top: -10px;
+    margin-bottom: 10px;*/
 	}
 
 	.hello-user{
@@ -213,7 +216,7 @@ body{
 	}
 
 	tr:nth-child(odd) {
-		background: #b15656;
+		background: #999;
 	}
 	
 	.cor-tr-btn{
@@ -469,6 +472,13 @@ body{
 		width: 40%;
 	}
 	/* Fim Login */
+	.navbar-brand{
+		height: auto !important;
+		/*margin-top: 30px;
+		margin-bottom: 20px;*/
+		    margin-top: -10px;
+    margin-bottom: 10px;
+	}
 }
 
 @media all and  (max-width:992px){

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-18 12:48:31
+<?php /* Smarty version 2.6.12, created on 2016-04-14 12:12:45
          compiled from fale-conosco.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -67,7 +67,12 @@
       '; ?>
 
    </head>
-   <body>
+   <body itemscopeitemtype="http://schema.org/WebPage">
+      <?php $_smarty_tpl_vars = $this->_tpl_vars;
+$this->_smarty_include(array('smarty_include_tpl_file' => "../inc/google-tag-manager.html", 'smarty_include_vars' => array()));
+$this->_tpl_vars = $_smarty_tpl_vars;
+unset($_smarty_tpl_vars);
+ ?>
       <div class="container-fluid no-padding">
          <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "../inc/header.html", 'smarty_include_vars' => array()));
@@ -104,6 +109,7 @@ unset($_smarty_tpl_vars);
                   <br>
                   <br>
                   <form class="form-horizontal" action="" method="post" name="contato">
+                     <input type="hidden" name="acao" value="enviaForm">
                      <div class="form-group">
                         <label for="Nome" class="col-sm-2 control-label font-normal">*<?php echo $this->_tpl_vars['arrayIdioma']['MN_FORM_NOME']; ?>
 :</label>

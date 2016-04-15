@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="robots" content="index, follow">
+      <meta name="description" content="Fique por dentro das principais notícias da área de direto" />
+      <title>Marcos Monteiro Sociedade de Advogados – Notícias da área de Direito</title>
+      <link href="commom/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="commom/css/estilo.css">
+      <link href="commom/img/icon-tab.png" rel="icon">
+      <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 9]>
+         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+   </head>
+   <body itemscopeitemtype="http://schema.org/WebPage">
+      {include file="../inc/google-tag-manager.html"}
+      <div class="container-fluid no-padding">
+         {include file="../inc/header.html"}
+         <!-- BreadCrumb -->
+         {include file="../inc/breadcrumb.html"}
+         <!-- BreadCrumb -->
+
+         <!-- Conteudo -->
+         <section class="conteudo-interna">
+            <div class="row tamanho-max bloco-conteudo bloco-conteudo-noticias">
+               <div class="col-xs-12 col-sm-8 col-md-8 pd-none encapsula-noticias">
+                  {if $dados}
+                     {include file="../inc/select-not-pub.html"}
+                     {section name=i loop=$dados}
+                        <div class="col-xs-12 col-sm-12 col-md-12 pd-none conteudo-interna-not">
+                           <a href="noticia.php?id={$dados[i].id}"><img class="img-noticias" src="{$dados[i].caminhoImagemThumb}" title="{$dados[0].titulo}" alt="{$dados[0].titulo}"></a>
+                           <h2 class="titulo-noticias font-normal"><a href="noticia.php?id={$dados[i].id}">{$dados[i].tituloAbrev}</a></h2>
+                           <p class="txt-noticias-info font-normal">{if $dados[i].por}{ $arrayIdioma.MN_NOT_POR }:  {$dados[i].por}  • {/if} { $arrayIdioma.MN_NOT_EM }: {$dados[i].nomeCategoria}  •   {$dados[i].dataMes[2]} {$dados[i].Mes} {$dados[i].dataMes[0]}</p>
+                           <a class="txt-desc-noticias font-normal" href="noticia.php?id={$dados[i].id}">{$dados[i].textoAbrev}</a>
+                        </div>
+                     {/section}
+
+                     {if $totalPaginas > 1}
+                        <div class="bloco-paginacao">
+                           {if $postBusca == ""}
+                              {if $anoPaginacao}
+                                 <a href="noticias.php?ano={$anoPaginacao}&mes={$mesPaginacao}&p={$Numpaginas[1]}" class="seta-esquerda fl-left seta-default">&lt;&lt;</a>
+                              {elseif $idCatPaginacao}
+                                 <a href="noticias.php?idCat={$idCatPaginacao}&p={$Numpaginas[1]}" class="seta-esquerda fl-left seta-default">&lt;&lt;</a>
+                              {elseif $tagPaginacao}
+                                 <a href="noticias.php?tag={$tagPaginacao}&p={$Numpaginas[1]}" class="seta-esquerda fl-left seta-default">&lt;&lt;</a>
+                              {else}
+                                 <a href="noticias.php?p={$Numpaginas[1]}" class="seta-esquerda fl-left seta-default">&lt;&lt;</a>
+                              {/if}
+                           {/if}
+                           {section start=1 name=i loop=$Numpaginas}
+                              {if $anoPaginacao}
+                                 <a href="noticias.php?ano={$anoPaginacao}&mes={$mesPaginacao}&p={$Numpaginas[i]}" class="link-paginacao {if $Numpaginas[i] == $smarty.get.p} link-paginacao-ativo {/if}">{$Numpaginas[i]}</a>
+                              {elseif $idCatPaginacao}
+                                 <a href="noticias.php?idCat={$idCatPaginacao}&p={$Numpaginas[i]}" class="link-paginacao {if $Numpaginas[i] == $smarty.get.p} link-paginacao-ativo {/if}">{$Numpaginas[i]}</a>
+                              {elseif $tagPaginacao}
+                                 <a href="noticias.php?tag={$tagPaginacao}&p={$Numpaginas[i]}" class="link-paginacao {if $Numpaginas[i] == $smarty.get.p} link-paginacao-ativo {/if}">{$Numpaginas[i]}</a>
+                              {elseif $postBusca}
+                                 <form method="post" action="" class="pull-left">
+                                    <input type="hidden" name="search" value="{$postBusca}">
+                                    <input type="hidden" name="acao" value="busca">
+                                    <input type="hidden" name="p" value="{$Numpaginas[i]}">
+                                    <input class="link-paginacao {if $Numpaginas[i] == $smarty.get.p} link-paginacao-ativo {/if}" type="submit" value="{$Numpaginas[i]}">
+                                 </form>
+                              {else}
+                                 <a href="noticias.php?p={$Numpaginas[i]}" class="link-paginacao {if $Numpaginas[i] == $smarty.get.p} link-paginacao-ativo {/if}">{$Numpaginas[i]}</a>
+                              {/if}
+                           {/section}
+                           {if $postBusca == ""}
+                              {if $anoPaginacao}
+                                 <a href="noticias.php?ano={$anoPaginacao}&mes={$mesPaginacao}&p={$ultimaPaginacao}" class="seta-direita fl-left seta-default">&gt;&gt;</a>
+                              {elseif $idCatPaginacao}
+                                 <a href="noticias.php?idCat={$idCatPaginacao}&p={$ultimaPaginacao}" class="seta-direita fl-left seta-default">&gt;&gt;</a>
+                              {elseif $tagPaginacao}
+                                 <a href="noticias.php?tag={$tagPaginacao}&p={$ultimaPaginacao}" class="seta-direita fl-left seta-default">&gt;&gt;</a>
+                              {else}
+                                 <a href="noticias.php?p={$ultimaPaginacao}" class="seta-direita fl-left seta-default">&gt;&gt;</a>
+                              {/if}
+                           {/if}   
+                        </div>
+                     {/if}
+                  {else}
+                     <br><br>
+                     <p class="sem-resultado font-bold">{ $arrayIdioma.MN_RESULT_BUSCA }</p>
+                  {/if}
+               </div>
+               {include file="../inc/menu-lateral-blog.html"}
+            </div>
+         </section>
+         <!-- Conteudo -->
+         {include file="../inc/footer.html"}
+      </div>
+  </body>
+</html>

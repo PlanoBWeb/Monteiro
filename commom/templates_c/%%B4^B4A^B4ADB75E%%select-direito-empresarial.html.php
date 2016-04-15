@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-18 14:50:55
+<?php /* Smarty version 2.6.12, created on 2016-04-08 10:29:36
          compiled from ../inc/select-direito-empresarial.html */ ?>
  <form>
    <select class="select-internas visible-xs-block" id="formRedirect">
@@ -18,6 +18,8 @@
       <option value="diligencias-negociais.php"><?php echo $this->_tpl_vars['arrayIdioma']['MN_TITULO_DN']; ?>
 </option>
       <option value="advocacia-consultiva.php"><?php echo $this->_tpl_vars['arrayIdioma']['MN_TITULO_DAC']; ?>
+</option>
+      <option value="contencioso-civil.php"><?php echo $this->_tpl_vars['arrayIdioma']['MN_TITULO_CC']; ?>
 </option>
    </select>
 </form>

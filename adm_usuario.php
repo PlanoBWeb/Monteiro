@@ -1,9 +1,10 @@
-<?php
+﻿<?php
 
 include_once "adm_login.php";
 include_once "classes/Usuario.class.php";
 $class = new Usuario();
 
+$smarty->assign("nome", $_SESSION['nome']);
 $smarty->assign("titulo", utf8_encode(TITULO));
 $pagina = "usuario";
 
@@ -72,10 +73,17 @@ elseif( $_GET['acao'] == "pesquisar" )
 }
 elseif( $_GET['acao'] == "editar" || $_GET['acao'] == "visualizar" || $_GET['acao'] == "senha")
 {
-	if($_GET['acao'] == "senha")
+	if($_GET['acao'] == "senha"){
 		$parametro['id'] = $_SESSION['id'];
-	else
+	}
+	elseif ($_GET['acao'] == "editar") {
+		$parametro['id'] = $_SESSION['id'];
+	}
+	else{
 		$parametro['id'] = $_GET['id'];
+	}
+		
+		
 
 	$retorno = $class->Pesquisar($parametro, null, null);
 	

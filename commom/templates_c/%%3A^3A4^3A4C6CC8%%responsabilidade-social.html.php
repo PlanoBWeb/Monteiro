@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-23 13:54:12
+<?php /* Smarty version 2.6.12, created on 2016-04-07 18:02:29
          compiled from responsabilidade-social.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">

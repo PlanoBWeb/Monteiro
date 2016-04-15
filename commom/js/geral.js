@@ -11,3 +11,14 @@ $('.close-search-mobile').click(function(){
    $('.search-mobile').animate({ width: "toggle" });
    $('.topo').css('margin-top', '0px');
 });
+
+$(document).ready(function () {
+    $('.titulo-menu-lateral').click(function(){
+        if ($(this).attr('class') != 'active'){
+            $('.menu-lateral').slideUp();
+            $(this).next('.menu-lateral').slideToggle();
+            $('.menu-lateral li').removeClass('active');
+            $(this).addClass('active');
+        }
+    });
+});

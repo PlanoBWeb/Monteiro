@@ -1,6 +1,6 @@
 <div class="row bloco-breadcrumb">
     <div class="tamanho-max pd-left-5">
-       	<ol class="breadcrumb">
+       	<ol class="breadcrumb" itemprop="breadcrumb">
        		<!-- Noticia -->
 			{if $pagina == "noticia.php"}
 				<li><a href="index.php">Home</a></li>
@@ -139,23 +139,39 @@
 			{elseif $PgAtiva == "direito publico"}
 				<li><a href="index.php">Home</a></li>
 				<li>Atuação</li>
-				<li><a href="direito-publico.php">Direito Público</a></li>
-         		<li>{$breadcrumb}</li>
+				{if $breadcrumb == "Direito Público"}
+					<li>{$breadcrumb}</li>
+				{else}
+					<li><a href="direito-publico.php">Direito Público</a></li>
+         			<li>{$breadcrumb}</li>
+				{/if}
          	{elseif $PgAtiva == "direito eleitoral"}
 				<li><a href="index.php">Home</a></li>
 				<li>Atuação</li>
-				<li><a href="direito-eleitoral.php">Direito Eleitoral</a></li>
-         		<li>{$breadcrumb}</li>
+				{if $breadcrumb == "Direito Eleitoral"}
+					<li>{$breadcrumb}</li>
+				{else}
+					<li><a href="direito-eleitoral.php">Direito Eleitoral</a></li>
+         			<li>{$breadcrumb}</li>
+				{/if}
          	{elseif $PgAtiva == "direito empresarial"}
 				<li><a href="index.php">Home</a></li>
 				<li>Atuação</li>
-				<li><a href="direito-empresarial.php">Direito Empresarial</a></li>
-         		<li>{$breadcrumb}</li>
+				{if $breadcrumb == "Direito Empresarial"}
+					<li>{$breadcrumb}</li>
+				{else}
+					<li><a href="direito-empresarial.php">Direito Empresarial</a></li>
+         			<li>{$breadcrumb}</li>
+				{/if}
          	{elseif $PgAtiva == "direito imobiliario"}
 				<li><a href="index.php">Home</a></li>
 				<li>Atuação</li>
-				<li><a href="direito-imobiliario.php">Direito Imobiliario</a></li>
-         		<li>{$breadcrumb}</li>
+				{if $breadcrumb == "Direito Imobiliário"}
+					<li>{$breadcrumb}</li>
+				{else}
+					<li><a href="direito-imobiliario.php">Direito Imobiliario</a></li>
+         			<li>{$breadcrumb}</li>
+				{/if}
          	{elseif $PgAtiva == "profissionais"}
          		<li><a href="index.php">Home</a></li>
          		<li>Profissionais</li>

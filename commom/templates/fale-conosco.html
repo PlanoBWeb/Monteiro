@@ -64,7 +64,8 @@
          </script>
       {/literal}
    </head>
-   <body>
+   <body itemscopeitemtype="http://schema.org/WebPage">
+      {include file="../inc/google-tag-manager.html"}
       <div class="container-fluid no-padding">
          {include file="../inc/header.html"}
          <!-- Banner -->
@@ -87,6 +88,7 @@
                   <br>
                   <br>
                   <form class="form-horizontal" action="" method="post" name="contato">
+                     <input type="hidden" name="acao" value="enviaForm">
                      <div class="form-group">
                         <label for="Nome" class="col-sm-2 control-label font-normal">*{ $arrayIdioma.MN_FORM_NOME }:</label>
                         <div class="col-sm-10">

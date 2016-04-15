@@ -1,7 +1,8 @@
 <?php 
 
 	$pastaProjeto	= "clientes/MonteiroEMassarana/Web/";
-	// $pastaProjeto	= "/Homologacao/";
+	// $pastaProjeto	= "/";
+	// $pastaProjeto	= "Homologacao/";
 	$urlCompleta 	= $_SERVER['REQUEST_URI'];
 	$posInicio		= strpos($urlCompleta, $pastaProjeto);
 	$priimeiraEtapa	= substr($urlCompleta, ($posInicio+strlen($pastaProjeto)));
@@ -70,7 +71,8 @@
 		$pagina == "impugnacoes-em-editais.php" ||
 		$pagina == "mandado-de-seguranca.php" ||
 		$pagina == "advocacia-consultiva.php" ||
-		$pagina == "diligencias-negociais.php"
+		$pagina == "diligencias-negociais.php" ||
+		$pagina == "contencioso-civil.php" 
 	){
 		$PgAtiva = "direito empresarial"; 
 	}
@@ -123,8 +125,29 @@
 		$tipoPub = "4";
 	}
 
-	if ($pagina == "escritorio.php" || $pagina == "missao-valores-objetivo.php" || $pagina == "responsabilidade-social.php" || $pagina == "localizacao.php" || $pagina == "fale-conosco.php") {
+	if ($pagina == "escritorio.php" || $pagina == "missao-visao-valores.php" || $pagina == "responsabilidade-social.php") {
 		$PgAtiva = "escritorio"; 
+	}
+
+	// Menu Ativo
+	if ($pagina == "escritorio.php" || $pagina == "missao-visao-valores.php" || $pagina == "responsabilidade-social.php") {
+		$menuAtivo = "escritorio";
+	}elseif ($PgAtiva == "profissionais") {
+		$menuAtivo = "profissionais";
+	}elseif ($PgAtiva == "direito publico" || $PgAtiva == "direito eleitoral" || $PgAtiva == "direito empresarial" || $PgAtiva == "direito imobiliario") {
+		$menuAtivo = "atuacao";
+	}elseif ($pagina == "noticias.php" || $pagina == "noticiaa.php") {
+		$menuAtivo = "noticias";
+	}elseif ($tipoPub == "1" || $tipoPub == "2" || $tipoPub == "3" || $tipoPub == "4"){
+		$menuAtivo = "publicacoes";
+	}elseif ($pagina == "midias.php") {
+		$menuAtivo = "midias";
+	}elseif ($pagina == "fale-conosco.php") {
+		$menuAtivo = "fale conosco";
+	}elseif ($pagina == "localizacao.php") {
+		$menuAtivo = "localizacao";
+	}elseif ($pagina == "index.php" || $pagina == "") {
+		$menuAtivo = "home";
 	}
 
 ?>

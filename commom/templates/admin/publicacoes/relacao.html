@@ -27,7 +27,8 @@
                             <td>
                                 <a class="ativa-select-acoes cor-tr-btn btn-acoes" href="#">Ações</a> 
                                 <div class="select-acoes mg-lf-90">
-                                    <a class="cor-tr-btn btn-acoes" href="?acao=visualizar&id={$dados[i].id}">visualizar</a> 
+                                    <!-- <a class="cor-tr-btn btn-acoes" href="?acao=visualizar&id={$dados[i].id}">visualizar</a>  -->
+                                    <a class="cor-tr-btn btn-acoes" target="_blank" href="{if $dados[i].tipo == "Instruções"}instrucao{elseif $dados[i].tipo == "Palestras"}palestra{elseif $dados[i].tipo == "Artigos"}artigo{elseif $dados[i].tipo == "Informativos"}informativo{/if}.php?id={$dados[i].id}">visualizar</a> 
                                     <a class="cor-tr-btn btn-acoes" href="?acao=editar&id={$dados[i].id}">editar</a> 
                                     <a class="cor-tr-btn btn-acoes" href="#" onclick="exclui({$dados[i].id}, 'usuario')">excluir</a>
                                 </div>

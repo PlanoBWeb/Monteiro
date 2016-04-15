@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2015-11-23 13:16:12
+<?php /* Smarty version 2.6.12, created on 2016-04-14 10:34:33
          compiled from index.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -7,8 +7,9 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="robots" content="index, follow">
+      <meta name="theme-color" content="#8b0304">
       <meta name="description" content="Escritório de Advocacia focado em direito Público, Eleitoral e Empresarial." />
-      <title>Marcos Monteiro – Sociedade de Advogados</title>
+      <title>Marcos Monteiro - Sociedade de Advogados</title>
       <link href="commom/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="commom/css/estilo.css">
       <link href="commom/img/icon-tab.png" rel="icon">
@@ -24,7 +25,12 @@
       <link rel="stylesheet" type="text/css" href="commom/css/vitrine/owl.transitions.css">
       <!-- vitrine -->
    </head>
-   <body>
+   <body itemscopeitemtype="http://schema.org/WebPage">
+      <?php $_smarty_tpl_vars = $this->_tpl_vars;
+$this->_smarty_include(array('smarty_include_tpl_file' => "../inc/google-tag-manager.html", 'smarty_include_vars' => array()));
+$this->_tpl_vars = $_smarty_tpl_vars;
+unset($_smarty_tpl_vars);
+ ?>
       <div class="container-fluid no-padding">
          <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "../inc/header.html", 'smarty_include_vars' => array()));
@@ -74,10 +80,10 @@ unset($_smarty_tpl_vars);
                         <h2 class="titulo-default font-normal pd-left-none fl-left"><?php echo $this->_tpl_vars['arrayIdioma']['MN_ULTIMAS_NOT']; ?>
 </h2>
                         <?php if ($this->_tpl_vars['totalNotDestaque'] > 6): ?>
-                           <div class="bloco-setas fl-right hidden-xs">
+                           <!-- <div class="bloco-setas fl-right hidden-xs">
                               <div id="next" class="seta-esquerda fl-left seta-default">&lt;</div>
                               <div id="prev" class="seta-direita fl-right seta-default">&gt;</div>
-                           </div>
+                           </div> -->
                         <?php endif; ?>
                      </div>
                   </div>
@@ -112,17 +118,19 @@ $this->_sections['i']['first']      = ($this->_sections['i']['iteration'] == 1);
 $this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $this->_sections['i']['total']);
 ?>
                               <div class="col-xs-12 col-sm-5 col-md-4 pd-none ultimas-noticias-ind">
-                                 <img src="<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['caminhoImagemThumb']; ?>
+                                 <?php if ($this->_tpl_vars['dados'][$this->_sections['i']['index']]['caminhoImagemThumb']): ?>
+                                    <img src="<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['caminhoImagemThumb']; ?>
 " alt="<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['tituloAbrev']; ?>
 " title="<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['tituloAbrev']; ?>
 ">
+                                 <?php endif; ?>
                                  <a href="noticia.php?id=<?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['id']; ?>
 " class="txt-noticia-destaque font-normal"><p><?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['tituloAbrev']; ?>
 </p></a>
-                                 <p class="data-noticia font-normal"><?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['dataMes'][2]; ?>
+                                 <!-- <p class="data-noticia font-normal"><?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['dataMes'][2]; ?>
  <?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['Mes']; ?>
  <?php echo $this->_tpl_vars['dados'][$this->_sections['i']['index']]['dataMes'][0]; ?>
-</p>
+</p> -->
                               </div>
                            <?php endfor; endif; ?>
                            <!-- Noticia Individual -->
@@ -195,7 +203,7 @@ $this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $th
                   <!-- Videos Individual -->
                   <div class="row">
                      <div class="col-xs-12 col-sm-12 col-md-12 pd-none">
-                        <iframe  src="https://www.youtube.com/embed/gV_17TRTEA0" frameborder="0" allowfullscreen></iframe>
+                        <iframe  src="https://www.youtube.com/embed/KdJjSbXgHcQ" frameborder="0" allowfullscreen></iframe>
                      </div>      
                   </div>
                   <!-- Videos Individual -->

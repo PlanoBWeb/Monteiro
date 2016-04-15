@@ -1,4 +1,4 @@
-<?php
+Ôªø<?php
 
 include_once "configs/funcoes.php";
 
@@ -19,7 +19,7 @@ class Usuario
 		if($retornoValidacao[1][0]['id'] != 0)
 		{
 			$retorno[0] = "1";
-			$retorno[1] = "O email ".$post['email']." j· existe em nosso banco de dados!";
+			$retorno[1] = "O email ".$post['email']." j√° existe em nosso banco de dados!";
 			return $retorno;
 		}
 		
@@ -29,8 +29,7 @@ class Usuario
 			SET
 				nome = '".utf8_decode($post['nome'])."',
 				email = '".$post['email']."',
-				senha = '".md5($post['senha'])."',
-				perfil = '".$post['perfil']."'
+				senha = '".md5($post['senha'])."'
 		";
 
 		$result = mysql_query($sql);
@@ -83,8 +82,7 @@ class Usuario
 				".$this->entidade." 
 			SET
 				nome = '".utf8_decode($post['nome'])."',
-				email = '".$post['email']."',
-				perfil = '".$post['perfil']."'
+				email = '".$post['email']."'
 			WHERE
 				id = '".$post['id']."'
 		".$query;
@@ -100,7 +98,7 @@ class Usuario
 		else
 		{
 			$retorno[0] = 0;
-			$retorno[1] = "AlteraÁ„o feita com sucesso!";
+			$retorno[1] = "Altera√ß√£o feita com sucesso!";
 			return $retorno;
 		}
 	}
@@ -217,7 +215,7 @@ class Usuario
 		}
 		
 		$retorno[0] = 0;
-		$retorno[1] = "Exclus„o feita com sucesso!";
+		$retorno[1] = "Exclus√£o feita com sucesso!";
 		return $retorno;
 	}
 	

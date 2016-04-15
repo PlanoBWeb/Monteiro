@@ -31,7 +31,12 @@ if( $_SERVER['SERVER_NAME'] == 'planobweb' || $_SERVER['SERVER_NAME'] == '192.16
 	define("db_user", 'root');
 	define("db_pass", '');
 	define("db_base", 'monteiro');
-	define("PATH_SERVIDOR","C:/wamp/www/Clientes/\MonteiroEMassarana/Web/");
+	define("PATH_SERVIDOR","C:/wamp/www/Clientes/MonteiroEMassarana/Web/");
+	// define("db_host", '179.188.16.95');
+	// define("db_user", 'monteiroemassa');
+	// define("db_pass", 'mo9428ro');
+	// define("db_base", 'monteiroemassa');
+	// define("PATH_SERVIDOR","E:/Home/monteiroemassarana/Web/Homologacao/");
 
 }
 else

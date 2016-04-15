@@ -1,12 +1,20 @@
 <div id="fb-root"></div>
 {literal}
-<script>(function(d, s, id) {
+<script>//(function(d, s, id) {
+//   var js, fjs = d.getElementsByTagName(s)[0];
+//   if (d.getElementById(id)) return;
+//   js = d.createElement(s); js.id = id;
+//   js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.5&appId=1455524614773861";
+//   fjs.parentNode.insertBefore(js, fjs);
+// }(document, 'script', 'facebook-jssdk'));
+(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.5&appId=1455524614773861";
+  js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.5";
   fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+}(document, 'script', 'facebook-jssdk'));
+</script>
 {/literal}
 <header class="header">
    <section class="encapsula-topo">
@@ -25,7 +33,7 @@
             </div>
             <div class="contato-topo">
                <img src="commom/img/icon-email.png" alt="icone e-mail" title="icone e-mail">
-               <a class="link-topo" href="mailto:contato@mmonteiroadv.com.br">contato@mmonteiroadv.com.br</a>
+               <a class="link-topo" href="mailto:contato@gabanmonteiroadv.com.br">contato@gabanmonteiroadv.com.br</a>
             </div>
          </div>
 
@@ -38,7 +46,7 @@
                   <img src="commom/img/icon-pt.png" alt="icone português" title="icone português">
                </a>
             </div> -->
-            <form action="noticias.php" class="form-search" method="post" name="form_search">
+            <form action="noticias.php" class="form-search form-busca-desk" method="post" name="form_search">
                <input type="hidden" name="acao" value="busca">
                <input class="font-normal fl-left" id="buscaValor" autocomplete="off" type="search" name="search" placeholder="{ $arrayIdioma.MN_BUSCA }">
                <input class="btn-ok cinza font-normal fl-left" type="submit" value="ok">
@@ -77,57 +85,63 @@
          </div>
          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-               <li class="linha-topo"><a class="link-linha-topo font-normal" href="index.php">{ $arrayIdioma.MN_HOME }</a></li>
+               <li class="linha-topo"><a class="link-linha-topo {if $menuAtivo == "home"}link-topo-ativo{/if} font-normal" href="index.php">{ $arrayIdioma.MN_HOME }</a></li>
                <!-- <li class="linha-topo"><a class="link-linha-topo font-normal" href="escritorio.php">Escritório</a></li> -->
                <li class="dropdown linha-topo">
-                  <a href="#" class="dropdown-toggle link-linha-topo font-normal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{ $arrayIdioma.MN_ESCRITORIO }<span class="caret"></span></a>
-                  <ul class="dropdown-menu">
+                  <a href="#" class="dropdown-toggle visible-xs link-linha-topo {if $menuAtivo == "escritorio"}link-topo-ativo{/if} font-normal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{ $arrayIdioma.MN_ESCRITORIO }<span class="caret"></span></a>
+                  <a href="#" class="hidden-xs link-linha-topo link-linha-topo-esc {if $menuAtivo == "escritorio"}link-topo-ativo{/if} font-normal">{ $arrayIdioma.MN_ESCRITORIO }<span class="caret"></span></a>
+                  <ul class="dropdown-menu dropdown-menu-esc">
                      <li><a class="link-linha-topo font-normal" href="escritorio.php">{ $arrayIdioma.MN_APRESENTACAO }</a></li>
-                     <li><a class="link-linha-topo font-normal" href="missao-valores-objetivo.php">{ $arrayIdioma.MN_MISVALOBJ }</a></li>
-                     <li><a class="link-linha-topo font-normal" href="responsabilidade-social.php">{ $arrayIdioma.MN_RESPSOCIAL }</a></li>
+                     <li><a class="link-linha-topo font-normal" href="missao-visao-valores.php">{ $arrayIdioma.MN_MISVALOBJ }</a></li>
+                     <!-- <li><a class="link-linha-topo font-normal" href="responsabilidade-social.php">{ $arrayIdioma.MN_RESPSOCIAL }</a></li> -->
                   </ul>
                </li>
 
 
                <li class="dropdown linha-topo">
-                  <a href="#" class="dropdown-toggle link-linha-topo font-normal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{ $arrayIdioma.MN_PROFISSIONAIS }<span class="caret"></span></a>
-                  <ul class="dropdown-menu">
+                  <a href="#" class="dropdown-toggle visible-xs link-linha-topo {if $menuAtivo == "profissionais"}link-topo-ativo{/if} font-normal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{ $arrayIdioma.MN_PROFISSIONAIS }<span class="caret"></span></a>
+                  <a href="#" class="hidden-xs link-linha-topo link-linha-topo-prof {if $menuAtivo == "profissionais"}link-topo-ativo{/if} font-normal">{ $arrayIdioma.MN_PROFISSIONAIS }<span class="caret"></span></a>
+                  <ul class="dropdown-menu dropdown-menu-prof">
                      <li><a class="link-linha-topo font-normal" href="marcos-antonio-gaban-monteiro.php">Marcos Antonio Gaban Monteiro</a></li>
                      <li><a class="link-linha-topo font-normal" href="alvaro-merlos-akinaga-cordeiro.php">Álvaro Merlos Akinaga Cordeiro</a></li>
                      <li><a class="link-linha-topo font-normal" href="juliana-gaban-monteiro-multini.php">Juliana Gaban Monteiro Multini</a></li>
                      <li><a class="link-linha-topo font-normal" href="angelica-rebequi-da-motta-santos.php">Angélica Rebequi da Motta Santos</a></li>
-                     <li><a class="link-linha-topo font-normal" href="krikor-palma-artissian.php">Krikor Palma Artissian</a></li>
+                     <!-- <li><a class="link-linha-topo font-normal" href="krikor-palma-artissian.php">Krikor Palma Artissian</a></li> -->
                      <li><a class="link-linha-topo font-normal" href="roberta-moraes-dias-benatti.php">Roberta Moraes Dias Benatti</a></li>
                      <li><a class="link-linha-topo font-normal" href="gabriel-vieira-almeida-machado.php">Gabriel Vieira Almeida Machado</a></li>
                      <li><a class="link-linha-topo font-normal" href="guillermo-santana-andrade-glassman.php">Guillermo Santana Andrade Glassman</a></li>
+                     <li><a class="link-linha-topo font-normal" href="milena-araujo.php">Milena Araujo</a></li>
                   </ul>
                </li>
 
 
                <li class="dropdown linha-topo">
-                  <a href="#" class="dropdown-toggle link-linha-topo font-normal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{ $arrayIdioma.MN_ATUACAO }<span class="caret"></span></a>
-                  <ul class="dropdown-menu">
+                  <a href="#" class="dropdown-toggle visible-xs link-linha-topo {if $menuAtivo == "atuacao"}link-topo-ativo{/if} font-normal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{ $arrayIdioma.MN_ATUACAO }<span class="caret"></span></a>
+                  <a href="#" class="hidden-xs link-linha-topo link-linha-topo-atu {if $menuAtivo == "atuacao"}link-topo-ativo{/if} font-normal">{ $arrayIdioma.MN_ATUACAO }<span class="caret"></span></a>
+                  <ul class="dropdown-menu dropdown-menu-atu">
                      <li><a class="link-linha-topo font-normal" href="direito-publico.php">{ $arrayIdioma.MN_DIRPUBLICO }</a></li>
                      <li><a class="link-linha-topo font-normal" href="direito-eleitoral.php">{ $arrayIdioma.MN_DIRELEITORAL }</a></li>
                      <li><a class="link-linha-topo font-normal" href="direito-empresarial.php">{ $arrayIdioma.MN_DIREMPRESARIAL }</a></li>
                      <li><a class="link-linha-topo font-normal" href="direito-imobiliario.php">{ $arrayIdioma.MN_DIRIMOBILIARIO }</a></li>                     
                   </ul>
                </li>
-               <li class="linha-topo"><a class="link-linha-topo font-normal" href="noticias.php">{ $arrayIdioma.MN_NOTICIAS }</a></li>
+               <li class="linha-topo"><a class="link-linha-topo {if $menuAtivo == "noticias"}link-topo-ativo{/if} font-normal" href="noticias.php">{ $arrayIdioma.MN_NOTICIAS }</a></li>
                <li class="dropdown linha-topo">
-                  <a href="#" class="dropdown-toggle link-linha-topo font-normal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{ $arrayIdioma.MN_PUBLICACOES }<span class="caret"></span></a>
-                  <ul class="dropdown-menu">
+                  <a href="#" class="dropdown-toggle visible-xs link-linha-topo {if $menuAtivo == "publicacoes"}link-topo-ativo{/if} font-normal" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{ $arrayIdioma.MN_PUBLICACOES }<span class="caret"></span></a>
+                  <a href="#" class="hidden-xs link-linha-topo link-linha-topo-pub {if $menuAtivo == "publicacoes"}link-topo-ativo{/if} font-normal">{ $arrayIdioma.MN_PUBLICACOES }<span class="caret"></span></a>
+                  <ul class="dropdown-menu dropdown-menu-pub">
                      <li><a class="link-linha-topo font-normal" href="informativos.php">{ $arrayIdioma.MN_INFORMATIVOS }</a></li>
                      <li><a class="link-linha-topo font-normal" href="artigos.php">{ $arrayIdioma.MN_ARTIGOS }</a></li>
-                     <li><a class="link-linha-topo font-normal" href="instrucoes.php">{ $arrayIdioma.MN_INSTRUCOES }</a></li>
+                     <!-- <li><a class="link-linha-topo font-normal" href="instrucoes.php">{ $arrayIdioma.MN_INSTRUCOES }</a></li> -->
                      <li><a class="link-linha-topo font-normal" href="palestras.php">{ $arrayIdioma.MN_PALESTRAS }</a></li>
                   </ul>
                </li>
-               <li class="linha-topo"><a class="link-linha-topo font-normal" href="midias.php">{ $arrayIdioma.MN_MIDIA }</a></li>
-               <li class="linha-topo"><a class="link-linha-topo font-normal" href="fale-conosco.php">{ $arrayIdioma.MN_FALECONOSCO }</a></li>
-               <li class="linha-topo"><a class="link-linha-topo font-normal" href="localizacao.php">{ $arrayIdioma.MN_LOCALIZACAO }</a></li>
-               <li class="linha-topo"><a class="link-linha-topo font-normal pd-right-none icon-redes" href="https://www.facebook.com/Marcos-Monteiro-Sociedade-de-Advogados-798300076864104/timeline/" target="_blank"><img src="commom/img/icon-face.png" alt="Facebook" title="Facebook"></a></li>
-               <li class="linha-topo"><a class="link-linha-topo font-normal pd-left-none icon-redes" href="https://www.linkedin.com/company/10305250?trk=tyah&trkInfo=clickedVertical%3Acompany%2CclickedEntityId%3A10305250%2Cidx%3A2-1-7%2CtarId%3A1447688521985%2Ctas%3Amarcos%20monteiro%20soc" target="_blank"><img src="commom/img/icon-in.png" alt="Likedin" title="Likedin" target="_blank"></a></li>
+               <li class="linha-topo"><a class="link-linha-topo {if $menuAtivo == "midia"}link-topo-ativo{/if} font-normal" href="midias.php">{ $arrayIdioma.MN_MIDIA }</a></li>
+               <li class="linha-topo"><a class="link-linha-topo {if $menuAtivo == "fale conosco"}link-topo-ativo{/if} font-normal" href="fale-conosco.php">{ $arrayIdioma.MN_FALECONOSCO }</a></li>
+               <li class="linha-topo"><a class="link-linha-topo {if $menuAtivo == "localizacao"}link-topo-ativo{/if} font-normal" href="localizacao.php">{ $arrayIdioma.MN_LOCALIZACAO }</a></li>
+               <li class="linha-topo"><a class=" font-normal pd-right-none icon-redes" href="https://www.facebook.com/Marcos-Monteiro-Sociedade-de-Advogados-798300076864104/timeline/" target="_blank"><img src="commom/img/icon-face.png" alt="Facebook" title="Facebook"></a></li>
+               <li class="linha-topo"><a class=" font-normal pd-left-none icon-redes" href="https://www.linkedin.com/company/10305250?trk=tyah&trkInfo=clickedVertical%3Acompany%2CclickedEntityId%3A10305250%2Cidx%3A2-1-7%2CtarId%3A1447688521985%2Ctas%3Amarcos%20monteiro%20soc" target="_blank"><img src="commom/img/icon-in.png" alt="Likedin" title="Likedin" target="_blank"></a></li>
+               <li class="linha-topo"><a class=" icon-youtube font-normal pd-left-none icon-redes" href="https://www.youtube.com/channel/UCsSSUlcc-jSWzuXz8HakFJw" target="_blank"><img src="commom/img/icon-youtube.png" alt="Youtube" title="Youtube" target="_blank"></a></li>
             </ul>
          </div>
       </div>

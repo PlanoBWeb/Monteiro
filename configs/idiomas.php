@@ -10,7 +10,7 @@ if( $_SESSION['idioma'] == "I")
 		'MN_HOME'  			=> 'Home',
 		'MN_ESCRITORIO'  	=> 'Escritório',
 		'MN_APRESENTACAO'  	=> 'APRESENTAÇÃO',
-		'MN_MISVALOBJ'  	=> 'MISSÃO, VALORES E OBJETIVO',
+		'MN_MISVALOBJ'  	=> 'Missão, Visão e Valores',
 		'MN_RESPSOCIAL'  	=> 'RESPONSABILIDADE SOCIAL',
 		'MN_PROFISSIONAIS' 	=> 'Profissionais',
 		'MN_ATUACAO' 		=> 'Atuação',
@@ -31,7 +31,7 @@ if( $_SESSION['idioma'] == "I")
 
 		// Index
 		'MN_TIT_BANNER'  	=> 'Tribunal de Contas Controle de Contas Públicas',
-		'MN_TXT_BANNER'  	=> 'Assessoria prévia à prestação de contas, orientações e acompanhamentos sobre aplicação e destinação de recursos públicos diante dos atuais posicionamentos dos Tribunais de',
+		'MN_TXT_BANNER'  	=> 'Assessoria prévia à prestação de contas, orientações e acompanhamentos sobre aplicação e destinação de recursos públicos diante dos atuais posicionamentos dos Tribunais de contas',
 		'MN_TXT_DES_HOME'	=> 'Defesas sólidas, criativas e atentas aos atuais entendimentos dos tribunais superiores do país.',
 		'MN_ULTIMAS_NOT'  	=> 'Últimas Notícias',
 		'MN_PUBLICACOES'  	=> 'Publicações',
@@ -42,34 +42,40 @@ if( $_SESSION['idioma'] == "I")
 		'MN_INDIQUE_SITE'  	=> 'Indique este site',
 		'MN_CONECTADO_NOS' 	=> 'Fique conectado conosco',
 		'MN_SOBRE_FOOTER'  	=> 'Sociedade de profissionais altamente qualificados, aptos a prestar assessoria, consultoria e direção jurídica de modo diferenciado, padronizado ou personalizado, de acordo com as exigências e o dinamismo do mercado.',
-		'MN_END_FOOTER'  	=> 'Rua Maria Paula, 36 | cj. A - 3º andar <br>CEP: 01319-000 | Bela Vista | SP',
+		//'MN_END_FOOTER'  	=> 'Rua Dona Maria Paula, 36 -3º andar – conjunto A - Entrada pela Rua Asdrúbal do Nascimento, 298',
+		'MN_END_FOOTER'  	=> 'Rua Dona Maria Paula, n° 36 - 3° Andar Bela Vista – São Paulo – SP',
+		'MN_END_FOOTER_ESTAC'  	=> 'Entrada do estacionamento pela Rua Asdrúbal do Nascimento, 298',  
 		'MN_CURTA_PAG'  	=> 'Curta nossa página!',
-		'MN_DIREITOS'  		=> 'MARCOS MONTEIRO SOCIEDADE DE ADVOGADOS - Todos os direitos reservados - 2015',
+		'MN_DIREITOS'  		=> 'GABAN MONTEIRO SOCIEDADE DE ADVOGADOS - Todos os direitos reservados - 2015',
 		'MN_DEV'  			=> 'Desenvolvimento:',
 
 
 		// Escritorio
 		'MN_TITULO_APRE' 	=> 'Apresentação',
-		'MN_TXT_APRE'  		=> 'MARCOS MONTEIRO SOCIEDADE DE ADVOGADOS é uma sociedade de profissionais altamente qualificados, aptos a prestar assessoria, consultoria e direção jurídica de modo diferenciado, padronizado ou personalizado, de acordo com as exigências e o dinamismo do mercado. <br><br> Através de uma atuação preventiva, evitando ou mesmo reduzindo riscos, assim como contenciosa, por meio de defesas sólidas, criativas e atentas aos atuais entendimentos dos tribunais superiores do país, nossos profissionais permitem ao cliente agir com segurança, consciência e confiança na administração de seus interesses e testemunhar à melhor proteção e garantia aos seus direitos e liberdades. ',
-		'MN_TITULO_MVO'  	=> 'Missão, Valores e Objetivo',
-		'MN_TXT_MVO'  		=> '<strong>MISSÃO</strong><br><br>
+		'MN_TXT_APRE'  		=> '<strong style="color: #8b0303;">GABAN MONTEIRO SOCIEDADE DE ADVOGADOS</strong> é uma sociedade de profissionais altamente qualificados, aptos a prestar assessoria, consultoria e direção jurídica de modo diferenciado, padronizado ou personalizado, de acordo com as exigências e o dinamismo do mercado. <br><br> Através de uma atuação preventiva, evitando ou mesmo reduzindo riscos, assim como contenciosa, por meio de defesas sólidas, criativas e atentas aos atuais entendimentos dos tribunais superiores do país, nossos profissionais permitem ao cliente agir com segurança, consciência e confiança na administração de seus interesses e testemunhar à melhor proteção e garantia aos seus direitos e liberdades. ',
+		'MN_TITULO_MVO'  	=> 'Missão, Visão e Valores',
+		'MN_TXT_MVO'  		=> '<strong style="color: #8b0303;">MISSÃO</strong><br><br>
 
-			                    MARCOS MONTEIRO SOCIEDADE DE ADVOGADOS nasceu do idealismo de seus sócios fundadores, empenhados em estruturar uma equipe de advogados qualificados com uma estratégia jurídico-profissional inovadora, afim de perpetuar o direito como principal instrumento de integração social. 
+		                    Ser uma referência em Direito Público pela confiança, resolutividade, comprometimento e conhecimento técnico de uma  equipe altamente qualificada, buscando foco no resultado, com estratégia para manter e aumentar a segurança de nossos clientes .
 
-			                    <br><br><strong>VALORES</strong><br><br>
+		                    <br><br><strong style="color: #8b0303;">VISÃO</strong><br><br>
 
-			                    MARCOS MONTEIRO SOCIEDADE DE ADVOGADOS é uma sociedade sólida, formada por seletos profissionais, compromissados com os valores éticos da advocacia, com a defesa das liberdades do homem e com a promoção e dispersão da Justiça.
+		                    Ser o melhor escritório especializado em Direito Público contribuindo com gestores e empresas na melhora permanente dos serviços públicos prestados  à Sociedade.
 
-			                    <br><br><strong>OBJETIVO</strong><br><br>
+		                    <br><br><strong style="color: #8b0303;">VALORES</strong><br><br>
 
-			                    MARCOS MONTEIRO SOCIEDADE DE ADVOGADOS pretende se tornar, nos próximos anos, escritório jurídico de vanguarda no campo do direito público, especialmente quanto ao controle de contas públicas municipais e estaduais pelos Tribunais de Contas em todas as esferas, área onde presta assessoria de forma especializada e inconfundível, garantindo a organização jurídica adequada das chefias executivas orçamentárias, ao mesmo tempo que compartilha e contribui para a formação e consonância da jurisprudência das cortes de contas com o ordenamento jurídico vigente. Almeja ainda promover o aculturamento de uma advocacia eleitoral preventiva, com consultas, assessoria e acompanhamento durante todo o processo pré-eleitoral, evitando imperfeições que possam prejudicar os futuros envolvidos no processo eleitoral.',
+		                    Confiança <br>
+							Responsabilidade / Comprometimento<br>
+							Trabalho em Equipe<br>
+							Excelência<br>
+							Fazer a Diferença<br>',
 		
 		'MN_TITULO_RS'  	=> 'Responsabilidade Social',
-		'MN_TXT_RS'  		=> 'MARCOS MONTEIRO SOCIEDADE DE ADVOGADOS reconhece o seu papel na sociedade e se mostra comprometida com o desenvolvimento social e com a luta por uma sociedade mais justa, seja contribuindo através da elaboração de um trabalho ético, transparente, dedicado e solidário.',
+		'MN_TXT_RS'  		=> '<strong style="color: #8b0303;">GABAN MONTEIRO SOCIEDADE DE ADVOGADOS</strong> reconhece o seu papel na sociedade e se mostra comprometida com o desenvolvimento social e com a luta por uma sociedade mais justa, seja contribuindo através da elaboração de um trabalho ético, transparente, dedicado e solidário.',
 		'MN_TITULO_LOCAL'  	=> 'Localização',
 		'MN_TXT_LOCAL'  	=> 'O escritório está estrategicamente localizado no Centro de São Paulo, próximo ao Tribunal de Justiça, Tribunal Eleitoral, Fórum da Fazenda e Tribunal de Contas do Estado.',
 		'MN_TITULO_FALE'  	=> 'Fale Conosco',
-		'MN_TXT_FALE'  		=> 'A MARCOS MONTEIRO SOCIEDADE DE ADVOGADOS abre este espaço para que possa enviar suas dúvidas aos nossos profissionais. Preencha seus dados e a mensagem e retornaremos o mais breve possível.',
+		'MN_TXT_FALE'  		=> 'A GABAN MONTEIRO SOCIEDADE DE ADVOGADOS abre este espaço para que possa enviar suas dúvidas aos nossos profissionais. Preencha seus dados e a mensagem e retornaremos o mais breve possível.',
 		'MN_FORM_NOME'  	=> 'NOME',
 		'MN_FORM_EMAIL'  	=> 'E-MAIL',
 		'MN_FORM_EMPRESA'  	=> 'EMPRESA',
@@ -79,11 +85,10 @@ if( $_SESSION['idioma'] == "I")
 
 		// Profissionais
 		'MN_PROF_MARCOS'	=> 'Marcos Antonio Gaban Monteiro',
-		'MN_TXT_MARCOS'  	=> 'Advogado especialista em direito público e nas parcerias entre o setor público e privado, realizando assessoria direta a Prefeituras e Câmaras na defesa de contas municipais.<br><br>
-			                    Atua também na área do direito eleitoral e presta consultoria jurídica especializada a Prefeituras e Câmaras Municipais, agentes políticos, empresas e entidades do Terceiro Setor, na área do direito administrativo, com atuação junto aos tribunais de contas. <br><br>
-			                    Consultor jurídico em direito público financeiro, direito do terceiro setor e direito empresarial voltado para contratações com o Poder Público. Articulista na área do direito público.<br><br> 
-			                    Participou do Curso de Contabilidade Aplicada ao Setor Público do Conselho Federal de Contabilidade, em 2012. Atuou junto à Companhia de Saneamento Básico do Estado de São Paulo – SABESP, junto à Companhia de Desenvolvimento Habitacional e Urbano – CDHU, junto à Companhia Paulista de Obras e Serviços, junto à Secretaria de Habitação do Estado de São Paulo e perante a Assembleia Legislativa do Estado de São Paulo, como chefe de gabinete participou da Comissão de Financiamento e Orçamento e da Comissão de Parcerias Público-Privadas. Consultor jurídico em Direito Administrativo e parcerias público-privadas. Palestrante na área do Direito Público e contas públicas.<br><br>
-			                    Sócio da Marcos Monteiro Sociedade de Advogados.',
+		'MN_TXT_MARCOS'  	=> 'Advogado sócio fundador da Gaban Monteiro Sociedade de Advogados, especialista em direito público e nas parcerias entre o setor público e privado, realizando Consultoria a Prefeituras, Câmaras e Empresas do setor com estratégias e defesas em órgãos de controle. <br><br>
+			                    Atuação presente no Tribunal de Contas do Estado e Tribunal de Justiça de São Paulo, na defesa de agentes políticos, empresas e entidades do Terceiro Setor, nas áreas do direito administrativo, direito financeiro e direito empresarial, além de atuar também com direito eleitoral, em prestações de contas e impugnações de candidaturas. <br><br>
+			                    Profissionalmente já trabalhou na SABESP, CDHU, CPOS empresas estatais do Governo do Estado de São Paulo, e no Legislativo na Assembleia Legislativa do Estado de São Paulo. <br><br> 
+			                    Palestrante na área do Direito Público. <br><br>',
 		'MN_ALVARO'  		=> 'Álvaro Merlos Akinaga Cordeiro',
 		'MN_TXT_ALVARO'  	=> 'Advogado, pós-graduando em Direito Constitucional pela Escola Superior de Direito Constitucional – ESDC, formado na Universidade Presbiteriana Mackenzie. Estagiou no Ministério Público de São Paulo e foi Conciliador no Juizado Especial Cível - Mackenzie.',
 		'MN_JULIANA'  		=> 'Juliana Gaban Monteiro Multini',
@@ -91,7 +96,9 @@ if( $_SESSION['idioma'] == "I")
 		                        Assessoria jurídica em operações contratuais, análise de riscos e administração de passivo trabalhista. Atuou como Assessora Executiva da Presidência da Assembléia Legislativa do Estado de São Paulo. Foi integrante do Grupo de Discussão sobre Desenvolvimento Sustentado do Estado de São Paulo e sobre índice de Responsabilidade Social do Fórum Legislativo da Assembléia Legislativa de São Paulo.<br><br>
 		                        Consultora jurídica em direito público e contencioso empresarial.',
 		'MN_ANGELICA'  		=> 'Angélica Rebequi da Motta Santos',
-		'MN_TXT_ANGELICA'  	=> 'Coordenadora Administrativa - Advogada formada pela Universidade de São Caetano do Sul – USCS – Atuante em diversos processos na área civil tais como inventário, divórcio, dano moral e material e nulidade de empréstimo consignado. ',
+		'MN_TXT_ANGELICA'  	=> 'Advogada – Coordenadora responsável pela gestão técnica do escritório, especializada em Direito Público, atua no atendimento, controle da produtividade e qualidade dos processos. <br><br>
+
+								No setor do Direito imobiliário sua atuação é diferenciada por cursos específicos realizados e a capacidade de resolutividade em órgãos de aprovação, como Graprohab, CETESB e Prefeituras. ',
 		'MN_KRIKOR'  		=> 'Krikor Palma Artissian',
 		'MN_TXT_KRIKOR'  	=> 'Advogado especialista em Direito Civil e Consumidor pela FMB – Instituto Flávio Monteiro de Barros, atua no departamento jurídico de grandes empresas como o Grupo Educacional UNIESP, e estagiou em órgãos públicos, tais como Procuradoria da Fazenda Nacional e Justiça Federal.',
 		'MN_ROBERTA'  		=> 'Roberta Moraes Dias Benatti',
@@ -105,18 +112,22 @@ if( $_SESSION['idioma'] == "I")
 		'MN_GABRIEL'  		=> 'Gabriel Vieira Almeida Machado',
 		'MN_TXT_GABRIEL'  	=> 'Advogado, pós-graduando em Direito Administrativo pela Pontifícia Universidade Católica – PUC/SP, formado pelo Centro Universitário CESMAC – Maceió/AL, atuante no contencioso e consultivo nas áreas do direito administrativo, eleitoral, municipal e financeiro, participou do curso de extensão promovido pela Escola Superior da Advocacia de São Paulo sobre Parcerias na Administração Pública, estagiou no Tribunal de Justiça do Estado de Alagoas.',
 		'MN_GUILHERMO'  	=> 'Guillermo Santana Andrade Glassman',
-		'MN_TXT_GUILHERMO'  => 'Advogado. Mestrando em Direito Político e Econômico pela Universidade Presbiteriana Mackenzie. Especialista em Direito Administrativo pela Pontifícia Universidade Católica da São Paulo. Cursou extensão em Contratos em Infraestrutura na Fundação Getúlio Vargas/SP. Bacharel em Direito pela Universidade do Estado da Bahia. Bacharelando em Ciências Sociais pela Universidade de São Paulo. <br><br>
+		'MN_TXT_GUILHERMO'  => 'Advogado. Mestre em Direito Político e Econômico pela Universidade Presbiteriana Mackenzie. Especialista em Direito Administrativo pela Pontifícia Universidade Católica da São Paulo. Cursou extensão em Contratos em Infraestrutura na Fundação Getúlio Vargas/SP. Bacharel em Direito pela Universidade do Estado da Bahia. Bacharelando em Ciências Sociais pela Universidade de São Paulo. <br><br>
 
-								Tem experiência na área de Direito Público, nos setores público e privado, com ênfase em Direito Administrativo - Contratos de Infraestrutura ',
+								Tem experiência na área de Direito Público, nos setores público e privado, com ênfase em Direito Administrativo - Contratos de Infraestrutura 
+								',
+		'MN_MILENA'  	    => 	'Milena Araujo',
+		'MN_TXT_MILENA'     =>  'Advogada formada pela Faculdade de Direito Damásio de Jesus, Pós-graduanda em Direito Público com ênfase em Gestão Pública.<br><br>
+								Atua na área do Direito Público, no consultivo, contencioso judicial e administrativo, com ênfase em Gestão Pública.',
 		
-		'MN_TXT_DP'  		=> 'Na área do Direito Público, a Marcos Monteiro Sociedade de Advogados, por meio de uma equipe altamente especializada, está apta a atender seus clientes de maneira rápida e eficiente em relação ao conjunto das normas jurídicas de natureza pública que regulam a relação entre o particular e o Estado e também às atividades, funções e organizações de poderes do Estado e dos seus servidores.',
+		'MN_TXT_DP'  		=> 'Na área do Direito Público, a Gaban Monteiro Sociedade de Advogados, por meio de uma equipe altamente especializada, está apta a atender seus clientes de maneira rápida e eficiente em relação ao conjunto das normas jurídicas de natureza pública que regulam a relação entre o particular e o Estado e também às atividades, funções e organizações de poderes do Estado e dos seus servidores.',
 		'MN_TITULO_DP'  	=> 'Direito Público',
 		'MN_TITULO_TC'  	=> 'Tribunal de Contas',
 		'MN_TXT_TC'  		=> 'Atua na fiscalização contábil, financeira, orçamentária, operacional e patrimonial de estados, municípios e da União, além das respectivas entidades de administração direta ou indireta e fundações, quanto à legalidade, legitimidade, economicidade, aplicação de subvenções e renúncia de receitas.<br><br>
 
 								A jurisdição do Tribunal alcança administradores e demais responsáveis por dinheiro, bens e valores públicos, além das pessoas físicas ou jurídicas, que, mediante convênios, acordos, ajustes ou outros instrumentos congêneres, apliquem auxílios, subvenções ou recursos repassados pelo Poder Público.<br><br>
 
-								Todo cuidado é pouco quando se trata do dinheiro público e os clientes da Marcos Monteiro Sociedade de Advogados são assessorados em todas as particularidades que envolvem os detalhados processos de prestação de contas dos órgãos públicos, incluindo:<br><br>
+								Todo cuidado é pouco quando se trata do dinheiro público e os clientes da Gaban Monteiro Sociedade de Advogados são assessorados em todas as particularidades que envolvem os detalhados processos de prestação de contas dos órgãos públicos, incluindo:<br><br>
 
 								- Patrocínio de defesas especializadas por área, tanto no setor público como privado (prefeituras, câmaras municipais, empresas).<br>
 								- Acompanhamento simultâneo do andamento processual realizado por sistema próprio.<br>
@@ -132,7 +143,7 @@ if( $_SESSION['idioma'] == "I")
 		'MN_TITULO_IA'  	=> 'Improbidade Administrativa',
 		'MN_TXT_IA'  		=> 'É o ato ilegal ou contrário aos princípios básicos da Administração Pública, cometido por agente público, durante o exercício de função pública ou decorrente desta.<br><br>
 
-								Os clientes da Marcos Monteiro Sociedade de Advogados contam com os seguintes serviços para evitar os problemas causados por questões de improbidade administrativa:<br><br>
+								Os clientes da Gaban Monteiro Sociedade de Advogados contam com os seguintes serviços para evitar os problemas causados por questões de improbidade administrativa:<br><br>
 
 								- Consultoria preventiva especializada para órgãos públicos.<br>
 								- Patrocínio de defesa especializada no Judiciário.<br>
@@ -169,13 +180,13 @@ if( $_SESSION['idioma'] == "I")
 		'MN_TITULO_PL'  	=> 'Processo Legislativo',
 		'MN_TXT_PL'  		=> 'É o conjunto de atos realizados pelas Assembleias, Câmaras e o Congresso Nacional, visando a elaboração das leis de forma democrática, ordenados conforme as regras expressas na Constituição e nos regimentos internos.<br><br>
 
-								A equipe de advogados da Marcos Monteiro Sociedade de Advogados trabalha para oferecer completa assessoria a seus clientes na área do processo legislativo, incluindo:<br><br>
+								A equipe de advogados da Gaban Monteiro Sociedade de Advogados trabalha para oferecer completa assessoria a seus clientes na área do processo legislativo, incluindo:<br><br>
 
 								- Consultoria técnica em elaboração legislativa, tanto do Executivo como do Legislativo (projetos de lei e decretos, entre outros atos normativos).<br>
 								- Acompanhamento de projetos de lei específicos por áreas de interesse de grupos empresariais.<br>
 								- Parecer de constitucionalidade de atos normativos.',
 		'MN_TITULO_C'  		=> 'Consultoria',
-		'MN_TXT_C'  		=> 'A Marcos Monteiro Sociedade de Advogados realiza consultoria completa por meio de processos consultivos, atendimento em reuniões e respostas técnicas via e-mails, tanto para o setor público como privado:<br><br>
+		'MN_TXT_C'  		=> 'A Gaban Monteiro Sociedade de Advogados realiza consultoria completa por meio de processos consultivos, atendimento em reuniões e respostas técnicas via e-mails, tanto para o setor público como privado:<br><br>
 
 								<strong>Setor Público </strong><br><br>
 
@@ -196,7 +207,7 @@ if( $_SESSION['idioma'] == "I")
 		'MN_TITULO_CM'  	=> 'Consórcios Municipais',
 		'MN_TXT_CM'  		=> 'Importante instrumento de política pública para o desenvolvimento econômico e melhorias no sistema de saúde, saneamento, meio ambiente, entre outros, criando-se uma articulação institucional entre municípios para construir soluções para problemas comuns.<br><br>
 
-								Mas para a eficiência dos consórcios, é necessário que eles funcionem de acordo com as regras estabelecidas na legislação e a Marcos Monteiro Sociedade de Advogados oferece:<br><br>
+								Mas para a eficiência dos consórcios, é necessário que eles funcionem de acordo com as regras estabelecidas na legislação e a Gaban Monteiro Sociedade de Advogados oferece:<br><br>
 
 								- Defesa em órgãos de controle.<br>
 								- Consultoria em criação e dissolução.<br>
@@ -205,7 +216,7 @@ if( $_SESSION['idioma'] == "I")
 		'MN_TITULO_DE'  	=> 'Direito Eleitoral',
 		'MN_TXT_DE'  		=> 'Ramo do Direito Público que trata de institutos relacionados com os direitos políticos e as eleições, em todas as suas fases, como forma de escolha dos titulares dos mandatos políticos e das instituições do Estado, disciplina a criação dos partidos, o ingresso do cidadão no corpo eleitoral para fruição dos direitos políticos, o registro das candidaturas, a propaganda eleitoral, o processo eletivo e a investidura no mandato.<br><br>
 
-								A Marcos Monteiro Sociedade de Advogados oferece uma equipe altamente especializada que presta assessoria completa em todas as áreas do Direito Eleitoral, desde a pré-candidatura até a prestação de contas da campanha:',
+								A Gaban Monteiro Sociedade de Advogados oferece uma equipe altamente especializada que presta assessoria completa em todas as áreas do Direito Eleitoral, desde a pré-candidatura até a prestação de contas da campanha:',
 		'MN_TITULO_APC'  	=> 'Assessoria para Pré-candidatos',
 		'MN_TXT_APC'  		=> '<strong>Pré-candidaturas </strong><br><br>
 
@@ -213,7 +224,7 @@ if( $_SESSION['idioma'] == "I")
 		'MN_TITULO_FP'  	=> 'Fidelidade Partidária',
 		'MN_TXT_FP'  		=> '- Pedido à Justiça Eleitoral decretação da perda de cargo eletivo em decorrência de desfiliação partidária sem justa causa.',
 		'MN_TITULO_RX'  	=> '“Raio X” do Candidato',
-		'MN_TXT_RX'  		=> 'Primeiro passo para aqueles interessados em pleitear ou candidatar-se a mandato eletivo é saber se não há nenhum impedimento para a candidatura e a Marcos Monteiro Sociedade de Advogados providencia um completo raio-X do candidato ou de seus adversários, incluindo:<br><br>
+		'MN_TXT_RX'  		=> 'Primeiro passo para aqueles interessados em pleitear ou candidatar-se a mandato eletivo é saber se não há nenhum impedimento para a candidatura e a Gaban Monteiro Sociedade de Advogados providencia um completo raio-X do candidato ou de seus adversários, incluindo:<br><br>
 
 								- Certidões judiciais.<br><br>
 								- Certidões administrativas (órgãos de controle).<br><br>
@@ -223,11 +234,11 @@ if( $_SESSION['idioma'] == "I")
 		'MN_TXT_RC'  		=> '- Observação de limites e prazos.<br>
 								- Organização da documentação necessária para o registro.',
 		'MN_TITULO_PC'  	=> 'Prestação de Contas',
-		'MN_TXT_PC'  	=> '- Orientação da prestação de contas de acordo com as rígidas regras eleitorais.
+		'MN_TXT_PC'  	=> '- Orientação da prestação de contas de acordo com as rígidas regras eleitorais.<br>
 							- Atendimento a partidos políticos, candidatos (inclusive vices e suplentes) e comitês financeiros, que estão obrigados a prestar contas à Justiça Eleitoral a respeito da movimentação financeira de suas campanhas eleitorais.',								
 		'MN_TITULO_PE'  	=> 'Propaganda Eleitoral',
-		'MN_TXT_PE'  		=> '- Orientação em relação ao que é permitido ou não de acordo com a legislação eleitoral.
-								- Orientação em relação aos prazos permitidos para cada tipo de propaganda.
+		'MN_TXT_PE'  		=> '- Orientação em relação ao que é permitido ou não de acordo com a legislação eleitoral.<br>
+								- Orientação em relação aos prazos permitidos para cada tipo de propaganda.<br>
 								- Defesa em ações propostas pela Justiça Eleitoral ou outros candidatos e partidos.',
 		'MN_TITULO_AC'  	=> 'Assessoria em Campanhas',
 		'MN_TXT_AC'  		=> '- Assessoria em todas as etapas da campanha eleitoral.',
@@ -257,14 +268,14 @@ if( $_SESSION['idioma'] == "I")
 		'MN_TITULO_DEMP'  	=> 'Direito Empresarial',
 		'MN_TXT_DEMP'  		=> 'Ramo do direito que estuda as relações que envolvem a empresa e o empresário, o estudo da empresa, o direito societário, as relações de título de crédito, as relações de direito concorrencial, as relações de direito intelectual e industrial e os contratos mercantis, entre outros.<br><br>
 
-								A Marcos Monteiro Sociedade de Advogados coloca à disposição de seus clientes uma equipe especializada na área do Direito Empresarial, incluindo os seguintes serviços:',
+								A Gaban Monteiro Sociedade de Advogados coloca à disposição de seus clientes uma equipe especializada na área do Direito Empresarial, incluindo os seguintes serviços:',
 		'MN_TITULO_PT'  	=> 'Planejamento Tributário',
 		'MN_TXT_PT'  		=> '- Análise da estrutura da empresa e do tipo de tributação mais vantajosa.<br>
 								- Análise das diversas opções de modalidades dos tributos federais, estaduais e municipais a serem escolhidos.<br>
 								- Racionalização da carga tributária a ser suportada pela empresa.<br>
 								- Otimização da aplicação dos recursos disponíveis.',
-		'MN_TITULO_RC'  	=> 'Recuperação de Créditos',
-		'MN_TXT_RC'  		=> '- Identificação de créditos fiscais não apropriados na escrita fiscal e contábil da empresa. <br>
+		'MN_TITULO_RCRE'  	=> 'Recuperação de Créditos',
+		'MN_TXT_RCRE'  		=> '- Identificação de créditos fiscais não apropriados na escrita fiscal e contábil da empresa. <br>
 								- Apuração e habilitação dos valores dos créditos de impostos e contribuições e seu aproveitamento na forma de restituição, ressarcimento e compensação com débitos vencidos e vincendos.',
 		'MN_TITULO_DFE'  	=> 'Debitos Federais e Estaduais',
 		'MN_TXT_DFE'  		=> '- Levantamento de certidões negativas relativas aos encargos federais e estaduais.',
@@ -295,7 +306,7 @@ if( $_SESSION['idioma'] == "I")
 		'MN_TITULO_CAJ'  	=> 'Consultoria & Assessoria Jurídicas',
 		'MN_TXT_CAJ'  		=> 'A prestação de consultoria e assessoria jurídicas, conforme previstas no Artigo 1º, inciso I do “Estatuto da Advocacia”, tem a função de advocacia preventiva, de modo a disponibilizar, tanto às pessoas naturais quanto às empresariais, o acompanhamento técnico, por advogado, de situações da vida cotidiana que, quando desenvolvidas sob a orientação adequada, dificilmente se transformam em litígio futuro. <br><br>
 
-								A Marcos Monteiro Sociedade de Advogados possui uma equipe especializada na prestação de assessoria concernente à venda e compra de imóveis, condomínios, regularização de loteamentos (fracionamentos, desmembramentos e remembramentos), contratos e operações imobiliárias, bem como, atua na área de consultoria jurídica mediante elaboração de “Pareceres”, os quais possibilitam assertiva orientação aos seus clientes. <br><br>
+								A Gaban Monteiro Sociedade de Advogados possui uma equipe especializada na prestação de assessoria concernente à venda e compra de imóveis, condomínios, regularização de loteamentos (fracionamentos, desmembramentos e remembramentos), contratos e operações imobiliárias, bem como, atua na área de consultoria jurídica mediante elaboração de “Pareceres”, os quais possibilitam assertiva orientação aos seus clientes. <br><br>
 
 								No que tange à assessoria, esta será desenvolvida mediante o estreitamento dos laços com a concretude do direito e sua realização do plano material, a qual se dará por atos orientados pelo advogado ou até mesmo, diretamente realizados por este. <br><br>
 
@@ -307,7 +318,7 @@ if( $_SESSION['idioma'] == "I")
 
 								A legalização imobiliária possibilita o efetivo registro do imóvel, assegurando a propriedade com caráter de autenticidade, segurança e eficácia jurídica. <br><br>
 
-								A Marcos Monteiro Sociedade de Advogados possui um corpo jurídico apto a promover as ações concernentes à regularização de tais áreas, bem como, atuar na obtenção do efetivo registro dominial. ',
+								A Gaban Monteiro Sociedade de Advogados possui um corpo jurídico apto a promover as ações concernentes à regularização de tais áreas, bem como, atuar na obtenção do efetivo registro dominial. ',
 		'MN_TITULO_RCI'  	=> 'Renegociação de Contratos Imobiliários',
 		'MN_TXT_RCI'  		=> 'Em financiamentos de imóveis a longo prazo é possível que o mutuário venha a se deparar com importantes mudanças em sua vida financeira, alterando as provisões para pagamento das parcelas. Situações como desemprego, divórcio, perda de cargo comissionado, no caso de servidores públicos, podem fazer com que as prestações deixem de ser pagas. <br><br>
 
@@ -319,7 +330,7 @@ if( $_SESSION['idioma'] == "I")
 
 								Nosso compromisso é garantir ao proprietário o direito à revisão dos contratos do SFH (Sistema Financeiro da Habitação) quando há comprometimento de renda, em conformidade à previsão legislativa vigente. ',
 		'MN_TITULO_CJE'  	=> 'Contencioso Judicial e Extrajudicial',
-		'MN_TXT_CJE'  		=> 'Os advogados da Marcos Monteiro Sociedade de Advogados estarão sempre aptos a interceder na defesa dos interesses de seus clientes, seja em âmbito judicial ou extrajudicial. <br><br>
+		'MN_TXT_CJE'  		=> 'Os advogados da Gaban Monteiro Sociedade de Advogados estarão sempre aptos a interceder na defesa dos interesses de seus clientes, seja em âmbito judicial ou extrajudicial. <br><br>
 
 								Atuando nos processos judiciais ou procedimentos administrativos, tais profissionais possuem a máxima qualificação e expertise, inclusive de forma preventiva em todas as questões que envolvam imóveis. <br><br>
 
@@ -367,23 +378,23 @@ if( $_SESSION['idioma'] == "I")
 
 								Neste caso, é necessário que o comprador demonstre ao juiz e aos demais herdeiros que todas as parcelas foram honradas, a fim de que obtenha sentença que autorize a transferência da propriedade do imóvel adquirido em seu favor, legitimando, assim, a sua titularidade. <br><br>
 
-								Para todos esses casos, a Marcos Monteiro Sociedade de Advogados possui profissionais preparados a fim de lograr êxito na viabilização do interesse de seu cliente.',
+								Para todos esses casos, a Gaban Monteiro Sociedade de Advogados possui profissionais preparados a fim de lograr êxito na viabilização do interesse de seu cliente.',
 		'MN_TITULO_APIP'  	=> 'Ações possessórias e Imissão na posse',
-		'MN_TXT_APIP'  		=> 'Objetivando a proteção da posse para seus clientes, a Marcos Monteiro Sociedade de Advogados tem plena expertise na ajuização das ações de reintegração de posse, manutenção de posse e ainda, interdito proibitório. <br><br>
+		'MN_TXT_APIP'  		=> 'Objetivando a proteção da posse para seus clientes, a Gaban Monteiro Sociedade de Advogados tem plena expertise na ajuização das ações de reintegração de posse, manutenção de posse e ainda, interdito proibitório. <br><br>
 
 								Havendo esbulho ou turbação na posse, o proprietário de um imóvel poderá contar com os profissionais que compõem o nosso corpo jurídico a fim de assegurar o seu direito através do ingresso das ações possessórias, as quais são determinadas conforme a gravidade da lesão. <br><br>
 
-								Ação de reintegração de posse: <br><br>
+								<strong>Ação de reintegração de posse:</strong> <br><br>
 
 								Necessária no caso da perda total da posse sobre determinado bem imóvel, através de invasão ou mediante violência, cujo objetivo é restituir ao proprietário (autor) a posse sobre o bem. <br><br>
 
-								Ação de manutenção de posse: <br><br>
+								<strong>Ação de manutenção de posse:</strong> <br><br>
 
 								Esta ação é cabível para aquele que esteja sofrendo turbação (perturbação), porém, ainda não tenha se operado a perda da posse do bem. <br><br>
 
 								Tal ação visa à manutenção da posse, garantindo ao autor o efetivo exercício desta sem interferência de outrem. <br><br>
 
-								Ação de interdito proibitório: <br><br>
+								<strong>Ação de interdito proibitório:</strong> <br><br>
 
 								Sua aplicação se dá quando o possuidor de um bem tem o receio justificado e iminente de que poderá vir a perder a posse por ato de terceiro, inibindo tal ato mediante ordem judicial. <br><br>
 
@@ -414,14 +425,19 @@ if( $_SESSION['idioma'] == "I")
 		'MN_NOT_IND_NOT'  	=> 'Indicar esta notícia',
 		'MN_NOT_LEIA_TBM'  	=> 'Leia também',
 		'MN_TXT_EMBREVE'  	=> 'Em breve!',
-		'MN_PROF' 			=> 'PROFSSIONAIS',
+		'MN_PROF' 			=> 'PROFISSIONAIS',
 		'MN_TXT_ESCRITORIO' => 'ESCRITÓRIO',
 		'MN_LAT_APRESENTA' 	=> 'Apresentação',
-		'MN_LAT_MVO'  		=> 'Missão, Valores e Objetivo',
+		'MN_LAT_MVO'  		=> 'Missão, Visão e Valores',
 		'MN_LAT_RS'  		=> 'Responsabilidade Social',
 		'MN_NOT_IND_PUB'  	=> 'Indicar esta publicação',
 		'MN_TESTE'  		=> '',
 		'MN_RESULT_BUSCA'	=> 'Não existe resultado',
+		'MN_TITULO_OBG_IND'	=> 'Indicação',
+		'MN_TXT_OBG_IND'	=> 'Obrigado pela indicação!',
+		'MN_TXT_OBG_FALE'	=> 'Obrigado, em breve entraremos em contato!', 
+		'MN_TITULO_NEWS'	=> 'Newsletter', 
+		'MN_TXT_OBG_NEWS'	=> 'Obrigado, em breve receberá nossas newsletters!', 
 	);	
 	
 }
@@ -435,7 +451,7 @@ else
 		'MN_HOME'  			=> 'Home',
 		'MN_ESCRITORIO'  	=> 'Escritório',
 		'MN_APRESENTACAO'  	=> 'APRESENTAÇÃO',
-		'MN_MISVALOBJ'  	=> 'MISSÃO, VALORES E OBJETIVO',
+		'MN_MISVALOBJ'  	=> 'Missão, Visão e Valores',
 		'MN_RESPSOCIAL'  	=> 'RESPONSABILIDADE SOCIAL',
 		'MN_PROFISSIONAIS' 	=> 'Profissionais',
 		'MN_ATUACAO' 		=> 'Atuação',
@@ -456,7 +472,7 @@ else
 
 		// Index
 		'MN_TIT_BANNER'  	=> 'Tribunal de Contas Controle de Contas Públicas',
-		'MN_TXT_BANNER'  	=> 'Assessoria prévia à prestação de contas, orientações e acompanhamentos sobre aplicação e destinação de recursos públicos diante dos atuais posicionamentos dos Tribunais de',
+		'MN_TXT_BANNER'  	=> 'Assessoria prévia à prestação de contas, orientações e acompanhamentos sobre aplicação e destinação de recursos públicos diante dos atuais posicionamentos dos Tribunais de contas',
 		'MN_TXT_DES_HOME'	=> 'Defesas sólidas, criativas e atentas aos atuais entendimentos dos tribunais superiores do país.',
 		'MN_ULTIMAS_NOT'  	=> 'Últimas Notícias',
 		'MN_PUBLICACOES'  	=> 'Publicações',
@@ -467,34 +483,40 @@ else
 		'MN_INDIQUE_SITE'  	=> 'Indique este site',
 		'MN_CONECTADO_NOS' 	=> 'Fique conectado conosco',
 		'MN_SOBRE_FOOTER'  	=> 'Sociedade de profissionais altamente qualificados, aptos a prestar assessoria, consultoria e direção jurídica de modo diferenciado, padronizado ou personalizado, de acordo com as exigências e o dinamismo do mercado.',
-		'MN_END_FOOTER'  	=> 'Rua Maria Paula, 36 | cj. A - 3º andar <br>CEP: 01319-000 | Bela Vista | SP',
+		//'MN_END_FOOTER'  	=> 'Rua Dona Maria Paula, 36 -3º andar – conjunto A - Entrada pela Rua Asdrúbal do Nascimento, 298',
+		'MN_END_FOOTER'  	=> 'Rua Dona Maria Paula, n° 36 - 3° Andar Bela Vista – São Paulo – SP',
+		'MN_END_FOOTER_ESTAC'  	=> 'Entrada do estacionamento pela Rua Asdrúbal do Nascimento, 298',  
 		'MN_CURTA_PAG'  	=> 'Curta nossa página!',
-		'MN_DIREITOS'  		=> 'MARCOS MONTEIRO SOCIEDADE DE ADVOGADOS - Todos os direitos reservados - 2015',
+		'MN_DIREITOS'  		=> 'GABAN MONTEIRO SOCIEDADE DE ADVOGADOS - Todos os direitos reservados - 2015',
 		'MN_DEV'  			=> 'Desenvolvimento:',
 
 
 		// Escritorio
 		'MN_TITULO_APRE' 	=> 'Apresentação',
-		'MN_TXT_APRE'  		=> 'MARCOS MONTEIRO SOCIEDADE DE ADVOGADOS é uma sociedade de profissionais altamente qualificados, aptos a prestar assessoria, consultoria e direção jurídica de modo diferenciado, padronizado ou personalizado, de acordo com as exigências e o dinamismo do mercado. <br><br> Através de uma atuação preventiva, evitando ou mesmo reduzindo riscos, assim como contenciosa, por meio de defesas sólidas, criativas e atentas aos atuais entendimentos dos tribunais superiores do país, nossos profissionais permitem ao cliente agir com segurança, consciência e confiança na administração de seus interesses e testemunhar à melhor proteção e garantia aos seus direitos e liberdades. ',
-		'MN_TITULO_MVO'  	=> 'Missão, Valores e Objetivo',
-		'MN_TXT_MVO'  		=> '<strong>MISSÃO</strong><br><br>
+		'MN_TXT_APRE'  		=> '<strong style="color: #8b0303;">GABAN MONTEIRO SOCIEDADE DE ADVOGADOS</strong> é uma sociedade de profissionais altamente qualificados, aptos a prestar assessoria, consultoria e direção jurídica de modo diferenciado, padronizado ou personalizado, de acordo com as exigências e o dinamismo do mercado. <br><br> Através de uma atuação preventiva, evitando ou mesmo reduzindo riscos, assim como contenciosa, por meio de defesas sólidas, criativas e atentas aos atuais entendimentos dos tribunais superiores do país, nossos profissionais permitem ao cliente agir com segurança, consciência e confiança na administração de seus interesses e testemunhar à melhor proteção e garantia aos seus direitos e liberdades. ',
+		'MN_TITULO_MVO'  	=> 'Missão, Visão e Valores',
+		'MN_TXT_MVO'  		=> '<strong style="color: #8b0303;">MISSÃO</strong><br><br>
 
-			                    MARCOS MONTEIRO SOCIEDADE DE ADVOGADOS nasceu do idealismo de seus sócios fundadores, empenhados em estruturar uma equipe de advogados qualificados com uma estratégia jurídico-profissional inovadora, afim de perpetuar o direito como principal instrumento de integração social. 
+			                    Ser uma referência em Direito Público pela confiança, resolutividade, comprometimento e conhecimento técnico de uma  equipe altamente qualificada, buscando foco no resultado, com estratégia para manter e aumentar a segurança de nossos clientes .
 
-			                    <br><br><strong>VALORES</strong><br><br>
+			                    <br><br><strong style="color: #8b0303;">VISÃO</strong><br><br>
 
-			                    MARCOS MONTEIRO SOCIEDADE DE ADVOGADOS é uma sociedade sólida, formada por seletos profissionais, compromissados com os valores éticos da advocacia, com a defesa das liberdades do homem e com a promoção e dispersão da Justiça.
+			                    Ser o melhor escritório especializado em Direito Público contribuindo com gestores e empresas na melhora permanente dos serviços públicos prestados  à Sociedade.
 
-			                    <br><br><strong>OBJETIVO</strong><br><br>
+			                    <br><br><strong style="color: #8b0303;">VALORES</strong><br><br>
 
-			                    MARCOS MONTEIRO SOCIEDADE DE ADVOGADOS pretende se tornar, nos próximos anos, escritório jurídico de vanguarda no campo do direito público, especialmente quanto ao controle de contas públicas municipais e estaduais pelos Tribunais de Contas em todas as esferas, área onde presta assessoria de forma especializada e inconfundível, garantindo a organização jurídica adequada das chefias executivas orçamentárias, ao mesmo tempo que compartilha e contribui para a formação e consonância da jurisprudência das cortes de contas com o ordenamento jurídico vigente. Almeja ainda promover o aculturamento de uma advocacia eleitoral preventiva, com consultas, assessoria e acompanhamento durante todo o processo pré-eleitoral, evitando imperfeições que possam prejudicar os futuros envolvidos no processo eleitoral.',
+			                    Confiança <br>
+								Responsabilidade / Comprometimento<br>
+								Trabalho em Equipe<br>
+								Excelência<br>
+								Fazer a Diferença<br>',
 		
 		'MN_TITULO_RS'  	=> 'Responsabilidade Social',
-		'MN_TXT_RS'  		=> 'MARCOS MONTEIRO SOCIEDADE DE ADVOGADOS reconhece o seu papel na sociedade e se mostra comprometida com o desenvolvimento social e com a luta por uma sociedade mais justa, seja contribuindo através da elaboração de um trabalho ético, transparente, dedicado e solidário.',
+		'MN_TXT_RS'  		=> '<strong style="color: #8b0303;">GABAN MONTEIRO SOCIEDADE DE ADVOGADOS</strong> reconhece o seu papel na sociedade e se mostra comprometida com o desenvolvimento social e com a luta por uma sociedade mais justa, seja contribuindo através da elaboração de um trabalho ético, transparente, dedicado e solidário.',
 		'MN_TITULO_LOCAL'  	=> 'Localização',
 		'MN_TXT_LOCAL'  	=> 'O escritório está estrategicamente localizado no Centro de São Paulo, próximo ao Tribunal de Justiça, Tribunal Eleitoral, Fórum da Fazenda e Tribunal de Contas do Estado.',
 		'MN_TITULO_FALE'  	=> 'Fale Conosco',
-		'MN_TXT_FALE'  		=> 'A MARCOS MONTEIRO SOCIEDADE DE ADVOGADOS abre este espaço para que possa enviar suas dúvidas aos nossos profissionais. Preencha seus dados e a mensagem e retornaremos o mais breve possível.',
+		'MN_TXT_FALE'  		=> 'A GABAN MONTEIRO SOCIEDADE DE ADVOGADOS abre este espaço para que possa enviar suas dúvidas aos nossos profissionais. Preencha seus dados e a mensagem e retornaremos o mais breve possível.',
 		'MN_FORM_NOME'  	=> 'NOME',
 		'MN_FORM_EMAIL'  	=> 'E-MAIL',
 		'MN_FORM_EMPRESA'  	=> 'EMPRESA',
@@ -504,11 +526,10 @@ else
 
 		// Profissionais
 		'MN_PROF_MARCOS'	=> 'Marcos Antonio Gaban Monteiro',
-		'MN_TXT_MARCOS'  	=> 'Advogado especialista em direito público e nas parcerias entre o setor público e privado, realizando assessoria direta a Prefeituras e Câmaras na defesa de contas municipais.<br><br>
-			                    Atua também na área do direito eleitoral e presta consultoria jurídica especializada a Prefeituras e Câmaras Municipais, agentes políticos, empresas e entidades do Terceiro Setor, na área do direito administrativo, com atuação junto aos tribunais de contas. <br><br>
-			                    Consultor jurídico em direito público financeiro, direito do terceiro setor e direito empresarial voltado para contratações com o Poder Público. Articulista na área do direito público.<br><br> 
-			                    Participou do Curso de Contabilidade Aplicada ao Setor Público do Conselho Federal de Contabilidade, em 2012. Atuou junto à Companhia de Saneamento Básico do Estado de São Paulo – SABESP, junto à Companhia de Desenvolvimento Habitacional e Urbano – CDHU, junto à Companhia Paulista de Obras e Serviços, junto à Secretaria de Habitação do Estado de São Paulo e perante a Assembleia Legislativa do Estado de São Paulo, como chefe de gabinete participou da Comissão de Financiamento e Orçamento e da Comissão de Parcerias Público-Privadas. Consultor jurídico em Direito Administrativo e parcerias público-privadas. Palestrante na área do Direito Público e contas públicas.<br><br>
-			                    Sócio da Marcos Monteiro Sociedade de Advogados.',
+		'MN_TXT_MARCOS'  	=> 'Advogado sócio fundador da Gaban Monteiro Sociedade de Advogados, especialista em direito público e nas parcerias entre o setor público e privado, realizando Consultoria a Prefeituras, Câmaras e Empresas do setor com estratégias e defesas em órgãos de controle. <br><br>
+			                    Atuação presente no Tribunal de Contas do Estado e Tribunal de Justiça de São Paulo, na defesa de agentes políticos, empresas e entidades do Terceiro Setor, nas áreas do direito administrativo, direito financeiro e direito empresarial, além de atuar também com direito eleitoral, em prestações de contas e impugnações de candidaturas. <br><br>
+			                    Profissionalmente já trabalhou na SABESP, CDHU, CPOS empresas estatais do Governo do Estado de São Paulo, e no Legislativo na Assembleia Legislativa do Estado de São Paulo. <br><br> 
+			                    Palestrante na área do Direito Público. <br><br>',
 		'MN_ALVARO'  		=> 'Álvaro Merlos Akinaga Cordeiro',
 		'MN_TXT_ALVARO'  	=> 'Advogado, pós-graduando em Direito Constitucional pela Escola Superior de Direito Constitucional – ESDC, formado na Universidade Presbiteriana Mackenzie. Estagiou no Ministério Público de São Paulo e foi Conciliador no Juizado Especial Cível - Mackenzie.',
 		'MN_JULIANA'  		=> 'Juliana Gaban Monteiro Multini',
@@ -516,7 +537,9 @@ else
 		                        Assessoria jurídica em operações contratuais, análise de riscos e administração de passivo trabalhista. Atuou como Assessora Executiva da Presidência da Assembléia Legislativa do Estado de São Paulo. Foi integrante do Grupo de Discussão sobre Desenvolvimento Sustentado do Estado de São Paulo e sobre índice de Responsabilidade Social do Fórum Legislativo da Assembléia Legislativa de São Paulo.<br><br>
 		                        Consultora jurídica em direito público e contencioso empresarial.',
 		'MN_ANGELICA'  		=> 'Angélica Rebequi da Motta Santos',
-		'MN_TXT_ANGELICA'  	=> 'Coordenadora Administrativa - Advogada formada pela Universidade de São Caetano do Sul – USCS – Atuante em diversos processos na área civil tais como inventário, divórcio, dano moral e material e nulidade de empréstimo consignado. ',
+		'MN_TXT_ANGELICA'  	=> 'Advogada – Coordenadora responsável pela gestão técnica do escritório, especializada em Direito Público, atua no atendimento, controle da produtividade e qualidade dos processos. <br><br>
+
+								No setor do Direito imobiliário sua atuação é diferenciada por cursos específicos realizados e a capacidade de resolutividade em órgãos de aprovação, como Graprohab, CETESB e Prefeituras. ',
 		'MN_KRIKOR'  		=> 'Krikor Palma Artissian',
 		'MN_TXT_KRIKOR'  	=> 'Advogado especialista em Direito Civil e Consumidor pela FMB – Instituto Flávio Monteiro de Barros, atua no departamento jurídico de grandes empresas como o Grupo Educacional UNIESP, e estagiou em órgãos públicos, tais como Procuradoria da Fazenda Nacional e Justiça Federal.',
 		'MN_ROBERTA'  		=> 'Roberta Moraes Dias Benatti',
@@ -530,18 +553,22 @@ else
 		'MN_GABRIEL'  		=> 'Gabriel Vieira Almeida Machado',
 		'MN_TXT_GABRIEL'  	=> 'Advogado, pós-graduando em Direito Administrativo pela Pontifícia Universidade Católica – PUC/SP, formado pelo Centro Universitário CESMAC – Maceió/AL, atuante no contencioso e consultivo nas áreas do direito administrativo, eleitoral, municipal e financeiro, participou do curso de extensão promovido pela Escola Superior da Advocacia de São Paulo sobre Parcerias na Administração Pública, estagiou no Tribunal de Justiça do Estado de Alagoas.',
 		'MN_GUILHERMO'  	=> 'Guillermo Santana Andrade Glassman',
-		'MN_TXT_GUILHERMO'  => 'Advogado. Mestrando em Direito Político e Econômico pela Universidade Presbiteriana Mackenzie. Especialista em Direito Administrativo pela Pontifícia Universidade Católica da São Paulo. Cursou extensão em Contratos em Infraestrutura na Fundação Getúlio Vargas/SP. Bacharel em Direito pela Universidade do Estado da Bahia. Bacharelando em Ciências Sociais pela Universidade de São Paulo. <br><br>
+		'MN_TXT_GUILHERMO'  => 'Advogado. Mestre em Direito Político e Econômico pela Universidade Presbiteriana Mackenzie. Especialista em Direito Administrativo pela Pontifícia Universidade Católica da São Paulo. Cursou extensão em Contratos em Infraestrutura na Fundação Getúlio Vargas/SP. Bacharel em Direito pela Universidade do Estado da Bahia. Bacharelando em Ciências Sociais pela Universidade de São Paulo. <br><br>
 
-								Tem experiência na área de Direito Público, nos setores público e privado, com ênfase em Direito Administrativo - Contratos de Infraestrutura ',
+								Tem experiência na área de Direito Público, nos setores público e privado, com ênfase em Direito Administrativo - Contratos de Infraestrutura 
+								',
+		'MN_MILENA'  	    => 	'Milena Araujo',
+		'MN_TXT_MILENA'     =>  'Advogada formada pela Faculdade de Direito Damásio de Jesus, Pós-graduanda em Direito Público com ênfase em Gestão Pública.<br><br>
+								Atua na área do Direito Público, no consultivo, contencioso judicial e administrativo, com ênfase em Gestão Pública.',
 		
-		'MN_TXT_DP'  		=> 'Na área do Direito Público, a Marcos Monteiro Sociedade de Advogados, por meio de uma equipe altamente especializada, está apta a atender seus clientes de maneira rápida e eficiente em relação ao conjunto das normas jurídicas de natureza pública que regulam a relação entre o particular e o Estado e também às atividades, funções e organizações de poderes do Estado e dos seus servidores.',
+		'MN_TXT_DP'  		=> 'Na área do Direito Público, a Gaban Monteiro Sociedade de Advogados, por meio de uma equipe altamente especializada, está apta a atender seus clientes de maneira rápida e eficiente em relação ao conjunto das normas jurídicas de natureza pública que regulam a relação entre o particular e o Estado e também às atividades, funções e organizações de poderes do Estado e dos seus servidores.',
 		'MN_TITULO_DP'  	=> 'Direito Público',
 		'MN_TITULO_TC'  	=> 'Tribunal de Contas',
 		'MN_TXT_TC'  		=> 'Atua na fiscalização contábil, financeira, orçamentária, operacional e patrimonial de estados, municípios e da União, além das respectivas entidades de administração direta ou indireta e fundações, quanto à legalidade, legitimidade, economicidade, aplicação de subvenções e renúncia de receitas.<br><br>
 
 								A jurisdição do Tribunal alcança administradores e demais responsáveis por dinheiro, bens e valores públicos, além das pessoas físicas ou jurídicas, que, mediante convênios, acordos, ajustes ou outros instrumentos congêneres, apliquem auxílios, subvenções ou recursos repassados pelo Poder Público.<br><br>
 
-								Todo cuidado é pouco quando se trata do dinheiro público e os clientes da Marcos Monteiro Sociedade de Advogados são assessorados em todas as particularidades que envolvem os detalhados processos de prestação de contas dos órgãos públicos, incluindo:<br><br>
+								Todo cuidado é pouco quando se trata do dinheiro público e os clientes da Gaban Monteiro Sociedade de Advogados são assessorados em todas as particularidades que envolvem os detalhados processos de prestação de contas dos órgãos públicos, incluindo:<br><br>
 
 								- Patrocínio de defesas especializadas por área, tanto no setor público como privado (prefeituras, câmaras municipais, empresas).<br>
 								- Acompanhamento simultâneo do andamento processual realizado por sistema próprio.<br>
@@ -557,7 +584,7 @@ else
 		'MN_TITULO_IA'  	=> 'Improbidade Administrativa',
 		'MN_TXT_IA'  		=> 'É o ato ilegal ou contrário aos princípios básicos da Administração Pública, cometido por agente público, durante o exercício de função pública ou decorrente desta.<br><br>
 
-								Os clientes da Marcos Monteiro Sociedade de Advogados contam com os seguintes serviços para evitar os problemas causados por questões de improbidade administrativa:<br><br>
+								Os clientes da Gaban Monteiro Sociedade de Advogados contam com os seguintes serviços para evitar os problemas causados por questões de improbidade administrativa:<br><br>
 
 								- Consultoria preventiva especializada para órgãos públicos.<br>
 								- Patrocínio de defesa especializada no Judiciário.<br>
@@ -594,13 +621,13 @@ else
 		'MN_TITULO_PL'  	=> 'Processo Legislativo',
 		'MN_TXT_PL'  		=> 'É o conjunto de atos realizados pelas Assembleias, Câmaras e o Congresso Nacional, visando a elaboração das leis de forma democrática, ordenados conforme as regras expressas na Constituição e nos regimentos internos.<br><br>
 
-								A equipe de advogados da Marcos Monteiro Sociedade de Advogados trabalha para oferecer completa assessoria a seus clientes na área do processo legislativo, incluindo:<br><br>
+								A equipe de advogados da Gaban Monteiro Sociedade de Advogados trabalha para oferecer completa assessoria a seus clientes na área do processo legislativo, incluindo:<br><br>
 
 								- Consultoria técnica em elaboração legislativa, tanto do Executivo como do Legislativo (projetos de lei e decretos, entre outros atos normativos).<br>
 								- Acompanhamento de projetos de lei específicos por áreas de interesse de grupos empresariais.<br>
 								- Parecer de constitucionalidade de atos normativos.',
 		'MN_TITULO_C'  		=> 'Consultoria',
-		'MN_TXT_C'  		=> 'A Marcos Monteiro Sociedade de Advogados realiza consultoria completa por meio de processos consultivos, atendimento em reuniões e respostas técnicas via e-mails, tanto para o setor público como privado:<br><br>
+		'MN_TXT_C'  		=> 'A Gaban Monteiro Sociedade de Advogados realiza consultoria completa por meio de processos consultivos, atendimento em reuniões e respostas técnicas via e-mails, tanto para o setor público como privado:<br><br>
 
 								<strong>Setor Público </strong><br><br>
 
@@ -621,7 +648,7 @@ else
 		'MN_TITULO_CM'  	=> 'Consórcios Municipais',
 		'MN_TXT_CM'  		=> 'Importante instrumento de política pública para o desenvolvimento econômico e melhorias no sistema de saúde, saneamento, meio ambiente, entre outros, criando-se uma articulação institucional entre municípios para construir soluções para problemas comuns.<br><br>
 
-								Mas para a eficiência dos consórcios, é necessário que eles funcionem de acordo com as regras estabelecidas na legislação e a Marcos Monteiro Sociedade de Advogados oferece:<br><br>
+								Mas para a eficiência dos consórcios, é necessário que eles funcionem de acordo com as regras estabelecidas na legislação e a Gaban Monteiro Sociedade de Advogados oferece:<br><br>
 
 								- Defesa em órgãos de controle.<br>
 								- Consultoria em criação e dissolução.<br>
@@ -630,7 +657,7 @@ else
 		'MN_TITULO_DE'  	=> 'Direito Eleitoral',
 		'MN_TXT_DE'  		=> 'Ramo do Direito Público que trata de institutos relacionados com os direitos políticos e as eleições, em todas as suas fases, como forma de escolha dos titulares dos mandatos políticos e das instituições do Estado, disciplina a criação dos partidos, o ingresso do cidadão no corpo eleitoral para fruição dos direitos políticos, o registro das candidaturas, a propaganda eleitoral, o processo eletivo e a investidura no mandato.<br><br>
 
-								A Marcos Monteiro Sociedade de Advogados oferece uma equipe altamente especializada que presta assessoria completa em todas as áreas do Direito Eleitoral, desde a pré-candidatura até a prestação de contas da campanha:',
+								A Gaban Monteiro Sociedade de Advogados oferece uma equipe altamente especializada que presta assessoria completa em todas as áreas do Direito Eleitoral, desde a pré-candidatura até a prestação de contas da campanha:',
 		'MN_TITULO_APC'  	=> 'Assessoria para Pré-candidatos',
 		'MN_TXT_APC'  		=> '<strong>Pré-candidaturas </strong><br><br>
 
@@ -638,7 +665,7 @@ else
 		'MN_TITULO_FP'  	=> 'Fidelidade Partidária',
 		'MN_TXT_FP'  		=> '- Pedido à Justiça Eleitoral decretação da perda de cargo eletivo em decorrência de desfiliação partidária sem justa causa.',
 		'MN_TITULO_RX'  	=> '“Raio X” do Candidato',
-		'MN_TXT_RX'  		=> 'Primeiro passo para aqueles interessados em pleitear ou candidatar-se a mandato eletivo é saber se não há nenhum impedimento para a candidatura e a Marcos Monteiro Sociedade de Advogados providencia um completo raio-X do candidato ou de seus adversários, incluindo:<br><br>
+		'MN_TXT_RX'  		=> 'Primeiro passo para aqueles interessados em pleitear ou candidatar-se a mandato eletivo é saber se não há nenhum impedimento para a candidatura e a Gaban Monteiro Sociedade de Advogados providencia um completo raio-X do candidato ou de seus adversários, incluindo:<br><br>
 
 								- Certidões judiciais.<br><br>
 								- Certidões administrativas (órgãos de controle).<br><br>
@@ -648,11 +675,11 @@ else
 		'MN_TXT_RC'  		=> '- Observação de limites e prazos.<br>
 								- Organização da documentação necessária para o registro.',
 		'MN_TITULO_PC'  	=> 'Prestação de Contas',
-		'MN_TXT_PC'  	=> '- Orientação da prestação de contas de acordo com as rígidas regras eleitorais.
+		'MN_TXT_PC'  	=> '- Orientação da prestação de contas de acordo com as rígidas regras eleitorais.<br>
 							- Atendimento a partidos políticos, candidatos (inclusive vices e suplentes) e comitês financeiros, que estão obrigados a prestar contas à Justiça Eleitoral a respeito da movimentação financeira de suas campanhas eleitorais.',								
 		'MN_TITULO_PE'  	=> 'Propaganda Eleitoral',
-		'MN_TXT_PE'  		=> '- Orientação em relação ao que é permitido ou não de acordo com a legislação eleitoral.
-								- Orientação em relação aos prazos permitidos para cada tipo de propaganda.
+		'MN_TXT_PE'  		=> '- Orientação em relação ao que é permitido ou não de acordo com a legislação eleitoral.<br>
+								- Orientação em relação aos prazos permitidos para cada tipo de propaganda.<br>
 								- Defesa em ações propostas pela Justiça Eleitoral ou outros candidatos e partidos.',
 		'MN_TITULO_AC'  	=> 'Assessoria em Campanhas',
 		'MN_TXT_AC'  		=> '- Assessoria em todas as etapas da campanha eleitoral.',
@@ -682,14 +709,14 @@ else
 		'MN_TITULO_DEMP'  	=> 'Direito Empresarial',
 		'MN_TXT_DEMP'  		=> 'Ramo do direito que estuda as relações que envolvem a empresa e o empresário, o estudo da empresa, o direito societário, as relações de título de crédito, as relações de direito concorrencial, as relações de direito intelectual e industrial e os contratos mercantis, entre outros.<br><br>
 
-								A Marcos Monteiro Sociedade de Advogados coloca à disposição de seus clientes uma equipe especializada na área do Direito Empresarial, incluindo os seguintes serviços:',
+								A Gaban Monteiro Sociedade de Advogados coloca à disposição de seus clientes uma equipe especializada na área do Direito Empresarial, incluindo os seguintes serviços:',
 		'MN_TITULO_PT'  	=> 'Planejamento Tributário',
 		'MN_TXT_PT'  		=> '- Análise da estrutura da empresa e do tipo de tributação mais vantajosa.<br>
 								- Análise das diversas opções de modalidades dos tributos federais, estaduais e municipais a serem escolhidos.<br>
 								- Racionalização da carga tributária a ser suportada pela empresa.<br>
 								- Otimização da aplicação dos recursos disponíveis.',
-		'MN_TITULO_RC'  	=> 'Recuperação de Créditos',
-		'MN_TXT_RC'  		=> '- Identificação de créditos fiscais não apropriados na escrita fiscal e contábil da empresa. <br>
+		'MN_TITULO_RCRE'  	=> 'Recuperação de Créditos',
+		'MN_TXT_RCRE'  		=> '- Identificação de créditos fiscais não apropriados na escrita fiscal e contábil da empresa. <br>
 								- Apuração e habilitação dos valores dos créditos de impostos e contribuições e seu aproveitamento na forma de restituição, ressarcimento e compensação com débitos vencidos e vincendos.',
 		'MN_TITULO_DFE'  	=> 'Debitos Federais e Estaduais',
 		'MN_TXT_DFE'  		=> '- Levantamento de certidões negativas relativas aos encargos federais e estaduais.',
@@ -720,7 +747,7 @@ else
 		'MN_TITULO_CAJ'  	=> 'Consultoria & Assessoria Jurídicas',
 		'MN_TXT_CAJ'  		=> 'A prestação de consultoria e assessoria jurídicas, conforme previstas no Artigo 1º, inciso I do “Estatuto da Advocacia”, tem a função de advocacia preventiva, de modo a disponibilizar, tanto às pessoas naturais quanto às empresariais, o acompanhamento técnico, por advogado, de situações da vida cotidiana que, quando desenvolvidas sob a orientação adequada, dificilmente se transformam em litígio futuro. <br><br>
 
-								A Marcos Monteiro Sociedade de Advogados possui uma equipe especializada na prestação de assessoria concernente à venda e compra de imóveis, condomínios, regularização de loteamentos (fracionamentos, desmembramentos e remembramentos), contratos e operações imobiliárias, bem como, atua na área de consultoria jurídica mediante elaboração de “Pareceres”, os quais possibilitam assertiva orientação aos seus clientes. <br><br>
+								A Gaban Monteiro Sociedade de Advogados possui uma equipe especializada na prestação de assessoria concernente à venda e compra de imóveis, condomínios, regularização de loteamentos (fracionamentos, desmembramentos e remembramentos), contratos e operações imobiliárias, bem como, atua na área de consultoria jurídica mediante elaboração de “Pareceres”, os quais possibilitam assertiva orientação aos seus clientes. <br><br>
 
 								No que tange à assessoria, esta será desenvolvida mediante o estreitamento dos laços com a concretude do direito e sua realização do plano material, a qual se dará por atos orientados pelo advogado ou até mesmo, diretamente realizados por este. <br><br>
 
@@ -732,7 +759,7 @@ else
 
 								A legalização imobiliária possibilita o efetivo registro do imóvel, assegurando a propriedade com caráter de autenticidade, segurança e eficácia jurídica. <br><br>
 
-								A Marcos Monteiro Sociedade de Advogados possui um corpo jurídico apto a promover as ações concernentes à regularização de tais áreas, bem como, atuar na obtenção do efetivo registro dominial. ',
+								A Gaban Monteiro Sociedade de Advogados possui um corpo jurídico apto a promover as ações concernentes à regularização de tais áreas, bem como, atuar na obtenção do efetivo registro dominial. ',
 		'MN_TITULO_RCI'  	=> 'Renegociação de Contratos Imobiliários',
 		'MN_TXT_RCI'  		=> 'Em financiamentos de imóveis a longo prazo é possível que o mutuário venha a se deparar com importantes mudanças em sua vida financeira, alterando as provisões para pagamento das parcelas. Situações como desemprego, divórcio, perda de cargo comissionado, no caso de servidores públicos, podem fazer com que as prestações deixem de ser pagas. <br><br>
 
@@ -744,7 +771,7 @@ else
 
 								Nosso compromisso é garantir ao proprietário o direito à revisão dos contratos do SFH (Sistema Financeiro da Habitação) quando há comprometimento de renda, em conformidade à previsão legislativa vigente. ',
 		'MN_TITULO_CJE'  	=> 'Contencioso Judicial e Extrajudicial',
-		'MN_TXT_CJE'  		=> 'Os advogados da Marcos Monteiro Sociedade de Advogados estarão sempre aptos a interceder na defesa dos interesses de seus clientes, seja em âmbito judicial ou extrajudicial. <br><br>
+		'MN_TXT_CJE'  		=> 'Os advogados da Gaban Monteiro Sociedade de Advogados estarão sempre aptos a interceder na defesa dos interesses de seus clientes, seja em âmbito judicial ou extrajudicial. <br><br>
 
 								Atuando nos processos judiciais ou procedimentos administrativos, tais profissionais possuem a máxima qualificação e expertise, inclusive de forma preventiva em todas as questões que envolvam imóveis. <br><br>
 
@@ -792,23 +819,23 @@ else
 
 								Neste caso, é necessário que o comprador demonstre ao juiz e aos demais herdeiros que todas as parcelas foram honradas, a fim de que obtenha sentença que autorize a transferência da propriedade do imóvel adquirido em seu favor, legitimando, assim, a sua titularidade. <br><br>
 
-								Para todos esses casos, a Marcos Monteiro Sociedade de Advogados possui profissionais preparados a fim de lograr êxito na viabilização do interesse de seu cliente.',
+								Para todos esses casos, a Gaban Monteiro Sociedade de Advogados possui profissionais preparados a fim de lograr êxito na viabilização do interesse de seu cliente.',
 		'MN_TITULO_APIP'  	=> 'Ações possessórias e Imissão na posse',
-		'MN_TXT_APIP'  		=> 'Objetivando a proteção da posse para seus clientes, a Marcos Monteiro Sociedade de Advogados tem plena expertise na ajuização das ações de reintegração de posse, manutenção de posse e ainda, interdito proibitório. <br><br>
+		'MN_TXT_APIP'  		=> 'Objetivando a proteção da posse para seus clientes, a Gaban Monteiro Sociedade de Advogados tem plena expertise na ajuização das ações de reintegração de posse, manutenção de posse e ainda, interdito proibitório. <br><br>
 
 								Havendo esbulho ou turbação na posse, o proprietário de um imóvel poderá contar com os profissionais que compõem o nosso corpo jurídico a fim de assegurar o seu direito através do ingresso das ações possessórias, as quais são determinadas conforme a gravidade da lesão. <br><br>
 
-								Ação de reintegração de posse: <br><br>
+								<strong>Ação de reintegração de posse:</strong> <br><br>
 
 								Necessária no caso da perda total da posse sobre determinado bem imóvel, através de invasão ou mediante violência, cujo objetivo é restituir ao proprietário (autor) a posse sobre o bem. <br><br>
 
-								Ação de manutenção de posse: <br><br>
+								<strong>Ação de manutenção de posse:</strong> <br><br>
 
 								Esta ação é cabível para aquele que esteja sofrendo turbação (perturbação), porém, ainda não tenha se operado a perda da posse do bem. <br><br>
 
 								Tal ação visa à manutenção da posse, garantindo ao autor o efetivo exercício desta sem interferência de outrem. <br><br>
 
-								Ação de interdito proibitório: <br><br>
+								<strong>Ação de interdito proibitório:</strong> <br><br>
 
 								Sua aplicação se dá quando o possuidor de um bem tem o receio justificado e iminente de que poderá vir a perder a posse por ato de terceiro, inibindo tal ato mediante ordem judicial. <br><br>
 
@@ -840,12 +867,17 @@ else
 		'MN_NOT_IND_PUB'  	=> 'Indicar esta publicação',
 		'MN_NOT_LEIA_TBM'  	=> 'Leia também',
 		'MN_TXT_EMBREVE'  	=> 'Em breve!',
-		'MN_PROF' 			=> 'PROFSSIONAIS',
+		'MN_PROF' 			=> 'PROFISSIONAIS',
 		'MN_TXT_ESCRITORIO' => 'ESCRITÓRIO',
 		'MN_LAT_APRESENTA' 	=> 'Apresentação',
-		'MN_LAT_MVO'  		=> 'Missão, Valores e Objetivo',
+		'MN_LAT_MVO'  		=> 'Missão, Visão e Valores',
 		'MN_LAT_RS'  		=> 'Responsabilidade Social',
 		'MN_RESULT_BUSCA'	=> 'Não existe resultado',
+		'MN_TITULO_OBG_IND'	=> 'Indicação',
+		'MN_TXT_OBG_IND'	=> 'Obrigado pela indicação!',
+		'MN_TXT_OBG_FALE'	=> 'Obrigado, em breve entraremos em contato!', 
+		'MN_TITULO_NEWS'	=> 'Newsletter', 
+		'MN_TXT_OBG_NEWS'	=> 'Obrigado, em breve receberá nossas newsletters!', 
 	);
 }
 

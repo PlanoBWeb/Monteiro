@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 	
 	include_once "configs/config.php";
 	include_once "url.php";
@@ -12,6 +12,7 @@
 	$parametro['id'] 		= $_GET['id'];
 	$parametro['idioma']	= $_idioma;
 	$parametro['destaque']	= "1";
+	$parametro['limitDestHome']	= "20";
 	$retorno = $class->Pesquisar($parametro, null, null);
 	if( $retorno[0] )
 	{
@@ -35,6 +36,7 @@
 		exit();
 	}
 
+	$smarty->assign("menuAtivo", $menuAtivo);
 	$smarty->assign("totalNotDestaque", $totalNotDestaque);
 	$smarty->assign("dadosPub", $retornoPub[1]);
 	$smarty->assign("dados", $retorno[1]);

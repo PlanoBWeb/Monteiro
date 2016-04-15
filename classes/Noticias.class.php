@@ -193,10 +193,40 @@ class Noticias
 		if($post['busca'])
 		{
 			if ($_SESSION['idioma'] == "P") {
-			 	$query .= " AND noticias.titulo LIKE '%".$post['busca']."%' ";
+			 	$query .= " AND noticias.titulo LIKE '%".utf8_decode($post['busca'])."%' ";
 			}else{
-			 	$query .= " AND noticias.titulo_I LIKE '".$post['busca']."' ";
+			 	$query .= " AND noticias.titulo_I LIKE '%".utf8_decode($post['busca'])."%' ";
 			}
+
+			// $valoresLike = explode(" ", $post['busca']);
+			// $totalValores = count($valoresLike);
+			// $totalValoresMenosUm = $totalValores-1;
+
+			// if ($totalValores == 1) {
+			// 	if ($_SESSION['idioma'] == "P") {
+			// 		$query .= " AND noticias.titulo LIKE '%".utf8_decode($post['busca'])."%' ";
+			// 	}else{
+			// 		$query .= " AND noticias.titulo_I LIKE '%".utf8_decode($post['busca'])."%' ";
+			// 	}
+			// }else{
+			// 	$and = array();
+			// 	if ($totalValores > 1) {
+			// 		for ($i=0; $i < $totalValores; $i++) { 
+			// 			if ($_SESSION['idioma'] == "P") {
+			// 				$and[$i] = " LIKE '%".utf8_decode($valoresLike[$i])."%' ".($i <> $totalValoresMenosUm ? "AND noticias.titulo" : "");
+			// 			}else{
+			// 				$and[$i] = " LIKE '%".utf8_decode($valoresLike[$i])."%' ".($i <> $totalValoresMenosUm ? "AND noticias.titulo_I" : "");
+			// 			}
+			// 		}
+			// 	}
+			// 	$andLike = implode('', $and);
+
+			// 	if ($_SESSION['idioma'] == "P") {
+			// 		$query .= " AND noticias.titulo ".$andLike." ";	
+			// 	}else{
+			// 		$query .= " AND noticias.titulo_I ".$andLike." ";	
+			// 	}
+			// }
 			
 		}
 
@@ -230,6 +260,16 @@ class Noticias
 			$query .= "AND noticias.destaque = '".$post['destaque']."' ";
 		}
 
+		if($post['limitVeja'])
+		{
+			$sqlLimit = "LIMIT " . $post['limitVeja'];
+		}
+
+		if($post['limitDestHome'])
+		{
+			$sqlLimit = "LIMIT " . $post['limitDestHome'];
+		}		
+
 		if($post['mes'])
 		{
 			if (intval($post['mes'])) {
@@ -257,6 +297,7 @@ class Noticias
 					data DESC
 			".$sqlLimit." ";
 
+
 		$result = mysql_query($sql);
 		if (!($result))
 		{
@@ -271,14 +312,14 @@ class Noticias
 			$dados[$i] 					= $rows;
 			if ($post['idioma'] == "I") {
 				$dados[$i]['titulo'] 		= utf8_encode($rows['titulo_I']);
-				$dados[$i]['tituloAbrev'] 	= utf8_encode(limita_caracteres($rows['titulo_I'], 45, false));	
+				$dados[$i]['tituloAbrev'] 	= utf8_encode(limita_caracteres($rows['titulo_I'], 55, false));	
 				$dados[$i]['texto'] 		= utf8_encode($rows['texto_I']);
 				$dados[$i]['textoSemTag']	= strip_tags(utf8_encode($rows['texto_I']));
 				$dados[$i]['textoAbrev']	= strip_tags(utf8_encode(limita_caracteres($rows['texto_I'], 150, false)));
 				$dados[$i]['tag']			= utf8_encode($rows['tag_I']);
 			}else{
 				$dados[$i]['titulo'] 		= utf8_encode($rows['titulo']);	
-				$dados[$i]['tituloAbrev'] 	= utf8_encode(limita_caracteres($rows['titulo'], 45, false));	
+				$dados[$i]['tituloAbrev'] 	= utf8_encode(limita_caracteres($rows['titulo'], 55, false));	
 				$dados[$i]['texto'] 		= utf8_encode($rows['texto']);
 				$dados[$i]['textoSemTag']	= strip_tags(utf8_encode($rows['texto']));
 				$dados[$i]['textoAbrev']	= strip_tags(utf8_encode(limita_caracteres($rows['texto'], 150, false)));
@@ -309,6 +350,11 @@ class Noticias
 			$query = "N.tag_I IS NOT NULL AND N.tag_I <> ''";
 		}else{
 			$query = "N.tag IS NOT NULL AND N.tag <> ''";
+		}
+
+		if($post['id'])
+		{
+			$query .= " AND N.id = '".$post['id']."' ";
 		}
 
 		$retorno = array();
@@ -494,4 +540,3 @@ class Noticias
 	}
 
 }
-

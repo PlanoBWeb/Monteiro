@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.12, created on 2015-12-09 17:34:51
+<?php /* Smarty version 2.6.12, created on 2016-04-12 13:37:47
          compiled from ../inc/menu-lateral-blog.html */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('modifier', 'default', '../inc/menu-lateral-blog.html', 31, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('modifier', 'default', '../inc/menu-lateral-blog.html', 34, false),)), $this); ?>
 <div class="col-xs-12 col-sm-4 col-md-4 bloco-menu-lateral">
    <h2 class="titulo-menu-destaques font-normal"><?php echo $this->_tpl_vars['arrayIdioma']['MN_NOT_DESTA']; ?>
 </h2><br>
@@ -36,28 +36,34 @@ $this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $th
 ?id=<?php echo $this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['id']; ?>
 "><strong><?php echo $this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['numPubclicacao']; ?>
 </strong></a><br>
-                  <a class="txt-desc-noticias font-normal" href="<?php echo $this->_tpl_vars['paginaMenuBlog']; ?>
+                  <!-- <a class="txt-desc-noticias font-normal" href="<?php echo $this->_tpl_vars['paginaMenuBlog']; ?>
 ?id=<?php echo $this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['id']; ?>
 "><?php echo $this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['tituloAbrev']; ?>
+</a> -->
+                  <a class="txt-desc-noticias font-normal" href="<?php echo $this->_tpl_vars['paginaMenuBlog']; ?>
+?id=<?php echo $this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['id']; ?>
+"><?php echo $this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['titulo']; ?>
 </a>
                <?php else: ?>
-                  <a href="<?php echo $this->_tpl_vars['paginaMenuBlog']; ?>
+                  <?php if ($this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['caminhoImagemThumb']): ?>
+                     <a href="<?php echo $this->_tpl_vars['paginaMenuBlog']; ?>
 ?id=<?php echo $this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['id']; ?>
 ">
-                     <img src="<?php echo $this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['caminhoImagemThumb']; ?>
-" alt="<?php echo $this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['tituloAbrev']; ?>
-" title="<?php echo $this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['tituloAbrev']; ?>
+                        <img src="<?php echo $this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['caminhoImagemThumb']; ?>
+" alt="<?php echo $this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['titulo']; ?>
+" title="<?php echo $this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['titulo']; ?>
 ">
-                  </a>
+                     </a>
+                  <?php endif; ?>
                   <a class="txt-desc-noticias font-normal" href="<?php echo $this->_tpl_vars['paginaMenuBlog']; ?>
 ?id=<?php echo $this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['id']; ?>
-"><?php echo $this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['tituloAbrev']; ?>
+"><?php echo $this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['titulo']; ?>
 </a>
                <?php endif; ?>
-               <p class="txt-noticias-info font-normal pd-none"><?php echo $this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['dataMes'][2]; ?>
+               <!-- <p class="txt-noticias-info font-normal pd-none"><?php echo $this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['dataMes'][2]; ?>
  <?php echo $this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['Mes']; ?>
  <?php echo $this->_tpl_vars['dadosMenuBlog'][$this->_sections['i']['index']]['dataMes'][0]; ?>
-</p>
+</p> -->
             </div>
       <?php endfor; endif; ?>
    <?php else: ?>
@@ -109,7 +115,8 @@ $this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $th
                   <?php $this->assign('nmTipo', $this->_tpl_vars['dadosMenuBlogAnoMes'][$this->_sections['i']['index']]['dataMes'][0]); ?>
 
                   <?php $this->assign('nmTipoMes', ((is_array($_tmp=@$this->_tpl_vars['nmTipoMes'])) ? $this->_run_mod_handler('default', true, $_tmp, "") : smarty_modifier_default($_tmp, ""))); ?>
-                     <?php if ($this->_tpl_vars['nmTipoMes'] <> $this->_tpl_vars['dadosMenuBlogAnoMes'][$this->_sections['i']['index']]['Mes']): ?>
+                  <?php $this->assign('nmTipoAno', ((is_array($_tmp=@$this->_tpl_vars['nmTipoAno'])) ? $this->_run_mod_handler('default', true, $_tmp, "") : smarty_modifier_default($_tmp, ""))); ?>
+                     <?php if ($this->_tpl_vars['nmTipoMes'] <> $this->_tpl_vars['dadosMenuBlogAnoMes'][$this->_sections['i']['index']]['Mes'] || $this->_tpl_vars['nmTipoAno'] <> $this->_tpl_vars['dadosMenuBlogAnoMes'][$this->_sections['i']['index']]['dataMes'][0]): ?>
                         <li class="linha-menu-lateral">
                            <a class="link-menu-lateral font-normal" href="<?php echo $this->_tpl_vars['paginaMenuBlogInver']; ?>
 ?ano=<?php echo $this->_tpl_vars['dadosMenuBlogAnoMes'][$this->_sections['i']['index']]['dataMes'][0]; ?>
@@ -119,6 +126,7 @@ $this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $th
                         </li>
                      <?php endif; ?>
                   <?php $this->assign('nmTipoMes', $this->_tpl_vars['dadosMenuBlogAnoMes'][$this->_sections['i']['index']]['Mes']); ?>
+                  <?php $this->assign('nmTipoAno', $this->_tpl_vars['dadosMenuBlogAnoMes'][$this->_sections['i']['index']]['dataMes'][0]); ?>
             <?php endfor; endif; ?>  
          </ul>
       </nav>
