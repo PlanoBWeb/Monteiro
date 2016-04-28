@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2016-04-15 14:27:39
+<?php /* Smarty version 2.6.12, created on 2016-04-28 10:26:52
          compiled from roberta-moraes-dias-benatti.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -8,7 +8,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="robots" content="index, follow">
       <meta name="description" content="Advogados com experiência no mercado e especialista nos diversos ramos do Direito." />
-      <title>Marcos Monteiro – Advogada Roberta Moraes Dias Benatti</title>
+      <title><?php echo $this->_tpl_vars['titulo']; ?>
+ – Advogada Roberta Moraes Dias Benatti</title>
       <link href="commom/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="commom/css/estilo.css">
       <link href="commom/img/icon-tab.png" rel="icon">

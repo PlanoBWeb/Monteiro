@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2016-04-12 17:46:50
+<?php /* Smarty version 2.6.12, created on 2016-04-28 10:27:51
          compiled from informativo.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -9,7 +9,8 @@
       <meta name="robots" content="index, follow">
       <meta name="description" content="<?php echo $this->_tpl_vars['dados'][0]['titulo']; ?>
 " />
-      <title>Marcos Monteiro Sociedade de Advogados – Informativos do escritório</title>
+      <title><?php echo $this->_tpl_vars['titulo']; ?>
+ – Informativos do escritório</title>
       <link href="commom/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="commom/css/estilo.css">
       <link href="commom/img/icon-tab.png" rel="icon">
@@ -32,6 +33,11 @@
     <script src="https://apis.google.com/js/platform.js" async defer></script>
    </head>
    <body itemscopeitemtype="http://schema.org/WebPage">
+      <?php $_smarty_tpl_vars = $this->_tpl_vars;
+$this->_smarty_include(array('smarty_include_tpl_file' => "../inc/google-tag-manager.html", 'smarty_include_vars' => array()));
+$this->_tpl_vars = $_smarty_tpl_vars;
+unset($_smarty_tpl_vars);
+ ?>
       <div class="container-fluid no-padding">
          <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "../inc/header.html", 'smarty_include_vars' => array()));

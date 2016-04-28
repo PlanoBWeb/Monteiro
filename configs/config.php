@@ -61,7 +61,7 @@ if (!($resultado)) {
 	echo "Erro ao conectar-se ao Banco de Dados";
 }
 
-define("TITULO","Monteiro");
+define("TITULO","Gaban Monteiro Sociedade de Advogados");
 
 //Define idioma padrão
 if(!$_SESSION['idioma'] || $_GET["l"])

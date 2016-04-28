@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2016-04-14 12:10:45
+<?php /* Smarty version 2.6.12, created on 2016-04-28 10:27:21
          compiled from terceiro-setor.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -8,7 +8,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="robots" content="index, follow">
       <meta name="description" content="Advogados especialistas em acompanhamento diário da jurisprudência" />
-      <title>Marcos Monteiro Sociedade de Advogados – Terceiro Setor</title>
+      <title><?php echo $this->_tpl_vars['titulo']; ?>
+ – Terceiro Setor</title>
       <link href="commom/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="commom/css/estilo.css">
       <link href="commom/img/icon-tab.png" rel="icon">

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2016-04-14 10:34:33
+<?php /* Smarty version 2.6.12, created on 2016-04-28 10:19:17
          compiled from index.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -9,7 +9,8 @@
       <meta name="robots" content="index, follow">
       <meta name="theme-color" content="#8b0304">
       <meta name="description" content="Escritório de Advocacia focado em direito Público, Eleitoral e Empresarial." />
-      <title>Marcos Monteiro - Sociedade de Advogados</title>
+      <title><?php echo $this->_tpl_vars['titulo']; ?>
+</title>
       <link href="commom/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="commom/css/estilo.css">
       <link href="commom/img/icon-tab.png" rel="icon">

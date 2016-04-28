@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2016-04-15 14:28:28
+<?php /* Smarty version 2.6.12, created on 2016-04-28 10:28:06
          compiled from midias.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -8,7 +8,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="robots" content="index, follow">
       <meta name="description" content="Marcos Monteiro Sociedade de Advogados na mídia" />
-      <title>Marcos Monteiro Sociedade de Advogados na mídia</title>
+      <title><?php echo $this->_tpl_vars['titulo']; ?>
+ na mídia</title>
       <link href="commom/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="commom/css/estilo.css">
       <link href="commom/img/icon-tab.png" rel="icon">

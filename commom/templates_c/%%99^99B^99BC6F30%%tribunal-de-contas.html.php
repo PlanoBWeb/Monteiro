@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2016-04-14 12:10:25
+<?php /* Smarty version 2.6.12, created on 2016-04-28 10:27:16
          compiled from tribunal-de-contas.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -8,7 +8,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="robots" content="index, follow">
       <meta name="description" content="Advogados especialistas em Tribunal de Contas" />
-      <title>Marcos Monteiro Sociedade de Advogados – Tribunal de Contas</title>
+      <title><?php echo $this->_tpl_vars['titulo']; ?>
+ – Tribunal de Contas</title>
       <link href="commom/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="commom/css/estilo.css">
       <link href="commom/img/icon-tab.png" rel="icon">

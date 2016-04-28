@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2016-04-08 15:15:21
+<?php /* Smarty version 2.6.12, created on 2016-04-28 10:27:57
          compiled from artigo.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -9,10 +9,20 @@
       <meta name="robots" content="index, follow">
       <meta name="description" content="<?php echo $this->_tpl_vars['dados'][0]['titulo']; ?>
 " />
-      <title>Marcos Monteiro Sociedade de Advogados – Artigos do escritório</title>
+      <title><?php echo $this->_tpl_vars['titulo']; ?>
+ – Artigos do escritório</title>
       <link href="commom/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="commom/css/estilo.css">
       <link href="commom/img/icon-tab.png" rel="icon">
+      <meta property="og:url"           content="<?php echo $this->_tpl_vars['urlCompleta']; ?>
+" />
+      <meta property="og:type"          content="website" />
+      <meta property="og:title"         content="<?php echo $this->_tpl_vars['dados'][0]['titulo']; ?>
+" />
+      <meta property="og:description"   content="<?php echo $this->_tpl_vars['dados'][0]['textoSemTag']; ?>
+" />
+      <meta property="og:image"         content="http://www.gabanmonteiroadv.com.br/homologacao/<?php echo $this->_tpl_vars['dados'][0]['caminhoImagem']; ?>
+" />
       <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
       <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
       <!--[if lt IE 9]>
@@ -22,7 +32,12 @@
       <link rel="canonical" href="http://gabanmonteiroadv.com.br/" />
     <script src="https://apis.google.com/js/platform.js" async defer></script>
    </head>
-   <body>
+   <body itemscopeitemtype="http://schema.org/WebPage">
+      <?php $_smarty_tpl_vars = $this->_tpl_vars;
+$this->_smarty_include(array('smarty_include_tpl_file' => "../inc/google-tag-manager.html", 'smarty_include_vars' => array()));
+$this->_tpl_vars = $_smarty_tpl_vars;
+unset($_smarty_tpl_vars);
+ ?>
       <div class="container-fluid no-padding">
          <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "../inc/header.html", 'smarty_include_vars' => array()));
@@ -117,7 +132,7 @@ $this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $th
                               <div class="fb-share-button" data-href="<?php echo $this->_tpl_vars['urlCompleta']; ?>
 " data-layout="button"></div>
                            </div>
-                           <div class="col-xs-12 col-sm-3 col-md-3" style="width: 90px !important; padding-left: 0px; padding-right: 0px;">
+                           <div class="col-xs-12 col-sm-3 col-md-3 btn-twitter" style="padding-left: 0px; padding-right: 0px;">
                               <a href="http://twitter.com/share" class="twitter-share-button" data-url="<?php echo $this->_tpl_vars['urlCompleta']; ?>
 "  data-count="horizontal" data-lang="pt">Tweetar</a> 
                            </div>

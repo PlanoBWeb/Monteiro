@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2016-04-14 12:12:45
+<?php /* Smarty version 2.6.12, created on 2016-04-28 10:26:27
          compiled from fale-conosco.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -8,7 +8,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="robots" content="index, follow">
       <meta name="description" content="Preencha seus dados e a mensagem e retornaremos o mais breve possível." />
-      <title>Marcos Monteiro Sociedade de Advogados – Fale Conosco</title>
+      <title><?php echo $this->_tpl_vars['titulo']; ?>
+ – Fale Conosco</title>
       <link href="commom/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="commom/css/estilo.css">
       <link href="commom/img/icon-tab.png" rel="icon">

@@ -1,6 +1,13 @@
 Options +FollowSymLinks
 RewriteEngine on
 
+RewriteBase /
+RewriteCond %{HTTP_HOST} http://www.mmonteiroadv.com.br/$ [OR]
+RewriteCond %{HTTP_HOST} mmonteiroadv.com.br$ [NC]
+RewriteRule ^(.*)$ http://www.gabanmonteiroadv.com.br/$1 [L,R=301]
+
+
+RewriteRule ^index.php$ 			http://www.gabanmonteiroadv.com.br [R=301,L]
 RewriteRule ^banner01.swf$ 																					http://www.gabanmonteiroadv.com.br/? [R=301,L]
 RewriteRule ^noticias/primeira-secao-afasta-recolhimento-privilegiado-iss-atividades-cartorio.php$ 			http://www.gabanmonteiroadv.com.br/noticias.php? [R=301,L]
 RewriteRule ^noticias/stf-declara-inconstitucionais-dispositivos-da-emenda-dos-precatorios.php$ 			http://www.gabanmonteiroadv.com.br/noticias.php? [R=301,L]

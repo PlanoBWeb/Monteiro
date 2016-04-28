@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.12, created on 2016-04-13 14:41:37
+<?php /* Smarty version 2.6.12, created on 2016-04-28 10:27:39
          compiled from noticias.html */ ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -8,7 +8,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="robots" content="index, follow">
       <meta name="description" content="Fique por dentro das principais notícias da área de direto" />
-      <title>Marcos Monteiro Sociedade de Advogados – Notícias da área de Direito</title>
+      <title><?php echo $this->_tpl_vars['titulo']; ?>
+ – Notícias da área de Direito</title>
       <link href="commom/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="commom/css/estilo.css">
       <link href="commom/img/icon-tab.png" rel="icon">
