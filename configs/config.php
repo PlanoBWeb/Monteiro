@@ -46,7 +46,7 @@ else
 	define("db_user", 'monteiroemassa');
 	define("db_pass", 'mo9428ro');
 	define("db_base", 'monteiroemassa');
-	define("PATH_SERVIDOR","E:/Home/monteiroemassarana/Web/Homologacao/");
+	define("PATH_SERVIDOR","E:/Home/monteiroemassarana/Web/");
 }
 
 //Acesso ao MyAdmin
